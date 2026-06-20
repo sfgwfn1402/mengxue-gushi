@@ -26,6 +26,7 @@ Page({
     pageSize: 50,
     hasMore: true,
     status: '',
+    expandedId: '',
     statusTabs: [
       { value: '', label: '全部' },
       { value: 'pending', label: '未处理' },
@@ -97,6 +98,11 @@ Page({
     if (Number.isNaN(date.getTime())) return value
     const pad = n => String(n).padStart(2, '0')
     return `${date.getFullYear()}.${pad(date.getMonth() + 1)}.${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}`
+  },
+
+  toggleFeedback(e) {
+    const id = e.currentTarget.dataset.id
+    this.setData({ expandedId: this.data.expandedId === id ? '' : id })
   },
 
   markResolved(e) {
