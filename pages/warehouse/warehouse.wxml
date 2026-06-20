@@ -26,7 +26,7 @@
       <text class="search-placeholder">搜索诗名 / 诗人 / 诗句</text>
     </view>
     <view class="search-bar" wx:else>
-      <input class="search-input" placeholder="搜索古诗/诗人/诗句..." bindinput="onSearchInput" value="{{searchKeyword}}" focus="{{showSearch}}" />
+      <input class="search-input" placeholder="搜索诗名 / 诗人 / 诗句" bindinput="onSearchInput" bindconfirm="onSearchConfirm" confirm-type="search" value="{{searchKeyword}}" focus="{{showSearch}}" />
       <text class="search-cancel" bindtap="toggleSearch">取消</text>
     </view>
 

@@ -464,6 +464,15 @@ Page({
     }, 300)
   },
 
+  onSearchConfirm(e) {
+    clearTimeout(this.searchTimer)
+    const keyword = String((e.detail && e.detail.value) || this.data.searchKeyword || '').trim()
+    const patch = { searchKeyword: keyword }
+    patch.activeFilterText = this.buildActiveFilterText(patch)
+    this.setData(patch)
+    this.fetchPoemsFromBackend()
+  },
+
   goToLearn(e) {
     const { id } = e.currentTarget.dataset
     wx.navigateTo({
