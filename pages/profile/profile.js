@@ -22,6 +22,7 @@ Page({
     modalType: '',
     modalItems: [],
     modalText: '',
+    aboutLines: [],
     appVersion: versionInfo.version || ''
   },
 
@@ -349,15 +350,16 @@ Page({
 
   openAbout() {
     const notes = Array.isArray(versionInfo.notes) ? versionInfo.notes : []
-    const content = [
-      `版本：${versionInfo.version || '-'}`,
-      notes.length ? `更新：${notes.join('、')}` : ''
-    ].filter(Boolean).join('\n')
-
-    wx.showModal({
-      title: '萌学古诗',
-      content,
-      showCancel: false
+    this.setData({
+      modalVisible: true,
+      modalTitle: '萌学古诗',
+      modalType: 'about',
+      modalText: '',
+      modalItems: [],
+      aboutLines: [
+        { label: '版本', value: versionInfo.version || '-' },
+        { label: '更新', value: notes.length ? notes.join('、') : '暂无更新说明' }
+      ]
     })
   },
 
@@ -392,7 +394,11 @@ Page({
   noop() {},
 
   closeModal() {
-    this.setData({ modalVisible: false })
+    this.setData({
+      modalVisible: false,
+      modalType: '',
+      aboutLines: []
+    })
   },
 
   openModalItem(e) {

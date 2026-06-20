@@ -84,6 +84,12 @@
         <view class="modal-close" bindtap="closeModal">×</view>
       </view>
       <view wx:if="{{modalText}}" class="modal-text">{{modalText}}</view>
+      <view wx:if="{{modalType === 'about'}}" class="about-version-list">
+        <view class="about-version-row" wx:for="{{aboutLines}}" wx:key="label">
+          <text class="about-version-label">{{item.label}}：</text>
+          <text class="about-version-value">{{item.value}}</text>
+        </view>
+      </view>
       <view wx:if="{{modalItems.length}}" class="modal-list">
         <view class="modal-item" wx:for="{{modalItems}}" wx:key="index" bindtap="openModalItem" data-index="{{index}}">
           <view class="modal-item-title">{{item.title}}</view>
