@@ -173,17 +173,17 @@ page {
   opacity: 0.92;
 }
 
-.poem-thumb-wrap {
-  position: relative;
+.poem-thumb-corner {
+  position: absolute;
   z-index: 1;
-  flex: none;
-  width: 156rpx;
-  height: 156rpx;
-  margin-right: 22rpx;
+  top: 22rpx;
+  right: 24rpx;
+  width: 118rpx;
+  height: 118rpx;
   border-radius: 28rpx;
   overflow: hidden;
-  background: linear-gradient(145deg, #FFF4D8 0%, #E8F7FF 100%);
-  box-shadow: 0 12rpx 26rpx rgba(31,35,46,0.10), inset 0 1rpx 0 rgba(255,255,255,0.85);
+  background: #FFF4D8;
+  box-shadow: 0 10rpx 22rpx rgba(31,35,46,0.12), 0 0 0 6rpx rgba(255,255,255,0.72);
 }
 
 .poem-thumb {
@@ -192,17 +192,13 @@ page {
   display: block;
 }
 
-.poem-thumb.fallback {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #B45309;
-  font-size: 56rpx;
-  font-weight: 950;
-  background: radial-gradient(circle at 30% 25%, #FFFFFF 0%, #FFF1C2 42%, #FDE7B0 100%);
-}
-
 .poem-card-left { flex: 1; min-width: 0; position: relative; z-index: 1; }
+
+.poem-card.has-thumb .poem-card-title,
+.poem-card.has-thumb .poem-card-author,
+.poem-card.has-thumb .poem-theme-tags {
+  margin-right: 130rpx;
+}
 
 .poem-level-tag {
   display: inline-flex;
@@ -843,10 +839,10 @@ page {
 .poem-card::after {
   content: '';
   position: absolute;
-  right: -48rpx;
-  top: -48rpx;
+  right: -58rpx;
+  bottom: -58rpx;
   width: 130rpx;
   height: 130rpx;
   border-radius: 50%;
-  background: rgba(255,214,107,0.20);
+  background: rgba(255,214,107,0.12);
 }

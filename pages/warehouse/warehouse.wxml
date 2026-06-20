@@ -107,17 +107,14 @@
     <view
       wx:for="{{filteredPoems}}"
       wx:key="id"
-      class="poem-card"
+      class="poem-card {{item.imageUrl ? 'has-thumb' : ''}}"
       bindtap="goToLearn"
       data-id="{{item.id}}"
     >
-      <view class="poem-thumb-wrap">
-        <image wx:if="{{item.imageUrl}}" class="poem-thumb" src="{{item.imageUrl}}" mode="aspectFill" lazy-load="true"></image>
-        <view wx:else class="poem-thumb fallback">
-          <text>诗</text>
-        </view>
-      </view>
       <view class="poem-card-left">
+        <view class="poem-thumb-corner" wx:if="{{item.imageUrl}}">
+          <image class="poem-thumb" src="{{item.imageUrl}}" mode="aspectFill" lazy-load="true"></image>
+        </view>
         <view class="poem-level-tag level-{{item.difficulty}}">
           {{item.difficulty === 1 ? '🌱' : item.difficulty === 2 ? '🌿' : '🏔️'}}
           {{item.difficulty === 1 ? '启蒙' : item.difficulty === 2 ? '进阶' : '挑战'}}
@@ -135,9 +132,6 @@
           <text catchtap="followPoemQuick" data-id="{{item.id}}">🎙️ 跟读</text>
           <text catchtap="markPoemQuick" data-id="{{item.id}}">✅ 学会</text>
         </view>
-      </view>
-      <view class="poem-card-right">
-        <text class="poem-arrow">›</text>
       </view>
     </view>
 
