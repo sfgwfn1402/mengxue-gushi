@@ -34,7 +34,7 @@
     <input class="input" placeholder="微信/手机号/邮箱，方便后续回访" value="{{contact}}" bindinput="onContactInput" />
   </view>
 
-  <button class="submit-btn" bindtap="submitFeedback">提交心声</button>
+  <button class="submit-btn" bindtap="submitFeedback" loading="{{submitting}}" disabled="{{submitting}}">{{submitting ? '提交中...' : '提交心声'}}</button>
 
   <view class="history-card" wx:if="{{history.length}}">
     <view class="history-title">最近提交</view>

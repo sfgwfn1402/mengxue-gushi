@@ -577,6 +577,15 @@ function removeFavorite(poemId) {
   return authed({ url: `/me/favorites/${poemId}`, method: 'DELETE' })
 }
 
+function submitParentFeedback(payload) {
+  return authed({
+    url: '/feedback',
+    method: 'POST',
+    data: payload || {},
+    header: { 'Content-Type': 'application/json' }
+  })
+}
+
 module.exports = {
   config,
   request,
@@ -626,5 +635,6 @@ module.exports = {
   listFavorites,
   addFavorite,
   removeFavorite,
+  submitParentFeedback,
   normalizePoemFromApi
 }
