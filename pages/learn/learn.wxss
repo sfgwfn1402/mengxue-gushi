@@ -206,7 +206,7 @@ page {
   z-index: 1;
   height: 540rpx;
   max-height: 540rpx;
-  padding: 0 16rpx;
+  padding: 22rpx 16rpx;
   margin-bottom: 18rpx;
   border-radius: 30rpx;
   box-sizing: border-box;
@@ -218,21 +218,25 @@ page {
 }
 
 .poem-reader-spacer {
-  height: 176rpx;
+  height: 0;
+}
+
+.poem-reader.reading .poem-reader-spacer {
+  height: 168rpx;
 }
 
 .poem-line {
   position: relative;
   z-index: 1;
-  min-height: 72rpx;
-  line-height: 1.7;
-  margin: 12rpx 4rpx;
-  padding: 14rpx 18rpx;
+  min-height: 82rpx;
+  line-height: 1.72;
+  margin: 10rpx 4rpx;
+  padding: 16rpx 18rpx;
   border-radius: 24rpx;
   box-sizing: border-box;
   text-align: center;
-  font-size: 38rpx;
-  font-weight: 700;
+  font-size: 42rpx;
+  font-weight: 800;
   color: #3B342A;
   letter-spacing: 4rpx;
   transform: scale(1);
@@ -280,8 +284,8 @@ page {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  min-width: 48rpx;
-  margin: 0 2rpx 10rpx;
+  min-width: 52rpx;
+  margin: 0 2rpx 12rpx;
 }
 
 .char-cell.punct {
@@ -292,7 +296,7 @@ page {
   min-height: 30rpx;
   line-height: 30rpx;
   color: #A67C52;
-  font-size: 19rpx;
+  font-size: 21rpx;
   font-weight: 800;
   letter-spacing: 0;
   white-space: nowrap;
@@ -301,18 +305,18 @@ page {
 .char-text {
   line-height: 1.15;
   color: inherit;
-  font-size: 38rpx;
+  font-size: 42rpx;
   font-weight: inherit;
   letter-spacing: 0;
 }
 
 .poem-line.active .char-pinyin {
   color: #D97706;
-  font-size: 21rpx;
+  font-size: 23rpx;
 }
 
 .poem-line.active .char-text {
-  font-size: 50rpx;
+  font-size: 52rpx;
 }
 
 .reading-hint {

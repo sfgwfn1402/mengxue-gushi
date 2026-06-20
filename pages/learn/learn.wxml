@@ -49,7 +49,7 @@
         <view class="poem-reader-spacer" aria-hidden="true"></view>
       </scroll-view>
 
-      <view class="reading-hint" wx:if="{{playing}}">正在跟读第 {{currentLineIndex + 1}} / {{poemLines.length}} 句</view>
+      <view class="reading-hint" wx:if="{{playing}}">正在朗读第 {{currentLineIndex + 1}} / {{poemLines.length}} 句</view>
 
       <view class="follow-entry {{followExpanded ? 'open' : ''}}">
         <view class="follow-entry-head" bindtap="openLandscapeFollow">
