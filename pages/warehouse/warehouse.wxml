@@ -1,0 +1,145 @@
+<!-- pages/warehouse/warehouse.wxml -->
+<view class="container">
+  <!-- 顶部标题栏 -->
+  <view class="header">
+    <view class="header-left">
+      <text class="page-title">📚 诗园</text>
+    </view>
+    <view class="header-right">
+      <text class="star-count">✨ {{stars}}</text>
+      <text class="rank-badge">{{rankEmoji}} {{rankName}}</text>
+    </view>
+  </view>
+
+  <!-- 统一筛选面板 -->
+  <view class="filter-panel">
+    <view class="filter-top">
+      <view>
+        <view class="filter-title">帮孩子找一首诗</view>
+        <view class="filter-sub">先选难度，再按主题或关键词找</view>
+      </view>
+      <view class="filter-reset" bindtap="clearAllFilters">重置</view>
+    </view>
+
+    <view class="search-compact" bindtap="toggleSearch" wx:if="{{!showSearch}}">
+      <text class="search-icon">🔍</text>
+      <text class="search-placeholder">搜索诗名 / 诗人 / 诗句</text>
+    </view>
+    <view class="search-bar" wx:else>
+      <input class="search-input" placeholder="搜索古诗/诗人/诗句..." bindinput="onSearchInput" value="{{searchKeyword}}" focus="{{showSearch}}" />
+      <text class="search-cancel" bindtap="toggleSearch">取消</text>
+    </view>
+
+    <view class="filter-section difficulty-section">
+      <view class="filter-section-head">
+        <text>学习难度</text>
+        <text class="filter-section-tip">和主题叠加</text>
+      </view>
+      <scroll-view class="category-scroll" scroll-x="true">
+        <view class="category-list">
+          <view
+            wx:for="{{categories}}"
+            wx:key="id"
+            class="category-item {{currentCategory === item.id ? 'active' : ''}}"
+            bindtap="switchCategory"
+            data-cat="{{item.id}}"
+          >
+            <text>{{item.emoji}} {{item.name}}</text>
+
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="filter-section child-section">
+      <view class="filter-section-head">
+        <text>孩子能懂的主题</text>
+        <text class="filter-section-tip">快捷入口</text>
+      </view>
+      <scroll-view class="child-theme-scroll" scroll-x="true">
+        <view class="child-theme-row">
+          <view wx:for="{{childThemes}}" wx:key="name" class="child-theme-chip {{childThemeKeyword === item.keyword ? 'active' : ''}}" bindtap="switchChildTheme" data-keyword="{{item.keyword}}" data-name="{{item.name}}">
+            <text>{{item.emoji}}</text>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="fine-theme-entry">
+      <view class="fine-theme-head">
+        <text>精细主题</text>
+        <text class="filter-section-tip">想找更具体的内容</text>
+      </view>
+      <view class="fine-theme-row">
+        <view class="theme-filter-main" bindtap="toggleThemes">
+          <text>{{currentThemeName ? '🔎 ' + currentThemeName : '🔎 打开精细主题'}}</text>
+          <text class="theme-filter-count">{{showThemes ? '收起' : '展开'}}</text>
+        </view>
+        <text wx:if="{{currentThemeId}}" class="theme-clear" bindtap="clearTheme">清除</text>
+      </view>
+    </view>
+
+    <view class="filter-status" wx:if="{{searchKeyword || childThemeKeyword || currentThemeName || currentCategory !== 'all' || currentSeason !== 'any'}}">
+      <text class="filter-status-label">当前筛选</text>
+      <text class="active-filter">{{activeFilterText}}</text>
+    </view>
+  </view>
+  <view wx:if="{{showThemes}}" class="theme-grid">
+    <view
+      wx:for="{{themes}}"
+      wx:key="id"
+      class="theme-card {{currentThemeId === item.id ? 'active' : ''}}"
+      bindtap="switchTheme"
+      data-id="{{item.id}}"
+      data-name="{{item.name}}"
+    >
+      <view class="theme-card-icon">{{item.emoji}}</view>
+      <view class="theme-card-main">
+        <view class="theme-card-name">{{item.name}}</view>
+        <view class="theme-card-desc">{{item.poem_count}} 首 · {{item.description}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 古诗列表 -->
+  <view class="poem-list">
+    <view
+      wx:for="{{filteredPoems}}"
+      wx:key="id"
+      class="poem-card"
+      bindtap="goToLearn"
+      data-id="{{item.id}}"
+    >
+      <view class="poem-card-left">
+        <view class="poem-level-tag level-{{item.difficulty}}">
+          {{item.difficulty === 1 ? '🌱' : item.difficulty === 2 ? '🌿' : '🏔️'}}
+          {{item.difficulty === 1 ? '启蒙' : item.difficulty === 2 ? '进阶' : '挑战'}}
+        </view>
+        <view class="poem-card-title">{{item.title}}</view>
+        <view class="poem-card-author">{{item.dynasty}} · {{item.author}}</view>
+        <view class="poem-theme-tags" wx:if="{{item.displayThemes && item.displayThemes.length}}">
+          <view class="poem-theme-tag" wx:for="{{item.displayThemes}}" wx:for-item="theme" wx:key="id">
+            {{theme.emoji}} {{theme.name}}
+          </view>
+        </view>
+        <view class="poem-card-preview">{{item.content}}</view>
+        <view class="poem-actions-mini">
+          <text catchtap="playPoemQuick" data-id="{{item.id}}">{{quickPlayingId === item.id ? '⏹ 停止' : '🔊 听一听'}}</text>
+          <text catchtap="followPoemQuick" data-id="{{item.id}}">🎙️ 跟读</text>
+          <text catchtap="markPoemQuick" data-id="{{item.id}}">✅ 学会</text>
+        </view>
+      </view>
+      <view class="poem-card-right">
+        <text class="poem-arrow">›</text>
+      </view>
+    </view>
+
+    <view wx:if="{{loadingMore}}" class="load-more-state">正在加载更多古诗…</view>
+    <view wx:elif="{{filteredPoems.length && !hasMore}}" class="load-more-state no-more">已经到底啦 🌱</view>
+
+    <view wx:if="{{!loading && filteredPoems.length === 0}}" class="empty-state">
+      <text>🔍 没有找到相关古诗</text>
+    </view>
+  </view>
+</view>

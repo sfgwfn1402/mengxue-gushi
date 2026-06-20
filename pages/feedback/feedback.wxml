@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="hero-card">
+    <view class="hero-icon">💬</view>
+    <view class="hero-title">听听家长和孩子的心声</view>
+    <view class="hero-desc">你希望孩子怎样快乐学古诗？哪里不好用？想增加什么内容？告诉我们。</view>
+  </view>
+
+  <view class="section-card">
+    <view class="field-title">孩子年龄</view>
+    <view class="chip-row">
+      <view wx:for="{{ages}}" wx:key="*this" class="chip {{age === item ? 'active' : ''}}" data-value="{{item}}" bindtap="selectAge">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="section-card">
+    <view class="field-title">你最想反馈哪一类？</view>
+    <view class="chip-row">
+      <view wx:for="{{types}}" wx:key="value" class="chip {{type === item.value ? 'active' : ''}}" data-value="{{item.value}}" bindtap="selectType">{{item.label}}</view>
+    </view>
+  </view>
+
+  <view class="section-card">
+    <view class="field-title">孩子现在学古诗最大的困难是什么？</view>
+    <textarea class="textarea" maxlength="300" placeholder="比如：不愿意背、听不懂意思、拼音不熟、练习太少、画面不够吸引……" value="{{painPoint}}" bindinput="onPainInput" />
+  </view>
+
+  <view class="section-card">
+    <view class="field-title">你希望我们怎么改，孩子会更快乐？</view>
+    <textarea class="textarea large" maxlength="500" placeholder="比如：加动画故事、闯关奖励、亲子任务、朗读评分、每天5分钟计划、按教材同步……" value="{{suggestion}}" bindinput="onSuggestionInput" />
+  </view>
+
+  <view class="section-card">
+    <view class="field-title">愿意留下联系方式吗？（选填）</view>
+    <input class="input" placeholder="微信/手机号/邮箱，方便后续回访" value="{{contact}}" bindinput="onContactInput" />
+  </view>
+
+  <button class="submit-btn" bindtap="submitFeedback">提交心声</button>
+
+  <view class="history-card" wx:if="{{history.length}}">
+    <view class="history-title">最近提交</view>
+    <view class="history-item" wx:for="{{history}}" wx:key="createdAt">
+      <view class="history-main">{{item.typeLabel}} · {{item.age || '未填年龄'}}</view>
+      <view class="history-desc">{{item.suggestion}}</view>
+    </view>
+  </view>
+</view>

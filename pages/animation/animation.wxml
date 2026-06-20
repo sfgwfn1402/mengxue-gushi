@@ -1,0 +1,45 @@
+<!--pages/animation/animation.wxml-->
+<view class="container" wx:if="{{poem}}">
+  <view class="poem-header">
+    <view class="poem-title">{{poem.title}}</view>
+    <view class="poem-author">{{poem.dynasty}} · {{poem.author}}</view>
+  </view>
+
+  <view class="video-container">
+    <view class="scene-container {{currentScene}}">
+      <view class="moon"></view>
+      <view class="stars">
+        <view class="star s1"></view>
+        <view class="star s2"></view>
+        <view class="star s3"></view>
+        <view class="star s4"></view>
+        <view class="star s5"></view>
+        <view class="star s6"></view>
+        <view class="star s7"></view>
+        <view class="star s8"></view>
+      </view>
+      <view class="poem-lines">
+        <view class="line l{{index + 1}}" wx:for="{{sceneLines}}" wx:key="index">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="explanation">
+    <view class="exp-title">诗意</view>
+    <view class="exp-content">{{poem.translation}}</view>
+  </view>
+
+  <view class="controls">
+    <button class="btn-replay" bindtap="replayVideo">🔄 重播动画</button>
+  </view>
+
+  <view class="nav">
+    <button class="nav-btn" bindtap="prevPoem" disabled="{{poemId <= 1}}">‹ 上一首</button>
+    <button class="nav-btn" bindtap="goBack">返回</button>
+    <button class="nav-btn" bindtap="nextPoem" disabled="{{poemId >= totalPoems}}">下一首 ›</button>
+  </view>
+</view>
+
+<view class="container" wx:else>
+  <view class="empty">正在加载古诗动画...</view>
+</view>

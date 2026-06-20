@@ -1,0 +1,823 @@
+/* pages/warehouse/warehouse.wxss - iOS 儿童学习 App 风格 */
+page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #F6F8FC 0%, #FFF7EA 100%);
+  color: #1D1D1F;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 26rpx 24rpx 44rpx;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rpx 0 22rpx;
+}
+
+.page-title {
+  font-size: 44rpx;
+  line-height: 1.18;
+  font-weight: 900;
+  color: #1F2937;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.star-count,
+.rank-badge {
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 900;
+  background: rgba(255,255,255,0.88);
+  box-shadow: 0 8rpx 18rpx rgba(31,35,46,0.055);
+}
+
+.star-count { color: #FF9500; }
+.rank-badge { color: #8B6914; background: #FFF2D2; }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+  gap: 16rpx;
+}
+
+.search-input {
+  flex: 1;
+  height: 72rpx;
+  line-height: 72rpx;
+  background: rgba(255,255,255,0.92);
+  border-radius: 24rpx;
+  padding: 0 26rpx;
+  font-size: 28rpx;
+  box-shadow: 0 10rpx 22rpx rgba(31,35,46,0.055), inset 0 1rpx 0 rgba(255,255,255,0.9);
+}
+
+.search-cancel,
+.search-toggle {
+  font-size: 27rpx;
+  font-weight: 700;
+  color: #8A8F98;
+}
+
+.search-toggle {
+  text-align: right;
+  margin-bottom: 14rpx;
+}
+
+.category-scroll {
+  white-space: nowrap;
+  margin-bottom: 16rpx;
+}
+
+.category-list {
+  display: inline-flex;
+  gap: 14rpx;
+  min-width: max-content;
+}
+
+.category-item,
+.season-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  min-height: 58rpx;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.94);
+  border-radius: 999rpx;
+  font-size: 26rpx;
+  font-weight: 800;
+  color: #6B7280;
+  white-space: nowrap;
+  border: 1rpx solid rgba(31,35,46,0.06);
+  box-shadow: 0 8rpx 18rpx rgba(31,35,46,0.045);
+  overflow: hidden;
+}
+
+.category-item.active {
+  background: linear-gradient(180deg, #FFB15D 0%, #FF7A45 100%);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 12rpx 22rpx rgba(255,122,69,0.20);
+}
+
+.category-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36rpx;
+  height: 32rpx;
+  padding: 0 10rpx;
+  border-radius: 999rpx;
+  box-sizing: border-box;
+  font-size: 21rpx;
+  line-height: 32rpx;
+  background: rgba(31,35,46,0.10);
+  color: inherit;
+}
+
+.category-item.active .category-count {
+  background: rgba(255,255,255,0.28);
+  color: #fff;
+}
+
+.season-bar {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 20rpx;
+}
+
+.season-item {
+  padding: 10rpx 18rpx;
+  font-size: 25rpx;
+}
+
+.season-item.active {
+  background: linear-gradient(180deg, #6DD98A 0%, #45B96C 100%);
+  color: #fff;
+  border-color: transparent;
+}
+
+.poem-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+  padding-bottom: 40rpx;
+}
+
+.poem-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.94);
+  border-radius: 30rpx;
+  padding: 28rpx;
+  border: 1rpx solid rgba(255,255,255,0.86);
+  box-shadow: 0 16rpx 36rpx rgba(31,35,46,0.07), 0 2rpx 8rpx rgba(31,35,46,0.035);
+}
+
+.poem-card:active {
+  transform: scale(0.986);
+  opacity: 0.92;
+}
+
+.poem-card-left { flex: 1; min-width: 0; }
+
+.poem-level-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 36rpx;
+  padding: 0 14rpx;
+  border-radius: 999rpx;
+  margin-bottom: 12rpx;
+  font-size: 21rpx;
+  font-weight: 900;
+}
+
+.level-1 { background: #E9F9EE; color: #2E7D32; }
+.level-2 { background: #FFF0D8; color: #D97706; }
+.level-3 { background: #FFE7F0; color: #B4235C; }
+
+.poem-card-title {
+  font-size: 36rpx;
+  line-height: 1.22;
+  font-weight: 900;
+  color: #1F2937;
+  margin-bottom: 6rpx;
+}
+
+.poem-card-author {
+  font-size: 24rpx;
+  color: #8A8F98;
+  margin-bottom: 10rpx;
+  font-weight: 600;
+}
+
+.poem-card-preview {
+  font-size: 27rpx;
+  color: #6B7280;
+  line-height: 1.58;
+}
+
+.poem-card-right { padding-left: 20rpx; }
+.poem-arrow { font-size: 44rpx; color: #C8CDD6; }
+
+.empty-state {
+  margin-top: 80rpx;
+  padding: 52rpx 20rpx;
+  border-radius: 30rpx;
+  background: rgba(255,255,255,0.86);
+  text-align: center;
+  color: #8A8F98;
+  font-size: 30rpx;
+  box-shadow: 0 12rpx 26rpx rgba(31,35,46,0.05);
+}
+
+.load-more-state {
+  padding: 30rpx 0 18rpx;
+  text-align: center;
+  color: #9AA1AD;
+  font-size: 25rpx;
+  font-weight: 700;
+}
+
+.load-more-state.no-more {
+  color: #C0A071;
+}
+
+.theme-filter {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 14rpx;
+}
+
+.theme-filter-main {
+  flex: 1;
+  height: 72rpx;
+  padding: 0 24rpx;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 10rpx 22rpx rgba(31,35,46,0.055), inset 0 1rpx 0 rgba(255,255,255,0.9);
+  color: #1F2937;
+  font-size: 27rpx;
+  font-weight: 900;
+}
+
+.theme-filter-count {
+  color: #8A8F98;
+  font-size: 22rpx;
+  font-weight: 800;
+}
+
+.theme-clear {
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  background: #FFF0D0;
+  color: #B86B00;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.theme-scroll {
+  white-space: nowrap;
+  margin-bottom: 18rpx;
+}
+
+.theme-list {
+  display: flex;
+  gap: 14rpx;
+}
+
+.theme-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 58rpx;
+  padding: 0 20rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 850;
+  color: #6B7280;
+  background: rgba(255,255,255,0.92);
+  border: 1rpx solid rgba(31,35,46,0.06);
+  box-shadow: 0 8rpx 18rpx rgba(31,35,46,0.045);
+}
+
+.theme-chip.active {
+  color: #fff;
+  background: linear-gradient(180deg, #71B8FF 0%, #3D8CFF 100%);
+  border-color: transparent;
+}
+
+.poem-theme-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rpx;
+  margin: 10rpx 0;
+}
+
+.poem-theme-tag {
+  max-width: 180rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  padding: 0 12rpx;
+  border-radius: 999rpx;
+  background: #FFF4D8;
+  color: #9A6A2E;
+  font-size: 21rpx;
+  font-weight: 850;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.poem-primary-theme {
+  display: inline-flex;
+  align-items: center;
+  max-width: 220rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  padding: 0 14rpx;
+  margin-bottom: 8rpx;
+  border-radius: 999rpx;
+  background: linear-gradient(180deg, #FFF4D8 0%, #FFE4A8 100%);
+  color: #9A5B00;
+  font-size: 21rpx;
+  font-weight: 900;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+  margin: 0 0 20rpx;
+}
+
+.theme-card {
+  min-height: 112rpx;
+  padding: 18rpx 16rpx;
+  border-radius: 26rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.92);
+  border: 1rpx solid rgba(255,255,255,0.82);
+  box-shadow: 0 12rpx 26rpx rgba(31,35,46,0.06);
+}
+
+.theme-card:active {
+  transform: scale(0.976);
+  opacity: 0.92;
+}
+
+.theme-card.active {
+  background: linear-gradient(135deg, #EAF4FF 0%, #CCE5FF 100%);
+  border-color: rgba(61,140,255,0.26);
+}
+
+.theme-card-icon {
+  flex-shrink: 0;
+  width: 56rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  border-radius: 18rpx;
+  text-align: center;
+  font-size: 32rpx;
+  background: rgba(255,255,255,0.68);
+}
+
+.theme-card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.theme-card-name {
+  font-size: 28rpx;
+  color: #1F2937;
+  font-weight: 900;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.theme-card-desc {
+  margin-top: 6rpx;
+  font-size: 21rpx;
+  color: #8A8F98;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 诗园字体和主题卡片增强 */
+.poem-card-title {
+  color: #172033;
+  font-weight: 950;
+  letter-spacing: 1rpx;
+  text-shadow: 0 2rpx 0 rgba(255,255,255,0.75);
+}
+
+.poem-card:nth-child(3n + 1) .poem-card-title { color: #B45309; }
+.poem-card:nth-child(3n + 2) .poem-card-title { color: #2563EB; }
+.poem-card:nth-child(3n + 3) .poem-card-title { color: #047857; }
+
+.poem-theme-tag,
+.poem-primary-theme {
+  font-weight: 900;
+  border-radius: 999rpx;
+  box-shadow: inset 0 1rpx 0 rgba(255,255,255,0.78);
+}
+
+.theme-filter-main {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+  border: 1rpx solid rgba(125, 211, 252, 0.42);
+  box-shadow: 0 10rpx 24rpx rgba(14, 116, 144, 0.08);
+}
+
+.theme-card-name {
+  color: #075985;
+  font-weight: 950;
+  letter-spacing: 1rpx;
+}
+
+.theme-card.active .theme-card-name {
+  color: #B45309;
+}
+
+/* 诗园：古诗标题和主题名做描边糖果字 */
+.poem-card-title,
+.theme-card-name,
+.theme-filter-main,
+.poem-theme-tag,
+.poem-primary-theme {
+  -webkit-text-stroke: 0.5rpx rgba(255,255,255,0.82);
+  text-shadow:
+    0 2rpx 0 rgba(255,255,255,0.9),
+    0 7rpx 14rpx rgba(31,35,46,0.08);
+}
+
+.poem-card-title {
+  font-weight: 950;
+  letter-spacing: 1.5rpx;
+}
+
+.theme-card-name {
+  color: #0EA5E9;
+  font-size: 30rpx;
+}
+
+.theme-card.active .theme-card-name {
+  color: #FF9F1C;
+}
+
+/* 回退：诗园去掉重描边，保留轻颜色 */
+.poem-card-title,
+.theme-card-name,
+.theme-filter-main,
+.poem-theme-tag,
+.poem-primary-theme {
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+.poem-card-title {
+  font-weight: 950 !important;
+  letter-spacing: 1rpx !important;
+}
+
+.theme-card-name {
+  color: #075985 !important;
+  font-size: inherit !important;
+}
+
+.theme-card.active .theme-card-name {
+  color: #B45309 !important;
+}
+
+/* 最终回退到初版：取消诗园字体个性化 */
+.poem-card-title,
+.theme-card-name,
+.theme-filter-main,
+.poem-theme-tag,
+.poem-primary-theme {
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+.poem-card-title {
+  color: #1F2937 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-card-name {
+  color: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: 0 !important;
+  font-size: inherit !important;
+}
+
+.theme-card.active .theme-card-name {
+  color: inherit !important;
+}
+
+.theme-filter-main {
+  background: inherit !important;
+  border: inherit !important;
+  box-shadow: inherit !important;
+}
+
+.poem-theme-tag,
+.poem-primary-theme {
+  font-weight: inherit !important;
+  box-shadow: none !important;
+}
+
+/* 诗园筛选面板：把搜索、难度、主题统一收进一个卡片 */
+.filter-panel {
+  margin: 14rpx 0 22rpx;
+  padding: 22rpx;
+  border-radius: 34rpx;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,250,238,0.96) 100%);
+  border: 1rpx solid rgba(255,255,255,0.92);
+  box-shadow: 0 18rpx 40rpx rgba(31,35,46,0.075), inset 0 1rpx 0 rgba(255,255,255,0.95);
+}
+
+.filter-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+  margin-bottom: 18rpx;
+}
+
+.filter-title {
+  font-size: 32rpx;
+  line-height: 1.2;
+  font-weight: 950;
+  color: #1F2937;
+}
+
+.filter-sub {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #9A7A25;
+}
+
+.filter-reset {
+  flex-shrink: 0;
+  height: 54rpx;
+  line-height: 54rpx;
+  padding: 0 22rpx;
+  border-radius: 999rpx;
+  background: #FFF3D7;
+  color: #B45309;
+  font-size: 23rpx;
+  font-weight: 900;
+  box-shadow: inset 0 1rpx 0 rgba(255,255,255,0.86);
+}
+
+.search-compact,
+.search-bar {
+  display: flex;
+  align-items: center;
+  min-height: 70rpx;
+  margin-bottom: 18rpx;
+  padding: 0 22rpx;
+  border-radius: 24rpx;
+  background: #F6F9FF;
+  border: 1rpx solid rgba(37,99,235,0.08);
+  box-shadow: inset 0 1rpx 0 rgba(255,255,255,0.95);
+  box-sizing: border-box;
+}
+
+.search-compact {
+  gap: 10rpx;
+  color: #8A8F98;
+  font-size: 26rpx;
+  font-weight: 800;
+}
+
+.search-icon { font-size: 30rpx; }
+.search-placeholder { color: #8A8F98; }
+
+.search-input {
+  flex: 1;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  font-size: 26rpx;
+  font-weight: 800;
+  box-shadow: none;
+}
+
+.search-cancel {
+  flex-shrink: 0;
+  margin-left: 16rpx;
+  font-size: 24rpx;
+  font-weight: 900;
+  color: #3D6FDB;
+}
+
+.search-toggle { display: none; }
+
+.filter-section {
+  margin-top: 16rpx;
+  padding: 18rpx 16rpx 16rpx;
+  border-radius: 26rpx;
+  box-sizing: border-box;
+}
+
+.difficulty-section {
+  background: linear-gradient(180deg, rgba(255,247,231,0.95) 0%, rgba(255,255,255,0.78) 100%);
+  border: 1rpx solid rgba(255,159,69,0.13);
+}
+
+.child-section {
+  background: linear-gradient(180deg, rgba(241,255,246,0.92) 0%, rgba(255,255,255,0.78) 100%);
+  border: 1rpx solid rgba(57,185,107,0.12);
+}
+
+.filter-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+  padding: 0 4rpx;
+  color: #1F2937;
+  font-size: 24rpx;
+  font-weight: 950;
+}
+
+.filter-section-tip {
+  color: #A0A6B1;
+  font-size: 21rpx;
+  font-weight: 800;
+}
+
+.child-theme-scroll,
+.category-scroll {
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
+.child-theme-row,
+.category-list {
+  display: inline-flex;
+  gap: 12rpx;
+  min-width: max-content;
+}
+
+.child-theme-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  min-height: 58rpx;
+  padding: 0 20rpx;
+  border-radius: 999rpx;
+  background: #FFFFFF;
+  color: #374151;
+  font-size: 25rpx;
+  font-weight: 900;
+  white-space: nowrap;
+  box-shadow: 0 8rpx 18rpx rgba(31,35,46,0.045);
+  border: 1rpx solid rgba(31,35,46,0.05);
+  box-sizing: border-box;
+}
+
+.child-theme-chip.active {
+  color: #fff;
+  background: linear-gradient(180deg, #7DDC9A 0%, #39B96B 100%);
+  border-color: transparent;
+  box-shadow: 0 12rpx 24rpx rgba(57,185,107,0.22);
+}
+
+.filter-status {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-top: 16rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx dashed rgba(31,35,46,0.10);
+}
+
+.filter-status-label {
+  flex-shrink: 0;
+  color: #8A8F98;
+  font-size: 22rpx;
+  font-weight: 900;
+}
+
+.active-filter {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 48rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  background: #EEF6FF;
+  color: #2563EB;
+  font-size: 22rpx;
+  font-weight: 900;
+  box-sizing: border-box;
+}
+
+.fine-theme-entry {
+  margin-top: 16rpx;
+  padding: 18rpx 16rpx 16rpx;
+  border-radius: 26rpx;
+  background: linear-gradient(180deg, rgba(246,249,255,0.96) 0%, rgba(255,255,255,0.82) 100%);
+  border: 1rpx solid rgba(37,99,235,0.10);
+}
+
+.fine-theme-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+  padding: 0 4rpx;
+  color: #1F2937;
+  font-size: 24rpx;
+  font-weight: 950;
+}
+
+.fine-theme-row {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.theme-filter { display: none; }
+
+.theme-filter-main {
+  flex: 1;
+  min-width: 0;
+  height: 58rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14rpx;
+  background: #FFFFFF !important;
+  border: 1rpx solid rgba(31,35,46,0.06) !important;
+  box-shadow: 0 8rpx 18rpx rgba(31,35,46,0.045) !important;
+  color: #1F2937;
+  font-size: 24rpx;
+  font-weight: 900;
+  box-sizing: border-box;
+}
+
+.theme-filter-count {
+  flex-shrink: 0;
+  color: #8A8F98;
+  font-size: 21rpx;
+  font-weight: 900;
+}
+
+.theme-clear {
+  height: 48rpx;
+  line-height: 48rpx;
+  padding: 0 16rpx;
+  border-radius: 999rpx;
+  background: #FFF0D0;
+  color: #B86B00;
+  font-size: 22rpx;
+  font-weight: 900;
+}
+
+.poem-actions-mini {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-top: 14rpx;
+}
+.poem-actions-mini text {
+  padding: 8rpx 14rpx;
+  border-radius: 999rpx;
+  background: #F3F7FF;
+  color: #3D6FDB;
+  font-size: 22rpx;
+  font-weight: 900;
+}
+.poem-card {
+  position: relative;
+  overflow: hidden;
+}
+.poem-card::after {
+  content: '';
+  position: absolute;
+  right: -48rpx;
+  top: -48rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  background: rgba(255,214,107,0.20);
+}

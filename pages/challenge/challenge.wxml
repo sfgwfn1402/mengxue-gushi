@@ -1,0 +1,59 @@
+<!--pages/challenge/challenge.wxml-->
+<view class="container">
+  <!-- 顶部统计 -->
+  <view class="stats-bar">
+    <view class="stats-help" bindtap="showStatsHelp">?</view>
+    <view class="stat-item">
+      <text class="stat-num">{{stars}}</text>
+      <text class="stat-label">✨ 我的诗光</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">{{streak}}</text>
+      <text class="stat-label">🔥 连续天数</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">{{completedCount}}/{{tasks.length}}</text>
+      <text class="stat-label">📋 今日完成</text>
+    </view>
+  </view>
+
+  <!-- 进度条 -->
+  <view class="progress-section">
+    <text class="progress-label">收集进度</text>
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{(completedCount / tasks.length * 100)}}%"></view>
+    </view>
+    <text class="progress-text">{{completedCount}} / {{tasks.length}}</text>
+  </view>
+
+  <!-- 诗光列表 -->
+  <view class="tasks-title">✨ 今日诗光</view>
+  <view class="task-list">
+    <view
+      wx:for="{{tasks}}"
+      wx:key="id"
+      class="task-card {{item.completed ? 'completed' : ''}}"    >
+      <view class="task-emoji">{{item.emoji}}</view>
+      <view class="task-info">
+        <view class="task-name">{{item.name}}</view>
+        <view class="task-desc">{{item.desc}}</view>
+      </view>
+      <view class="task-reward">+{{item.stars}}✨</view>
+      <view class="task-action">
+        <button
+          wx:if="{{!item.completed}}"
+          class="task-btn {{item.completed ? 'done' : ''}}"
+          bindtap="doTask" data-id="{{item.id}}"
+        >{{item.completed ? '✅' : '去完成'}}</button>
+        <text wx:else class="task-done">✅ 已完成</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 全部完成奖励 -->
+  <view wx:if="{{completedCount === tasks.length}}" class="reward-banner">
+    <text>🎊 今日诗光全部收集完成！明天再来继续收集！</text>
+  </view>
+</view>

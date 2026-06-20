@@ -1,0 +1,39 @@
+<view class="page">
+  <view wx:if="{{loading}}" class="empty">正在打开作品…</view>
+  <view wx:elif="{{!work}}" class="empty">
+    <view class="empty-icon">🌙</view>
+    <view>作品不存在或已删除</view>
+  </view>
+
+  <view wx:else>
+    <view class="hero">
+      <view class="type-pill">{{type === 'recitation' ? '🎙️ 朗读作品' : '🎨 诗画作品'}}</view>
+      <view class="poem-title">《{{work.poem_title || work.poemTitle || '古诗'}}》</view>
+      <view class="date">{{createdText}}</view>
+    </view>
+
+    <view class="content-card">
+      <image wx:if="{{type === 'artwork'}}" class="artwork" src="{{mediaUrl}}" mode="aspectFill" bindtap="previewArtwork"></image>
+      <view wx:else class="audio-box">
+        <view class="mic">🎙️</view>
+        <view class="audio-title">小诗人的朗读</view>
+        <view class="audio-duration">{{work.duration_seconds || work.durationSeconds || 0}} 秒</view>
+        <button class="play-btn" bindtap="toggleAudio">{{playing ? '停止播放' : '回听朗读'}}</button>
+      </view>
+
+      <view class="work-title">{{work.title || (type === 'artwork' ? '我的诗配画' : '我的朗读')}}</view>
+      <view class="desc" wx:if="{{work.description}}">{{work.description}}</view>
+    </view>
+
+    <view class="actions compact-actions">
+      <button wx:if="{{type === 'artwork'}}" class="action primary" bindtap="previewArtwork">查看大图</button>
+      <button wx:else class="action primary" bindtap="toggleAudio">{{playing ? '停止' : '回听'}}</button>
+      <button class="action" bindtap="openShareMenu">分享</button>
+    </view>
+    <view class="delete-link" bindtap="deleteWork">删除作品</view>
+
+    <view class="privacy">🔒 当前作品默认私有。只有你主动分享时，别人才能通过入口查看。</view>
+  </view>
+
+  <canvas class="share-canvas" canvas-id="detailShareCanvas" style="width: 600px; height: 900px;"></canvas>
+</view>

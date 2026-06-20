@@ -1,0 +1,43 @@
+<view class="page">
+  <view class="hero">
+    <view class="hero-title">我的诗集</view>
+    <view class="hero-subtitle">保存小诗人的朗读和诗画，先只自己可见</view>
+  </view>
+
+  <view class="tabs">
+    <view class="tab {{tab === 'recitations' ? 'active' : ''}}" data-tab="recitations" bindtap="switchTab">🎙️ 我的朗读</view>
+    <view class="tab {{tab === 'artworks' ? 'active' : ''}}" data-tab="artworks" bindtap="switchTab">🎨 我的诗画</view>
+  </view>
+
+  <view class="privacy-card">
+    <text>🔒 当前是我的作品库。未发布作品只自己可见，发布后会直接展示到“发现”。</text>
+  </view>
+
+  <view wx:if="{{loading}}" class="empty">正在整理作品…</view>
+  <view wx:elif="{{!items.length}}" class="empty">
+    <view class="empty-icon">{{tab === 'recitations' ? '🎙️' : '🎨'}}</view>
+    <view>{{tab === 'recitations' ? '还没有上传朗读作品' : '还没有上传诗画作品'}}</view>
+    <view class="empty-tip">去学习页朗读，或去创作页画一幅诗画吧</view>
+  </view>
+
+  <view class="work-list" wx:else>
+    <view class="work-card" wx:for="{{items}}" wx:key="id">
+      <view class="more-btn" data-id="{{item.id}}" bindtap="openMoreMenu"><text></text><text></text><text></text></view>
+      <image wx:if="{{tab === 'artworks'}}" class="work-image" src="{{item.image_url || item.imageUrl}}" mode="aspectFill" bindtap="previewArtwork" data-url="{{item.image_url || item.imageUrl}}"></image>
+      <view class="work-body">
+        <view class="work-title">{{item.poem_title || item.poemTitle || '古诗作品'}}</view>
+        <view class="work-meta">{{formatTimeMap[item.id] || ''}} <text class="status-badge {{item.status || 'active'}}">{{statusTextMap[item.status || 'active']}}</text></view>
+        <view class="work-desc" wx:if="{{tab === 'artworks'}}">{{item.title || '我的诗配画'}}</view>
+        <view class="work-desc" wx:else>朗读时长 {{item.duration_seconds || item.durationSeconds || 0}} 秒</view>
+        <view class="actions compact-actions">
+          <button wx:if="{{tab === 'recitations'}}" class="action primary" data-id="{{item.id}}" bindtap="playRecitation">{{playingId === item.id ? '停止' : '回听'}}</button>
+          <button wx:if="{{tab === 'artworks'}}" class="action primary" data-url="{{item.image_url || item.imageUrl}}" bindtap="previewArtwork">查看</button>
+          <button class="action" data-index="{{index}}" bindtap="openDetail">详情</button>
+          <button class="action" data-index="{{index}}" bindtap="openShareMenu">分享</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <canvas class="share-canvas" canvas-id="shareCanvas" style="width: 600px; height: 900px;"></canvas>
+</view>

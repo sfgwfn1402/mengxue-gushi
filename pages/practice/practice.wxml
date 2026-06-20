@@ -1,0 +1,57 @@
+<!--pages/practice/practice.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="title">🎮 趣味练习</view>
+    <view class="subtitle">玩一玩，记得更牢</view>
+  </view>
+
+  <!-- 练习模式选择 -->
+  <view class="mode-list">
+    <view class="mode-card" bindtap="startPoemQuiz">
+      <view class="mode-icon">📝</view>
+      <view class="mode-info">
+        <view class="mode-name">古诗填空</view>
+        <view class="mode-desc">补全古诗句子</view>
+      </view>
+      <view class="mode-arrow">›</view>
+    </view>
+
+    <view class="mode-card" bindtap="startIdiomQuiz">
+      <view class="mode-icon" style="background: linear-gradient(135deg, #87CEEB 0%, #4682B4 100%);">📖</view>
+      <view class="mode-info">
+        <view class="mode-name">成语接龙</view>
+        <view class="mode-desc">根据解释猜成语</view>
+      </view>
+      <view class="mode-arrow">›</view>
+    </view>
+
+    <view class="mode-card" bindtap="startMatching">
+      <view class="mode-icon" style="background: linear-gradient(135deg, #98FB98 0%, #32CD32 100%);">🎯</view>
+      <view class="mode-info">
+        <view class="mode-name">连线配对</view>
+        <view class="mode-desc">诗句和作者配对</view>
+      </view>
+      <view class="mode-arrow">›</view>
+    </view>
+  </view>
+
+  <!-- 成就展示 -->
+  <view class="section-title">🏆 我的成就</view>
+  <view class="achievements">
+    <view class="achievement">
+      <view class="achievement-icon">🌟</view>
+      <view class="achievement-name">学习之星</view>
+      <view class="achievement-value">{{learnedCount}}首</view>
+    </view>
+    <view class="achievement">
+      <view class="achievement-icon">📚</view>
+      <view class="achievement-name">成语达人</view>
+      <view class="achievement-value">{{learnedIdiomCount}}个</view>
+    </view>
+    <view class="achievement">
+      <view class="achievement-icon">🔥</view>
+      <view class="achievement-name">连续学习</view>
+      <view class="achievement-value">{{streak}}天</view>
+    </view>
+  </view>
+</view>

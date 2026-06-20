@@ -1,0 +1,146 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="home-tabs">
+    <view class="home-tab {{homeTab === 'learn' ? 'active' : ''}}" data-tab="learn" bindtap="switchHomeTab">诗旅</view>
+    <view class="home-tab {{homeTab === 'discover' ? 'active' : ''}}" data-tab="discover" bindtap="switchHomeTab">发现</view>
+  </view>
+
+  <block wx:if="{{homeTab === 'learn'}}">
+  <view class="home-hero">
+    <view>
+      <view class="hello-title">今天也来读一首诗吧 🌙</view>
+      <view class="hello-subtitle">每天读一点，慢慢爱上古诗</view>
+    </view>
+    <view class="hero-badge">诗园</view>
+  </view>
+
+  <view class="maintenance" wx:if="{{!todayPoem}}">
+    <view class="maintenance-title">{{backendError ? '服务维护中' : '古诗加载中'}}</view>
+    <view class="maintenance-desc">{{backendError || '正在准备今日古诗，请稍等一下～'}}</view>
+  </view>
+
+  <block wx:if="{{todayPoem}}">
+    <view class="today-card" wx:if="{{todayPoem}}" bindtap="goToLearn" data-id="{{todayPoem.id}}" data-type="poem">
+      <image wx:if="{{todayPoem.imageUrl}}" class="today-image" src="{{todayPoem.imageUrl}}" mode="aspectFill"></image>
+      <view class="today-label">📚 今日一诗</view>
+      <view class="today-title">{{todayPoem.title}}</view>
+      <view class="today-author">{{todayPoem.dynasty}} · {{todayPoem.author}}</view>
+      <view class="today-lines">{{todayPoem.content}}</view>
+      <view class="today-bottom">
+        <view class="today-tags" wx:if="{{todayPoem.displayThemes && todayPoem.displayThemes.length}}">
+          <text wx:for="{{todayPoem.displayThemes}}" wx:for-item="theme" wx:key="id">{{theme.emoji}} {{theme.name}}</text>
+        </view>
+        <view class="today-btn">开始学习 ›</view>
+      </view>
+    </view>
+
+    <view class="continue-card" wx:if="{{lastPoem}}" bindtap="goToLearn" data-id="{{lastPoem.id}}" data-type="poem">
+      <view class="continue-icon">🔖</view>
+      <view class="continue-main">
+        <view class="continue-label">继续学习</view>
+        <view class="continue-title">《{{lastPoem.title}}》</view>
+        <view class="continue-sub">{{lastPoem.dynasty}} · {{lastPoem.author}} · 接着听、跟读、背一背</view>
+      </view>
+      <view class="continue-go">›</view>
+    </view>
+
+    <view class="section-title row-title">
+      <text>🚀 今天怎么学</text>
+      <text class="more" bindtap="openWarehouse">更多诗 ›</text>
+    </view>
+    <view class="learning-path-grid">
+      <view class="learning-path-card path-{{index % 4}}" wx:for="{{learningPaths}}" wx:key="id" bindtap="openLearningPath" data-keyword="{{item.keyword}}" data-category="{{item.category}}" data-mode="{{item.mode}}">
+        <view class="path-emoji">{{item.emoji}}</view>
+        <view class="path-title">{{item.title}}</view>
+        <view class="path-desc">{{item.desc}}</view>
+      </view>
+    </view>
+
+    <view class="section-title row-title">
+      <text>✨ 为你推荐</text>
+      <text class="more">{{recommendShortReason}}</text>
+    </view>
+    <view class="recommend-list">
+      <view class="recommend-card" wx:for="{{recommendedPoems}}" wx:key="id" bindtap="goToLearn" data-id="{{item.id}}" data-type="poem">
+        <image wx:if="{{item.imageUrl}}" class="recommend-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+        <view class="poem-primary-theme" wx:if="{{item.primaryTheme}}">{{item.primaryTheme.emoji}} {{item.primaryTheme.name}}</view>
+        <view class="recommend-title">{{item.title}}</view>
+        <view class="recommend-author">{{item.dynasty}} · {{item.author}}</view>
+      </view>
+    </view>
+
+    <view class="section-title row-title">
+      <text>🎙 人气朗诵</text>
+    </view>
+    <view class="popular-list" wx:if="{{popularRecitations.length}}">
+      <view class="popular-item" wx:for="{{popularRecitations}}" wx:key="recitation.id">
+        <view class="popular-rank">{{index + 1}}</view>
+        <view class="popular-info">
+          <view class="popular-title">{{item.poem_title}}</view>
+          <view class="popular-meta">{{item.recitation.nickname || '小诗童'}} · {{item.recitation.like_count}} 赞</view>
+        </view>
+        <view class="popular-play" bindtap="playPopularRecitation" data-id="{{item.recitation.id}}">{{playingRecitationId === item.recitation.id ? '■' : '▶'}}</view>
+      </view>
+    </view>
+    <view class="empty-popular" wx:else>还没有人气朗诵，快去上传你的作品吧～</view>
+
+    <view class="section-title row-title">
+      <text>🔎 按孩子能懂的主题找</text>
+      <text class="more" bindtap="openWarehouse">诗园 ›</text>
+    </view>
+    <view class="child-theme-grid">
+      <view class="child-theme theme-{{index % 8}}" wx:for="{{childThemes}}" wx:key="name" bindtap="openThemeKeyword" data-keyword="{{item.keyword}}" data-name="{{item.name}}">
+        <view class="child-theme-emoji">{{item.emoji}}</view>
+        <view class="child-theme-name">{{item.name}}</view>
+      </view>
+    </view>
+
+    <view class="section-title">🎯 今日小任务</view>
+    <view class="task-list">
+      <view class="task-card" wx:for="{{dailyTasks}}" wx:key="title" bindtap="openDailyTask" data-index="{{index}}" data-id="{{todayPoem.id}}" data-type="poem">
+        <view class="task-emoji">{{item.emoji}}</view>
+        <view class="task-main">
+          <view class="task-title">{{item.title}}</view>
+          <view class="task-sub">{{item.desc}}</view>
+        </view>
+        <view class="task-go">›</view>
+      </view>
+    </view>
+
+
+  </block>
+  </block>
+
+  <block wx:if="{{homeTab === 'discover'}}">
+    <view class="discover-header">
+      <view class="discover-title">大家的古诗作品</view>
+      <view class="discover-sub">看看小诗童们的朗诵和诗配画</view>
+    </view>
+    <view class="discover-filters">
+      <view class="discover-filter {{discoverFilter === 'all' ? 'active' : ''}}" data-filter="all" bindtap="switchDiscoverFilter">全部</view>
+      <view class="discover-filter {{discoverFilter === 'artwork' ? 'active' : ''}}" data-filter="artwork" bindtap="switchDiscoverFilter">诗配画</view>
+      <view class="discover-filter {{discoverFilter === 'recitation' ? 'active' : ''}}" data-filter="recitation" bindtap="switchDiscoverFilter">朗诵</view>
+    </view>
+    <view class="discover-waterfall" wx:if="{{visibleDiscoverItems.length}}">
+      <view class="discover-card {{item.type}}" wx:for="{{visibleDiscoverItems}}" wx:key="id">
+        <image wx:if="{{item.type === 'artwork'}}" class="discover-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+        <view wx:else class="recitation-cover">
+          <view class="recitation-icon">🎙️</view>
+          <view class="recitation-poem">{{item.poemTitle}}</view>
+          <view class="recitation-play" data-id="{{item.id}}" bindtap="playDiscoverRecitation">{{playingRecitationId === item.id ? '■ 正在播放' : '▶ 播放朗诵'}}</view>
+        </view>
+        <view class="discover-card-body">
+          <view class="discover-card-title">{{item.title}}</view>
+          <view class="discover-card-poem" wx:if="{{item.type === 'artwork'}}">《{{item.poemTitle}}》</view>
+          <view class="discover-user-row">
+            <image wx:if="{{item.avatarUrl}}" class="discover-avatar" src="{{item.avatarUrl}}" mode="aspectFill"></image>
+            <view wx:else class="discover-avatar fallback">👶</view>
+            <view class="discover-nickname">{{item.nickname}}</view>
+            <view class="discover-like {{item.likedByMe ? 'liked' : ''}}" data-id="{{item.id}}" data-type="{{item.type}}" catchtap="toggleDiscoverLike">{{item.likedByMe ? '♥' : '♡'}} {{item.likeCount}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="discover-empty" wx:else>还没有作品，去“创作”发布第一条吧～</view>
+  </block>
+</view>

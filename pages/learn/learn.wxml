@@ -1,0 +1,231 @@
+<!--pages/learn/learn.wxml-->
+<view class="container">
+  <!-- 返回按钮 -->
+  <view class="back" bindtap="goBack">‹ 返回</view>
+
+  <!-- 学习卡片 -->
+  <view class="card">
+    <!-- 古诗 -->
+    <block wx:if="{{type === 'poem'}}">
+      <view class="card-header poem-card-header">
+        <view class="type-tag">古诗</view>
+        <view class="favorite-pill {{favorite ? 'active' : ''}}" bindtap="addToFavorites">
+          <text>{{favorite ? '❤️ 已收藏' : '♡ 收藏'}}</text>
+        </view>
+      </view>
+      <image wx:if="{{poem.imageUrl}}" class="poem-illustration" src="{{poem.imageUrl}}" mode="aspectFill"></image>
+      <view class="poem-title">{{poem.title}}</view>
+      <view class="poem-author">{{poem.dynasty}} · {{poem.author}}</view>
+
+      <view class="top-actions {{featuredRecitation ? 'has-featured' : ''}}">
+        <button class="top-read-btn {{playing ? 'playing' : ''}}" bindtap="readAloud">
+          {{playing ? '⏹ 停止朗读' : '🔊 官方朗读'}}
+        </button>
+        <view wx:if="{{featuredRecitation}}" class="featured-read-wrap">
+          <button class="top-read-btn featured {{playingFeatured ? 'playing' : ''}}" bindtap="playFeaturedRecitation">
+            {{playingFeatured ? '⏹ 停止' : '🌟 人气朗诵'}}
+          </button>
+          <view class="featured-from">来自：{{featuredRecitation.nickname || '小诗童'}}</view>
+        </view>
+      </view>
+
+      <scroll-view class="poem-reader {{playing ? 'reading' : ''}}" scroll-y="true" scroll-into-view="{{scrollIntoView}}" scroll-with-animation="true" enhanced="true" show-scrollbar="false">
+        <view class="poem-reader-spacer" aria-hidden="true"></view>
+        <view
+          id="poem-line-{{index}}"
+          class="poem-line {{currentLineIndex === index ? 'active' : ''}} {{currentLineIndex > index ? 'done' : ''}} {{playing && currentLineIndex !== index ? 'inactive' : ''}}"
+          wx:for="{{poemLines}}"
+          wx:key="index"
+        >
+          <text class="line-speaker" wx:if="{{currentLineIndex === index}}">🔊</text>
+          <view class="rich-line" wx:if="{{poemLineRich.length}}">
+            <view class="char-cell {{charItem.punct ? 'punct' : ''}}" wx:for="{{poemLineRich[index]}}" wx:for-item="charItem" wx:key="index">
+              <text class="char-pinyin">{{charItem.pinyin}}</text>
+              <text class="char-text">{{charItem.char}}</text>
+            </view>
+          </view>
+          <text wx:else>{{item}}</text>
+        </view>
+        <view class="poem-reader-spacer" aria-hidden="true"></view>
+      </scroll-view>
+
+      <view class="reading-hint" wx:if="{{playing}}">正在跟读第 {{currentLineIndex + 1}} / {{poemLines.length}} 句</view>
+
+      <view class="follow-entry {{followExpanded ? 'open' : ''}}">
+        <view class="follow-entry-head" bindtap="openLandscapeFollow">
+          <view class="follow-entry-icon-wrap">
+            <view class="follow-entry-icon">🎙️</view>
+            <view class="follow-entry-sound">♪</view>
+          </view>
+          <view class="follow-entry-copy">
+            <view class="follow-entry-title">一句一句跟读</view>
+            <view class="follow-entry-subtitle">听一句，读一句，像小诗人一样朗诵</view>
+          </view>
+          <view class="follow-entry-right">
+            <text class="follow-stars-mini">✨ {{followCompletedCount}}/{{followLines.length || poemLines.length}}</text>
+            <text class="follow-chevron">开始练习 →</text>
+          </view>
+        </view>
+
+      </view>
+
+      <view class="child-guide-grid">
+        <view class="child-guide-card">
+          <view class="child-guide-title">🌈 这首诗讲什么？</view>
+          <view class="child-guide-content">{{childExplain}}</view>
+        </view>
+        <view class="child-guide-card warm">
+          <view class="child-guide-title">🖼️ 里面有什么画面？</view>
+          <view class="child-guide-content">{{pictureGuide}}</view>
+        </view>
+      </view>
+
+      <view class="section parent-questions" wx:if="{{parentQuestions.length}}">
+        <view class="section-title">💬 可以问孩子</view>
+        <view class="question-chip" wx:for="{{parentQuestions}}" wx:key="index">{{item}}</view>
+      </view>
+
+      <view class="recitation-section">
+        <view class="recitation-head">
+          <view class="recitation-icon">🎙</view>
+          <view class="recitation-copy">
+            <view class="recitation-title">小小朗诵家</view>
+            <view class="recitation-subtitle">先录音，试听满意后再上传</view>
+          </view>
+          <view class="record-status {{recording ? 'live' : (recordFilePath ? 'ready' : '')}}">
+            {{recording ? '录音中' : (recordFilePath ? recordDuration + 's' : '未录')}}
+          </view>
+        </view>
+
+        <view class="record-panel">
+          <view wx:if="{{!recording}}" class="record-main-btn" bindtap="startRecord">
+            <text>{{recordFilePath ? '重新录制' : '开始朗诵'}}</text>
+          </view>
+          <view wx:else class="record-main-btn recording" bindtap="stopRecord">
+            <text class="pulse-dot">●</text>
+            <text>停止录音</text>
+          </view>
+
+          <view class="record-tools" wx:if="{{recordFilePath}}">
+            <view class="tool-btn preview" bindtap="previewMyRecitation">
+              {{previewingRecord ? '停止试听' : '试听'}}
+            </view>
+            <view class="tool-btn upload {{uploadingRecitation ? 'disabled' : ''}}" bindtap="uploadMyRecitation">
+              {{uploadingRecitation ? '上传中' : '上传作品'}}
+            </view>
+          </view>
+          <view class="record-tip" wx:if="{{recordFilePath}}">每首诗只保留你最新的一条作品，重新上传会替换旧作品</view>
+        </view>
+
+        <view class="rank-block">
+          <view class="rank-title-row">
+            <view class="rank-title">🏆 朗诵榜</view>
+            <view class="rank-subtitle">Top 5</view>
+          </view>
+          <view wx:if="{{!recitations.length}}" class="empty-rank">暂无作品，快来抢第一个上榜名额～</view>
+          <view class="rank-item" wx:for="{{recitations}}" wx:key="id">
+            <view class="rank-no {{index < 3 ? 'top' : ''}}">{{index + 1}}</view>
+            <view class="rank-user">
+              <view class="rank-name">{{item.nickname || '小诗童'}}</view>
+              <view class="rank-meta">{{item.duration_seconds || '-'}}秒 · {{item.like_count}}赞</view>
+            </view>
+            <view class="rank-actions">
+              <view class="rank-icon play" data-id="{{item.id}}" data-url="{{item.audio_url}}" bindtap="playRecitation">
+                {{playingRecitationId === item.id ? '■' : '▶'}}
+              </view>
+              <view class="rank-icon like {{item.liked_by_me ? 'liked' : ''}}" data-id="{{item.id}}" data-liked="{{item.liked_by_me}}" bindtap="toggleRecitationLike">
+                {{item.liked_by_me ? '♥' : '♡'}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="section parent-guide {{parentGuideExpanded ? 'open' : ''}}" wx:if="{{poem.parentGuide}}">
+        <view class="parent-guide-head" bindtap="toggleParentGuide">
+          <view class="parent-guide-icon">👨‍👩‍👧</view>
+          <view class="parent-guide-copy">
+            <view class="section-title">妈妈可以这样讲</view>
+            <view class="parent-guide-subtitle">给家长准备的亲子讲解话术，点开就能照着讲</view>
+          </view>
+          <view class="parent-guide-toggle">{{parentGuideExpanded ? '收起' : '展开'}} {{parentGuideExpanded ? '⌃' : '⌄'}}</view>
+        </view>
+        <view class="parent-guide-preview" wx:if="{{!parentGuideExpanded}}">里面有一段适合讲给孩子听的小故事和引导方式</view>
+        <view class="section-content parent-guide-content" wx:if="{{parentGuideExpanded}}">{{poem.parentGuide}}</view>
+      </view>
+    </block>
+
+    <!-- 成语 -->
+    <block wx:else>
+      <view class="card-header">
+        <view class="type-tag" style="background: linear-gradient(135deg, #87CEEB 0%, #4682B4 100%);">成语</view>
+      </view>
+      <view class="poem-title">{{idiom.word}}</view>
+      <view class="poem-author">{{idiom.pinyin}}</view>
+      
+      <view class="section">
+        <view class="section-title">📖 含义</view>
+        <view class="section-content">{{idiom.meaning}}</view>
+      </view>
+      
+      <view class="section">
+        <view class="section-title">📚 典故</view>
+        <view class="section-content">{{idiom.story}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="immersive-follow {{isLandscapeViewport ? 'landscape-mode' : 'portrait-mode'}}" wx:if="{{landscapeFollowVisible}}">
+    <image wx:if="{{poem.imageUrl}}" class="immersive-bg" src="{{poem.imageUrl}}" mode="aspectFill"></image>
+    <view wx:else class="immersive-bg fallback"></view>
+    <view class="immersive-veil"></view>
+
+    <view class="immersive-head">
+      <view class="immersive-back" bindtap="closeLandscapeFollow">‹ 返回</view>
+      <view class="immersive-title-wrap">
+        <view class="immersive-title">{{poem.title}}</view>
+        <view class="immersive-author">{{poem.dynasty}} · {{poem.author}}</view>
+      </view>
+      <view class="immersive-count">{{followLineIndex + 1}} / {{followLines.length || poemLines.length}}</view>
+    </view>
+
+    <view class="immersive-body">
+      <view class="immersive-side">
+        <view class="immersive-tag">沉浸跟读</view>
+        <view class="immersive-state" wx:if="{{followPhase === 'playing'}}">先听一句</view>
+        <view class="immersive-state rec" wx:elif="{{followPhase === 'recording'}}">轮到你读</view>
+        <view class="immersive-state" wx:elif="{{followPhase === 'preview'}}">回放中</view>
+        <view class="immersive-state done" wx:elif="{{followPhase === 'done'}}">完成啦</view>
+        <view class="immersive-state" wx:else>准备开始</view>
+        <view class="immersive-hint">听一句，读一句；切换其它功能会自动停止播放。</view>
+      </view>
+
+      <view class="immersive-main">
+        <view class="immersive-line-card">
+          <view class="immersive-line-index">第 {{followLineIndex + 1}} 句</view>
+          <view class="immersive-line">{{followLines[followLineIndex] || poemLines[followLineIndex]}}</view>
+        </view>
+        <view class="immersive-dots">
+          <view wx:for="{{followLines.length ? followLines : poemLines}}" wx:key="index" class="immersive-dot {{followLineDone[index] ? 'done' : ''}} {{followLineIndex === index ? 'active' : ''}}" data-index="{{index}}" bindtap="selectFollowLine">{{index + 1}}</view>
+        </view>
+      </view>
+
+      <view class="immersive-actions">
+        <button class="immersive-primary {{followPhase}}" bindtap="handleFollowMainAction">
+          <text wx:if="{{followPhase === 'playing'}}">朗读中…</text>
+          <text wx:elif="{{followPhase === 'recording'}}">{{followRecording || followRecorderStarted ? '完成录音' : '准备录音…'}}</text>
+          <text wx:elif="{{followPhase === 'preview'}}">回放中…</text>
+          <text wx:elif="{{followPhase === 'done'}}">再练一次</text>
+          <text wx:else>{{followAutoMode ? '朗读' : '开始跟读'}}</text>
+        </button>
+        <button class="immersive-secondary" bindtap="replayCurrentFollowLine">重听</button>
+        <button class="immersive-secondary" bindtap="skipFollowLine">下一句</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 进度提示 -->
+  <view class="progress">
+    <text>已学习 {{learnedCount}} 首古诗，{{learnedIdiomCount}} 个成语</text>
+  </view>
+</view>

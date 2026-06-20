@@ -1,0 +1,571 @@
+{
+  "poems": [
+    {
+      "id": 36,
+      "title": "长恨歌",
+      "author": "白居易",
+      "dynasty": "唐",
+      "content": "汉皇重色思倾国，御宇多年求不得。杨家有女初长成，养在深闺人未识。天生丽质难自弃，一朝选在君王侧。回眸一笑百媚生，六宫粉黛无颜色。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "爱情",
+        "长诗",
+        "唐朝",
+        "杨贵妃"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 37,
+      "title": "卖炭翁",
+      "author": "白居易",
+      "dynasty": "唐",
+      "content": "卖炭翁，伐薪烧炭南山中。满面尘灰烟火色，两鬓苍苍十指黑。卖炭得钱何所营？身上衣裳口中食。可怜身上衣正单，心忧炭贱愿天寒。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "劳动",
+        "贫穷",
+        "生活",
+        "同情"
+      ],
+      "season": "winter"
+    },
+    {
+      "id": 38,
+      "title": "琵琶行",
+      "author": "白居易",
+      "dynasty": "唐",
+      "content": "浔阳江头夜送客，枫叶荻花秋瑟瑟。主人下马客在船，举酒欲饮无管弦。醉不成欢惨将别，别时茫茫江浸月。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "音乐",
+        "长诗",
+        "离别",
+        "同情"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 39,
+      "title": "兵车行",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "车辚辚，马萧萧，行人弓箭各在腰。耶娘妻子走相送，尘埃不见咸阳桥。牵衣顿足拦道哭，哭声直上干云霄。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "战争",
+        "反战",
+        "离别",
+        "痛苦"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 40,
+      "title": "茅屋为秋风所破歌",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "八月秋高风怒号，卷我屋上三重茅。茅飞渡江洒江郊，高者挂罥长林梢，下者飘转沉塘坳。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "秋天",
+        "贫穷",
+        "愿望",
+        "安居"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 41,
+      "title": "春望",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "国破山河在，城春草木深。感时花溅泪，恨别鸟惊心。烽火连三月，家书抵万金。白头搔更短，浑欲不胜簪。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "爱国",
+        "战争",
+        "思乡",
+        "悲伤"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 42,
+      "title": "登高",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "风急天高猿啸哀，渚清沙白鸟飞回。无边落木萧萧下，不尽长江滚滚来。万里悲秋常作客，百年多病独登台。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "秋天",
+        "长江",
+        "漂泊",
+        "悲伤"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 43,
+      "title": "梦游天姥吟留别",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "海客谈瀛洲，烟涛微茫信难求。越人语天姥，云霞明灭或可睹。天姥连天向天横，势拔五岳掩赤城。天台四万八千丈，对此欲倒东南倾。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "梦",
+        "神游",
+        "仙山",
+        "想象"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 44,
+      "title": "行路难",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "金樽清酒斗十千，玉盘珍羞直万钱。停杯投箸不能食，拔剑四顾心茫然。欲渡黄河冰塞川，将登太行雪满山。闲来垂钓碧溪上，忽复乘舟梦日边。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "人生",
+        "困难",
+        "坚持",
+        "信心"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 45,
+      "title": "将进酒",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "酒",
+        "人生",
+        "豪放",
+        "及时行乐"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 46,
+      "title": "蜀道难",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "噫吁嚱，危乎高哉！蜀道之难，难于上青天！蚕丛及鱼凫，开国何茫然！尔来四万八千岁，不与秦塞通人烟。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "四川",
+        "山路",
+        "艰难",
+        "地理"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 47,
+      "title": "马",
+      "author": "李贺",
+      "dynasty": "唐",
+      "content": "大漠沙如雪，燕山月似钩。何当金络脑，快走踏清秋。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "马",
+        "战场",
+        "建功",
+        "秋天"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 48,
+      "title": "雁门太守行",
+      "author": "李贺",
+      "dynasty": "唐",
+      "content": "黑云压城城欲摧，甲光向日金鳞开。角声满天秋色里，塞上燕脂凝夜紫。半卷红旗临易水，霜重鼓寒声不起。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "战争",
+        "边疆",
+        "战斗",
+        "边塞"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 49,
+      "title": "观书有感",
+      "author": "朱熹",
+      "dynasty": "宋",
+      "content": "半亩方塘一鉴开，天光云影共徘徊。问渠那得清如许，为有源头活水来。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "读书",
+        "哲理",
+        "源头",
+        "学习"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 50,
+      "title": "论诗",
+      "author": "赵翼",
+      "dynasty": "清",
+      "content": "李杜诗篇万口传，至今已觉不新鲜。江山代有才人出，各领风骚数百年。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "创新",
+        "哲理",
+        "人才",
+        "时代"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 83,
+      "title": "泊秦淮",
+      "author": "杜牧",
+      "dynasty": "唐",
+      "content": "烟笼寒水月笼沙，夜泊秦淮近酒家。商女不知亡国恨，隔江犹唱后庭花。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "历史",
+        "夜晚"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 86,
+      "title": "商山早行",
+      "author": "温庭筠",
+      "dynasty": "唐",
+      "content": "晨起动征铎，客行悲故乡。鸡声茅店月，人迹板桥霜。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "早晨",
+        "旅行",
+        "思乡"
+      ],
+      "season": "winter"
+    },
+    {
+      "id": 94,
+      "title": "夏日绝句",
+      "author": "李清照",
+      "dynasty": "宋",
+      "content": "生当作人杰，死亦为鬼雄。至今思项羽，不肯过江东。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "英雄",
+        "气节"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 96,
+      "title": "示儿",
+      "author": "陆游",
+      "dynasty": "宋",
+      "content": "死去元知万事空，但悲不见九州同。王师北定中原日，家祭无忘告乃翁。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "爱国",
+        "家国"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 105,
+      "title": "题诗后",
+      "author": "贾岛",
+      "dynasty": "唐",
+      "content": "两句三年得，一吟双泪流。知音如不赏，归卧故山秋。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "勤奋",
+        "写作",
+        "秋天"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 112,
+      "title": "赤壁",
+      "author": "杜牧",
+      "dynasty": "唐",
+      "content": "折戟沉沙铁未销，自将磨洗认前朝。东风不与周郎便，铜雀春深锁二乔。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "历史",
+        "战争",
+        "哲理"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 113,
+      "title": "赠别",
+      "author": "杜牧",
+      "dynasty": "唐",
+      "content": "多情却似总无情，唯觉樽前笑不成。蜡烛有心还惜别，替人垂泪到天明。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "送别",
+        "友情",
+        "夜晚"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 114,
+      "title": "寄扬州韩绰判官",
+      "author": "杜牧",
+      "dynasty": "唐",
+      "content": "青山隐隐水迢迢，秋尽江南草未凋。二十四桥明月夜，玉人何处教吹箫。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "秋天",
+        "月夜",
+        "江南"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 116,
+      "title": "无题",
+      "author": "李商隐",
+      "dynasty": "唐",
+      "content": "相见时难别亦难，东风无力百花残。春蚕到死丝方尽，蜡炬成灰泪始干。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "离别",
+        "春天",
+        "情感"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 117,
+      "title": "霜月",
+      "author": "李商隐",
+      "dynasty": "唐",
+      "content": "初闻征雁已无蝉，百尺楼高水接天。青女素娥俱耐冷，月中霜里斗婵娟。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "秋天",
+        "月夜",
+        "想象"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 118,
+      "title": "贾生",
+      "author": "李商隐",
+      "dynasty": "唐",
+      "content": "宣室求贤访逐臣，贾生才调更无伦。可怜夜半虚前席，不问苍生问鬼神。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "历史",
+        "哲理",
+        "家国"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 121,
+      "title": "送上人",
+      "author": "刘长卿",
+      "dynasty": "唐",
+      "content": "孤云将野鹤，岂向人间住。莫买沃洲山，时人已知处。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "送别",
+        "山林",
+        "隐逸"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 136,
+      "title": "客中行",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "兰陵美酒郁金香，玉碗盛来琥珀光。但使主人能醉客，不知何处是他乡。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "友情",
+        "饮酒",
+        "旅行"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 139,
+      "title": "白雪歌送武判官归京",
+      "author": "岑参",
+      "dynasty": "唐",
+      "content": "北风卷地白草折，胡天八月即飞雪。忽如一夜春风来，千树万树梨花开。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "冬天",
+        "边塞",
+        "送别"
+      ],
+      "season": "winter"
+    },
+    {
+      "id": 149,
+      "title": "题李凝幽居",
+      "author": "贾岛",
+      "dynasty": "唐",
+      "content": "闲居少邻并，草径入荒园。鸟宿池边树，僧敲月下门。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "月夜",
+        "山林",
+        "写作"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 150,
+      "title": "闺怨",
+      "author": "王昌龄",
+      "dynasty": "唐",
+      "content": "闺中少妇不知愁，春日凝妆上翠楼。忽见陌头杨柳色，悔教夫婿觅封侯。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "春天",
+        "思念",
+        "边塞"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 156,
+      "title": "月夜忆舍弟",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "戍鼓断人行，边秋一雁声。露从今夜白，月是故乡明。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "思乡",
+        "亲情",
+        "秋天"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 158,
+      "title": "前出塞",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "挽弓当挽强，用箭当用长。射人先射马，擒贼先擒王。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "边塞",
+        "战争",
+        "策略"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 160,
+      "title": "江村",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "清江一曲抱村流，长夏江村事事幽。自去自来梁上燕，相亲相近水中鸥。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "夏天",
+        "乡村",
+        "江河"
+      ],
+      "season": "summer"
+    },
+    {
+      "id": 162,
+      "title": "闻官军收河南河北",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "剑外忽传收蓟北，初闻涕泪满衣裳。却看妻子愁何在，漫卷诗书喜欲狂。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "家国",
+        "喜悦",
+        "战争"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 166,
+      "title": "钱塘湖春行",
+      "author": "白居易",
+      "dynasty": "唐",
+      "content": "孤山寺北贾亭西，水面初平云脚低。几处早莺争暖树，谁家新燕啄春泥。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "春天",
+        "西湖",
+        "动物"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 171,
+      "title": "离思",
+      "author": "元稹",
+      "dynasty": "唐",
+      "content": "曾经沧海难为水，除却巫山不是云。取次花丛懒回顾，半缘修道半缘君。",
+      "level": 3,
+      "difficulty": 3,
+      "tags": [
+        "情感",
+        "人生",
+        "哲理"
+      ],
+      "season": "any"
+    }
+  ]
+}

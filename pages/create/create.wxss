@@ -1,0 +1,39 @@
+page { min-height: 100vh; background: linear-gradient(180deg, #F6F8FC 0%, #FFF7EA 100%); color: #1F2937; }
+.container { padding: 30rpx 24rpx 120rpx; box-sizing: border-box; }
+.hero { padding: 32rpx; border-radius: 34rpx; background: linear-gradient(135deg, #FFF0D0, #FFD9A6); box-shadow: 0 16rpx 36rpx rgba(255,159,69,0.16); margin-bottom: 24rpx; }
+.hero-title { font-size: 38rpx; font-weight: 900; }
+.hero-sub { margin-top: 10rpx; font-size: 26rpx; color: #8A5B22; font-weight: 700; }
+.mode-tabs { display: flex; gap: 16rpx; margin-bottom: 22rpx; }
+.mode-tab { flex: 1; text-align: center; padding: 22rpx 10rpx; border-radius: 999rpx; background: rgba(255,255,255,0.92); color: #8A8F98; font-size: 27rpx; font-weight: 900; box-shadow: 0 10rpx 24rpx rgba(31,35,46,0.05); }
+.mode-tab.active { background: linear-gradient(180deg, #FFB15D 0%, #FF7A45 100%); color: #fff; }
+.form-card { padding: 28rpx; border-radius: 30rpx; background: rgba(255,255,255,0.94); margin-bottom: 22rpx; box-shadow: 0 16rpx 36rpx rgba(31,35,46,0.07); }
+.field-label { font-size: 28rpx; font-weight: 900; margin-bottom: 16rpx; }
+.picker-box { padding: 24rpx; border-radius: 24rpx; background: #F8FAFF; color: #1F2937; font-size: 29rpx; font-weight: 800; }
+.search-input { height: 78rpx; padding: 0 24rpx; border-radius: 22rpx; background: #F8FAFF; font-size: 28rpx; margin-bottom: 14rpx; }
+.selected-poem { padding: 16rpx 20rpx; border-radius: 20rpx; background: #FFF8E8; color: #9A5B00; font-size: 25rpx; font-weight: 800; margin-bottom: 14rpx; }
+.poem-list-hint { margin: 4rpx 0 12rpx; color: #8A8F98; font-size: 23rpx; font-weight: 800; }
+.poem-result-list { display: flex; flex-direction: column; gap: 12rpx; max-height: 420rpx; overflow: auto; }
+.poem-result { display: flex; align-items: center; justify-content: space-between; gap: 14rpx; padding: 18rpx 20rpx; border-radius: 20rpx; background: #F8FAFF; border: 2rpx solid transparent; }
+.poem-result.active { background: #FFF0D0; border-color: #FF9F45; }
+.poem-result-title { font-size: 28rpx; font-weight: 900; color: #1F2937; }
+.poem-result-sub { flex-shrink: 0; font-size: 23rpx; color: #8A8F98; font-weight: 700; }
+.record-box { text-align: center; padding: 34rpx; border-radius: 28rpx; background: #FFF8E8; margin-bottom: 20rpx; }
+.record-icon { font-size: 70rpx; }
+.record-text { margin-top: 12rpx; font-size: 30rpx; font-weight: 900; }
+.record-duration { margin-top: 8rpx; color: #8A8F98; font-size: 24rpx; }
+.primary-btn, .danger-btn, .publish-btn { height: 82rpx; line-height: normal; display: flex; align-items: center; justify-content: center; border-radius: 999rpx; color: #fff; font-size: 30rpx; font-weight: 900; border: none; margin-top: 18rpx; padding: 0; }
+.primary-btn { background: linear-gradient(180deg, #6DD98A 0%, #45B96C 100%); }
+.danger-btn { background: linear-gradient(180deg, #FF7A7A 0%, #E84A5F 100%); }
+.publish-btn { background: linear-gradient(180deg, #FFB15D 0%, #FF7A45 100%); }
+button::after { border: none; }
+.art-preview { height: 360rpx; border-radius: 28rpx; overflow: hidden; background: #FFF8E8; display: flex; align-items: center; justify-content: center; margin-bottom: 18rpx; }
+.art-preview image { width: 100%; height: 100%; display: block; }
+.art-placeholder { color: #B86B00; font-size: 30rpx; font-weight: 900; }
+.input { height: 78rpx; padding: 0 24rpx; border-radius: 22rpx; background: #F8FAFF; font-size: 28rpx; margin-bottom: 16rpx; }
+.textarea { width: 100%; min-height: 150rpx; padding: 22rpx 24rpx; box-sizing: border-box; border-radius: 22rpx; background: #F8FAFF; font-size: 28rpx; }
+.section-title { margin: 30rpx 0 18rpx; font-size: 34rpx; font-weight: 900; }
+.art-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16rpx; }
+.art-item { border-radius: 26rpx; overflow: hidden; background: rgba(255,255,255,0.94); box-shadow: 0 12rpx 28rpx rgba(31,35,46,0.06); padding-bottom: 16rpx; }
+.art-img { width: 100%; height: 210rpx; display: block; background: #FFF4D8; }
+.art-title { padding: 14rpx 16rpx 0; font-size: 28rpx; font-weight: 900; }
+.art-poem { padding: 6rpx 16rpx 0; color: #8A8F98; font-size: 23rpx; font-weight: 700; }

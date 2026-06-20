@@ -1,0 +1,80 @@
+<!--pages/quiz/quiz.wxml-->
+<view class="container">
+  <block wx:if="{{!isComplete && questions.length}}">
+    <!-- 顶部进度 -->
+    <view class="progress-bar fade-in">
+      <view class="progress-text">{{current + 1}}/{{questions.length}}｜已答对 {{score}} 题，答对 {{passScore}} 题可得诗光</view>
+      <view class="progress-track">
+        <view class="progress-fill progress-anim" style="width: {{(current + 1) / questions.length * 100}}%"></view>
+      </view>
+    </view>
+
+    <!-- 题目卡片 -->
+    <view class="question-card {{isCorrect === true ? 'correct-anim' : ''}} {{isCorrect === false ? 'wrong-anim' : ''}}">
+      <view class="question-type">{{type === 'poem' ? '📝 古诗选择题' : '📖 成语选择题'}}</view>
+
+      <view class="question-text" wx:if="{{type === 'poem'}}">
+        <text class="poem-line">{{questions[current].line}}</text>
+      </view>
+
+      <view class="question-text" wx:else>
+        <view class="hint">根据提示猜成语</view>
+        <view class="hint-content">{{questions[current].hint}}</view>
+      </view>
+
+      <view class="option-list">
+        <view
+          wx:for="{{questions[current].options}}"
+          wx:key="*this"
+          class="option-card {{selectedOption === item ? (isCorrect ? 'option-correct' : 'option-wrong') : ''}} {{isCorrect !== null && item === questions[current].answer ? 'option-answer' : ''}}"
+          bindtap="chooseOption"
+          data-value="{{item}}"
+        >
+          <text class="option-dot">{{index + 1}}</text>
+          <text class="option-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 提示按钮 -->
+    <view class="hint-btn fade-in" bindtap="showHint" wx:if="{{!showHint && isCorrect === null}}">
+      💡 提示
+    </view>
+    <view class="hint-box fade-in" wx:if="{{showHint}}">
+      提示：{{questions[current].hint}}
+    </view>
+
+    <!-- 正确/错误提示 -->
+    <view class="result fade-in" wx:if="{{isCorrect !== null}}">
+      <view class="{{isCorrect ? 'correct' : 'wrong'}}">
+        {{isCorrect ? '🎉 回答正确！太棒了！' : '🌱 没关系，再认识一次就记住啦～'}}
+      </view>
+      <view class="answer-explain">{{questions[current].explain}}</view>
+    </view>
+
+    <!-- 按钮 -->
+    <view class="actions">
+      <button class="btn btn-primary {{isCorrect !== null ? 'btn-active' : ''}}" bindtap="nextQuestion">
+        {{isCorrect === null ? '请选择答案' : (current + 1 >= questions.length ? '查看结果' : '下一题 →')}}
+      </button>
+    </view>
+  </block>
+
+  <view class="empty" wx:if="{{!isComplete && !questions.length}}">
+    <view class="empty-icon">📚</view>
+    <view class="empty-text">题目准备中，请稍后再试～</view>
+  </view>
+
+  <!-- 完成页面 -->
+  <view class="complete" wx:if="{{isComplete}}">
+    <view class="complete-icon bounce">{{score >= passScore ? '🎊' : '🌱'}}</view>
+    <view class="complete-title fade-in">{{score >= passScore ? '挑战成功！' : '再练一次吧！'}}</view>
+    <view class="complete-score fade-in">答对 {{score}}/{{questions.length}} 题</view>
+    <view class="complete-message fade-in">{{scoreMessage}}</view>
+    <view class="complete-rule">答对 {{passScore}} 题即可完成今日答题任务 +3✨</view>
+    <view class="complete-btns">
+      <button class="btn btn-primary bounce" bindtap="restart">再来一次</button>
+      <button class="btn btn-secondary" bindtap="goBack">返回</button>
+    </view>
+  </view>
+</view>

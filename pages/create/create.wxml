@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="hero">
+    <view class="hero-title">留下孩子的古诗作品 ✨</view>
+    <view class="hero-sub">可以发布朗诵，也可以晒一幅诗配画</view>
+  </view>
+
+  <view class="mode-tabs">
+    <view class="mode-tab {{mode === 'recitation' ? 'active' : ''}}" data-mode="recitation" bindtap="switchMode">🎙 发布朗诵</view>
+    <view class="mode-tab {{mode === 'artwork' ? 'active' : ''}}" data-mode="artwork" bindtap="switchMode">🎨 发布诗配画</view>
+  </view>
+
+  <view class="form-card">
+    <view class="field-label">选择关联古诗</view>
+    <input class="search-input" placeholder="输入诗名、作者或诗句搜索" value="{{poemSearch}}" bindinput="onPoemSearchInput" />
+    <view class="selected-poem">当前：{{selectedPoemTitle}}</view>
+    <view class="poem-list-hint">{{poemListHint}}</view>
+    <view class="poem-result-list">
+      <view
+        class="poem-result {{selectedPoemId === item.id ? 'active' : ''}}"
+        wx:for="{{filteredPoems}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        bindtap="selectPoem"
+      >
+        <view class="poem-result-title">《{{item.title}}》</view>
+        <view class="poem-result-sub">{{item.dynasty}} · {{item.author}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-card" wx:if="{{mode === 'recitation'}}">
+    <view class="field-label">录一段孩子朗诵</view>
+    <view class="record-box">
+      <view class="record-icon">{{recording ? '🔴' : '🎙️'}}</view>
+      <view class="record-text">{{recording ? '正在录音…' : (recordFilePath ? '录音已准备好' : '点击开始录音')}}</view>
+      <view class="record-duration" wx:if="{{recordDuration}}">{{recordDuration}} 秒</view>
+    </view>
+    <button class="primary-btn" wx:if="{{!recording}}" bindtap="startRecord">开始录音</button>
+    <button class="danger-btn" wx:else bindtap="stopRecord">完成录音</button>
+    <button class="publish-btn" loading="{{publishing}}" disabled="{{publishing}}" bindtap="publishRecitation">发布朗诵</button>
+  </view>
+
+  <view class="form-card" wx:if="{{mode === 'artwork'}}">
+    <view class="field-label">上传诗配画</view>
+    <view class="art-preview" bindtap="chooseArtwork">
+      <image wx:if="{{artworkPath}}" src="{{artworkPath}}" mode="aspectFill"></image>
+      <view wx:else class="art-placeholder">📷 选择图片 / 拍一张</view>
+    </view>
+    <input class="input" placeholder="作品标题，比如：夏日荷花" value="{{artworkTitle}}" bindinput="onTitleInput" />
+    <textarea class="textarea" placeholder="写一句介绍，比如：孩子画的接天莲叶无穷碧" value="{{artworkDesc}}" bindinput="onDescInput"></textarea>
+    <button class="publish-btn" loading="{{publishing}}" disabled="{{publishing}}" bindtap="publishArtwork">发布诗配画</button>
+  </view>
+
+  <view class="section-title" wx:if="{{myArtworks.length}}">我的诗配画</view>
+  <view class="art-list" wx:if="{{myArtworks.length}}">
+    <view class="art-item" wx:for="{{myArtworks}}" wx:key="id">
+      <image class="art-img" src="{{item.image_url}}" mode="aspectFill"></image>
+      <view class="art-title">{{item.title}}</view>
+      <view class="art-poem">《{{item.poem_title}}》</view>
+    </view>
+  </view>
+</view>

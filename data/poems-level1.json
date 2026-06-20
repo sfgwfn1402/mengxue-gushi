@@ -1,0 +1,892 @@
+{
+  "poems": [
+    {
+      "id": 1,
+      "title": "静夜思",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "床前明月光，疑是地上霜。举头望明月，低头思故乡。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "思乡",
+        "夜景",
+        "月亮",
+        "秋天"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 2,
+      "title": "春晓",
+      "author": "孟浩然",
+      "dynasty": "唐",
+      "content": "春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "自然",
+        "景色",
+        "早晨"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 3,
+      "title": "登鹳雀楼",
+      "author": "王之涣",
+      "dynasty": "唐",
+      "content": "白日依山尽，黄河入海流。欲穷千里目，更上一层楼。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "风景",
+        "黄河",
+        "登高",
+        "哲理"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 4,
+      "title": "相思",
+      "author": "王维",
+      "dynasty": "唐",
+      "content": "红豆生南国，春来发几枝。愿君多采撷，此物最相思。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "友情",
+        "红豆",
+        "思念",
+        "春天"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 5,
+      "title": "鹿柴",
+      "author": "王维",
+      "dynasty": "唐",
+      "content": "空山不见人，但闻人语响。返景入深林，复照青苔上。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "风景",
+        "山林",
+        "夕阳",
+        "自然"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 6,
+      "title": "悯农",
+      "author": "李绅",
+      "dynasty": "唐",
+      "content": "锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "劳动",
+        "农民",
+        "粮食",
+        "节约"
+      ],
+      "season": "summer"
+    },
+    {
+      "id": 7,
+      "title": "江雪",
+      "author": "柳宗元",
+      "dynasty": "唐",
+      "content": "千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "冬天",
+        "钓鱼",
+        "孤独",
+        "雪景"
+      ],
+      "season": "winter"
+    },
+    {
+      "id": 8,
+      "title": "游子吟",
+      "author": "孟郊",
+      "dynasty": "唐",
+      "content": "慈母手中线，游子身上衣。临行密密缝，意恐迟迟归。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "母爱",
+        "亲情",
+        "离别",
+        "感恩"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 9,
+      "title": "咏鹅",
+      "author": "骆宾王",
+      "dynasty": "唐",
+      "content": "鹅，鹅，鹅，曲项向天歌。白毛浮绿水，红掌拨清波。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "动物",
+        "鹅",
+        "童年",
+        "写景"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 10,
+      "title": "清明",
+      "author": "杜牧",
+      "dynasty": "唐",
+      "content": "清明时节雨纷纷，路上行人欲断魂。借问酒家何处有，牧童遥指杏花村。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "清明节",
+        "雨",
+        "春天",
+        "酒"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 11,
+      "title": "赋得古原草送别",
+      "author": "白居易",
+      "dynasty": "唐",
+      "content": "离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "草",
+        "生命力",
+        "春天",
+        "送别"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 12,
+      "title": "早发白帝城",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "朝辞白帝彩云间，千里江陵一日还。两岸猿声啼不住，轻舟已过万重山。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "旅行",
+        "三峡",
+        "高兴",
+        "船"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 13,
+      "title": "绝句",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "风景",
+        "鸟类",
+        "自然"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 14,
+      "title": "枫桥夜泊",
+      "author": "张继",
+      "dynasty": "唐",
+      "content": "月落乌啼霜满天，江枫渔火对愁眠。姑苏城外寒山寺，夜半钟声到客船。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "夜景",
+        "秋天",
+        "钟声",
+        "旅途"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 15,
+      "title": "从军行",
+      "author": "王昌龄",
+      "dynasty": "唐",
+      "content": "青海长云暗雪山，孤城遥望玉门关。黄沙百战穿金甲，不破楼兰终不还。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "边塞",
+        "战争",
+        "英勇",
+        "保家卫国"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 16,
+      "title": "咏柳",
+      "author": "贺知章",
+      "dynasty": "唐",
+      "content": "碧玉妆成一树高，万条垂下绿丝绦。不知细叶谁裁出，二月春风似剪刀。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "柳树",
+        "风景",
+        "春风"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 17,
+      "title": "望天门山",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "天门中断楚江开，碧水东流至此回。两岸青山相对出，孤帆一片日边来。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "风景",
+        "长江",
+        "青山",
+        "船"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 18,
+      "title": "凉州词",
+      "author": "王翰",
+      "dynasty": "唐",
+      "content": "葡萄美酒夜光杯，欲饮琵琶马上催。醉卧沙场君莫笑，古来征战几人回。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "边塞",
+        "战争",
+        "酒",
+        "豪爽"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 19,
+      "title": "黄鹤楼送孟浩然之广陵",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空尽，唯见长江天际流。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "友情",
+        "送别",
+        "长江",
+        "春天"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 20,
+      "title": "回乡偶书",
+      "author": "贺知章",
+      "dynasty": "唐",
+      "content": "少小离家老大回，乡音无改鬓毛衰。儿童相见不相识，笑问客从何处来。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "回家",
+        "时光流逝",
+        "童年",
+        "思乡"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 51,
+      "title": "咏鹅",
+      "author": "骆宾王",
+      "dynasty": "唐",
+      "content": "鹅，鹅，鹅，曲项向天歌。白毛浮绿水，红掌拨清波。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "动物",
+        "启蒙",
+        "池塘"
+      ],
+      "season": "summer"
+    },
+    {
+      "id": 52,
+      "title": "悯农其一",
+      "author": "李绅",
+      "dynasty": "唐",
+      "content": "春种一粒粟，秋收万颗子。四海无闲田，农夫犹饿死。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "粮食",
+        "劳动",
+        "节约"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 53,
+      "title": "悯农其二",
+      "author": "李绅",
+      "dynasty": "唐",
+      "content": "锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "粮食",
+        "劳动",
+        "节约"
+      ],
+      "season": "summer"
+    },
+    {
+      "id": 54,
+      "title": "江雪",
+      "author": "柳宗元",
+      "dynasty": "唐",
+      "content": "千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "冬天",
+        "雪",
+        "江河"
+      ],
+      "season": "winter"
+    },
+    {
+      "id": 55,
+      "title": "寻隐者不遇",
+      "author": "贾岛",
+      "dynasty": "唐",
+      "content": "松下问童子，言师采药去。只在此山中，云深不知处。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "山林",
+        "拜访",
+        "童子"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 56,
+      "title": "江南",
+      "author": "汉乐府",
+      "dynasty": "汉",
+      "content": "江南可采莲，莲叶何田田。鱼戏莲叶间。鱼戏莲叶东，鱼戏莲叶西，鱼戏莲叶南，鱼戏莲叶北。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "江南",
+        "莲叶",
+        "鱼儿"
+      ],
+      "season": "summer"
+    },
+    {
+      "id": 57,
+      "title": "敕勒歌",
+      "author": "北朝民歌",
+      "dynasty": "南北朝",
+      "content": "敕勒川，阴山下。天似穹庐，笼盖四野。天苍苍，野茫茫，风吹草低见牛羊。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "草原",
+        "牛羊",
+        "民歌"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 58,
+      "title": "风",
+      "author": "李峤",
+      "dynasty": "唐",
+      "content": "解落三秋叶，能开二月花。过江千尺浪，入竹万竿斜。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "自然",
+        "风",
+        "观察"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 59,
+      "title": "所见",
+      "author": "袁枚",
+      "dynasty": "清",
+      "content": "牧童骑黄牛，歌声振林樾。意欲捕鸣蝉，忽然闭口立。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "儿童",
+        "牧童",
+        "夏天"
+      ],
+      "season": "summer"
+    },
+    {
+      "id": 60,
+      "title": "村居",
+      "author": "高鼎",
+      "dynasty": "清",
+      "content": "草长莺飞二月天，拂堤杨柳醉春烟。儿童散学归来早，忙趁东风放纸鸢。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "儿童",
+        "风筝"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 61,
+      "title": "小池",
+      "author": "杨万里",
+      "dynasty": "宋",
+      "content": "泉眼无声惜细流，树阴照水爱晴柔。小荷才露尖尖角，早有蜻蜓立上头。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "夏天",
+        "荷花",
+        "蜻蜓"
+      ],
+      "season": "summer"
+    },
+    {
+      "id": 62,
+      "title": "池上",
+      "author": "白居易",
+      "dynasty": "唐",
+      "content": "小娃撑小艇，偷采白莲回。不解藏踪迹，浮萍一道开。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "儿童",
+        "莲花",
+        "夏天"
+      ],
+      "season": "summer"
+    },
+    {
+      "id": 63,
+      "title": "山村咏怀",
+      "author": "邵雍",
+      "dynasty": "宋",
+      "content": "一去二三里，烟村四五家。亭台六七座，八九十枝花。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "数字",
+        "乡村",
+        "启蒙"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 64,
+      "title": "梅花",
+      "author": "王安石",
+      "dynasty": "宋",
+      "content": "墙角数枝梅，凌寒独自开。遥知不是雪，为有暗香来。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "冬天",
+        "梅花",
+        "坚强"
+      ],
+      "season": "winter"
+    },
+    {
+      "id": 68,
+      "title": "赠汪伦",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "李白乘舟将欲行，忽闻岸上踏歌声。桃花潭水深千尺，不及汪伦送我情。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "友情",
+        "送别",
+        "桃花潭"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 70,
+      "title": "绝句二首其一",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "迟日江山丽，春风花草香。泥融飞燕子，沙暖睡鸳鸯。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "燕子",
+        "自然"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 71,
+      "title": "绝句",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "鸟",
+        "风景"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 80,
+      "title": "清明",
+      "author": "杜牧",
+      "dynasty": "唐",
+      "content": "清明时节雨纷纷，路上行人欲断魂。借问酒家何处有？牧童遥指杏花村。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "清明",
+        "牧童",
+        "春雨"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 81,
+      "title": "山行",
+      "author": "杜牧",
+      "dynasty": "唐",
+      "content": "远上寒山石径斜，白云生处有人家。停车坐爱枫林晚，霜叶红于二月花。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "秋天",
+        "枫叶",
+        "山路"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 87,
+      "title": "元日",
+      "author": "王安石",
+      "dynasty": "宋",
+      "content": "爆竹声中一岁除，春风送暖入屠苏。千门万户曈曈日，总把新桃换旧符。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春节",
+        "新年"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 92,
+      "title": "惠崇春江晚景",
+      "author": "苏轼",
+      "dynasty": "宋",
+      "content": "竹外桃花三两枝，春江水暖鸭先知。蒌蒿满地芦芽短，正是河豚欲上时。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "鸭子",
+        "江水"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 98,
+      "title": "晓出净慈寺送林子方",
+      "author": "杨万里",
+      "dynasty": "宋",
+      "content": "毕竟西湖六月中，风光不与四时同。接天莲叶无穷碧，映日荷花别样红。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "西湖",
+        "荷花",
+        "夏天"
+      ],
+      "season": "summer"
+    },
+    {
+      "id": 99,
+      "title": "宿新市徐公店",
+      "author": "杨万里",
+      "dynasty": "宋",
+      "content": "篱落疏疏一径深，树头新绿未成阴。儿童急走追黄蝶，飞入菜花无处寻。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "儿童",
+        "蝴蝶",
+        "春天"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 100,
+      "title": "春日",
+      "author": "朱熹",
+      "dynasty": "宋",
+      "content": "胜日寻芳泗水滨，无边光景一时新。等闲识得东风面，万紫千红总是春。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "赏花"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 119,
+      "title": "逢雪宿芙蓉山主人",
+      "author": "刘长卿",
+      "dynasty": "唐",
+      "content": "日暮苍山远，天寒白屋贫。柴门闻犬吠，风雪夜归人。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "冬天",
+        "雪",
+        "山村"
+      ],
+      "season": "winter"
+    },
+    {
+      "id": 123,
+      "title": "杂诗",
+      "author": "王维",
+      "dynasty": "唐",
+      "content": "君自故乡来，应知故乡事。来日绮窗前，寒梅著花未。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "思乡",
+        "梅花",
+        "冬天"
+      ],
+      "season": "winter"
+    },
+    {
+      "id": 124,
+      "title": "送别",
+      "author": "王维",
+      "dynasty": "唐",
+      "content": "山中相送罢，日暮掩柴扉。春草明年绿，王孙归不归。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "送别",
+        "春天",
+        "山林"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 125,
+      "title": "九月九日忆山东兄弟",
+      "author": "王维",
+      "dynasty": "唐",
+      "content": "独在异乡为异客，每逢佳节倍思亲。遥知兄弟登高处，遍插茱萸少一人。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "思乡",
+        "节日",
+        "亲情"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 126,
+      "title": "鸟鸣涧",
+      "author": "王维",
+      "dynasty": "唐",
+      "content": "人闲桂花落，夜静春山空。月出惊山鸟，时鸣春涧中。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "山水",
+        "月夜"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 127,
+      "title": "竹里馆",
+      "author": "王维",
+      "dynasty": "唐",
+      "content": "独坐幽篁里，弹琴复长啸。深林人不知，明月来相照。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "月夜",
+        "山林",
+        "音乐"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 130,
+      "title": "画",
+      "author": "王维",
+      "dynasty": "唐",
+      "content": "远看山有色，近听水无声。春去花还在，人来鸟不惊。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "山水",
+        "儿童",
+        "春天"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 131,
+      "title": "独坐敬亭山",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "众鸟高飞尽，孤云独去闲。相看两不厌，只有敬亭山。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "山水",
+        "孤独",
+        "哲理"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 133,
+      "title": "夜宿山寺",
+      "author": "李白",
+      "dynasty": "唐",
+      "content": "危楼高百尺，手可摘星辰。不敢高声语，恐惊天上人。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "想象",
+        "星空",
+        "山寺"
+      ],
+      "season": "any"
+    },
+    {
+      "id": 161,
+      "title": "春夜喜雨",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "好雨知时节，当春乃发生。随风潜入夜，润物细无声。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "雨",
+        "自然"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 163,
+      "title": "江畔独步寻花其六",
+      "author": "杜甫",
+      "dynasty": "唐",
+      "content": "黄四娘家花满蹊，千朵万朵压枝低。留连戏蝶时时舞，自在娇莺恰恰啼。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "春天",
+        "花",
+        "动物"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 165,
+      "title": "暮江吟",
+      "author": "白居易",
+      "dynasty": "唐",
+      "content": "一道残阳铺水中，半江瑟瑟半江红。可怜九月初三夜，露似真珠月似弓。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "秋天",
+        "江河",
+        "月夜"
+      ],
+      "season": "autumn"
+    },
+    {
+      "id": 168,
+      "title": "遗爱寺",
+      "author": "白居易",
+      "dynasty": "唐",
+      "content": "弄石临溪坐，寻花绕寺行。时时闻鸟语，处处是泉声。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "山水",
+        "花鸟",
+        "闲适"
+      ],
+      "season": "spring"
+    },
+    {
+      "id": 170,
+      "title": "菊花",
+      "author": "元稹",
+      "dynasty": "唐",
+      "content": "秋丛绕舍似陶家，遍绕篱边日渐斜。不是花中偏爱菊，此花开尽更无花。",
+      "level": 1,
+      "difficulty": 1,
+      "tags": [
+        "秋天",
+        "菊花",
+        "品格"
+      ],
+      "season": "autumn"
+    }
+  ]
+}

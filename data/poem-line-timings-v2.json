@@ -1,0 +1,410 @@
+{
+  "1": {
+    "poemId": 1,
+    "title": "静夜思",
+    "lineCount": 4,
+    "status": "ok_v2",
+    "cost": 0.177,
+    "skipSegments": 3,
+    "segmentCount": 7,
+    "lines": [
+      {
+        "index": 0,
+        "text": "床前明月光，",
+        "start": 4.67,
+        "end": 6.35,
+        "segments": 1
+      },
+      {
+        "index": 1,
+        "text": "疑是地上霜。",
+        "start": 6.79,
+        "end": 8.27,
+        "segments": 1
+      },
+      {
+        "index": 2,
+        "text": "举头望明月，",
+        "start": 9.03,
+        "end": 10.55,
+        "segments": 1
+      },
+      {
+        "index": 3,
+        "text": "低头思故乡。",
+        "start": 10.89,
+        "end": 12.41,
+        "segments": 1
+      }
+    ]
+  },
+  "2": {
+    "poemId": 2,
+    "title": "春晓",
+    "lineCount": 4,
+    "status": "ok_v2",
+    "cost": 0.2,
+    "skipSegments": 3,
+    "segmentCount": 9,
+    "lines": [
+      {
+        "index": 0,
+        "text": "春眠不觉晓，",
+        "start": 5.93,
+        "end": 8.94,
+        "segments": 1
+      },
+      {
+        "index": 1,
+        "text": "处处闻啼鸟。",
+        "start": 9.65,
+        "end": 13.01,
+        "segments": 2
+      },
+      {
+        "index": 2,
+        "text": "夜来风雨声，",
+        "start": 14.46,
+        "end": 17.3,
+        "segments": 1
+      },
+      {
+        "index": 3,
+        "text": "花落知多少。",
+        "start": 17.99,
+        "end": 21.85,
+        "segments": 2
+      }
+    ]
+  },
+  "3": {
+    "poemId": 3,
+    "title": "登鹳雀楼",
+    "lineCount": 4,
+    "status": "funasr_aligned",
+    "cost": 0.417,
+    "skipSegments": 3,
+    "segmentCount": 10,
+    "lines": [
+      {
+        "index": 0,
+        "text": "白日依山尽，",
+        "start": 5.27,
+        "end": 7.75,
+        "segments": 5,
+        "source": "funasr"
+      },
+      {
+        "index": 1,
+        "text": "黄河入海流。",
+        "start": 9.03,
+        "end": 12.05,
+        "segments": 5,
+        "source": "funasr"
+      },
+      {
+        "index": 2,
+        "text": "欲穷千里目，",
+        "start": 13.71,
+        "end": 15.69,
+        "segments": 5,
+        "source": "funasr"
+      },
+      {
+        "index": 3,
+        "text": "更上一层楼。",
+        "start": 16.55,
+        "end": 19.86,
+        "segments": 5,
+        "source": "funasr"
+      }
+    ]
+  },
+  "6": {
+    "poemId": 6,
+    "title": "悯农",
+    "lineCount": 4,
+    "status": "ok_v2",
+    "cost": 0.088,
+    "skipSegments": 4,
+    "segmentCount": 8,
+    "lines": [
+      {
+        "index": 0,
+        "text": "锄禾日当午，",
+        "start": 6.05,
+        "end": 7.68,
+        "segments": 1
+      },
+      {
+        "index": 1,
+        "text": "汗滴禾下土。",
+        "start": 8.07,
+        "end": 9.79,
+        "segments": 1
+      },
+      {
+        "index": 2,
+        "text": "谁知盘中餐，",
+        "start": 10.51,
+        "end": 12.19,
+        "segments": 1
+      },
+      {
+        "index": 3,
+        "text": "粒粒皆辛苦。",
+        "start": 12.56,
+        "end": 14.2,
+        "segments": 1
+      }
+    ]
+  },
+  "7": {
+    "poemId": 7,
+    "title": "江雪",
+    "lineCount": 4,
+    "status": "ok_v2",
+    "cost": 0.32,
+    "skipSegments": 3,
+    "segmentCount": 7,
+    "lines": [
+      {
+        "index": 0,
+        "text": "千山鸟飞绝，",
+        "start": 4.88,
+        "end": 6.56,
+        "segments": 1
+      },
+      {
+        "index": 1,
+        "text": "万径人踪灭。",
+        "start": 6.95,
+        "end": 8.55,
+        "segments": 1
+      },
+      {
+        "index": 2,
+        "text": "孤舟蓑笠翁，",
+        "start": 9.34,
+        "end": 10.69,
+        "segments": 1
+      },
+      {
+        "index": 3,
+        "text": "独钓寒江雪。",
+        "start": 11.12,
+        "end": 12.85,
+        "segments": 1
+      }
+    ]
+  },
+  "8": {
+    "poemId": 8,
+    "title": "游子吟",
+    "lineCount": 4,
+    "status": "ok_v2",
+    "cost": 0.216,
+    "skipSegments": 5,
+    "segmentCount": 9,
+    "lines": [
+      {
+        "index": 0,
+        "text": "慈母手中线，",
+        "start": 9.04,
+        "end": 10.72,
+        "segments": 1
+      },
+      {
+        "index": 1,
+        "text": "游子身上衣。",
+        "start": 11.04,
+        "end": 12.58,
+        "segments": 1
+      },
+      {
+        "index": 2,
+        "text": "临行密密缝，",
+        "start": 13.31,
+        "end": 15.01,
+        "segments": 1
+      },
+      {
+        "index": 3,
+        "text": "意恐迟迟归。",
+        "start": 15.43,
+        "end": 16.95,
+        "segments": 1
+      }
+    ]
+  },
+  "9": {
+    "poemId": 9,
+    "title": "咏鹅",
+    "lineCount": 6,
+    "status": "ok_v2",
+    "cost": 3.474,
+    "skipSegments": 2,
+    "segmentCount": 9,
+    "lines": [
+      {
+        "index": 0,
+        "text": "鹅，",
+        "start": 4.57,
+        "end": 5.57,
+        "segments": 1
+      },
+      {
+        "index": 1,
+        "text": "鹅，",
+        "start": 7.63,
+        "end": 9.34,
+        "segments": 1
+      },
+      {
+        "index": 2,
+        "text": "鹅，",
+        "start": 10.34,
+        "end": 11.48,
+        "segments": 1
+      },
+      {
+        "index": 3,
+        "text": "曲项向天歌。",
+        "start": 11.79,
+        "end": 13.67,
+        "segments": 1
+      },
+      {
+        "index": 4,
+        "text": "白毛浮绿水，",
+        "start": 15.2,
+        "end": 17.68,
+        "segments": 1
+      },
+      {
+        "index": 5,
+        "text": "红掌拨清波。",
+        "start": 18.4,
+        "end": 22.19,
+        "segments": 2
+      }
+    ]
+  },
+  "10": {
+    "poemId": 10,
+    "title": "清明",
+    "lineCount": 4,
+    "status": "ok_v2",
+    "cost": 0.246,
+    "skipSegments": 3,
+    "segmentCount": 7,
+    "lines": [
+      {
+        "index": 0,
+        "text": "清明时节雨纷纷，",
+        "start": 4.41,
+        "end": 6.61,
+        "segments": 1
+      },
+      {
+        "index": 1,
+        "text": "路上行人欲断魂。",
+        "start": 6.84,
+        "end": 9.33,
+        "segments": 1
+      },
+      {
+        "index": 2,
+        "text": "借问酒家何处有，",
+        "start": 10.12,
+        "end": 12.15,
+        "segments": 1
+      },
+      {
+        "index": 3,
+        "text": "牧童遥指杏花村。",
+        "start": 12.96,
+        "end": 15.16,
+        "segments": 1
+      }
+    ]
+  },
+  "21": {
+    "poemId": 21,
+    "title": "望庐山瀑布",
+    "lineCount": 4,
+    "status": "ok_v2",
+    "cost": 0.199,
+    "skipSegments": 3,
+    "segmentCount": 7,
+    "lines": [
+      {
+        "index": 0,
+        "text": "日照香炉生紫烟，",
+        "start": 5.21,
+        "end": 7.26,
+        "segments": 1
+      },
+      {
+        "index": 1,
+        "text": "遥看瀑布挂前川。",
+        "start": 7.66,
+        "end": 9.81,
+        "segments": 1
+      },
+      {
+        "index": 2,
+        "text": "飞流直下三千尺，",
+        "start": 10.52,
+        "end": 12.74,
+        "segments": 1
+      },
+      {
+        "index": 3,
+        "text": "疑是银河落九天。",
+        "start": 12.88,
+        "end": 15.28,
+        "segments": 1
+      }
+    ]
+  },
+  "91": {
+    "poemId": 91,
+    "title": "题西林壁",
+    "lineCount": 4,
+    "status": "ok_v2",
+    "cost": 0.386,
+    "skipSegments": 2,
+    "segmentCount": 10,
+    "lines": [
+      {
+        "index": 0,
+        "text": "横看成岭侧成峰，",
+        "start": 3.15,
+        "end": 8.96,
+        "segments": 2
+      },
+      {
+        "index": 1,
+        "text": "远近高低各不同。",
+        "start": 9.03,
+        "end": 14.15,
+        "segments": 2
+      },
+      {
+        "index": 2,
+        "text": "不识庐山真面目，",
+        "start": 14.52,
+        "end": 20.67,
+        "segments": 2
+      },
+      {
+        "index": 3,
+        "text": "只缘身在此山中。",
+        "start": 21.04,
+        "end": 25.92,
+        "segments": 2
+      }
+    ]
+  }
+}

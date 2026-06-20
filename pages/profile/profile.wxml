@@ -1,0 +1,95 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <view class="checkin-card">
+    <view class="checkin-header">
+      <view class="checkin-title">📅 每日打卡</view>
+      <view class="checkin-streak">连续 {{streak}} 天</view>
+    </view>
+    <view class="checkin-calendar">
+      <view class="weekdays">
+        <text>日</text><text>一</text><text>二</text><text>三</text><text>四</text><text>五</text><text>六</text>
+      </view>
+      <view class="days">
+        <view class="day {{item.checked ? 'checked' : ''}} {{item.today ? 'today' : ''}}" wx:for="{{calendar}}" wx:key="index">{{item.day}}</view>
+      </view>
+    </view>
+    <button class="checkin-btn {{todayChecked ? 'checked-btn' : ''}}" bindtap="doCheckin" disabled="{{todayChecked}}">
+      {{todayChecked ? '✅ 今日已打卡' : '📌 立即打卡'}}
+    </button>
+  </view>
+
+  <view class="profile-header">
+    <button class="avatar avatar-button" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill"></image>
+      <text wx:else>👶</text>
+    </button>
+    <view class="user-info">
+      <input class="nickname-input" type="nickname" placeholder="给小诗人起个昵称" value="{{nicknameInput}}" bindinput="onNicknameInput" />
+      <view class="level">Lv.{{level}} 启蒙学者</view>
+      <view class="login-tip">微信静默登录已开启，学习记录会跟随当前微信账号</view>
+    </view>
+    <button class="profile-save" bindtap="saveProfile" loading="{{profileSaving}}" disabled="{{profileSaving}}">保存</button>
+  </view>
+
+  <view class="stats">
+    <button class="stat-item stat-button" data-type="poems" bindtap="handleStatTap">
+      <view class="stat-value">{{learnedCount}}</view><view class="stat-label">古诗</view><view class="stat-hint">查看已学</view>
+    </button>
+    <button class="stat-item stat-button" data-type="days" bindtap="handleStatTap">
+      <view class="stat-value">{{totalDays}}</view><view class="stat-label">学习天数</view><view class="stat-hint">学习记录</view>
+    </button>
+  </view>
+
+  <view class="menu-list">
+    <button class="menu-item menu-button menu-works" data-action="works" bindtap="handleMenuTap">
+      <view class="menu-icon-wrap"><text class="menu-icon">🎧</text></view>
+      <text class="menu-text">我的诗集</text>
+      <text class="menu-desc">朗读 · 诗画</text>
+    </button>
+    <button class="menu-item menu-button menu-favorites" data-action="favorites" bindtap="handleMenuTap">
+      <view class="menu-icon-wrap"><text class="menu-icon">📚</text></view>
+      <text class="menu-text">我的收藏</text>
+      <text class="menu-desc">喜欢的古诗</text>
+    </button>
+    <button class="menu-item menu-button menu-records" data-action="records" bindtap="handleMenuTap">
+      <view class="menu-icon-wrap"><text class="menu-icon">📖</text></view>
+      <text class="menu-text">学习记录</text>
+      <text class="menu-desc">成长足迹</text>
+    </button>
+    <button class="menu-item menu-button menu-achievements" data-action="achievements" bindtap="handleMenuTap">
+      <view class="menu-icon-wrap"><text class="menu-icon">🏆</text></view>
+      <text class="menu-text">成就墙</text>
+      <text class="menu-desc">勋章奖励</text>
+    </button>
+    <button class="menu-item menu-button menu-feedback" data-action="feedback" bindtap="handleMenuTap">
+      <view class="menu-icon-wrap"><text class="menu-icon">💬</text></view>
+      <text class="menu-text">家长心声</text>
+      <text class="menu-desc">建议反馈</text>
+    </button>
+    <button class="menu-item menu-button menu-settings" data-action="settings" bindtap="handleMenuTap">
+      <view class="menu-icon-wrap"><text class="menu-icon">⚙️</text></view>
+      <text class="menu-text">设置</text>
+      <text class="menu-desc">账号与偏好</text>
+    </button>
+  </view>
+
+  <view class="reminder"><view class="reminder-title">{{encourageMessage}}</view></view>
+
+  <view class="version-info">v{{appVersion}}</view>
+
+  <view class="modal-mask" wx:if="{{modalVisible}}" bindtap="closeModal">
+    <view class="modal-card" catchtap="noop">
+      <view class="modal-header">
+        <view class="modal-title">{{modalTitle}}</view>
+        <view class="modal-close" bindtap="closeModal">×</view>
+      </view>
+      <view wx:if="{{modalText}}" class="modal-text">{{modalText}}</view>
+      <view wx:if="{{modalItems.length}}" class="modal-list">
+        <view class="modal-item" wx:for="{{modalItems}}" wx:key="index" bindtap="openModalItem" data-index="{{index}}">
+          <view class="modal-item-title">{{item.title}}</view>
+          <view class="modal-item-desc">{{item.desc}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

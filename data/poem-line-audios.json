@@ -1,0 +1,6201 @@
+{
+  "1": {
+    "poemId": 1,
+    "title": "静夜思",
+    "lines": [
+      {
+        "index": 0,
+        "text": "床前明月光，",
+        "url": "line-audios/poem-1-line-1.mp3",
+        "start": 4.63,
+        "end": 6.31
+      },
+      {
+        "index": 1,
+        "text": "疑是地上霜。",
+        "url": "line-audios/poem-1-line-2.mp3",
+        "start": 6.69,
+        "end": 8.21
+      },
+      {
+        "index": 2,
+        "text": "举头望明月，",
+        "url": "line-audios/poem-1-line-3.mp3",
+        "start": 8.95,
+        "end": 10.47
+      },
+      {
+        "index": 3,
+        "text": "低头思故乡。",
+        "url": "line-audios/poem-1-line-4.mp3",
+        "start": 10.77,
+        "end": 12.865
+      }
+    ]
+  },
+  "2": {
+    "poemId": 2,
+    "title": "春晓",
+    "lines": [
+      {
+        "index": 0,
+        "text": "春眠不觉晓，",
+        "url": "line-audios/poem-2-line-1.mp3",
+        "start": 5.93,
+        "end": 8.47
+      },
+      {
+        "index": 1,
+        "text": "处处闻啼鸟。",
+        "url": "line-audios/poem-2-line-2.mp3",
+        "start": 9.57,
+        "end": 12.53
+      },
+      {
+        "index": 2,
+        "text": "夜来风雨声，",
+        "url": "line-audios/poem-2-line-3.mp3",
+        "start": 14.31,
+        "end": 16.77
+      },
+      {
+        "index": 3,
+        "text": "花落知多少。",
+        "url": "line-audios/poem-2-line-4.mp3",
+        "start": 17.95,
+        "end": 21.665
+      }
+    ]
+  },
+  "3": {
+    "poemId": 3,
+    "title": "登鹳雀楼",
+    "lines": [
+      {
+        "index": 0,
+        "text": "白日依山尽，",
+        "url": "line-audios/poem-3-line-1.mp3",
+        "start": 5.19,
+        "end": 7.87
+      },
+      {
+        "index": 1,
+        "text": "黄河入海流。",
+        "url": "line-audios/poem-3-line-2.mp3",
+        "start": 8.95,
+        "end": 12.17
+      },
+      {
+        "index": 2,
+        "text": "欲穷千里目，",
+        "url": "line-audios/poem-3-line-3.mp3",
+        "start": 13.63,
+        "end": 15.81
+      },
+      {
+        "index": 3,
+        "text": "更上一层楼。",
+        "url": "line-audios/poem-3-line-4.mp3",
+        "start": 16.47,
+        "end": 19.975
+      }
+    ]
+  },
+  "4": {
+    "poemId": 4,
+    "title": "相思",
+    "lines": [
+      {
+        "index": 0,
+        "text": "红豆生南国，",
+        "url": "line-audios/poem-4-line-1.mp3",
+        "start": 0.09,
+        "end": 1.65
+      },
+      {
+        "index": 1,
+        "text": "春来发几枝。",
+        "url": "line-audios/poem-4-line-2.mp3",
+        "start": 2.05,
+        "end": 3.61
+      },
+      {
+        "index": 2,
+        "text": "愿君多采撷，",
+        "url": "line-audios/poem-4-line-3.mp3",
+        "start": 4.29,
+        "end": 5.93
+      },
+      {
+        "index": 3,
+        "text": "此物最相思。",
+        "url": "line-audios/poem-4-line-4.mp3",
+        "start": 6.37,
+        "end": 8.455
+      }
+    ]
+  },
+  "5": {
+    "poemId": 5,
+    "title": "鹿柴",
+    "lines": [
+      {
+        "index": 0,
+        "text": "空山不见人，",
+        "url": "line-audios/poem-5-line-1.mp3",
+        "start": 0.17,
+        "end": 2.61
+      },
+      {
+        "index": 1,
+        "text": "但闻人语响。",
+        "url": "line-audios/poem-5-line-2.mp3",
+        "start": 3.93,
+        "end": 6.61
+      },
+      {
+        "index": 2,
+        "text": "返景入深林，",
+        "url": "line-audios/poem-5-line-3.mp3",
+        "start": 8.55,
+        "end": 11.09
+      },
+      {
+        "index": 3,
+        "text": "复照青苔上。",
+        "url": "line-audios/poem-5-line-4.mp3",
+        "start": 12.41,
+        "end": 16.045
+      }
+    ]
+  },
+  "6": {
+    "poemId": 6,
+    "title": "悯农",
+    "lines": [
+      {
+        "index": 0,
+        "text": "锄禾日当午，",
+        "url": "line-audios/poem-6-line-1.mp3",
+        "start": 6.03,
+        "end": 7.51
+      },
+      {
+        "index": 1,
+        "text": "汗滴禾下土。",
+        "url": "line-audios/poem-6-line-2.mp3",
+        "start": 8.07,
+        "end": 9.71
+      },
+      {
+        "index": 2,
+        "text": "谁知盘中餐，",
+        "url": "line-audios/poem-6-line-3.mp3",
+        "start": 10.47,
+        "end": 12.03
+      },
+      {
+        "index": 3,
+        "text": "粒粒皆辛苦。",
+        "url": "line-audios/poem-6-line-4.mp3",
+        "start": 12.49,
+        "end": 14.575
+      }
+    ]
+  },
+  "7": {
+    "poemId": 7,
+    "title": "江雪",
+    "lines": [
+      {
+        "index": 0,
+        "text": "千山鸟飞绝，",
+        "url": "line-audios/poem-7-line-1.mp3",
+        "start": 4.85,
+        "end": 6.43
+      },
+      {
+        "index": 1,
+        "text": "万径人踪灭。",
+        "url": "line-audios/poem-7-line-2.mp3",
+        "start": 6.85,
+        "end": 8.45
+      },
+      {
+        "index": 2,
+        "text": "孤舟蓑笠翁，",
+        "url": "line-audios/poem-7-line-3.mp3",
+        "start": 9.25,
+        "end": 10.65
+      },
+      {
+        "index": 3,
+        "text": "独钓寒江雪。",
+        "url": "line-audios/poem-7-line-4.mp3",
+        "start": 11.01,
+        "end": 13.225
+      }
+    ]
+  },
+  "8": {
+    "poemId": 8,
+    "title": "游子吟",
+    "lines": [
+      {
+        "index": 0,
+        "text": "慈母手中线，",
+        "url": "line-audios/poem-8-line-1.mp3",
+        "start": 0.05,
+        "end": 2.05
+      },
+      {
+        "index": 1,
+        "text": "游子身上衣。",
+        "url": "line-audios/poem-8-line-2.mp3",
+        "start": 2.05,
+        "end": 4.35
+      },
+      {
+        "index": 2,
+        "text": "临行密密缝，",
+        "url": "line-audios/poem-8-line-3.mp3",
+        "start": 4.35,
+        "end": 6.2
+      },
+      {
+        "index": 3,
+        "text": "意恐迟迟归。",
+        "url": "line-audios/poem-8-line-4.mp3",
+        "start": 6.2,
+        "end": 8.2
+      }
+    ]
+  },
+  "9": {
+    "poemId": 9,
+    "title": "咏鹅",
+    "lines": [
+      {
+        "index": 0,
+        "text": "鹅，",
+        "url": "line-audios/poem-9-line-1.mp3",
+        "start": 7.55,
+        "end": 8.05
+      },
+      {
+        "index": 1,
+        "text": "鹅，",
+        "url": "line-audios/poem-9-line-2.mp3",
+        "start": 8.05,
+        "end": 8.55
+      },
+      {
+        "index": 2,
+        "text": "鹅，",
+        "url": "line-audios/poem-9-line-3.mp3",
+        "start": 8.55,
+        "end": 9.15
+      },
+      {
+        "index": 3,
+        "text": "曲项向天歌。",
+        "url": "line-audios/poem-9-line-4.mp3",
+        "start": 10.25,
+        "end": 13.75
+      },
+      {
+        "index": 4,
+        "text": "白毛浮绿水，",
+        "url": "line-audios/poem-9-line-5.mp3",
+        "start": 14.95,
+        "end": 17.35
+      },
+      {
+        "index": 5,
+        "text": "红掌拨清波。",
+        "url": "line-audios/poem-9-line-6.mp3",
+        "start": 18.25,
+        "end": 22.05
+      }
+    ]
+  },
+  "10": {
+    "poemId": 10,
+    "title": "清明",
+    "lines": [
+      {
+        "index": 0,
+        "text": "清明时节雨纷纷，",
+        "url": "line-audios/poem-10-line-1.mp3",
+        "start": 4.47,
+        "end": 6.55
+      },
+      {
+        "index": 1,
+        "text": "路上行人欲断魂。",
+        "url": "line-audios/poem-10-line-2.mp3",
+        "start": 6.91,
+        "end": 9.17
+      },
+      {
+        "index": 2,
+        "text": "借问酒家何处有，",
+        "url": "line-audios/poem-10-line-3.mp3",
+        "start": 10.11,
+        "end": 12.03
+      },
+      {
+        "index": 3,
+        "text": "牧童遥指杏花村。",
+        "url": "line-audios/poem-10-line-4.mp3",
+        "start": 12.87,
+        "end": 15.595
+      }
+    ]
+  },
+  "11": {
+    "poemId": 11,
+    "title": "赋得古原草送别",
+    "lines": [
+      {
+        "index": 0,
+        "text": "离离原上草，",
+        "url": "line-audios/poem-11-line-1.mp3",
+        "start": 6.74,
+        "end": 9.24
+      },
+      {
+        "index": 1,
+        "text": "一岁一枯荣。",
+        "url": "line-audios/poem-11-line-2.mp3",
+        "start": 9.88,
+        "end": 12.7
+      },
+      {
+        "index": 2,
+        "text": "野火烧不尽，",
+        "url": "line-audios/poem-11-line-3.mp3",
+        "start": 14.01,
+        "end": 16.56
+      },
+      {
+        "index": 3,
+        "text": "春风吹又生。",
+        "url": "line-audios/poem-11-line-4.mp3",
+        "start": 16.9,
+        "end": 19.95
+      }
+    ]
+  },
+  "12": {
+    "poemId": 12,
+    "title": "早发白帝城",
+    "lines": [
+      {
+        "index": 0,
+        "text": "朝辞白帝彩云间，",
+        "url": "line-audios/poem-12-line-1.mp3",
+        "start": 5.13,
+        "end": 7.27
+      },
+      {
+        "index": 1,
+        "text": "千里江陵一日还。",
+        "url": "line-audios/poem-12-line-2.mp3",
+        "start": 7.59,
+        "end": 9.71
+      },
+      {
+        "index": 2,
+        "text": "两岸猿声啼不住，",
+        "url": "line-audios/poem-12-line-3.mp3",
+        "start": 10.61,
+        "end": 12.75
+      },
+      {
+        "index": 3,
+        "text": "轻舟已过万重山。",
+        "url": "line-audios/poem-12-line-4.mp3",
+        "start": 13.03,
+        "end": 15.655
+      }
+    ]
+  },
+  "13": {
+    "poemId": 13,
+    "title": "绝句",
+    "lines": [
+      {
+        "index": 0,
+        "text": "两个黄鹂鸣翠柳，",
+        "url": "line-audios/poem-13-line-1.mp3",
+        "start": 5.57,
+        "end": 8.49
+      },
+      {
+        "index": 1,
+        "text": "一行白鹭上青天。",
+        "url": "line-audios/poem-13-line-2.mp3",
+        "start": 9.31,
+        "end": 12.85
+      },
+      {
+        "index": 2,
+        "text": "窗含西岭千秋雪，",
+        "url": "line-audios/poem-13-line-3.mp3",
+        "start": 14.03,
+        "end": 16.91
+      },
+      {
+        "index": 3,
+        "text": "门泊东吴万里船。",
+        "url": "line-audios/poem-13-line-4.mp3",
+        "start": 17.71,
+        "end": 21.565
+      }
+    ]
+  },
+  "14": {
+    "poemId": 14,
+    "title": "枫桥夜泊",
+    "lines": [
+      {
+        "index": 0,
+        "text": "月落乌啼霜满天，",
+        "url": "line-audios/poem-14-line-1.mp3",
+        "start": 7.99,
+        "end": 12.61
+      },
+      {
+        "index": 1,
+        "text": "江枫渔火对愁眠。",
+        "url": "line-audios/poem-14-line-2.mp3",
+        "start": 14.29,
+        "end": 19.25
+      },
+      {
+        "index": 2,
+        "text": "姑苏城外寒山寺，",
+        "url": "line-audios/poem-14-line-3.mp3",
+        "start": 22.33,
+        "end": 26.55
+      },
+      {
+        "index": 3,
+        "text": "夜半钟声到客船。",
+        "url": "line-audios/poem-14-line-4.mp3",
+        "start": 28.41,
+        "end": 35.065
+      }
+    ]
+  },
+  "15": {
+    "poemId": 15,
+    "title": "从军行",
+    "lines": [
+      {
+        "index": 0,
+        "text": "青海长云暗雪山，",
+        "url": "line-audios/poem-15-line-1.mp3",
+        "start": 6.83,
+        "end": 9.07
+      },
+      {
+        "index": 1,
+        "text": "孤城遥望玉门关。",
+        "url": "line-audios/poem-15-line-2.mp3",
+        "start": 9.41,
+        "end": 11.51
+      },
+      {
+        "index": 2,
+        "text": "黄沙百战穿金甲，",
+        "url": "line-audios/poem-15-line-3.mp3",
+        "start": 12.35,
+        "end": 14.49
+      },
+      {
+        "index": 3,
+        "text": "不破楼兰终不还。",
+        "url": "line-audios/poem-15-line-4.mp3",
+        "start": 14.91,
+        "end": 17.515
+      }
+    ]
+  },
+  "16": {
+    "poemId": 16,
+    "title": "咏柳",
+    "lines": [
+      {
+        "index": 0,
+        "text": "碧玉妆成一树高，",
+        "url": "line-audios/poem-16-line-1.mp3",
+        "start": 4.53,
+        "end": 6.61
+      },
+      {
+        "index": 1,
+        "text": "万条垂下绿丝绦。",
+        "url": "line-audios/poem-16-line-2.mp3",
+        "start": 6.99,
+        "end": 9.17
+      },
+      {
+        "index": 2,
+        "text": "不知细叶谁裁出，",
+        "url": "line-audios/poem-16-line-3.mp3",
+        "start": 9.93,
+        "end": 11.85
+      },
+      {
+        "index": 3,
+        "text": "二月春风似剪刀。",
+        "url": "line-audios/poem-16-line-4.mp3",
+        "start": 12.25,
+        "end": 14.935
+      }
+    ]
+  },
+  "17": {
+    "poemId": 17,
+    "title": "望天门山",
+    "lines": [
+      {
+        "index": 0,
+        "text": "天门中断楚江开，",
+        "url": "line-audios/poem-17-line-1.mp3",
+        "start": 8.55,
+        "end": 12.67
+      },
+      {
+        "index": 1,
+        "text": "碧水东流至此回。",
+        "url": "line-audios/poem-17-line-2.mp3",
+        "start": 14.21,
+        "end": 18.89
+      },
+      {
+        "index": 2,
+        "text": "两岸青山相对出，",
+        "url": "line-audios/poem-17-line-3.mp3",
+        "start": 20.95,
+        "end": 24.87
+      },
+      {
+        "index": 3,
+        "text": "孤帆一片日边来。",
+        "url": "line-audios/poem-17-line-4.mp3",
+        "start": 26.21,
+        "end": 31.765
+      }
+    ]
+  },
+  "18": {
+    "poemId": 18,
+    "title": "凉州词",
+    "lines": [
+      {
+        "index": 0,
+        "text": "葡萄美酒夜光杯，",
+        "url": "line-audios/poem-18-line-1.mp3",
+        "start": 6.8,
+        "end": 9.84
+      },
+      {
+        "index": 1,
+        "text": "欲饮琵琶马上催。",
+        "url": "line-audios/poem-18-line-2.mp3",
+        "start": 10.52,
+        "end": 13.84
+      },
+      {
+        "index": 2,
+        "text": "醉卧沙场君莫笑，",
+        "url": "line-audios/poem-18-line-3.mp3",
+        "start": 15.2,
+        "end": 17.84
+      },
+      {
+        "index": 3,
+        "text": "古来征战几人回。",
+        "url": "line-audios/poem-18-line-4.mp3",
+        "start": 18.36,
+        "end": 21.475
+      }
+    ]
+  },
+  "19": {
+    "poemId": 19,
+    "title": "黄鹤楼送孟浩然之广陵",
+    "lines": [
+      {
+        "index": 0,
+        "text": "故人西辞黄鹤楼，",
+        "url": "line-audios/poem-19-line-1.mp3",
+        "start": 6.77,
+        "end": 8.95
+      },
+      {
+        "index": 1,
+        "text": "烟花三月下扬州。",
+        "url": "line-audios/poem-19-line-2.mp3",
+        "start": 9.31,
+        "end": 11.63
+      },
+      {
+        "index": 2,
+        "text": "孤帆远影碧空尽，",
+        "url": "line-audios/poem-19-line-3.mp3",
+        "start": 12.39,
+        "end": 14.49
+      },
+      {
+        "index": 3,
+        "text": "唯见长江天际流。",
+        "url": "line-audios/poem-19-line-4.mp3",
+        "start": 14.91,
+        "end": 17.875
+      }
+    ]
+  },
+  "20": {
+    "poemId": 20,
+    "title": "回乡偶书",
+    "lines": [
+      {
+        "index": 0,
+        "text": "少小离家老大回，",
+        "url": "line-audios/poem-20-line-1.mp3",
+        "start": 9.07,
+        "end": 13.51
+      },
+      {
+        "index": 1,
+        "text": "乡音无改鬓毛衰。",
+        "url": "line-audios/poem-20-line-2.mp3",
+        "start": 15.85,
+        "end": 21.895
+      },
+      {
+        "index": 2,
+        "text": "儿童相见不相识，",
+        "url": "line-audios/poem-20-line-3.mp3",
+        "start": 24.12,
+        "end": 28.6
+      },
+      {
+        "index": 3,
+        "text": "笑问客从何处来。",
+        "url": "line-audios/poem-20-line-4.mp3",
+        "start": 30.42,
+        "end": 36.445
+      }
+    ]
+  },
+  "21": {
+    "poemId": 21,
+    "title": "望庐山瀑布",
+    "lines": [
+      {
+        "index": 0,
+        "text": "日照香炉生紫烟，",
+        "url": "line-audios/poem-21-line-1.mp3",
+        "start": 5.17,
+        "end": 7.27
+      },
+      {
+        "index": 1,
+        "text": "遥看瀑布挂前川。",
+        "url": "line-audios/poem-21-line-2.mp3",
+        "start": 7.57,
+        "end": 9.71
+      },
+      {
+        "index": 2,
+        "text": "飞流直下三千尺，",
+        "url": "line-audios/poem-21-line-3.mp3",
+        "start": 10.47,
+        "end": 12.57
+      },
+      {
+        "index": 3,
+        "text": "疑是银河落九天。",
+        "url": "line-audios/poem-21-line-4.mp3",
+        "start": 12.99,
+        "end": 15.715
+      }
+    ]
+  },
+  "22": {
+    "poemId": 22,
+    "title": "赠汪伦",
+    "lines": [
+      {
+        "index": 0,
+        "text": "李白乘舟将欲行，",
+        "url": "line-audios/poem-22-line-1.mp3",
+        "start": 4.65,
+        "end": 6.73
+      },
+      {
+        "index": 1,
+        "text": "忽闻涛声踏歌声。",
+        "url": "line-audios/poem-22-line-2.mp3",
+        "start": 7.19,
+        "end": 9.29
+      },
+      {
+        "index": 2,
+        "text": "桃花潭水深千尺，",
+        "url": "line-audios/poem-22-line-3.mp3",
+        "start": 10.03,
+        "end": 12.21
+      },
+      {
+        "index": 3,
+        "text": "不及汪伦送我情。",
+        "url": "line-audios/poem-22-line-4.mp3",
+        "start": 12.55,
+        "end": 15.175
+      }
+    ]
+  },
+  "23": {
+    "poemId": 23,
+    "title": "登幽州台歌",
+    "lines": [
+      {
+        "index": 0,
+        "text": "前不见古人，",
+        "url": "line-audios/poem-23-line-1.mp3",
+        "start": 5.37,
+        "end": 6.91
+      },
+      {
+        "index": 1,
+        "text": "后不见来者。",
+        "url": "line-audios/poem-23-line-2.mp3",
+        "start": 7.19,
+        "end": 8.63
+      },
+      {
+        "index": 2,
+        "text": "念天地之悠悠，",
+        "url": "line-audios/poem-23-line-3.mp3",
+        "start": 9.35,
+        "end": 11.01
+      },
+      {
+        "index": 3,
+        "text": "独怆然而泪下。",
+        "url": "line-audios/poem-23-line-4.mp3",
+        "start": 11.39,
+        "end": 13.765
+      }
+    ]
+  },
+  "24": {
+    "poemId": 24,
+    "title": "出塞",
+    "lines": [
+      {
+        "index": 0,
+        "text": "秦时明月汉时关，",
+        "url": "line-audios/poem-24-line-1.mp3",
+        "start": 4.71,
+        "end": 6.85
+      },
+      {
+        "index": 1,
+        "text": "万里长征人未还。",
+        "url": "line-audios/poem-24-line-2.mp3",
+        "start": 7.15,
+        "end": 9.23
+      },
+      {
+        "index": 2,
+        "text": "但使龙城飞将在，",
+        "url": "line-audios/poem-24-line-3.mp3",
+        "start": 10.15,
+        "end": 12.15
+      },
+      {
+        "index": 3,
+        "text": "不教胡马度阴山。",
+        "url": "line-audios/poem-24-line-4.mp3",
+        "start": 12.45,
+        "end": 15.085
+      }
+    ]
+  },
+  "25": {
+    "poemId": 25,
+    "title": "题临安邸",
+    "lines": [
+      {
+        "index": 0,
+        "text": "山外青山楼外楼，",
+        "url": "line-audios/poem-25-line-1.mp3",
+        "start": 9.29,
+        "end": 13.55
+      },
+      {
+        "index": 1,
+        "text": "西湖歌舞几时休。",
+        "url": "line-audios/poem-25-line-2.mp3",
+        "start": 15.39,
+        "end": 20.005
+      },
+      {
+        "index": 2,
+        "text": "暖风熏得游人醉，",
+        "url": "line-audios/poem-25-line-3.mp3",
+        "start": 21.94,
+        "end": 25.9
+      },
+      {
+        "index": 3,
+        "text": "直把杭州作汴州。",
+        "url": "line-audios/poem-25-line-4.mp3",
+        "start": 27.48,
+        "end": 32.365
+      }
+    ]
+  },
+  "26": {
+    "poemId": 26,
+    "title": "秋夜将晓出篱门迎凉有感",
+    "lines": [
+      {
+        "index": 0,
+        "text": "三万里河东入海，",
+        "url": "line-audios/poem-26-line-1.mp3",
+        "start": 18.19,
+        "end": 20.15
+      },
+      {
+        "index": 1,
+        "text": "五千仞岳上摩天。",
+        "url": "line-audios/poem-26-line-2.mp3",
+        "start": 20.63,
+        "end": 22.65
+      },
+      {
+        "index": 2,
+        "text": "遗民泪尽胡尘里，",
+        "url": "line-audios/poem-26-line-3.mp3",
+        "start": 23.43,
+        "end": 25.47
+      },
+      {
+        "index": 3,
+        "text": "南望王师又一年。",
+        "url": "line-audios/poem-26-line-4.mp3",
+        "start": 25.87,
+        "end": 28.465
+      }
+    ]
+  },
+  "27": {
+    "poemId": 27,
+    "title": "示儿",
+    "lines": [
+      {
+        "index": 0,
+        "text": "死去元知万事空，",
+        "url": "line-audios/poem-27-line-1.mp3",
+        "start": 9.68,
+        "end": 14.46
+      },
+      {
+        "index": 1,
+        "text": "但悲不见九州同。",
+        "url": "line-audios/poem-27-line-2.mp3",
+        "start": 16.58,
+        "end": 22.125
+      },
+      {
+        "index": 2,
+        "text": "王师北定中原日，",
+        "url": "line-audios/poem-27-line-3.mp3",
+        "start": 24.85,
+        "end": 28.77
+      },
+      {
+        "index": 3,
+        "text": "家祭无忘告乃翁。",
+        "url": "line-audios/poem-27-line-4.mp3",
+        "start": 31.43,
+        "end": 37.875
+      }
+    ]
+  },
+  "28": {
+    "poemId": 28,
+    "title": "游园不值",
+    "lines": [
+      {
+        "index": 0,
+        "text": "应怜屐齿印苍苔，",
+        "url": "line-audios/poem-28-line-1.mp3",
+        "start": 7.93,
+        "end": 11.19
+      },
+      {
+        "index": 1,
+        "text": "小扣柴扉久不开。",
+        "url": "line-audios/poem-28-line-2.mp3",
+        "start": 12.21,
+        "end": 16.27
+      },
+      {
+        "index": 2,
+        "text": "春色满园关不住，",
+        "url": "line-audios/poem-28-line-3.mp3",
+        "start": 17.93,
+        "end": 21.65
+      },
+      {
+        "index": 3,
+        "text": "一枝红杏出墙来。",
+        "url": "line-audios/poem-28-line-4.mp3",
+        "start": 22.59,
+        "end": 28.285
+      }
+    ]
+  },
+  "29": {
+    "poemId": 29,
+    "title": "墨梅",
+    "lines": [
+      {
+        "index": 0,
+        "text": "吾家洗砚池头树，",
+        "url": "line-audios/poem-29-line-1.mp3",
+        "start": 0.09,
+        "end": 6.31
+      },
+      {
+        "index": 1,
+        "text": "朵朵花开淡墨痕。",
+        "url": "line-audios/poem-29-line-2.mp3",
+        "start": 6.59,
+        "end": 8.51
+      },
+      {
+        "index": 2,
+        "text": "不要人夸好颜色，",
+        "url": "line-audios/poem-29-line-3.mp3",
+        "start": 9.33,
+        "end": 11.19
+      },
+      {
+        "index": 3,
+        "text": "只留清气满乾坤。",
+        "url": "line-audios/poem-29-line-4.mp3",
+        "start": 11.63,
+        "end": 14.245
+      }
+    ]
+  },
+  "30": {
+    "poemId": 30,
+    "title": "石灰吟",
+    "lines": [
+      {
+        "index": 0,
+        "text": "千锤万击出深山，",
+        "url": "line-audios/poem-30-line-1.mp3",
+        "start": 8.11,
+        "end": 11.17
+      },
+      {
+        "index": 1,
+        "text": "烈火焚烧若等闲。",
+        "url": "line-audios/poem-30-line-2.mp3",
+        "start": 11.91,
+        "end": 15.53
+      },
+      {
+        "index": 2,
+        "text": "粉身碎骨全不怕，",
+        "url": "line-audios/poem-30-line-3.mp3",
+        "start": 17.25,
+        "end": 20.37
+      },
+      {
+        "index": 3,
+        "text": "要留清白在人间。",
+        "url": "line-audios/poem-30-line-4.mp3",
+        "start": 21.27,
+        "end": 25.835
+      }
+    ]
+  },
+  "31": {
+    "poemId": 31,
+    "title": "竹石",
+    "lines": [
+      {
+        "index": 0,
+        "text": "咬定青山不放松，",
+        "url": "line-audios/poem-31-line-1.mp3",
+        "start": 7.18,
+        "end": 10.46
+      },
+      {
+        "index": 1,
+        "text": "立根原在破岩中。",
+        "url": "line-audios/poem-31-line-2.mp3",
+        "start": 11.52,
+        "end": 15.36
+      },
+      {
+        "index": 2,
+        "text": "千磨万击还坚劲，",
+        "url": "line-audios/poem-31-line-3.mp3",
+        "start": 16.84,
+        "end": 20.32
+      },
+      {
+        "index": 3,
+        "text": "任尔东西南北风。",
+        "url": "line-audios/poem-31-line-4.mp3",
+        "start": 21.44,
+        "end": 25.725
+      }
+    ]
+  },
+  "32": {
+    "poemId": 32,
+    "title": "宿新市徐公店",
+    "lines": [
+      {
+        "index": 0,
+        "text": "篱落疏疏一径深，",
+        "url": "line-audios/poem-32-line-1.mp3",
+        "start": 9.06,
+        "end": 12.42
+      },
+      {
+        "index": 1,
+        "text": "树头花落未成阴。",
+        "url": "line-audios/poem-32-line-2.mp3",
+        "start": 13.62,
+        "end": 17.2
+      },
+      {
+        "index": 2,
+        "text": "儿童急走追黄蝶，",
+        "url": "line-audios/poem-32-line-3.mp3",
+        "start": 18.7,
+        "end": 21.74
+      },
+      {
+        "index": 3,
+        "text": "飞入菜花无处寻。",
+        "url": "line-audios/poem-32-line-4.mp3",
+        "start": 23.08,
+        "end": 27.495
+      }
+    ]
+  },
+  "33": {
+    "poemId": 33,
+    "title": "四时田园杂兴",
+    "lines": [
+      {
+        "index": 0,
+        "text": "昼出耘田夜绩麻，",
+        "url": "line-audios/poem-33-line-1.mp3",
+        "start": 6.678,
+        "end": 9.63
+      },
+      {
+        "index": 1,
+        "text": "村庄儿女各当家。",
+        "url": "line-audios/poem-33-line-2.mp3",
+        "start": 10.08,
+        "end": 13.32
+      },
+      {
+        "index": 2,
+        "text": "童孙未解供耕织，",
+        "url": "line-audios/poem-33-line-3.mp3",
+        "start": 13.77,
+        "end": 16.362
+      },
+      {
+        "index": 3,
+        "text": "也傍桑阴学种瓜。",
+        "url": "line-audios/poem-33-line-4.mp3",
+        "start": 16.812,
+        "end": 19.44
+      }
+    ]
+  },
+  "34": {
+    "poemId": 34,
+    "title": "忆江南",
+    "lines": [
+      {
+        "index": 0,
+        "text": "江南好，",
+        "url": "line-audios/poem-34-line-1.mp3",
+        "start": 8.32,
+        "end": 9.56
+      },
+      {
+        "index": 1,
+        "text": "风景旧曾谙。",
+        "url": "line-audios/poem-34-line-2.mp3",
+        "start": 10.86,
+        "end": 14.395
+      },
+      {
+        "index": 2,
+        "text": "日出江花红胜火，",
+        "url": "line-audios/poem-34-line-3.mp3",
+        "start": 16.31,
+        "end": 19.79
+      },
+      {
+        "index": 3,
+        "text": "春来江水绿如蓝。",
+        "url": "line-audios/poem-34-line-4.mp3",
+        "start": 21.03,
+        "end": 25.29
+      },
+      {
+        "index": 4,
+        "text": "能不忆江南。",
+        "url": "line-audios/poem-34-line-5.mp3",
+        "start": 26.97,
+        "end": 31.565
+      }
+    ]
+  },
+  "35": {
+    "poemId": 35,
+    "title": "泊船瓜洲",
+    "lines": [
+      {
+        "index": 0,
+        "text": "京口瓜洲一水间，",
+        "url": "line-audios/poem-35-line-1.mp3",
+        "start": 6.52,
+        "end": 10.08
+      },
+      {
+        "index": 1,
+        "text": "钟山只隔数重山。",
+        "url": "line-audios/poem-35-line-2.mp3",
+        "start": 11.18,
+        "end": 15.22
+      },
+      {
+        "index": 2,
+        "text": "春风又绿江南岸，",
+        "url": "line-audios/poem-35-line-3.mp3",
+        "start": 17.18,
+        "end": 20.18
+      },
+      {
+        "index": 3,
+        "text": "明月何时照我还。",
+        "url": "line-audios/poem-35-line-4.mp3",
+        "start": 20.94,
+        "end": 25.495
+      }
+    ]
+  },
+  "36": {
+    "poemId": 36,
+    "title": "长恨歌",
+    "lines": [
+      {
+        "index": 0,
+        "text": "汉皇重色思倾国，",
+        "url": "line-audios/poem-36-line-1.mp3",
+        "start": 4.87,
+        "end": 7.11
+      },
+      {
+        "index": 1,
+        "text": "御宇多年求不得。",
+        "url": "line-audios/poem-36-line-2.mp3",
+        "start": 7.57,
+        "end": 9.69
+      },
+      {
+        "index": 2,
+        "text": "杨家有女初长成，",
+        "url": "line-audios/poem-36-line-3.mp3",
+        "start": 10.41,
+        "end": 12.51
+      },
+      {
+        "index": 3,
+        "text": "养在深闺人未识。",
+        "url": "line-audios/poem-36-line-4.mp3",
+        "start": 12.93,
+        "end": 14.97
+      },
+      {
+        "index": 4,
+        "text": "天生丽质难自弃，",
+        "url": "line-audios/poem-36-line-5.mp3",
+        "start": 15.79,
+        "end": 17.89
+      },
+      {
+        "index": 5,
+        "text": "一朝选在君王侧。",
+        "url": "line-audios/poem-36-line-6.mp3",
+        "start": 18.19,
+        "end": 20.35
+      },
+      {
+        "index": 6,
+        "text": "回眸一笑百媚生，",
+        "url": "line-audios/poem-36-line-7.mp3",
+        "start": 21.15,
+        "end": 23.11
+      },
+      {
+        "index": 7,
+        "text": "六宫粉黛无颜色。",
+        "url": "line-audios/poem-36-line-8.mp3",
+        "start": 23.51,
+        "end": 25.69
+      }
+    ]
+  },
+  "37": {
+    "poemId": 37,
+    "title": "卖炭翁",
+    "lines": [
+      {
+        "index": 0,
+        "text": "卖炭翁，",
+        "url": "line-audios/poem-37-line-1.mp3",
+        "start": 8.88,
+        "end": 10.22
+      },
+      {
+        "index": 1,
+        "text": "伐薪烧炭南山中。",
+        "url": "line-audios/poem-37-line-2.mp3",
+        "start": 11.66,
+        "end": 16.335
+      },
+      {
+        "index": 2,
+        "text": "满面尘灰烟火色，",
+        "url": "line-audios/poem-37-line-3.mp3",
+        "start": 18.46,
+        "end": 22.74
+      },
+      {
+        "index": 3,
+        "text": "两鬓苍苍十指黑。",
+        "url": "line-audios/poem-37-line-4.mp3",
+        "start": 24.54,
+        "end": 30.015
+      },
+      {
+        "index": 4,
+        "text": "卖炭得钱何所营？",
+        "url": "line-audios/poem-37-line-5.mp3",
+        "start": 32.29,
+        "end": 36.51
+      },
+      {
+        "index": 5,
+        "text": "身上衣裳口中食。",
+        "url": "line-audios/poem-37-line-6.mp3",
+        "start": 38.09,
+        "end": 43.005
+      },
+      {
+        "index": 6,
+        "text": "可怜身上衣正单，",
+        "url": "line-audios/poem-37-line-7.mp3",
+        "start": 45.88,
+        "end": 49.94
+      },
+      {
+        "index": 7,
+        "text": "心忧炭贱愿天寒。",
+        "url": "line-audios/poem-37-line-8.mp3",
+        "start": 51.56,
+        "end": 56.4
+      }
+    ]
+  },
+  "38": {
+    "poemId": 38,
+    "title": "琵琶行",
+    "lines": [
+      {
+        "index": 0,
+        "text": "浔阳江头夜送客，",
+        "url": "line-audios/poem-38-line-1.mp3",
+        "start": 85.86,
+        "end": 89.375
+      },
+      {
+        "index": 1,
+        "text": "枫叶荻花秋瑟瑟。",
+        "url": "line-audios/poem-38-line-2.mp3",
+        "start": 90.79,
+        "end": 94.565
+      },
+      {
+        "index": 2,
+        "text": "主人下马客在船，",
+        "url": "line-audios/poem-38-line-3.mp3",
+        "start": 96.47,
+        "end": 99.775
+      },
+      {
+        "index": 3,
+        "text": "举酒欲饮无管弦。",
+        "url": "line-audios/poem-38-line-4.mp3",
+        "start": 101.11,
+        "end": 104.715
+      },
+      {
+        "index": 4,
+        "text": "醉不成欢惨将别，",
+        "url": "line-audios/poem-38-line-5.mp3",
+        "start": 106.54,
+        "end": 109.945
+      },
+      {
+        "index": 5,
+        "text": "别时茫茫江浸月。",
+        "url": "line-audios/poem-38-line-6.mp3",
+        "start": 111.1,
+        "end": 114.845
+      }
+    ]
+  },
+  "39": {
+    "poemId": 39,
+    "title": "兵车行",
+    "lines": [
+      {
+        "index": 0,
+        "text": "车辚辚，",
+        "url": "line-audios/poem-39-line-1.mp3",
+        "start": 0.33,
+        "end": 2.27
+      },
+      {
+        "index": 1,
+        "text": "马萧萧，",
+        "url": "line-audios/poem-39-line-2.mp3",
+        "start": 6.27,
+        "end": 7.23
+      },
+      {
+        "index": 2,
+        "text": "行人弓箭各在腰。",
+        "url": "line-audios/poem-39-line-3.mp3",
+        "start": 7.69,
+        "end": 9.63
+      },
+      {
+        "index": 3,
+        "text": "耶娘妻子走相送，",
+        "url": "line-audios/poem-39-line-4.mp3",
+        "start": 10.33,
+        "end": 12.45
+      },
+      {
+        "index": 4,
+        "text": "尘埃不见咸阳桥。",
+        "url": "line-audios/poem-39-line-5.mp3",
+        "start": 12.81,
+        "end": 14.85
+      },
+      {
+        "index": 5,
+        "text": "牵衣顿足拦道哭，",
+        "url": "line-audios/poem-39-line-6.mp3",
+        "start": 15.79,
+        "end": 17.79
+      },
+      {
+        "index": 6,
+        "text": "哭声直上干云霄。",
+        "url": "line-audios/poem-39-line-7.mp3",
+        "start": 89.76,
+        "end": 92.985
+      }
+    ]
+  },
+  "40": {
+    "poemId": 40,
+    "title": "茅屋为秋风所破歌",
+    "lines": [
+      {
+        "index": 0,
+        "text": "八月秋高风怒号，",
+        "url": "line-audios/poem-40-line-1.mp3",
+        "start": 9.76,
+        "end": 12.58
+      },
+      {
+        "index": 1,
+        "text": "卷我屋上三重茅。",
+        "url": "line-audios/poem-40-line-2.mp3",
+        "start": 13.4,
+        "end": 16.4
+      },
+      {
+        "index": 2,
+        "text": "茅飞渡江洒江郊，",
+        "url": "line-audios/poem-40-line-3.mp3",
+        "start": 17.98,
+        "end": 20.76
+      },
+      {
+        "index": 3,
+        "text": "高者挂罥长林梢，",
+        "url": "line-audios/poem-40-line-4.mp3",
+        "start": 21.52,
+        "end": 25.12
+      },
+      {
+        "index": 4,
+        "text": "下者飘转沉塘坳。",
+        "url": "line-audios/poem-40-line-5.mp3",
+        "start": 25.7,
+        "end": 29.675
+      }
+    ]
+  },
+  "41": {
+    "poemId": 41,
+    "title": "春望",
+    "lines": [
+      {
+        "index": 0,
+        "text": "国破山河在，",
+        "url": "line-audios/poem-41-line-1.mp3",
+        "start": 4.43,
+        "end": 6.03
+      },
+      {
+        "index": 1,
+        "text": "城春草木深。",
+        "url": "line-audios/poem-41-line-2.mp3",
+        "start": 6.33,
+        "end": 7.99
+      },
+      {
+        "index": 2,
+        "text": "感时花溅泪，",
+        "url": "line-audios/poem-41-line-3.mp3",
+        "start": 8.69,
+        "end": 10.15
+      },
+      {
+        "index": 3,
+        "text": "恨别鸟惊心。",
+        "url": "line-audios/poem-41-line-4.mp3",
+        "start": 10.49,
+        "end": 11.99
+      },
+      {
+        "index": 4,
+        "text": "烽火连三月，",
+        "url": "line-audios/poem-41-line-5.mp3",
+        "start": 12.79,
+        "end": 14.27
+      },
+      {
+        "index": 5,
+        "text": "家书抵万金。",
+        "url": "line-audios/poem-41-line-6.mp3",
+        "start": 14.67,
+        "end": 16.17
+      },
+      {
+        "index": 6,
+        "text": "白头搔更短，",
+        "url": "line-audios/poem-41-line-7.mp3",
+        "start": 16.85,
+        "end": 18.45
+      },
+      {
+        "index": 7,
+        "text": "浑欲不胜簪。",
+        "url": "line-audios/poem-41-line-8.mp3",
+        "start": 18.81,
+        "end": 20.785
+      }
+    ]
+  },
+  "42": {
+    "poemId": 42,
+    "title": "登高",
+    "lines": [
+      {
+        "index": 0,
+        "text": "风急天高猿啸哀，",
+        "url": "line-audios/poem-42-line-1.mp3",
+        "start": 7.76,
+        "end": 12.735
+      },
+      {
+        "index": 1,
+        "text": "渚清沙白鸟飞回。",
+        "url": "line-audios/poem-42-line-2.mp3",
+        "start": 14.67,
+        "end": 19.73
+      },
+      {
+        "index": 2,
+        "text": "无边落木萧萧下，",
+        "url": "line-audios/poem-42-line-3.mp3",
+        "start": 22.29,
+        "end": 27.03
+      },
+      {
+        "index": 3,
+        "text": "不尽长江滚滚来。",
+        "url": "line-audios/poem-42-line-4.mp3",
+        "start": 28.91,
+        "end": 35.045
+      },
+      {
+        "index": 4,
+        "text": "万里悲秋常作客，",
+        "url": "line-audios/poem-42-line-5.mp3",
+        "start": 37.53,
+        "end": 42.45
+      },
+      {
+        "index": 5,
+        "text": "百年多病独登台。",
+        "url": "line-audios/poem-42-line-6.mp3",
+        "start": 44.25,
+        "end": 50.175
+      }
+    ]
+  },
+  "43": {
+    "poemId": 43,
+    "title": "梦游天姥吟留别",
+    "lines": [
+      {
+        "index": 0,
+        "text": "海客谈瀛洲，",
+        "url": "line-audios/poem-43-line-1.mp3",
+        "start": 11.21,
+        "end": 14.87
+      },
+      {
+        "index": 1,
+        "text": "烟涛微茫信难求。",
+        "url": "line-audios/poem-43-line-2.mp3",
+        "start": 17.05,
+        "end": 21.99
+      },
+      {
+        "index": 2,
+        "text": "越人语天姥，",
+        "url": "line-audios/poem-43-line-3.mp3",
+        "start": 24.39,
+        "end": 27.43
+      },
+      {
+        "index": 3,
+        "text": "云霞明灭或可睹。",
+        "url": "line-audios/poem-43-line-4.mp3",
+        "start": 29.17,
+        "end": 34.865
+      },
+      {
+        "index": 4,
+        "text": "天姥连天向天横，",
+        "url": "line-audios/poem-43-line-5.mp3",
+        "start": 37.08,
+        "end": 41.3
+      },
+      {
+        "index": 5,
+        "text": "势拔五岳掩赤城。",
+        "url": "line-audios/poem-43-line-6.mp3",
+        "start": 42.86,
+        "end": 47.58
+      },
+      {
+        "index": 6,
+        "text": "天台四万八千丈，",
+        "url": "line-audios/poem-43-line-7.mp3",
+        "start": 49.34,
+        "end": 53.32
+      },
+      {
+        "index": 7,
+        "text": "对此欲倒东南倾。",
+        "url": "line-audios/poem-43-line-8.mp3",
+        "start": 54.3,
+        "end": 210.11
+      }
+    ]
+  },
+  "44": {
+    "poemId": 44,
+    "title": "行路难",
+    "lines": [
+      {
+        "index": 0,
+        "text": "金樽清酒斗十千，",
+        "url": "line-audios/poem-44-line-1.mp3",
+        "start": 5.79,
+        "end": 7.95
+      },
+      {
+        "index": 1,
+        "text": "玉盘珍羞直万钱。",
+        "url": "line-audios/poem-44-line-2.mp3",
+        "start": 8.27,
+        "end": 10.47
+      },
+      {
+        "index": 2,
+        "text": "停杯投箸不能食，",
+        "url": "line-audios/poem-44-line-3.mp3",
+        "start": 11.31,
+        "end": 13.27
+      },
+      {
+        "index": 3,
+        "text": "拔剑四顾心茫然。",
+        "url": "line-audios/poem-44-line-4.mp3",
+        "start": 13.77,
+        "end": 15.85
+      },
+      {
+        "index": 4,
+        "text": "欲渡黄河冰塞川，",
+        "url": "line-audios/poem-44-line-5.mp3",
+        "start": 16.61,
+        "end": 18.85
+      },
+      {
+        "index": 5,
+        "text": "将登太行雪满山。",
+        "url": "line-audios/poem-44-line-6.mp3",
+        "start": 19.21,
+        "end": 21.41
+      },
+      {
+        "index": 6,
+        "text": "闲来垂钓碧溪上，",
+        "url": "line-audios/poem-44-line-7.mp3",
+        "start": 22.25,
+        "end": 24.29
+      },
+      {
+        "index": 7,
+        "text": "忽复乘舟梦日边。",
+        "url": "line-audios/poem-44-line-8.mp3",
+        "start": 24.67,
+        "end": 26.81
+      }
+    ]
+  },
+  "45": {
+    "poemId": 45,
+    "title": "将进酒",
+    "lines": [
+      {
+        "index": 0,
+        "text": "君不见黄河之水天上来，",
+        "url": "line-audios/poem-45-line-1.mp3",
+        "start": 4.67,
+        "end": 7.59
+      },
+      {
+        "index": 1,
+        "text": "奔流到海不复回。",
+        "url": "line-audios/poem-45-line-2.mp3",
+        "start": 7.93,
+        "end": 9.93
+      },
+      {
+        "index": 2,
+        "text": "君不见高堂明镜悲白发，",
+        "url": "line-audios/poem-45-line-3.mp3",
+        "start": 10.73,
+        "end": 13.71
+      },
+      {
+        "index": 3,
+        "text": "朝如青丝暮成雪。",
+        "url": "line-audios/poem-45-line-4.mp3",
+        "start": 14.11,
+        "end": 16.29
+      },
+      {
+        "index": 4,
+        "text": "人生得意须尽欢，",
+        "url": "line-audios/poem-45-line-5.mp3",
+        "start": 17.13,
+        "end": 19.21
+      },
+      {
+        "index": 5,
+        "text": "莫使金樽空对月。",
+        "url": "line-audios/poem-45-line-6.mp3",
+        "start": 19.57,
+        "end": 21.79
+      },
+      {
+        "index": 6,
+        "text": "天生我材必有用，",
+        "url": "line-audios/poem-45-line-7.mp3",
+        "start": 22.49,
+        "end": 24.43
+      },
+      {
+        "index": 7,
+        "text": "千金散尽还复来。",
+        "url": "line-audios/poem-45-line-8.mp3",
+        "start": 24.87,
+        "end": 27.07
+      }
+    ]
+  },
+  "46": {
+    "poemId": 46,
+    "title": "蜀道难",
+    "lines": [
+      {
+        "index": 0,
+        "text": "噫吁嚱，",
+        "url": "line-audios/poem-46-line-1.mp3",
+        "start": 0.13,
+        "end": 1.07
+      },
+      {
+        "index": 1,
+        "text": "危乎高哉！",
+        "url": "line-audios/poem-46-line-2.mp3",
+        "start": 5.89,
+        "end": 7.17
+      },
+      {
+        "index": 2,
+        "text": "蜀道之难，",
+        "url": "line-audios/poem-46-line-3.mp3",
+        "start": 7.91,
+        "end": 9.09
+      },
+      {
+        "index": 3,
+        "text": "难于上青天！",
+        "url": "line-audios/poem-46-line-4.mp3",
+        "start": 9.55,
+        "end": 11.13
+      },
+      {
+        "index": 4,
+        "text": "蚕丛及鱼凫，",
+        "url": "line-audios/poem-46-line-5.mp3",
+        "start": 11.89,
+        "end": 13.41
+      },
+      {
+        "index": 5,
+        "text": "开国何茫然！",
+        "url": "line-audios/poem-46-line-6.mp3",
+        "start": 13.85,
+        "end": 15.39
+      },
+      {
+        "index": 6,
+        "text": "尔来四万八千岁，",
+        "url": "line-audios/poem-46-line-7.mp3",
+        "start": 16.35,
+        "end": 18.27
+      },
+      {
+        "index": 7,
+        "text": "不与秦塞通人烟。",
+        "url": "line-audios/poem-46-line-8.mp3",
+        "start": 18.61,
+        "end": 74.87
+      }
+    ]
+  },
+  "47": {
+    "poemId": 47,
+    "title": "马",
+    "lines": [
+      {
+        "index": 0,
+        "text": "大漠沙如雪，",
+        "url": "line-audios/poem-47-line-1.mp3",
+        "start": 11.68,
+        "end": 14.78
+      },
+      {
+        "index": 1,
+        "text": "燕山月似钩。",
+        "url": "line-audios/poem-47-line-2.mp3",
+        "start": 16.56,
+        "end": 20.12
+      },
+      {
+        "index": 2,
+        "text": "何当金络脑，",
+        "url": "line-audios/poem-47-line-3.mp3",
+        "start": 22.14,
+        "end": 24.84
+      },
+      {
+        "index": 3,
+        "text": "快走踏清秋。",
+        "url": "line-audios/poem-47-line-4.mp3",
+        "start": 26.34,
+        "end": 31.105
+      }
+    ]
+  },
+  "48": {
+    "poemId": 48,
+    "title": "雁门太守行",
+    "lines": [
+      {
+        "index": 0,
+        "text": "黑云压城城欲摧，",
+        "url": "line-audios/poem-48-line-1.mp3",
+        "start": 10.08,
+        "end": 14.06
+      },
+      {
+        "index": 1,
+        "text": "甲光向日金鳞开。",
+        "url": "line-audios/poem-48-line-2.mp3",
+        "start": 15.6,
+        "end": 19.86
+      },
+      {
+        "index": 2,
+        "text": "角声满天秋色里，",
+        "url": "line-audios/poem-48-line-3.mp3",
+        "start": 21.64,
+        "end": 25.66
+      },
+      {
+        "index": 3,
+        "text": "塞上燕脂凝夜紫。",
+        "url": "line-audios/poem-48-line-4.mp3",
+        "start": 27.06,
+        "end": 31.425
+      },
+      {
+        "index": 4,
+        "text": "半卷红旗临易水，",
+        "url": "line-audios/poem-48-line-5.mp3",
+        "start": 33.52,
+        "end": 37.64
+      },
+      {
+        "index": 5,
+        "text": "霜重鼓寒声不起。",
+        "url": "line-audios/poem-48-line-6.mp3",
+        "start": 39.16,
+        "end": 43.86
+      }
+    ]
+  },
+  "49": {
+    "poemId": 49,
+    "title": "观书有感",
+    "lines": [
+      {
+        "index": 0,
+        "text": "半亩方塘一鉴开，",
+        "url": "line-audios/poem-49-line-1.mp3",
+        "start": 2.73,
+        "end": 4.69
+      },
+      {
+        "index": 1,
+        "text": "天光云影共徘徊。",
+        "url": "line-audios/poem-49-line-2.mp3",
+        "start": 4.95,
+        "end": 6.95
+      },
+      {
+        "index": 2,
+        "text": "问渠那得清如许，",
+        "url": "line-audios/poem-49-line-3.mp3",
+        "start": 7.17,
+        "end": 9.03
+      },
+      {
+        "index": 3,
+        "text": "为有源头活水来。",
+        "url": "line-audios/poem-49-line-4.mp3",
+        "start": 9.19,
+        "end": 11.125
+      }
+    ]
+  },
+  "50": {
+    "poemId": 50,
+    "title": "论诗",
+    "lines": [
+      {
+        "index": 0,
+        "text": "李杜诗篇万口传，",
+        "url": "line-audios/poem-50-line-1.mp3",
+        "start": 10.27,
+        "end": 13.87
+      },
+      {
+        "index": 1,
+        "text": "至今已觉不新鲜。",
+        "url": "line-audios/poem-50-line-2.mp3",
+        "start": 15.53,
+        "end": 19.85
+      },
+      {
+        "index": 2,
+        "text": "江山代有才人出，",
+        "url": "line-audios/poem-50-line-3.mp3",
+        "start": 21.87,
+        "end": 25.29
+      },
+      {
+        "index": 3,
+        "text": "各领风骚数百年。",
+        "url": "line-audios/poem-50-line-4.mp3",
+        "start": 26.79,
+        "end": 32.184
+      }
+    ]
+  },
+  "51": {
+    "poemId": 51,
+    "title": "咏鹅",
+    "lines": [
+      {
+        "index": 0,
+        "text": "鹅，",
+        "url": "line-audios/poem-51-line-1.mp3",
+        "start": 7.59,
+        "end": 8.03
+      },
+      {
+        "index": 1,
+        "text": "鹅，",
+        "url": "line-audios/poem-51-line-2.mp3",
+        "start": 8.09,
+        "end": 8.53
+      },
+      {
+        "index": 2,
+        "text": "鹅，",
+        "url": "line-audios/poem-51-line-3.mp3",
+        "start": 8.57,
+        "end": 9.01
+      },
+      {
+        "index": 3,
+        "text": "曲项向天歌。",
+        "url": "line-audios/poem-51-line-4.mp3",
+        "start": 10.31,
+        "end": 13.49
+      },
+      {
+        "index": 4,
+        "text": "白毛浮绿水，",
+        "url": "line-audios/poem-51-line-5.mp3",
+        "start": 15.03,
+        "end": 17.19
+      },
+      {
+        "index": 5,
+        "text": "红掌拨清波。",
+        "url": "line-audios/poem-51-line-6.mp3",
+        "start": 18.33,
+        "end": 21.895
+      }
+    ]
+  },
+  "52": {
+    "poemId": 52,
+    "title": "悯农其一",
+    "lines": [
+      {
+        "index": 0,
+        "text": "春种一粒粟，",
+        "url": "line-audios/poem-52-line-1.mp3",
+        "start": 2.71,
+        "end": 4.09
+      },
+      {
+        "index": 1,
+        "text": "秋收万颗子。",
+        "url": "line-audios/poem-52-line-2.mp3",
+        "start": 4.33,
+        "end": 5.75
+      },
+      {
+        "index": 2,
+        "text": "四海无闲田，",
+        "url": "line-audios/poem-52-line-3.mp3",
+        "start": 5.85,
+        "end": 7.29
+      },
+      {
+        "index": 3,
+        "text": "农夫犹饿死。",
+        "url": "line-audios/poem-52-line-4.mp3",
+        "start": 7.63,
+        "end": 8.965
+      }
+    ]
+  },
+  "53": {
+    "poemId": 53,
+    "title": "悯农其二",
+    "lines": [
+      {
+        "index": 0,
+        "text": "锄禾日当午，",
+        "url": "line-audios/poem-53-line-1.mp3",
+        "start": 6.03,
+        "end": 7.51
+      },
+      {
+        "index": 1,
+        "text": "汗滴禾下土。",
+        "url": "line-audios/poem-53-line-2.mp3",
+        "start": 8.07,
+        "end": 9.71
+      },
+      {
+        "index": 2,
+        "text": "谁知盘中餐，",
+        "url": "line-audios/poem-53-line-3.mp3",
+        "start": 10.47,
+        "end": 12.03
+      },
+      {
+        "index": 3,
+        "text": "粒粒皆辛苦。",
+        "url": "line-audios/poem-53-line-4.mp3",
+        "start": 12.49,
+        "end": 14.575
+      }
+    ]
+  },
+  "54": {
+    "poemId": 54,
+    "title": "江雪",
+    "lines": [
+      {
+        "index": 0,
+        "text": "千山鸟飞绝，",
+        "url": "line-audios/poem-54-line-1.mp3",
+        "start": 4.85,
+        "end": 6.43
+      },
+      {
+        "index": 1,
+        "text": "万径人踪灭。",
+        "url": "line-audios/poem-54-line-2.mp3",
+        "start": 6.85,
+        "end": 8.45
+      },
+      {
+        "index": 2,
+        "text": "孤舟蓑笠翁，",
+        "url": "line-audios/poem-54-line-3.mp3",
+        "start": 9.25,
+        "end": 10.65
+      },
+      {
+        "index": 3,
+        "text": "独钓寒江雪。",
+        "url": "line-audios/poem-54-line-4.mp3",
+        "start": 11.01,
+        "end": 13.225
+      }
+    ]
+  },
+  "55": {
+    "poemId": 55,
+    "title": "寻隐者不遇",
+    "lines": [
+      {
+        "index": 0,
+        "text": "松下问童子，",
+        "url": "line-audios/poem-55-line-1.mp3",
+        "start": 9.52,
+        "end": 12.52
+      },
+      {
+        "index": 1,
+        "text": "言师采药去。",
+        "url": "line-audios/poem-55-line-2.mp3",
+        "start": 13.8,
+        "end": 16.88
+      },
+      {
+        "index": 2,
+        "text": "只在此山中，",
+        "url": "line-audios/poem-55-line-3.mp3",
+        "start": 18.92,
+        "end": 21.6
+      },
+      {
+        "index": 3,
+        "text": "云深不知处。",
+        "url": "line-audios/poem-55-line-4.mp3",
+        "start": 23.22,
+        "end": 27.635
+      }
+    ]
+  },
+  "56": {
+    "poemId": 56,
+    "title": "江南",
+    "lines": [
+      {
+        "index": 0,
+        "text": "江南可采莲，",
+        "url": "line-audios/poem-56-line-1.mp3",
+        "start": 7.48,
+        "end": 9.46
+      },
+      {
+        "index": 1,
+        "text": "莲叶何田田。",
+        "url": "line-audios/poem-56-line-2.mp3",
+        "start": 10.22,
+        "end": 12.4
+      },
+      {
+        "index": 2,
+        "text": "鱼戏莲叶间。",
+        "url": "line-audios/poem-56-line-3.mp3",
+        "start": 13.2,
+        "end": 15.68
+      },
+      {
+        "index": 3,
+        "text": "鱼戏莲叶东，",
+        "url": "line-audios/poem-56-line-4.mp3",
+        "start": 17.36,
+        "end": 19.38
+      },
+      {
+        "index": 4,
+        "text": "鱼戏莲叶西，",
+        "url": "line-audios/poem-56-line-5.mp3",
+        "start": 20.08,
+        "end": 22.26
+      },
+      {
+        "index": 5,
+        "text": "鱼戏莲叶南，",
+        "url": "line-audios/poem-56-line-6.mp3",
+        "start": 23.36,
+        "end": 25.48
+      },
+      {
+        "index": 6,
+        "text": "鱼戏莲叶北。",
+        "url": "line-audios/poem-56-line-7.mp3",
+        "start": 26.6,
+        "end": 30.575
+      }
+    ]
+  },
+  "57": {
+    "poemId": 57,
+    "title": "敕勒歌",
+    "lines": [
+      {
+        "index": 0,
+        "text": "敕勒川，",
+        "url": "line-audios/poem-57-line-1.mp3",
+        "start": 5.57,
+        "end": 6.49
+      },
+      {
+        "index": 1,
+        "text": "阴山下。",
+        "url": "line-audios/poem-57-line-2.mp3",
+        "start": 6.79,
+        "end": 7.87
+      },
+      {
+        "index": 2,
+        "text": "天似穹庐，",
+        "url": "line-audios/poem-57-line-3.mp3",
+        "start": 8.59,
+        "end": 9.95
+      },
+      {
+        "index": 3,
+        "text": "笼盖四野。",
+        "url": "line-audios/poem-57-line-4.mp3",
+        "start": 10.43,
+        "end": 11.69
+      },
+      {
+        "index": 4,
+        "text": "天苍苍，",
+        "url": "line-audios/poem-57-line-5.mp3",
+        "start": 12.53,
+        "end": 13.49
+      },
+      {
+        "index": 5,
+        "text": "野茫茫，",
+        "url": "line-audios/poem-57-line-6.mp3",
+        "start": 13.83,
+        "end": 14.79
+      },
+      {
+        "index": 6,
+        "text": "风吹草低见牛羊。",
+        "url": "line-audios/poem-57-line-7.mp3",
+        "start": 15.25,
+        "end": 18.055
+      }
+    ]
+  },
+  "58": {
+    "poemId": 58,
+    "title": "风",
+    "lines": [
+      {
+        "index": 0,
+        "text": "解落三秋叶，",
+        "url": "line-audios/poem-58-line-1.mp3",
+        "start": 4.09,
+        "end": 5.59
+      },
+      {
+        "index": 1,
+        "text": "能开二月花。",
+        "url": "line-audios/poem-58-line-2.mp3",
+        "start": 5.93,
+        "end": 7.43
+      },
+      {
+        "index": 2,
+        "text": "过江千尺浪，",
+        "url": "line-audios/poem-58-line-3.mp3",
+        "start": 8.23,
+        "end": 9.81
+      },
+      {
+        "index": 3,
+        "text": "入竹万竿斜。",
+        "url": "line-audios/poem-58-line-4.mp3",
+        "start": 10.13,
+        "end": 12.205
+      }
+    ]
+  },
+  "59": {
+    "poemId": 59,
+    "title": "所见",
+    "lines": [
+      {
+        "index": 0,
+        "text": "牧童骑黄牛，",
+        "url": "line-audios/poem-59-line-1.mp3",
+        "start": 6.31,
+        "end": 8.31
+      },
+      {
+        "index": 1,
+        "text": "歌声振林樾。",
+        "url": "line-audios/poem-59-line-2.mp3",
+        "start": 8.85,
+        "end": 11.53
+      },
+      {
+        "index": 2,
+        "text": "意欲捕鸣蝉，",
+        "url": "line-audios/poem-59-line-3.mp3",
+        "start": 12.53,
+        "end": 14.75
+      },
+      {
+        "index": 3,
+        "text": "忽然闭口立。",
+        "url": "line-audios/poem-59-line-4.mp3",
+        "start": 15.75,
+        "end": 19.825
+      }
+    ]
+  },
+  "60": {
+    "poemId": 60,
+    "title": "村居",
+    "lines": [
+      {
+        "index": 0,
+        "text": "草长莺飞二月天，",
+        "url": "line-audios/poem-60-line-1.mp3",
+        "start": 5.47,
+        "end": 8.65
+      },
+      {
+        "index": 1,
+        "text": "拂堤杨柳醉春烟。",
+        "url": "line-audios/poem-60-line-2.mp3",
+        "start": 9.55,
+        "end": 13.13
+      },
+      {
+        "index": 2,
+        "text": "儿童散学归来早，",
+        "url": "line-audios/poem-60-line-3.mp3",
+        "start": 14.31,
+        "end": 16.89
+      },
+      {
+        "index": 3,
+        "text": "忙趁东风放纸鸢。",
+        "url": "line-audios/poem-60-line-4.mp3",
+        "start": 17.71,
+        "end": 21.445
+      }
+    ]
+  },
+  "61": {
+    "poemId": 61,
+    "title": "小池",
+    "lines": [
+      {
+        "index": 0,
+        "text": "泉眼无声惜细流，",
+        "url": "line-audios/poem-61-line-1.mp3",
+        "start": 4.73,
+        "end": 6.85
+      },
+      {
+        "index": 1,
+        "text": "树阴照水爱晴柔。",
+        "url": "line-audios/poem-61-line-2.mp3",
+        "start": 7.23,
+        "end": 9.41
+      },
+      {
+        "index": 2,
+        "text": "小荷才露尖尖角，",
+        "url": "line-audios/poem-61-line-3.mp3",
+        "start": 10.25,
+        "end": 12.21
+      },
+      {
+        "index": 3,
+        "text": "早有蜻蜓立上头。",
+        "url": "line-audios/poem-61-line-4.mp3",
+        "start": 12.75,
+        "end": 15.415
+      }
+    ]
+  },
+  "62": {
+    "poemId": 62,
+    "title": "池上",
+    "lines": [
+      {
+        "index": 0,
+        "text": "小娃撑小艇，",
+        "url": "line-audios/poem-62-line-1.mp3",
+        "start": 8.07,
+        "end": 10.87
+      },
+      {
+        "index": 1,
+        "text": "偷采白莲回。",
+        "url": "line-audios/poem-62-line-2.mp3",
+        "start": 12.35,
+        "end": 15.65
+      },
+      {
+        "index": 2,
+        "text": "不解藏踪迹，",
+        "url": "line-audios/poem-62-line-3.mp3",
+        "start": 17.55,
+        "end": 19.71
+      },
+      {
+        "index": 3,
+        "text": "浮萍一道开。",
+        "url": "line-audios/poem-62-line-4.mp3",
+        "start": 20.95,
+        "end": 24.605
+      }
+    ]
+  },
+  "63": {
+    "poemId": 63,
+    "title": "山村咏怀",
+    "lines": [
+      {
+        "index": 0,
+        "text": "一去二三里，",
+        "url": "line-audios/poem-63-line-1.mp3",
+        "start": 2.15,
+        "end": 3.31
+      },
+      {
+        "index": 1,
+        "text": "烟村四五家。",
+        "url": "line-audios/poem-63-line-2.mp3",
+        "start": 3.41,
+        "end": 4.79
+      },
+      {
+        "index": 2,
+        "text": "亭台六七座，",
+        "url": "line-audios/poem-63-line-3.mp3",
+        "start": 4.89,
+        "end": 6.33
+      },
+      {
+        "index": 3,
+        "text": "八九十枝花。",
+        "url": "line-audios/poem-63-line-4.mp3",
+        "start": 6.43,
+        "end": 7.705
+      }
+    ]
+  },
+  "64": {
+    "poemId": 64,
+    "title": "梅花",
+    "lines": [
+      {
+        "index": 0,
+        "text": "墙角数枝梅，",
+        "url": "line-audios/poem-64-line-1.mp3",
+        "start": 5.03,
+        "end": 7.15
+      },
+      {
+        "index": 1,
+        "text": "凌寒独自开。",
+        "url": "line-audios/poem-64-line-2.mp3",
+        "start": 8.41,
+        "end": 10.85
+      },
+      {
+        "index": 2,
+        "text": "遥知不是雪，",
+        "url": "line-audios/poem-64-line-3.mp3",
+        "start": 12.21,
+        "end": 14.07
+      },
+      {
+        "index": 3,
+        "text": "为有暗香来。",
+        "url": "line-audios/poem-64-line-4.mp3",
+        "start": 15.33,
+        "end": 18.415
+      }
+    ]
+  },
+  "65": {
+    "poemId": 65,
+    "title": "蜂",
+    "lines": [
+      {
+        "index": 0,
+        "text": "不论平地与山尖，",
+        "url": "line-audios/poem-65-line-1.mp3",
+        "start": 4.07,
+        "end": 6.19
+      },
+      {
+        "index": 1,
+        "text": "无限风光尽被占。",
+        "url": "line-audios/poem-65-line-2.mp3",
+        "start": 6.55,
+        "end": 8.81
+      },
+      {
+        "index": 2,
+        "text": "采得百花成蜜后，",
+        "url": "line-audios/poem-65-line-3.mp3",
+        "start": 9.59,
+        "end": 11.49
+      },
+      {
+        "index": 3,
+        "text": "为谁辛苦为谁甜？",
+        "url": "line-audios/poem-65-line-4.mp3",
+        "start": 11.79,
+        "end": 14.725
+      }
+    ]
+  },
+  "66": {
+    "poemId": 66,
+    "title": "早发白帝城",
+    "lines": [
+      {
+        "index": 0,
+        "text": "朝辞白帝彩云间，",
+        "url": "line-audios/poem-66-line-1.mp3",
+        "start": 5.13,
+        "end": 7.27
+      },
+      {
+        "index": 1,
+        "text": "千里江陵一日还。",
+        "url": "line-audios/poem-66-line-2.mp3",
+        "start": 7.59,
+        "end": 9.71
+      },
+      {
+        "index": 2,
+        "text": "两岸猿声啼不住，",
+        "url": "line-audios/poem-66-line-3.mp3",
+        "start": 10.61,
+        "end": 12.75
+      },
+      {
+        "index": 3,
+        "text": "轻舟已过万重山。",
+        "url": "line-audios/poem-66-line-4.mp3",
+        "start": 13.03,
+        "end": 15.655
+      }
+    ]
+  },
+  "67": {
+    "poemId": 67,
+    "title": "望庐山瀑布",
+    "lines": [
+      {
+        "index": 0,
+        "text": "日照香炉生紫烟，",
+        "url": "line-audios/poem-67-line-1.mp3",
+        "start": 5.17,
+        "end": 7.27
+      },
+      {
+        "index": 1,
+        "text": "遥看瀑布挂前川。",
+        "url": "line-audios/poem-67-line-2.mp3",
+        "start": 7.57,
+        "end": 9.71
+      },
+      {
+        "index": 2,
+        "text": "飞流直下三千尺，",
+        "url": "line-audios/poem-67-line-3.mp3",
+        "start": 10.47,
+        "end": 12.57
+      },
+      {
+        "index": 3,
+        "text": "疑是银河落九天。",
+        "url": "line-audios/poem-67-line-4.mp3",
+        "start": 12.99,
+        "end": 15.715
+      }
+    ]
+  },
+  "68": {
+    "poemId": 68,
+    "title": "赠汪伦",
+    "lines": [
+      {
+        "index": 0,
+        "text": "李白乘舟将欲行，",
+        "url": "line-audios/poem-68-line-1.mp3",
+        "start": 4.65,
+        "end": 6.73
+      },
+      {
+        "index": 1,
+        "text": "忽闻岸上踏歌声。",
+        "url": "line-audios/poem-68-line-2.mp3",
+        "start": 7.19,
+        "end": 9.29
+      },
+      {
+        "index": 2,
+        "text": "桃花潭水深千尺，",
+        "url": "line-audios/poem-68-line-3.mp3",
+        "start": 10.03,
+        "end": 12.21
+      },
+      {
+        "index": 3,
+        "text": "不及汪伦送我情。",
+        "url": "line-audios/poem-68-line-4.mp3",
+        "start": 12.55,
+        "end": 15.175
+      }
+    ]
+  },
+  "69": {
+    "poemId": 69,
+    "title": "黄鹤楼送孟浩然之广陵",
+    "lines": [
+      {
+        "index": 0,
+        "text": "故人西辞黄鹤楼，",
+        "url": "line-audios/poem-69-line-1.mp3",
+        "start": 6.77,
+        "end": 8.95
+      },
+      {
+        "index": 1,
+        "text": "烟花三月下扬州。",
+        "url": "line-audios/poem-69-line-2.mp3",
+        "start": 9.31,
+        "end": 11.63
+      },
+      {
+        "index": 2,
+        "text": "孤帆远影碧空尽，",
+        "url": "line-audios/poem-69-line-3.mp3",
+        "start": 12.39,
+        "end": 14.49
+      },
+      {
+        "index": 3,
+        "text": "唯见长江天际流。",
+        "url": "line-audios/poem-69-line-4.mp3",
+        "start": 14.91,
+        "end": 17.875
+      }
+    ]
+  },
+  "70": {
+    "poemId": 70,
+    "title": "绝句二首其一",
+    "lines": [
+      {
+        "index": 0,
+        "text": "迟日江山丽，",
+        "url": "line-audios/poem-70-line-1.mp3",
+        "start": 0.07,
+        "end": 3.235
+      },
+      {
+        "index": 1,
+        "text": "春风花草香。",
+        "url": "line-audios/poem-70-line-2.mp3",
+        "start": 5.57,
+        "end": 7.71
+      },
+      {
+        "index": 2,
+        "text": "泥融飞燕子，",
+        "url": "line-audios/poem-70-line-3.mp3",
+        "start": 7.69,
+        "end": 10.49
+      },
+      {
+        "index": 3,
+        "text": "沙暖睡鸳鸯。",
+        "url": "line-audios/poem-70-line-4.mp3",
+        "start": 10.37,
+        "end": 14.47
+      }
+    ]
+  },
+  "71": {
+    "poemId": 71,
+    "title": "绝句",
+    "lines": [
+      {
+        "index": 0,
+        "text": "两个黄鹂鸣翠柳，",
+        "url": "line-audios/poem-71-line-1.mp3",
+        "start": 5.57,
+        "end": 8.49
+      },
+      {
+        "index": 1,
+        "text": "一行白鹭上青天。",
+        "url": "line-audios/poem-71-line-2.mp3",
+        "start": 9.31,
+        "end": 12.85
+      },
+      {
+        "index": 2,
+        "text": "窗含西岭千秋雪，",
+        "url": "line-audios/poem-71-line-3.mp3",
+        "start": 14.03,
+        "end": 16.91
+      },
+      {
+        "index": 3,
+        "text": "门泊东吴万里船。",
+        "url": "line-audios/poem-71-line-4.mp3",
+        "start": 17.71,
+        "end": 21.565
+      }
+    ]
+  },
+  "72": {
+    "poemId": 72,
+    "title": "江畔独步寻花",
+    "lines": [
+      {
+        "index": 0,
+        "text": "黄师塔前江水东，",
+        "url": "line-audios/poem-72-line-1.mp3",
+        "start": 10.7,
+        "end": 13.7
+      },
+      {
+        "index": 1,
+        "text": "春光懒困倚微风。",
+        "url": "line-audios/poem-72-line-2.mp3",
+        "start": 14.44,
+        "end": 18.36
+      },
+      {
+        "index": 2,
+        "text": "桃花一簇开无主，",
+        "url": "line-audios/poem-72-line-3.mp3",
+        "start": 19.8,
+        "end": 22.9
+      },
+      {
+        "index": 3,
+        "text": "可爱深红爱浅红。",
+        "url": "line-audios/poem-72-line-4.mp3",
+        "start": 24.02,
+        "end": 29.145
+      }
+    ]
+  },
+  "73": {
+    "poemId": 73,
+    "title": "枫桥夜泊",
+    "lines": [
+      {
+        "index": 0,
+        "text": "月落乌啼霜满天，",
+        "url": "line-audios/poem-73-line-1.mp3",
+        "start": 7.99,
+        "end": 12.61
+      },
+      {
+        "index": 1,
+        "text": "江枫渔火对愁眠。",
+        "url": "line-audios/poem-73-line-2.mp3",
+        "start": 14.29,
+        "end": 19.25
+      },
+      {
+        "index": 2,
+        "text": "姑苏城外寒山寺，",
+        "url": "line-audios/poem-73-line-3.mp3",
+        "start": 22.33,
+        "end": 26.55
+      },
+      {
+        "index": 3,
+        "text": "夜半钟声到客船。",
+        "url": "line-audios/poem-73-line-4.mp3",
+        "start": 28.41,
+        "end": 35.065
+      }
+    ]
+  },
+  "74": {
+    "poemId": 74,
+    "title": "游子吟",
+    "lines": [
+      {
+        "index": 0,
+        "text": "慈母手中线，",
+        "url": "line-audios/poem-74-line-1.mp3",
+        "start": 4.65,
+        "end": 6.25
+      },
+      {
+        "index": 1,
+        "text": "游子身上衣。",
+        "url": "line-audios/poem-74-line-2.mp3",
+        "start": 6.69,
+        "end": 8.229
+      },
+      {
+        "index": 2,
+        "text": "临行密密缝，",
+        "url": "line-audios/poem-74-line-3.mp3",
+        "start": 9.01,
+        "end": 10.55
+      },
+      {
+        "index": 3,
+        "text": "意恐迟迟归。",
+        "url": "line-audios/poem-74-line-4.mp3",
+        "start": 10.93,
+        "end": 12.53
+      },
+      {
+        "index": 4,
+        "text": "谁言寸草心，",
+        "url": "line-audios/poem-74-line-5.mp3",
+        "start": 13.27,
+        "end": 14.91
+      },
+      {
+        "index": 5,
+        "text": "报得三春晖。",
+        "url": "line-audios/poem-74-line-6.mp3",
+        "start": 15.27,
+        "end": 17.395
+      }
+    ]
+  },
+  "75": {
+    "poemId": 75,
+    "title": "竹枝词",
+    "lines": [
+      {
+        "index": 0,
+        "text": "杨柳青青江水平，",
+        "url": "line-audios/poem-75-line-1.mp3",
+        "start": 10.43,
+        "end": 13.87
+      },
+      {
+        "index": 1,
+        "text": "闻郎江上唱歌声。",
+        "url": "line-audios/poem-75-line-2.mp3",
+        "start": 14.87,
+        "end": 18.77
+      },
+      {
+        "index": 2,
+        "text": "东边日出西边雨，",
+        "url": "line-audios/poem-75-line-3.mp3",
+        "start": 20.43,
+        "end": 23.55
+      },
+      {
+        "index": 3,
+        "text": "道是无晴却有晴。",
+        "url": "line-audios/poem-75-line-4.mp3",
+        "start": 24.89,
+        "end": 29.885
+      }
+    ]
+  },
+  "76": {
+    "poemId": 76,
+    "title": "乌衣巷",
+    "lines": [
+      {
+        "index": 0,
+        "text": "朱雀桥边野草花，",
+        "url": "line-audios/poem-76-line-1.mp3",
+        "start": 4.85,
+        "end": 6.97
+      },
+      {
+        "index": 1,
+        "text": "乌衣巷口夕阳斜。",
+        "url": "line-audios/poem-76-line-2.mp3",
+        "start": 7.39,
+        "end": 9.53
+      },
+      {
+        "index": 2,
+        "text": "旧时王谢堂前燕，",
+        "url": "line-audios/poem-76-line-3.mp3",
+        "start": 10.41,
+        "end": 12.51
+      },
+      {
+        "index": 3,
+        "text": "飞入寻常百姓家。",
+        "url": "line-audios/poem-76-line-4.mp3",
+        "start": 12.85,
+        "end": 15.655
+      }
+    ]
+  },
+  "77": {
+    "poemId": 77,
+    "title": "浪淘沙",
+    "lines": [
+      {
+        "index": 0,
+        "text": "九曲黄河万里沙，",
+        "url": "line-audios/poem-77-line-1.mp3",
+        "start": 9.89,
+        "end": 14.13
+      },
+      {
+        "index": 1,
+        "text": "浪淘风簸自天涯。",
+        "url": "line-audios/poem-77-line-2.mp3",
+        "start": 15.85,
+        "end": 20.11
+      },
+      {
+        "index": 2,
+        "text": "如今直上银河去，",
+        "url": "line-audios/poem-77-line-3.mp3",
+        "start": 22.13,
+        "end": 25.849
+      },
+      {
+        "index": 3,
+        "text": "同到牵牛织女家。",
+        "url": "line-audios/poem-77-line-4.mp3",
+        "start": 27.37,
+        "end": 32.515
+      }
+    ]
+  },
+  "78": {
+    "poemId": 78,
+    "title": "秋词",
+    "lines": [
+      {
+        "index": 0,
+        "text": "自古逢秋悲寂寥，",
+        "url": "line-audios/poem-78-line-1.mp3",
+        "start": 6.09,
+        "end": 8.11
+      },
+      {
+        "index": 1,
+        "text": "我言秋日胜春朝。",
+        "url": "line-audios/poem-78-line-2.mp3",
+        "start": 8.59,
+        "end": 10.73
+      },
+      {
+        "index": 2,
+        "text": "晴空一鹤排云上，",
+        "url": "line-audios/poem-78-line-3.mp3",
+        "start": 11.43,
+        "end": 13.47
+      },
+      {
+        "index": 3,
+        "text": "便引诗情到碧霄。",
+        "url": "line-audios/poem-78-line-4.mp3",
+        "start": 13.77,
+        "end": 16.405
+      }
+    ]
+  },
+  "79": {
+    "poemId": 79,
+    "title": "题都城南庄",
+    "lines": [
+      {
+        "index": 0,
+        "text": "去年今日此门中，",
+        "url": "line-audios/poem-79-line-1.mp3",
+        "start": 8.39,
+        "end": 12.19
+      },
+      {
+        "index": 1,
+        "text": "人面桃花相映红。",
+        "url": "line-audios/poem-79-line-2.mp3",
+        "start": 13.49,
+        "end": 17.63
+      },
+      {
+        "index": 2,
+        "text": "人面不知何处去，",
+        "url": "line-audios/poem-79-line-3.mp3",
+        "start": 19.93,
+        "end": 23.49
+      },
+      {
+        "index": 3,
+        "text": "桃花依旧笑春风。",
+        "url": "line-audios/poem-79-line-4.mp3",
+        "start": 25.37,
+        "end": 31.585
+      }
+    ]
+  },
+  "80": {
+    "poemId": 80,
+    "title": "清明",
+    "lines": [
+      {
+        "index": 0,
+        "text": "清明时节雨纷纷，",
+        "url": "line-audios/poem-80-line-1.mp3",
+        "start": 4.47,
+        "end": 6.55
+      },
+      {
+        "index": 1,
+        "text": "路上行人欲断魂。",
+        "url": "line-audios/poem-80-line-2.mp3",
+        "start": 6.91,
+        "end": 9.17
+      },
+      {
+        "index": 2,
+        "text": "借问酒家何处有？",
+        "url": "line-audios/poem-80-line-3.mp3",
+        "start": 10.11,
+        "end": 12.03
+      },
+      {
+        "index": 3,
+        "text": "牧童遥指杏花村。",
+        "url": "line-audios/poem-80-line-4.mp3",
+        "start": 12.87,
+        "end": 15.595
+      }
+    ]
+  },
+  "81": {
+    "poemId": 81,
+    "title": "山行",
+    "lines": [
+      {
+        "index": 0,
+        "text": "远上寒山石径斜，",
+        "url": "line-audios/poem-81-line-1.mp3",
+        "start": 8.46,
+        "end": 12.22
+      },
+      {
+        "index": 1,
+        "text": "白云生处有人家。",
+        "url": "line-audios/poem-81-line-2.mp3",
+        "start": 13.74,
+        "end": 17.9
+      },
+      {
+        "index": 2,
+        "text": "停车坐爱枫林晚，",
+        "url": "line-audios/poem-81-line-3.mp3",
+        "start": 19.68,
+        "end": 23.28
+      },
+      {
+        "index": 3,
+        "text": "霜叶红于二月花。",
+        "url": "line-audios/poem-81-line-4.mp3",
+        "start": 25.04,
+        "end": 30.785
+      }
+    ]
+  },
+  "82": {
+    "poemId": 82,
+    "title": "江南春",
+    "lines": [
+      {
+        "index": 0,
+        "text": "千里莺啼绿映红，",
+        "url": "line-audios/poem-82-line-1.mp3",
+        "start": 4.55,
+        "end": 6.61
+      },
+      {
+        "index": 1,
+        "text": "水村山郭酒旗风。",
+        "url": "line-audios/poem-82-line-2.mp3",
+        "start": 7.09,
+        "end": 9.41
+      },
+      {
+        "index": 2,
+        "text": "南朝四百八十寺，",
+        "url": "line-audios/poem-82-line-3.mp3",
+        "start": 10.13,
+        "end": 12.21
+      },
+      {
+        "index": 3,
+        "text": "多少楼台烟雨中。",
+        "url": "line-audios/poem-82-line-4.mp3",
+        "start": 12.57,
+        "end": 15.115
+      }
+    ]
+  },
+  "83": {
+    "poemId": 83,
+    "title": "泊秦淮",
+    "lines": [
+      {
+        "index": 0,
+        "text": "烟笼寒水月笼沙，",
+        "url": "line-audios/poem-83-line-1.mp3",
+        "start": 7.9,
+        "end": 12.02
+      },
+      {
+        "index": 1,
+        "text": "夜泊秦淮近酒家。",
+        "url": "line-audios/poem-83-line-2.mp3",
+        "start": 13.66,
+        "end": 18.24
+      },
+      {
+        "index": 2,
+        "text": "商女不知亡国恨，",
+        "url": "line-audios/poem-83-line-3.mp3",
+        "start": 20.28,
+        "end": 23.74
+      },
+      {
+        "index": 3,
+        "text": "隔江犹唱后庭花。",
+        "url": "line-audios/poem-83-line-4.mp3",
+        "start": 25.54,
+        "end": 31.275
+      }
+    ]
+  },
+  "84": {
+    "poemId": 84,
+    "title": "乐游原",
+    "lines": [
+      {
+        "index": 0,
+        "text": "向晚意不适，",
+        "url": "line-audios/poem-84-line-1.mp3",
+        "start": 5.29,
+        "end": 6.67
+      },
+      {
+        "index": 1,
+        "text": "驱车登古原。",
+        "url": "line-audios/poem-84-line-2.mp3",
+        "start": 6.95,
+        "end": 8.51
+      },
+      {
+        "index": 2,
+        "text": "夕阳无限好，",
+        "url": "line-audios/poem-84-line-3.mp3",
+        "start": 9.39,
+        "end": 10.89
+      },
+      {
+        "index": 3,
+        "text": "只是近黄昏。",
+        "url": "line-audios/poem-84-line-4.mp3",
+        "start": 11.35,
+        "end": 13.345
+      }
+    ]
+  },
+  "85": {
+    "poemId": 85,
+    "title": "夜雨寄北",
+    "lines": [
+      {
+        "index": 0,
+        "text": "君问归期未有期，",
+        "url": "line-audios/poem-85-line-1.mp3",
+        "start": 6.76,
+        "end": 10.12
+      },
+      {
+        "index": 1,
+        "text": "巴山夜雨涨秋池。",
+        "url": "line-audios/poem-85-line-2.mp3",
+        "start": 11.38,
+        "end": 15.14
+      },
+      {
+        "index": 2,
+        "text": "何当共剪西窗烛，",
+        "url": "line-audios/poem-85-line-3.mp3",
+        "start": 16.96,
+        "end": 19.86
+      },
+      {
+        "index": 3,
+        "text": "却话巴山夜雨时。",
+        "url": "line-audios/poem-85-line-4.mp3",
+        "start": 20.74,
+        "end": 24.275
+      }
+    ]
+  },
+  "86": {
+    "poemId": 86,
+    "title": "商山早行",
+    "lines": [
+      {
+        "index": 0,
+        "text": "晨起动征铎，",
+        "url": "line-audios/poem-86-line-1.mp3",
+        "start": 5.53,
+        "end": 7.09
+      },
+      {
+        "index": 1,
+        "text": "客行悲故乡。",
+        "url": "line-audios/poem-86-line-2.mp3",
+        "start": 7.63,
+        "end": 9.13
+      },
+      {
+        "index": 2,
+        "text": "鸡声茅店月，",
+        "url": "line-audios/poem-86-line-3.mp3",
+        "start": 9.83,
+        "end": 11.35
+      },
+      {
+        "index": 3,
+        "text": "人迹板桥霜。",
+        "url": "line-audios/poem-86-line-4.mp3",
+        "start": 11.69,
+        "end": 13.25
+      }
+    ]
+  },
+  "87": {
+    "poemId": 87,
+    "title": "元日",
+    "lines": [
+      {
+        "index": 0,
+        "text": "爆竹声中一岁除，",
+        "url": "line-audios/poem-87-line-1.mp3",
+        "start": 2.53,
+        "end": 5.69
+      },
+      {
+        "index": 1,
+        "text": "春风送暖入屠苏。",
+        "url": "line-audios/poem-87-line-2.mp3",
+        "start": 6.81,
+        "end": 10.615
+      },
+      {
+        "index": 2,
+        "text": "千门万户曈曈日，",
+        "url": "line-audios/poem-87-line-3.mp3",
+        "start": 12.84,
+        "end": 15.68
+      },
+      {
+        "index": 3,
+        "text": "总把新桃换旧符。",
+        "url": "line-audios/poem-87-line-4.mp3",
+        "start": 16.26,
+        "end": 20.315
+      }
+    ]
+  },
+  "88": {
+    "poemId": 88,
+    "title": "泊船瓜洲",
+    "lines": [
+      {
+        "index": 0,
+        "text": "京口瓜洲一水间，",
+        "url": "line-audios/poem-88-line-1.mp3",
+        "start": 6.52,
+        "end": 10.08
+      },
+      {
+        "index": 1,
+        "text": "钟山只隔数重山。",
+        "url": "line-audios/poem-88-line-2.mp3",
+        "start": 11.18,
+        "end": 15.22
+      },
+      {
+        "index": 2,
+        "text": "春风又绿江南岸，",
+        "url": "line-audios/poem-88-line-3.mp3",
+        "start": 17.18,
+        "end": 20.18
+      },
+      {
+        "index": 3,
+        "text": "明月何时照我还？",
+        "url": "line-audios/poem-88-line-4.mp3",
+        "start": 20.94,
+        "end": 25.495
+      }
+    ]
+  },
+  "89": {
+    "poemId": 89,
+    "title": "书湖阴先生壁",
+    "lines": [
+      {
+        "index": 0,
+        "text": "茅檐长扫净无苔，",
+        "url": "line-audios/poem-89-line-1.mp3",
+        "start": 5.97,
+        "end": 8.11
+      },
+      {
+        "index": 1,
+        "text": "花木成畦手自栽。",
+        "url": "line-audios/poem-89-line-2.mp3",
+        "start": 8.61,
+        "end": 10.73
+      },
+      {
+        "index": 2,
+        "text": "一水护田将绿绕，",
+        "url": "line-audios/poem-89-line-3.mp3",
+        "start": 11.37,
+        "end": 13.59
+      },
+      {
+        "index": 3,
+        "text": "两山排闼送青来。",
+        "url": "line-audios/poem-89-line-4.mp3",
+        "start": 14.05,
+        "end": 16.705
+      }
+    ]
+  },
+  "90": {
+    "poemId": 90,
+    "title": "饮湖上初晴后雨",
+    "lines": [
+      {
+        "index": 0,
+        "text": "水光潋滟晴方好，",
+        "url": "line-audios/poem-90-line-1.mp3",
+        "start": 7.51,
+        "end": 9.67
+      },
+      {
+        "index": 1,
+        "text": "山色空蒙雨亦奇。",
+        "url": "line-audios/poem-90-line-2.mp3",
+        "start": 10.15,
+        "end": 12.29
+      },
+      {
+        "index": 2,
+        "text": "欲把西湖比西子，",
+        "url": "line-audios/poem-90-line-3.mp3",
+        "start": 13.05,
+        "end": 15.15
+      },
+      {
+        "index": 3,
+        "text": "淡妆浓抹总相宜。",
+        "url": "line-audios/poem-90-line-4.mp3",
+        "start": 15.53,
+        "end": 18.325
+      }
+    ]
+  },
+  "91": {
+    "poemId": 91,
+    "title": "题西林壁",
+    "lines": [
+      {
+        "index": 0,
+        "text": "横看成岭侧成峰，",
+        "url": "line-audios/poem-91-line-1.mp3",
+        "start": 6.28,
+        "end": 10.66
+      },
+      {
+        "index": 1,
+        "text": "远近高低各不同。",
+        "url": "line-audios/poem-91-line-2.mp3",
+        "start": 11.68,
+        "end": 15.74
+      },
+      {
+        "index": 2,
+        "text": "不识庐山真面目，",
+        "url": "line-audios/poem-91-line-3.mp3",
+        "start": 17.3,
+        "end": 20.34
+      },
+      {
+        "index": 3,
+        "text": "只缘身在此山中。",
+        "url": "line-audios/poem-91-line-4.mp3",
+        "start": 21,
+        "end": 25.835
+      }
+    ]
+  },
+  "92": {
+    "poemId": 92,
+    "title": "惠崇春江晚景",
+    "lines": [
+      {
+        "index": 0,
+        "text": "竹外桃花三两枝，",
+        "url": "line-audios/poem-92-line-1.mp3",
+        "start": 9.51,
+        "end": 12.93
+      },
+      {
+        "index": 1,
+        "text": "春江水暖鸭先知。",
+        "url": "line-audios/poem-92-line-2.mp3",
+        "start": 14.09,
+        "end": 18.61
+      },
+      {
+        "index": 2,
+        "text": "蒌蒿满地芦芽短，",
+        "url": "line-audios/poem-92-line-3.mp3",
+        "start": 20.31,
+        "end": 23.75
+      },
+      {
+        "index": 3,
+        "text": "正是河豚欲上时。",
+        "url": "line-audios/poem-92-line-4.mp3",
+        "start": 25.11,
+        "end": 30.235
+      }
+    ]
+  },
+  "93": {
+    "poemId": 93,
+    "title": "六月二十七日望湖楼醉书",
+    "lines": [
+      {
+        "index": 0,
+        "text": "黑云翻墨未遮山，",
+        "url": "line-audios/poem-93-line-1.mp3",
+        "start": 13.47,
+        "end": 17.25
+      },
+      {
+        "index": 1,
+        "text": "白雨跳珠乱入船。",
+        "url": "line-audios/poem-93-line-2.mp3",
+        "start": 18.71,
+        "end": 23.055
+      },
+      {
+        "index": 2,
+        "text": "卷地风来忽吹散，",
+        "url": "line-audios/poem-93-line-3.mp3",
+        "start": 25.2,
+        "end": 28.98
+      },
+      {
+        "index": 3,
+        "text": "望湖楼下水如天。",
+        "url": "line-audios/poem-93-line-4.mp3",
+        "start": 30.8,
+        "end": 36.705
+      }
+    ]
+  },
+  "94": {
+    "poemId": 94,
+    "title": "夏日绝句",
+    "lines": [
+      {
+        "index": 0,
+        "text": "生当作人杰，",
+        "url": "line-audios/poem-94-line-1.mp3",
+        "start": 8.77,
+        "end": 11.59
+      },
+      {
+        "index": 1,
+        "text": "死亦为鬼雄。",
+        "url": "line-audios/poem-94-line-2.mp3",
+        "start": 12.97,
+        "end": 16.37
+      },
+      {
+        "index": 2,
+        "text": "至今思项羽，",
+        "url": "line-audios/poem-94-line-3.mp3",
+        "start": 16.17,
+        "end": 22.15
+      },
+      {
+        "index": 3,
+        "text": "不肯过江东。",
+        "url": "line-audios/poem-94-line-4.mp3",
+        "start": 24.03,
+        "end": 28.405
+      }
+    ]
+  },
+  "95": {
+    "poemId": 95,
+    "title": "如梦令",
+    "lines": [
+      {
+        "index": 0,
+        "text": "常记溪亭日暮，",
+        "url": "line-audios/poem-95-line-1.mp3",
+        "start": 7.31,
+        "end": 9.07
+      },
+      {
+        "index": 1,
+        "text": "沉醉不知归路。",
+        "url": "line-audios/poem-95-line-2.mp3",
+        "start": 9.43,
+        "end": 11.15
+      },
+      {
+        "index": 2,
+        "text": "兴尽晚回舟，",
+        "url": "line-audios/poem-95-line-3.mp3",
+        "start": 11.91,
+        "end": 13.43
+      },
+      {
+        "index": 3,
+        "text": "误入藕花深处。",
+        "url": "line-audios/poem-95-line-4.mp3",
+        "start": 13.73,
+        "end": 15.63
+      },
+      {
+        "index": 4,
+        "text": "争渡，",
+        "url": "line-audios/poem-95-line-5.mp3",
+        "start": 16.33,
+        "end": 17.07
+      },
+      {
+        "index": 5,
+        "text": "争渡，",
+        "url": "line-audios/poem-95-line-6.mp3",
+        "start": 17.35,
+        "end": 18.09
+      },
+      {
+        "index": 6,
+        "text": "惊起一滩鸥鹭。",
+        "url": "line-audios/poem-95-line-7.mp3",
+        "start": 18.49,
+        "end": 20.755
+      }
+    ]
+  },
+  "96": {
+    "poemId": 96,
+    "title": "示儿",
+    "lines": [
+      {
+        "index": 0,
+        "text": "死去元知万事空，",
+        "url": "line-audios/poem-96-line-1.mp3",
+        "start": 9.68,
+        "end": 14.46
+      },
+      {
+        "index": 1,
+        "text": "但悲不见九州同。",
+        "url": "line-audios/poem-96-line-2.mp3",
+        "start": 16.58,
+        "end": 22.125
+      },
+      {
+        "index": 2,
+        "text": "王师北定中原日，",
+        "url": "line-audios/poem-96-line-3.mp3",
+        "start": 24.85,
+        "end": 28.77
+      },
+      {
+        "index": 3,
+        "text": "家祭无忘告乃翁。",
+        "url": "line-audios/poem-96-line-4.mp3",
+        "start": 31.43,
+        "end": 37.875
+      }
+    ]
+  },
+  "97": {
+    "poemId": 97,
+    "title": "游山西村",
+    "lines": [
+      {
+        "index": 0,
+        "text": "莫笑农家腊酒浑，",
+        "url": "line-audios/poem-97-line-1.mp3",
+        "start": 5.76,
+        "end": 8.18
+      },
+      {
+        "index": 1,
+        "text": "丰年留客足鸡豚。",
+        "url": "line-audios/poem-97-line-2.mp3",
+        "start": 8.9,
+        "end": 11.66
+      },
+      {
+        "index": 2,
+        "text": "山重水复疑无路，",
+        "url": "line-audios/poem-97-line-3.mp3",
+        "start": 12.7,
+        "end": 15.24
+      },
+      {
+        "index": 3,
+        "text": "柳暗花明又一村。",
+        "url": "line-audios/poem-97-line-4.mp3",
+        "start": 15.58,
+        "end": 18.6
+      }
+    ]
+  },
+  "98": {
+    "poemId": 98,
+    "title": "晓出净慈寺送林子方",
+    "lines": [
+      {
+        "index": 0,
+        "text": "毕竟西湖六月中，",
+        "url": "line-audios/poem-98-line-1.mp3",
+        "start": 7.67,
+        "end": 10.97
+      },
+      {
+        "index": 1,
+        "text": "风光不与四时同。",
+        "url": "line-audios/poem-98-line-2.mp3",
+        "start": 11.91,
+        "end": 15.27
+      },
+      {
+        "index": 2,
+        "text": "接天莲叶无穷碧，",
+        "url": "line-audios/poem-98-line-3.mp3",
+        "start": 16.69,
+        "end": 19.99
+      },
+      {
+        "index": 3,
+        "text": "映日荷花别样红。",
+        "url": "line-audios/poem-98-line-4.mp3",
+        "start": 20.71,
+        "end": 24.915
+      }
+    ]
+  },
+  "99": {
+    "poemId": 99,
+    "title": "宿新市徐公店",
+    "lines": [
+      {
+        "index": 0,
+        "text": "篱落疏疏一径深，",
+        "url": "line-audios/poem-99-line-1.mp3",
+        "start": 9.06,
+        "end": 12.42
+      },
+      {
+        "index": 1,
+        "text": "树头新绿未成阴。",
+        "url": "line-audios/poem-99-line-2.mp3",
+        "start": 13.62,
+        "end": 17.2
+      },
+      {
+        "index": 2,
+        "text": "儿童急走追黄蝶，",
+        "url": "line-audios/poem-99-line-3.mp3",
+        "start": 18.7,
+        "end": 21.74
+      },
+      {
+        "index": 3,
+        "text": "飞入菜花无处寻。",
+        "url": "line-audios/poem-99-line-4.mp3",
+        "start": 23.08,
+        "end": 27.495
+      }
+    ]
+  },
+  "100": {
+    "poemId": 100,
+    "title": "春日",
+    "lines": [
+      {
+        "index": 0,
+        "text": "胜日寻芳泗水滨，",
+        "url": "line-audios/poem-100-line-1.mp3",
+        "start": 5.54,
+        "end": 8.66
+      },
+      {
+        "index": 1,
+        "text": "无边光景一时新。",
+        "url": "line-audios/poem-100-line-2.mp3",
+        "start": 9.5,
+        "end": 13.08
+      },
+      {
+        "index": 2,
+        "text": "等闲识得东风面，",
+        "url": "line-audios/poem-100-line-3.mp3",
+        "start": 14.1,
+        "end": 17.02
+      },
+      {
+        "index": 3,
+        "text": "万紫千红总是春。",
+        "url": "line-audios/poem-100-line-4.mp3",
+        "start": 17.68,
+        "end": 22.155
+      }
+    ]
+  },
+  "101": {
+    "poemId": 101,
+    "title": "登科后",
+    "lines": [
+      {
+        "index": 0,
+        "text": "昔日龌龊不足夸，",
+        "url": "line-audios/poem-101-line-1.mp3",
+        "start": 1.69,
+        "end": 3.37
+      },
+      {
+        "index": 1,
+        "text": "今朝放荡思无涯。",
+        "url": "line-audios/poem-101-line-2.mp3",
+        "start": 3.59,
+        "end": 5.33
+      },
+      {
+        "index": 2,
+        "text": "春风得意马蹄疾，",
+        "url": "line-audios/poem-101-line-3.mp3",
+        "start": 5.45,
+        "end": 7.17
+      },
+      {
+        "index": 3,
+        "text": "一日看尽长安花。",
+        "url": "line-audios/poem-101-line-4.mp3",
+        "start": 7.27,
+        "end": 9.025
+      }
+    ]
+  },
+  "102": {
+    "poemId": 102,
+    "title": "劝学",
+    "lines": [
+      {
+        "index": 0,
+        "text": "三更灯火五更鸡，",
+        "url": "line-audios/poem-102-line-1.mp3",
+        "start": 1.81,
+        "end": 3.61
+      },
+      {
+        "index": 1,
+        "text": "正是男儿读书时。",
+        "url": "line-audios/poem-102-line-2.mp3",
+        "start": 3.71,
+        "end": 5.39
+      },
+      {
+        "index": 2,
+        "text": "黑发不知勤学早，",
+        "url": "line-audios/poem-102-line-3.mp3",
+        "start": 5.57,
+        "end": 7.41
+      },
+      {
+        "index": 3,
+        "text": "白首方悔读书迟。",
+        "url": "line-audios/poem-102-line-4.mp3",
+        "start": 7.55,
+        "end": 9.325
+      }
+    ]
+  },
+  "103": {
+    "poemId": 103,
+    "title": "金缕衣",
+    "lines": [
+      {
+        "index": 0,
+        "text": "劝君莫惜金缕衣，",
+        "url": "line-audios/poem-103-line-1.mp3",
+        "start": 1.89,
+        "end": 3.67
+      },
+      {
+        "index": 1,
+        "text": "劝君惜取少年时。",
+        "url": "line-audios/poem-103-line-2.mp3",
+        "start": 3.79,
+        "end": 5.75
+      },
+      {
+        "index": 2,
+        "text": "花开堪折直须折，",
+        "url": "line-audios/poem-103-line-3.mp3",
+        "start": 5.89,
+        "end": 7.77
+      },
+      {
+        "index": 3,
+        "text": "莫待无花空折枝。",
+        "url": "line-audios/poem-103-line-4.mp3",
+        "start": 7.87,
+        "end": 9.625
+      }
+    ]
+  },
+  "104": {
+    "poemId": 104,
+    "title": "剑客",
+    "lines": [
+      {
+        "index": 0,
+        "text": "十年磨一剑，",
+        "url": "line-audios/poem-104-line-1.mp3",
+        "start": 1.45,
+        "end": 2.65
+      },
+      {
+        "index": 1,
+        "text": "霜刃未曾试。",
+        "url": "line-audios/poem-104-line-2.mp3",
+        "start": 2.87,
+        "end": 4.25
+      },
+      {
+        "index": 2,
+        "text": "今日把示君，",
+        "url": "line-audios/poem-104-line-3.mp3",
+        "start": 4.31,
+        "end": 5.61
+      },
+      {
+        "index": 3,
+        "text": "谁有不平事。",
+        "url": "line-audios/poem-104-line-4.mp3",
+        "start": 5.83,
+        "end": 7.135
+      }
+    ]
+  },
+  "105": {
+    "poemId": 105,
+    "title": "题诗后",
+    "lines": [
+      {
+        "index": 0,
+        "text": "两句三年得，",
+        "url": "line-audios/poem-105-line-1.mp3",
+        "start": 1.63,
+        "end": 2.95
+      },
+      {
+        "index": 1,
+        "text": "一吟双泪流。",
+        "url": "line-audios/poem-105-line-2.mp3",
+        "start": 2.95,
+        "end": 4.19
+      },
+      {
+        "index": 2,
+        "text": "知音如不赏，",
+        "url": "line-audios/poem-105-line-3.mp3",
+        "start": 4.35,
+        "end": 5.55
+      },
+      {
+        "index": 3,
+        "text": "归卧故山秋。",
+        "url": "line-audios/poem-105-line-4.mp3",
+        "start": 5.75,
+        "end": 7.045
+      }
+    ]
+  },
+  "106": {
+    "poemId": 106,
+    "title": "农家",
+    "lines": [
+      {
+        "index": 0,
+        "text": "半夜呼儿趁晓耕，",
+        "url": "line-audios/poem-106-line-1.mp3",
+        "start": 1.57,
+        "end": 3.31
+      },
+      {
+        "index": 1,
+        "text": "羸牛无力渐艰行。",
+        "url": "line-audios/poem-106-line-2.mp3",
+        "start": 3.47,
+        "end": 5.27
+      },
+      {
+        "index": 2,
+        "text": "时人不识农家苦，",
+        "url": "line-audios/poem-106-line-3.mp3",
+        "start": 5.43,
+        "end": 7.11
+      },
+      {
+        "index": 3,
+        "text": "将谓田中谷自生。",
+        "url": "line-audios/poem-106-line-4.mp3",
+        "start": 7.29,
+        "end": 9.145
+      }
+    ]
+  },
+  "107": {
+    "poemId": 107,
+    "title": "蚕妇",
+    "lines": [
+      {
+        "index": 0,
+        "text": "昨日入城市，",
+        "url": "line-audios/poem-107-line-1.mp3",
+        "start": 4.45,
+        "end": 5.95
+      },
+      {
+        "index": 1,
+        "text": "归来泪满巾。",
+        "url": "line-audios/poem-107-line-2.mp3",
+        "start": 6.25,
+        "end": 7.67
+      },
+      {
+        "index": 2,
+        "text": "遍身罗绮者，",
+        "url": "line-audios/poem-107-line-3.mp3",
+        "start": 8.49,
+        "end": 9.99
+      },
+      {
+        "index": 3,
+        "text": "不是养蚕人。",
+        "url": "line-audios/poem-107-line-4.mp3",
+        "start": 10.27,
+        "end": 12.265
+      }
+    ]
+  },
+  "108": {
+    "poemId": 108,
+    "title": "陶者",
+    "lines": [
+      {
+        "index": 0,
+        "text": "陶尽门前土，",
+        "url": "line-audios/poem-108-line-1.mp3",
+        "start": 6.47,
+        "end": 9.43
+      },
+      {
+        "index": 1,
+        "text": "屋上无片瓦。",
+        "url": "line-audios/poem-108-line-2.mp3",
+        "start": 10.83,
+        "end": 14.09
+      },
+      {
+        "index": 2,
+        "text": "十指不沾泥，",
+        "url": "line-audios/poem-108-line-3.mp3",
+        "start": 16.11,
+        "end": 19.11
+      },
+      {
+        "index": 3,
+        "text": "鳞鳞居大厦。",
+        "url": "line-audios/poem-108-line-4.mp3",
+        "start": 20.75,
+        "end": 24.535
+      }
+    ]
+  },
+  "109": {
+    "poemId": 109,
+    "title": "乡村四月",
+    "lines": [
+      {
+        "index": 0,
+        "text": "绿遍山原白满川，",
+        "url": "line-audios/poem-109-line-1.mp3",
+        "start": 8.1,
+        "end": 11.58
+      },
+      {
+        "index": 1,
+        "text": "子规声里雨如烟。",
+        "url": "line-audios/poem-109-line-2.mp3",
+        "start": 12.94,
+        "end": 16.54
+      },
+      {
+        "index": 2,
+        "text": "乡村四月闲人少，",
+        "url": "line-audios/poem-109-line-3.mp3",
+        "start": 18.2,
+        "end": 21.44
+      },
+      {
+        "index": 3,
+        "text": "才了蚕桑又插田。",
+        "url": "line-audios/poem-109-line-4.mp3",
+        "start": 22.68,
+        "end": 26.925
+      }
+    ]
+  },
+  "110": {
+    "poemId": 110,
+    "title": "约客",
+    "lines": [
+      {
+        "index": 0,
+        "text": "黄梅时节家家雨，",
+        "url": "line-audios/poem-110-line-1.mp3",
+        "start": 7.29,
+        "end": 10.81
+      },
+      {
+        "index": 1,
+        "text": "青草池塘处处蛙。",
+        "url": "line-audios/poem-110-line-2.mp3",
+        "start": 12.45,
+        "end": 16.37
+      },
+      {
+        "index": 2,
+        "text": "有约不来过夜半，",
+        "url": "line-audios/poem-110-line-3.mp3",
+        "start": 18.09,
+        "end": 21.57
+      },
+      {
+        "index": 3,
+        "text": "闲敲棋子落灯花。",
+        "url": "line-audios/poem-110-line-4.mp3",
+        "start": 23.21,
+        "end": 28.105
+      }
+    ]
+  },
+  "111": {
+    "poemId": 111,
+    "title": "秋夕",
+    "lines": [
+      {
+        "index": 0,
+        "text": "银烛秋光冷画屏，",
+        "url": "line-audios/poem-111-line-1.mp3",
+        "start": 4.63,
+        "end": 7.75
+      },
+      {
+        "index": 1,
+        "text": "轻罗小扇扑流萤。",
+        "url": "line-audios/poem-111-line-2.mp3",
+        "start": 8.69,
+        "end": 11.87
+      },
+      {
+        "index": 2,
+        "text": "天阶夜色凉如水，",
+        "url": "line-audios/poem-111-line-3.mp3",
+        "start": 13.51,
+        "end": 16.17
+      },
+      {
+        "index": 3,
+        "text": "卧看牵牛织女星。",
+        "url": "line-audios/poem-111-line-4.mp3",
+        "start": 16.95,
+        "end": 20.635
+      }
+    ]
+  },
+  "112": {
+    "poemId": 112,
+    "title": "赤壁",
+    "lines": [
+      {
+        "index": 0,
+        "text": "折戟沉沙铁未销，",
+        "url": "line-audios/poem-112-line-1.mp3",
+        "start": 7.66,
+        "end": 11.44
+      },
+      {
+        "index": 1,
+        "text": "自将磨洗认前朝。",
+        "url": "line-audios/poem-112-line-2.mp3",
+        "start": 13.22,
+        "end": 17.42
+      },
+      {
+        "index": 2,
+        "text": "东风不与周郎便，",
+        "url": "line-audios/poem-112-line-3.mp3",
+        "start": 19.56,
+        "end": 22.98
+      },
+      {
+        "index": 3,
+        "text": "铜雀春深锁二乔。",
+        "url": "line-audios/poem-112-line-4.mp3",
+        "start": 24.5,
+        "end": 30.185
+      }
+    ]
+  },
+  "113": {
+    "poemId": 113,
+    "title": "赠别",
+    "lines": [
+      {
+        "index": 0,
+        "text": "多情却似总无情，",
+        "url": "line-audios/poem-113-line-1.mp3",
+        "start": 2.19,
+        "end": 4.15
+      },
+      {
+        "index": 1,
+        "text": "唯觉樽前笑不成。",
+        "url": "line-audios/poem-113-line-2.mp3",
+        "start": 4.41,
+        "end": 6.47
+      },
+      {
+        "index": 2,
+        "text": "蜡烛有心还惜别，",
+        "url": "line-audios/poem-113-line-3.mp3",
+        "start": 6.65,
+        "end": 8.55
+      },
+      {
+        "index": 3,
+        "text": "替人垂泪到天明。",
+        "url": "line-audios/poem-113-line-4.mp3",
+        "start": 8.73,
+        "end": 10.675
+      }
+    ]
+  },
+  "114": {
+    "poemId": 114,
+    "title": "寄扬州韩绰判官",
+    "lines": [
+      {
+        "index": 0,
+        "text": "青山隐隐水迢迢，",
+        "url": "line-audios/poem-114-line-1.mp3",
+        "start": 10.15,
+        "end": 14.05
+      },
+      {
+        "index": 1,
+        "text": "秋尽江南草未凋。",
+        "url": "line-audios/poem-114-line-2.mp3",
+        "start": 15.77,
+        "end": 20.21
+      },
+      {
+        "index": 2,
+        "text": "二十四桥明月夜，",
+        "url": "line-audios/poem-114-line-3.mp3",
+        "start": 22.31,
+        "end": 25.77
+      },
+      {
+        "index": 3,
+        "text": "玉人何处教吹箫。",
+        "url": "line-audios/poem-114-line-4.mp3",
+        "start": 27.43,
+        "end": 33.605
+      }
+    ]
+  },
+  "115": {
+    "poemId": 115,
+    "title": "嫦娥",
+    "lines": [
+      {
+        "index": 0,
+        "text": "云母屏风烛影深，",
+        "url": "line-audios/poem-115-line-1.mp3",
+        "start": 7.02,
+        "end": 11.4
+      },
+      {
+        "index": 1,
+        "text": "长河渐落晓星沉。",
+        "url": "line-audios/poem-115-line-2.mp3",
+        "start": 12.92,
+        "end": 18.345
+      },
+      {
+        "index": 2,
+        "text": "嫦娥应悔偷灵药，",
+        "url": "line-audios/poem-115-line-3.mp3",
+        "start": 20.65,
+        "end": 23.93
+      },
+      {
+        "index": 3,
+        "text": "碧海青天夜夜心。",
+        "url": "line-audios/poem-115-line-4.mp3",
+        "start": 25.07,
+        "end": 30.865
+      }
+    ]
+  },
+  "116": {
+    "poemId": 116,
+    "title": "无题",
+    "lines": [
+      {
+        "index": 0,
+        "text": "相见时难别亦难，",
+        "url": "line-audios/poem-116-line-1.mp3",
+        "start": 2.57,
+        "end": 4.51
+      },
+      {
+        "index": 1,
+        "text": "东风无力百花残。",
+        "url": "line-audios/poem-116-line-2.mp3",
+        "start": 4.67,
+        "end": 6.59
+      },
+      {
+        "index": 2,
+        "text": "春蚕到死丝方尽，",
+        "url": "line-audios/poem-116-line-3.mp3",
+        "start": 6.83,
+        "end": 8.85
+      },
+      {
+        "index": 3,
+        "text": "蜡炬成灰泪始干。",
+        "url": "line-audios/poem-116-line-4.mp3",
+        "start": 9.05,
+        "end": 11.065
+      }
+    ]
+  },
+  "117": {
+    "poemId": 117,
+    "title": "霜月",
+    "lines": [
+      {
+        "index": 0,
+        "text": "初闻征雁已无蝉，",
+        "url": "line-audios/poem-117-line-1.mp3",
+        "start": 7.47,
+        "end": 11.57
+      },
+      {
+        "index": 1,
+        "text": "百尺楼高水接天。",
+        "url": "line-audios/poem-117-line-2.mp3",
+        "start": 13.25,
+        "end": 17.55
+      },
+      {
+        "index": 2,
+        "text": "青女素娥俱耐冷，",
+        "url": "line-audios/poem-117-line-3.mp3",
+        "start": 19.57,
+        "end": 23.47
+      },
+      {
+        "index": 3,
+        "text": "月中霜里斗婵娟。",
+        "url": "line-audios/poem-117-line-4.mp3",
+        "start": 25.43,
+        "end": 31.005
+      }
+    ]
+  },
+  "118": {
+    "poemId": 118,
+    "title": "贾生",
+    "lines": [
+      {
+        "index": 0,
+        "text": "宣室求贤访逐臣，",
+        "url": "line-audios/poem-118-line-1.mp3",
+        "start": 4.73,
+        "end": 6.91
+      },
+      {
+        "index": 1,
+        "text": "贾生才调更无伦。",
+        "url": "line-audios/poem-118-line-2.mp3",
+        "start": 7.33,
+        "end": 9.41
+      },
+      {
+        "index": 2,
+        "text": "可怜夜半虚前席，",
+        "url": "line-audios/poem-118-line-3.mp3",
+        "start": 10.29,
+        "end": 12.27
+      },
+      {
+        "index": 3,
+        "text": "不问苍生问鬼神。",
+        "url": "line-audios/poem-118-line-4.mp3",
+        "start": 12.73,
+        "end": 15.385
+      }
+    ]
+  },
+  "119": {
+    "poemId": 119,
+    "title": "逢雪宿芙蓉山主人",
+    "lines": [
+      {
+        "index": 0,
+        "text": "日暮苍山远，",
+        "url": "line-audios/poem-119-line-1.mp3",
+        "start": 10.18,
+        "end": 12.96
+      },
+      {
+        "index": 1,
+        "text": "天寒白屋贫。",
+        "url": "line-audios/poem-119-line-2.mp3",
+        "start": 14.62,
+        "end": 17.92
+      },
+      {
+        "index": 2,
+        "text": "柴门闻犬吠，",
+        "url": "line-audios/poem-119-line-3.mp3",
+        "start": 20.06,
+        "end": 23.06
+      },
+      {
+        "index": 3,
+        "text": "风雪夜归人。",
+        "url": "line-audios/poem-119-line-4.mp3",
+        "start": 24.72,
+        "end": 29.575
+      }
+    ]
+  },
+  "120": {
+    "poemId": 120,
+    "title": "送灵澈上人",
+    "lines": [
+      {
+        "index": 0,
+        "text": "苍苍竹林寺，",
+        "url": "line-audios/poem-120-line-1.mp3",
+        "start": 10.5,
+        "end": 13.42
+      },
+      {
+        "index": 1,
+        "text": "杳杳钟声晚。",
+        "url": "line-audios/poem-120-line-2.mp3",
+        "start": 14.72,
+        "end": 17.9
+      },
+      {
+        "index": 2,
+        "text": "荷笠带斜阳，",
+        "url": "line-audios/poem-120-line-3.mp3",
+        "start": 19.88,
+        "end": 22.74
+      },
+      {
+        "index": 3,
+        "text": "青山独归远。",
+        "url": "line-audios/poem-120-line-4.mp3",
+        "start": 24.32,
+        "end": 28.445
+      }
+    ]
+  },
+  "121": {
+    "poemId": 121,
+    "title": "送上人",
+    "lines": [
+      {
+        "index": 0,
+        "text": "孤云将野鹤，",
+        "url": "line-audios/poem-121-line-1.mp3",
+        "start": 5.57,
+        "end": 7.09
+      },
+      {
+        "index": 1,
+        "text": "岂向人间住。",
+        "url": "line-audios/poem-121-line-2.mp3",
+        "start": 7.51,
+        "end": 9.05
+      },
+      {
+        "index": 2,
+        "text": "莫买沃洲山，",
+        "url": "line-audios/poem-121-line-3.mp3",
+        "start": 9.75,
+        "end": 11.07
+      },
+      {
+        "index": 3,
+        "text": "时人已知处。",
+        "url": "line-audios/poem-121-line-4.mp3",
+        "start": 11.47,
+        "end": 13.405
+      }
+    ]
+  },
+  "122": {
+    "poemId": 122,
+    "title": "渡汉江",
+    "lines": [
+      {
+        "index": 0,
+        "text": "岭外音书断，",
+        "url": "line-audios/poem-122-line-1.mp3",
+        "start": 4.83,
+        "end": 6.31
+      },
+      {
+        "index": 1,
+        "text": "经冬复历春。",
+        "url": "line-audios/poem-122-line-2.mp3",
+        "start": 6.65,
+        "end": 8.21
+      },
+      {
+        "index": 2,
+        "text": "近乡情更怯，",
+        "url": "line-audios/poem-122-line-3.mp3",
+        "start": 9.01,
+        "end": 10.53
+      },
+      {
+        "index": 3,
+        "text": "不敢问来人。",
+        "url": "line-audios/poem-122-line-4.mp3",
+        "start": 10.83,
+        "end": 12.685
+      }
+    ]
+  },
+  "123": {
+    "poemId": 123,
+    "title": "杂诗",
+    "lines": [
+      {
+        "index": 0,
+        "text": "君自故乡来，",
+        "url": "line-audios/poem-123-line-1.mp3",
+        "start": 9.01,
+        "end": 11.49
+      },
+      {
+        "index": 1,
+        "text": "应知故乡事。",
+        "url": "line-audios/poem-123-line-2.mp3",
+        "start": 12.49,
+        "end": 15.31
+      },
+      {
+        "index": 2,
+        "text": "来日绮窗前，",
+        "url": "line-audios/poem-123-line-3.mp3",
+        "start": 16.63,
+        "end": 19.25
+      },
+      {
+        "index": 3,
+        "text": "寒梅著花未。",
+        "url": "line-audios/poem-123-line-4.mp3",
+        "start": 20.35,
+        "end": 23.845
+      }
+    ]
+  },
+  "124": {
+    "poemId": 124,
+    "title": "送别",
+    "lines": [
+      {
+        "index": 0,
+        "text": "山中相送罢，",
+        "url": "line-audios/poem-124-line-1.mp3",
+        "start": 2.39,
+        "end": 3.91
+      },
+      {
+        "index": 1,
+        "text": "日暮掩柴扉。",
+        "url": "line-audios/poem-124-line-2.mp3",
+        "start": 4.05,
+        "end": 5.45
+      },
+      {
+        "index": 2,
+        "text": "春草明年绿，",
+        "url": "line-audios/poem-124-line-3.mp3",
+        "start": 5.59,
+        "end": 7.11
+      },
+      {
+        "index": 3,
+        "text": "王孙归不归。",
+        "url": "line-audios/poem-124-line-4.mp3",
+        "start": 7.17,
+        "end": 8.605
+      }
+    ]
+  },
+  "125": {
+    "poemId": 125,
+    "title": "九月九日忆山东兄弟",
+    "lines": [
+      {
+        "index": 0,
+        "text": "独在异乡为异客，",
+        "url": "line-audios/poem-125-line-1.mp3",
+        "start": 8.9,
+        "end": 12.36
+      },
+      {
+        "index": 1,
+        "text": "每逢佳节倍思亲。",
+        "url": "line-audios/poem-125-line-2.mp3",
+        "start": 13.54,
+        "end": 17.38
+      },
+      {
+        "index": 2,
+        "text": "遥知兄弟登高处，",
+        "url": "line-audios/poem-125-line-3.mp3",
+        "start": 19.06,
+        "end": 21.86
+      },
+      {
+        "index": 3,
+        "text": "遍插茱萸少一人。",
+        "url": "line-audios/poem-125-line-4.mp3",
+        "start": 22.82,
+        "end": 26.815
+      }
+    ]
+  },
+  "126": {
+    "poemId": 126,
+    "title": "鸟鸣涧",
+    "lines": [
+      {
+        "index": 0,
+        "text": "人闲桂花落，",
+        "url": "line-audios/poem-126-line-1.mp3",
+        "start": 4.11,
+        "end": 6.31
+      },
+      {
+        "index": 1,
+        "text": "夜静春山空。",
+        "url": "line-audios/poem-126-line-2.mp3",
+        "start": 6.77,
+        "end": 9.53
+      },
+      {
+        "index": 2,
+        "text": "月出惊山鸟，",
+        "url": "line-audios/poem-126-line-3.mp3",
+        "start": 11.05,
+        "end": 13.35
+      },
+      {
+        "index": 3,
+        "text": "时鸣春涧中。",
+        "url": "line-audios/poem-126-line-4.mp3",
+        "start": 14.35,
+        "end": 17.545
+      }
+    ]
+  },
+  "127": {
+    "poemId": 127,
+    "title": "竹里馆",
+    "lines": [
+      {
+        "index": 0,
+        "text": "独坐幽篁里，",
+        "url": "line-audios/poem-127-line-1.mp3",
+        "start": 4.19,
+        "end": 6.67
+      },
+      {
+        "index": 1,
+        "text": "弹琴复长啸。",
+        "url": "line-audios/poem-127-line-2.mp3",
+        "start": 7.37,
+        "end": 10.19
+      },
+      {
+        "index": 2,
+        "text": "深林人不知，",
+        "url": "line-audios/poem-127-line-3.mp3",
+        "start": 12.25,
+        "end": 14.61
+      },
+      {
+        "index": 3,
+        "text": "明月来相照。",
+        "url": "line-audios/poem-127-line-4.mp3",
+        "start": 15.67,
+        "end": 19.345
+      }
+    ]
+  },
+  "128": {
+    "poemId": 128,
+    "title": "送元二使安西",
+    "lines": [
+      {
+        "index": 0,
+        "text": "渭城朝雨浥轻尘，",
+        "url": "line-audios/poem-128-line-1.mp3",
+        "start": 6.73,
+        "end": 9.97
+      },
+      {
+        "index": 1,
+        "text": "客舍青青柳色新。",
+        "url": "line-audios/poem-128-line-2.mp3",
+        "start": 11.57,
+        "end": 15.235
+      },
+      {
+        "index": 2,
+        "text": "劝君更尽一杯酒，",
+        "url": "line-audios/poem-128-line-3.mp3",
+        "start": 17.16,
+        "end": 20.04
+      },
+      {
+        "index": 3,
+        "text": "西出阳关无故人。",
+        "url": "line-audios/poem-128-line-4.mp3",
+        "start": 21.46,
+        "end": 25.215
+      }
+    ]
+  },
+  "129": {
+    "poemId": 129,
+    "title": "山中",
+    "lines": [
+      {
+        "index": 0,
+        "text": "荆溪白石出，",
+        "url": "line-audios/poem-129-line-1.mp3",
+        "start": 0.03,
+        "end": 3.91
+      },
+      {
+        "index": 1,
+        "text": "天寒红叶稀。",
+        "url": "line-audios/poem-129-line-2.mp3",
+        "start": 4.13,
+        "end": 5.63
+      },
+      {
+        "index": 2,
+        "text": "山路元无雨，",
+        "url": "line-audios/poem-129-line-3.mp3",
+        "start": 5.79,
+        "end": 7.23
+      },
+      {
+        "index": 3,
+        "text": "空翠湿人衣。",
+        "url": "line-audios/poem-129-line-4.mp3",
+        "start": 7.39,
+        "end": 8.755
+      }
+    ]
+  },
+  "130": {
+    "poemId": 130,
+    "title": "画",
+    "lines": [
+      {
+        "index": 0,
+        "text": "远看山有色，",
+        "url": "line-audios/poem-130-line-1.mp3",
+        "start": 3.91,
+        "end": 6.07
+      },
+      {
+        "index": 1,
+        "text": "近听水无声。",
+        "url": "line-audios/poem-130-line-2.mp3",
+        "start": 7.11,
+        "end": 9.95
+      },
+      {
+        "index": 2,
+        "text": "春去花还在，",
+        "url": "line-audios/poem-130-line-3.mp3",
+        "start": 11.59,
+        "end": 13.77
+      },
+      {
+        "index": 3,
+        "text": "人来鸟不惊。",
+        "url": "line-audios/poem-130-line-4.mp3",
+        "start": 14.85,
+        "end": 17.785
+      }
+    ]
+  },
+  "131": {
+    "poemId": 131,
+    "title": "独坐敬亭山",
+    "lines": [
+      {
+        "index": 0,
+        "text": "众鸟高飞尽，",
+        "url": "line-audios/poem-131-line-1.mp3",
+        "start": 5.09,
+        "end": 6.67
+      },
+      {
+        "index": 1,
+        "text": "孤云独去闲。",
+        "url": "line-audios/poem-131-line-2.mp3",
+        "start": 6.99,
+        "end": 8.51
+      },
+      {
+        "index": 2,
+        "text": "相看两不厌，",
+        "url": "line-audios/poem-131-line-3.mp3",
+        "start": 9.39,
+        "end": 10.71
+      },
+      {
+        "index": 3,
+        "text": "只有敬亭山。",
+        "url": "line-audios/poem-131-line-4.mp3",
+        "start": 11.05,
+        "end": 13.045
+      }
+    ]
+  },
+  "132": {
+    "poemId": 132,
+    "title": "秋浦歌",
+    "lines": [
+      {
+        "index": 0,
+        "text": "白发三千丈，",
+        "url": "line-audios/poem-132-line-1.mp3",
+        "start": 1.69,
+        "end": 3.07
+      },
+      {
+        "index": 1,
+        "text": "缘愁似个长。",
+        "url": "line-audios/poem-132-line-2.mp3",
+        "start": 3.19,
+        "end": 4.49
+      },
+      {
+        "index": 2,
+        "text": "不知明镜里，",
+        "url": "line-audios/poem-132-line-3.mp3",
+        "start": 4.65,
+        "end": 5.91
+      },
+      {
+        "index": 3,
+        "text": "何处得秋霜。",
+        "url": "line-audios/poem-132-line-4.mp3",
+        "start": 5.95,
+        "end": 7.195
+      }
+    ]
+  },
+  "133": {
+    "poemId": 133,
+    "title": "夜宿山寺",
+    "lines": [
+      {
+        "index": 0,
+        "text": "危楼高百尺，",
+        "url": "line-audios/poem-133-line-1.mp3",
+        "start": 7.97,
+        "end": 10.59
+      },
+      {
+        "index": 1,
+        "text": "手可摘星辰。",
+        "url": "line-audios/poem-133-line-2.mp3",
+        "start": 11.81,
+        "end": 14.89
+      },
+      {
+        "index": 2,
+        "text": "不敢高声语，",
+        "url": "line-audios/poem-133-line-3.mp3",
+        "start": 16.549,
+        "end": 18.95
+      },
+      {
+        "index": 3,
+        "text": "恐惊天上人。",
+        "url": "line-audios/poem-133-line-4.mp3",
+        "start": 20.43,
+        "end": 24.465
+      }
+    ]
+  },
+  "134": {
+    "poemId": 134,
+    "title": "峨眉山月歌",
+    "lines": [
+      {
+        "index": 0,
+        "text": "峨眉山月半轮秋，",
+        "url": "line-audios/poem-134-line-1.mp3",
+        "start": 8.33,
+        "end": 11.81
+      },
+      {
+        "index": 1,
+        "text": "影入平羌江水流。",
+        "url": "line-audios/poem-134-line-2.mp3",
+        "start": 13.19,
+        "end": 17.07
+      },
+      {
+        "index": 2,
+        "text": "夜发清溪向三峡，",
+        "url": "line-audios/poem-134-line-3.mp3",
+        "start": 19.07,
+        "end": 22.69
+      },
+      {
+        "index": 3,
+        "text": "思君不见下渝州。",
+        "url": "line-audios/poem-134-line-4.mp3",
+        "start": 24.289,
+        "end": 30.195
+      }
+    ]
+  },
+  "135": {
+    "poemId": 135,
+    "title": "山中问答",
+    "lines": [
+      {
+        "index": 0,
+        "text": "问余何意栖碧山，",
+        "url": "line-audios/poem-135-line-1.mp3",
+        "start": 0.45,
+        "end": 3.43
+      },
+      {
+        "index": 1,
+        "text": "笑而不答心自闲。",
+        "url": "line-audios/poem-135-line-2.mp3",
+        "start": 3.65,
+        "end": 5.39
+      },
+      {
+        "index": 2,
+        "text": "桃花流水窅然去，",
+        "url": "line-audios/poem-135-line-3.mp3",
+        "start": 5.55,
+        "end": 7.35
+      },
+      {
+        "index": 3,
+        "text": "别有天地非人间。",
+        "url": "line-audios/poem-135-line-4.mp3",
+        "start": 7.45,
+        "end": 9.205
+      }
+    ]
+  },
+  "136": {
+    "poemId": 136,
+    "title": "客中行",
+    "lines": [
+      {
+        "index": 0,
+        "text": "兰陵美酒郁金香，",
+        "url": "line-audios/poem-136-line-1.mp3",
+        "start": 1.67,
+        "end": 3.31
+      },
+      {
+        "index": 1,
+        "text": "玉碗盛来琥珀光。",
+        "url": "line-audios/poem-136-line-2.mp3",
+        "start": 3.53,
+        "end": 5.33
+      },
+      {
+        "index": 2,
+        "text": "但使主人能醉客，",
+        "url": "line-audios/poem-136-line-3.mp3",
+        "start": 5.43,
+        "end": 7.17
+      },
+      {
+        "index": 3,
+        "text": "不知何处是他乡。",
+        "url": "line-audios/poem-136-line-4.mp3",
+        "start": 7.27,
+        "end": 8.965
+      }
+    ]
+  },
+  "137": {
+    "poemId": 137,
+    "title": "春夜洛城闻笛",
+    "lines": [
+      {
+        "index": 0,
+        "text": "谁家玉笛暗飞声，",
+        "url": "line-audios/poem-137-line-1.mp3",
+        "start": 9.47,
+        "end": 13.43
+      },
+      {
+        "index": 1,
+        "text": "散入春风满洛城。",
+        "url": "line-audios/poem-137-line-2.mp3",
+        "start": 14.97,
+        "end": 19.565
+      },
+      {
+        "index": 2,
+        "text": "此夜曲中闻折柳，",
+        "url": "line-audios/poem-137-line-3.mp3",
+        "start": 21.66,
+        "end": 25.42
+      },
+      {
+        "index": 3,
+        "text": "何人不起故园情。",
+        "url": "line-audios/poem-137-line-4.mp3",
+        "start": 27.84,
+        "end": 34.075
+      }
+    ]
+  },
+  "138": {
+    "poemId": 138,
+    "title": "逢入京使",
+    "lines": [
+      {
+        "index": 0,
+        "text": "故园东望路漫漫，",
+        "url": "line-audios/poem-138-line-1.mp3",
+        "start": 5.07,
+        "end": 7.09
+      },
+      {
+        "index": 1,
+        "text": "双袖龙钟泪不干。",
+        "url": "line-audios/poem-138-line-2.mp3",
+        "start": 7.47,
+        "end": 9.53
+      },
+      {
+        "index": 2,
+        "text": "马上相逢无纸笔，",
+        "url": "line-audios/poem-138-line-3.mp3",
+        "start": 10.35,
+        "end": 12.45
+      },
+      {
+        "index": 3,
+        "text": "凭君传语报平安。",
+        "url": "line-audios/poem-138-line-4.mp3",
+        "start": 12.93,
+        "end": 15.715
+      }
+    ]
+  },
+  "139": {
+    "poemId": 139,
+    "title": "白雪歌送武判官归京",
+    "lines": [
+      {
+        "index": 0,
+        "text": "北风卷地白草折，",
+        "url": "line-audios/poem-139-line-1.mp3",
+        "start": 12.13,
+        "end": 16.45
+      },
+      {
+        "index": 1,
+        "text": "胡天八月即飞雪。",
+        "url": "line-audios/poem-139-line-2.mp3",
+        "start": 18.27,
+        "end": 23.245
+      },
+      {
+        "index": 2,
+        "text": "忽如一夜春风来，",
+        "url": "line-audios/poem-139-line-3.mp3",
+        "start": 25.31,
+        "end": 29.01
+      },
+      {
+        "index": 3,
+        "text": "千树万树梨花开。",
+        "url": "line-audios/poem-139-line-4.mp3",
+        "start": 30.59,
+        "end": 35.805
+      }
+    ]
+  },
+  "140": {
+    "poemId": 140,
+    "title": "别董大",
+    "lines": [
+      {
+        "index": 0,
+        "text": "千里黄云白日曛，",
+        "url": "line-audios/poem-140-line-1.mp3",
+        "start": 7.13,
+        "end": 10.45
+      },
+      {
+        "index": 1,
+        "text": "北风吹雁雪纷纷。",
+        "url": "line-audios/poem-140-line-2.mp3",
+        "start": 11.53,
+        "end": 15.71
+      },
+      {
+        "index": 2,
+        "text": "莫愁前路无知己，",
+        "url": "line-audios/poem-140-line-3.mp3",
+        "start": 17.27,
+        "end": 20.19
+      },
+      {
+        "index": 3,
+        "text": "天下谁人不识君。",
+        "url": "line-audios/poem-140-line-4.mp3",
+        "start": 21.13,
+        "end": 26.285
+      }
+    ]
+  },
+  "141": {
+    "poemId": 141,
+    "title": "塞下曲",
+    "lines": [
+      {
+        "index": 0,
+        "text": "月黑雁飞高，",
+        "url": "line-audios/poem-141-line-1.mp3",
+        "start": 4.73,
+        "end": 6.25
+      },
+      {
+        "index": 1,
+        "text": "单于夜遁逃。",
+        "url": "line-audios/poem-141-line-2.mp3",
+        "start": 6.63,
+        "end": 8.21
+      },
+      {
+        "index": 2,
+        "text": "欲将轻骑逐，",
+        "url": "line-audios/poem-141-line-3.mp3",
+        "start": 8.97,
+        "end": 10.59
+      },
+      {
+        "index": 3,
+        "text": "大雪满弓刀。",
+        "url": "line-audios/poem-141-line-4.mp3",
+        "start": 10.99,
+        "end": 13.015
+      }
+    ]
+  },
+  "142": {
+    "poemId": 142,
+    "title": "塞下曲其二",
+    "lines": [
+      {
+        "index": 0,
+        "text": "林暗草惊风，",
+        "url": "line-audios/poem-142-line-1.mp3",
+        "start": 0,
+        "end": 1.87
+      },
+      {
+        "index": 1,
+        "text": "将军夜引弓。",
+        "url": "line-audios/poem-142-line-2.mp3",
+        "start": 1.67,
+        "end": 4.49
+      },
+      {
+        "index": 2,
+        "text": "平明寻白羽，",
+        "url": "line-audios/poem-142-line-3.mp3",
+        "start": 5.03,
+        "end": 9.43
+      },
+      {
+        "index": 3,
+        "text": "没在石棱中。",
+        "url": "line-audios/poem-142-line-4.mp3",
+        "start": 9.35,
+        "end": 12.29
+      }
+    ]
+  },
+  "143": {
+    "poemId": 143,
+    "title": "寒食",
+    "lines": [
+      {
+        "index": 0,
+        "text": "春城无处不飞花，",
+        "url": "line-audios/poem-143-line-1.mp3",
+        "start": 8.39,
+        "end": 12.43
+      },
+      {
+        "index": 1,
+        "text": "寒食东风御柳斜。",
+        "url": "line-audios/poem-143-line-2.mp3",
+        "start": 13.93,
+        "end": 18.745
+      },
+      {
+        "index": 2,
+        "text": "日暮汉宫传蜡烛，",
+        "url": "line-audios/poem-143-line-3.mp3",
+        "start": 20.86,
+        "end": 24.58
+      },
+      {
+        "index": 3,
+        "text": "轻烟散入五侯家。",
+        "url": "line-audios/poem-143-line-4.mp3",
+        "start": 26.38,
+        "end": 31.645
+      }
+    ]
+  },
+  "144": {
+    "poemId": 144,
+    "title": "滁州西涧",
+    "lines": [
+      {
+        "index": 0,
+        "text": "独怜幽草涧边生，",
+        "url": "line-audios/poem-144-line-1.mp3",
+        "start": 5.17,
+        "end": 7.27
+      },
+      {
+        "index": 1,
+        "text": "上有黄鹂深树鸣。",
+        "url": "line-audios/poem-144-line-2.mp3",
+        "start": 7.77,
+        "end": 9.95
+      },
+      {
+        "index": 2,
+        "text": "春潮带雨晚来急，",
+        "url": "line-audios/poem-144-line-3.mp3",
+        "start": 10.75,
+        "end": 12.75
+      },
+      {
+        "index": 3,
+        "text": "野渡无人舟自横。",
+        "url": "line-audios/poem-144-line-4.mp3",
+        "start": 13.15,
+        "end": 15.775
+      }
+    ]
+  },
+  "145": {
+    "poemId": 145,
+    "title": "秋思",
+    "lines": [
+      {
+        "index": 0,
+        "text": "洛阳城里见秋风，",
+        "url": "line-audios/poem-145-line-1.mp3",
+        "start": 4.55,
+        "end": 6.61
+      },
+      {
+        "index": 1,
+        "text": "欲作家书意万重。",
+        "url": "line-audios/poem-145-line-2.mp3",
+        "start": 6.95,
+        "end": 8.99
+      },
+      {
+        "index": 2,
+        "text": "复恐匆匆说不尽，",
+        "url": "line-audios/poem-145-line-3.mp3",
+        "start": 9.89,
+        "end": 11.85
+      },
+      {
+        "index": 3,
+        "text": "行人临发又开封。",
+        "url": "line-audios/poem-145-line-4.mp3",
+        "start": 12.23,
+        "end": 14.845
+      }
+    ]
+  },
+  "146": {
+    "poemId": 146,
+    "title": "十五夜望月",
+    "lines": [
+      {
+        "index": 0,
+        "text": "中庭地白树栖鸦，",
+        "url": "line-audios/poem-146-line-1.mp3",
+        "start": 9.1,
+        "end": 13.24
+      },
+      {
+        "index": 1,
+        "text": "冷露无声湿桂花。",
+        "url": "line-audios/poem-146-line-2.mp3",
+        "start": 14.7,
+        "end": 19.1
+      },
+      {
+        "index": 2,
+        "text": "今夜月明人尽望，",
+        "url": "line-audios/poem-146-line-3.mp3",
+        "start": 21.16,
+        "end": 25.02
+      },
+      {
+        "index": 3,
+        "text": "不知秋思落谁家。",
+        "url": "line-audios/poem-146-line-4.mp3",
+        "start": 26.38,
+        "end": 32.555
+      }
+    ]
+  },
+  "147": {
+    "poemId": 147,
+    "title": "雨过山村",
+    "lines": [
+      {
+        "index": 0,
+        "text": "雨里鸡鸣一两家，",
+        "url": "line-audios/poem-147-line-1.mp3",
+        "start": 0,
+        "end": 3.61
+      },
+      {
+        "index": 1,
+        "text": "竹溪村路板桥斜。",
+        "url": "line-audios/poem-147-line-2.mp3",
+        "start": 3.79,
+        "end": 5.63
+      },
+      {
+        "index": 2,
+        "text": "妇姑相唤浴蚕去，",
+        "url": "line-audios/poem-147-line-3.mp3",
+        "start": 5.77,
+        "end": 7.65
+      },
+      {
+        "index": 3,
+        "text": "闲看中庭栀子花。",
+        "url": "line-audios/poem-147-line-4.mp3",
+        "start": 7.83,
+        "end": 9.595
+      }
+    ]
+  },
+  "148": {
+    "poemId": 148,
+    "title": "新嫁娘词",
+    "lines": [
+      {
+        "index": 0,
+        "text": "三日入厨下，",
+        "url": "line-audios/poem-148-line-1.mp3",
+        "start": 9.46,
+        "end": 12.3
+      },
+      {
+        "index": 1,
+        "text": "洗手作羹汤。",
+        "url": "line-audios/poem-148-line-2.mp3",
+        "start": 13.88,
+        "end": 16.9
+      },
+      {
+        "index": 2,
+        "text": "未谙姑食性，",
+        "url": "line-audios/poem-148-line-3.mp3",
+        "start": 18.62,
+        "end": 21.2
+      },
+      {
+        "index": 3,
+        "text": "先遣小姑尝。",
+        "url": "line-audios/poem-148-line-4.mp3",
+        "start": 22.7,
+        "end": 26.515
+      }
+    ]
+  },
+  "149": {
+    "poemId": 149,
+    "title": "题李凝幽居",
+    "lines": [
+      {
+        "index": 0,
+        "text": "闲居少邻并，",
+        "url": "line-audios/poem-149-line-1.mp3",
+        "start": 2.05,
+        "end": 3.43
+      },
+      {
+        "index": 1,
+        "text": "草径入荒园。",
+        "url": "line-audios/poem-149-line-2.mp3",
+        "start": 3.53,
+        "end": 4.91
+      },
+      {
+        "index": 2,
+        "text": "鸟宿池边树，",
+        "url": "line-audios/poem-149-line-3.mp3",
+        "start": 5.07,
+        "end": 6.45
+      },
+      {
+        "index": 3,
+        "text": "僧敲月下门。",
+        "url": "line-audios/poem-149-line-4.mp3",
+        "start": 6.67,
+        "end": 8.035
+      }
+    ]
+  },
+  "150": {
+    "poemId": 150,
+    "title": "闺怨",
+    "lines": [
+      {
+        "index": 0,
+        "text": "闺中少妇不知愁，",
+        "url": "line-audios/poem-150-line-1.mp3",
+        "start": 7.81,
+        "end": 11.49
+      },
+      {
+        "index": 1,
+        "text": "春日凝妆上翠楼。",
+        "url": "line-audios/poem-150-line-2.mp3",
+        "start": 13.21,
+        "end": 17.29
+      },
+      {
+        "index": 2,
+        "text": "忽见陌头杨柳色，",
+        "url": "line-audios/poem-150-line-3.mp3",
+        "start": 19.55,
+        "end": 23.69
+      },
+      {
+        "index": 3,
+        "text": "悔教夫婿觅封侯。",
+        "url": "line-audios/poem-150-line-4.mp3",
+        "start": 25.59,
+        "end": 31.795
+      }
+    ]
+  },
+  "151": {
+    "poemId": 151,
+    "title": "芙蓉楼送辛渐",
+    "lines": [
+      {
+        "index": 0,
+        "text": "寒雨连江夜入吴，",
+        "url": "line-audios/poem-151-line-1.mp3",
+        "start": 7.16,
+        "end": 9.92
+      },
+      {
+        "index": 1,
+        "text": "平明送客楚山孤。",
+        "url": "line-audios/poem-151-line-2.mp3",
+        "start": 10.72,
+        "end": 14.22
+      },
+      {
+        "index": 2,
+        "text": "洛阳亲友如相问，",
+        "url": "line-audios/poem-151-line-3.mp3",
+        "start": 15.3,
+        "end": 18.04
+      },
+      {
+        "index": 3,
+        "text": "一片冰心在玉壶。",
+        "url": "line-audios/poem-151-line-4.mp3",
+        "start": 18.6,
+        "end": 23.295
+      }
+    ]
+  },
+  "152": {
+    "poemId": 152,
+    "title": "采莲曲",
+    "lines": [
+      {
+        "index": 0,
+        "text": "荷叶罗裙一色裁，",
+        "url": "line-audios/poem-152-line-1.mp3",
+        "start": 5.05,
+        "end": 7.03
+      },
+      {
+        "index": 1,
+        "text": "芙蓉向脸两边开。",
+        "url": "line-audios/poem-152-line-2.mp3",
+        "start": 7.49,
+        "end": 9.65
+      },
+      {
+        "index": 2,
+        "text": "乱入池中看不见，",
+        "url": "line-audios/poem-152-line-3.mp3",
+        "start": 10.41,
+        "end": 12.33
+      },
+      {
+        "index": 3,
+        "text": "闻歌始觉有人来。",
+        "url": "line-audios/poem-152-line-4.mp3",
+        "start": 12.71,
+        "end": 15.265
+      }
+    ]
+  },
+  "153": {
+    "poemId": 153,
+    "title": "凉州词",
+    "lines": [
+      {
+        "index": 0,
+        "text": "黄河远上白云间，",
+        "url": "line-audios/poem-153-line-1.mp3",
+        "start": 9.41,
+        "end": 13.15
+      },
+      {
+        "index": 1,
+        "text": "一片孤城万仞山。",
+        "url": "line-audios/poem-153-line-2.mp3",
+        "start": 14.45,
+        "end": 18.59
+      },
+      {
+        "index": 2,
+        "text": "羌笛何须怨杨柳，",
+        "url": "line-audios/poem-153-line-3.mp3",
+        "start": 20.57,
+        "end": 24.21
+      },
+      {
+        "index": 3,
+        "text": "春风不度玉门关。",
+        "url": "line-audios/poem-153-line-4.mp3",
+        "start": 25.79,
+        "end": 31.645
+      }
+    ]
+  },
+  "154": {
+    "poemId": 154,
+    "title": "渔歌子",
+    "lines": [
+      {
+        "index": 0,
+        "text": "西塞山前白鹭飞，",
+        "url": "line-audios/poem-154-line-1.mp3",
+        "start": 7.57,
+        "end": 9.61
+      },
+      {
+        "index": 1,
+        "text": "桃花流水鳜鱼肥。",
+        "url": "line-audios/poem-154-line-2.mp3",
+        "start": 9.99,
+        "end": 12.17
+      },
+      {
+        "index": 2,
+        "text": "青箬笠，",
+        "url": "line-audios/poem-154-line-3.mp3",
+        "start": 13.07,
+        "end": 14.03
+      },
+      {
+        "index": 3,
+        "text": "绿蓑衣，",
+        "url": "line-audios/poem-154-line-4.mp3",
+        "start": 14.33,
+        "end": 15.27
+      },
+      {
+        "index": 4,
+        "text": "斜风细雨不须归。",
+        "url": "line-audios/poem-154-line-5.mp3",
+        "start": 15.59,
+        "end": 18.295
+      }
+    ]
+  },
+  "155": {
+    "poemId": 155,
+    "title": "江南逢李龟年",
+    "lines": [
+      {
+        "index": 0,
+        "text": "岐王宅里寻常见，",
+        "url": "line-audios/poem-155-line-1.mp3",
+        "start": 6.15,
+        "end": 9.31
+      },
+      {
+        "index": 1,
+        "text": "崔九堂前几度闻。",
+        "url": "line-audios/poem-155-line-2.mp3",
+        "start": 10.03,
+        "end": 13.13
+      },
+      {
+        "index": 2,
+        "text": "正是江南好风景，",
+        "url": "line-audios/poem-155-line-3.mp3",
+        "start": 14.01,
+        "end": 16.41
+      },
+      {
+        "index": 3,
+        "text": "落花时节又逢君。",
+        "url": "line-audios/poem-155-line-4.mp3",
+        "start": 17.03,
+        "end": 20.785
+      }
+    ]
+  },
+  "156": {
+    "poemId": 156,
+    "title": "月夜忆舍弟",
+    "lines": [
+      {
+        "index": 0,
+        "text": "戍鼓断人行，",
+        "url": "line-audios/poem-156-line-1.mp3",
+        "start": 8.99,
+        "end": 12.47
+      },
+      {
+        "index": 1,
+        "text": "边秋一雁声。",
+        "url": "line-audios/poem-156-line-2.mp3",
+        "start": 14.09,
+        "end": 17.995
+      },
+      {
+        "index": 2,
+        "text": "露从今夜白，",
+        "url": "line-audios/poem-156-line-3.mp3",
+        "start": 20.15,
+        "end": 22.51
+      },
+      {
+        "index": 3,
+        "text": "月是故乡明。",
+        "url": "line-audios/poem-156-line-4.mp3",
+        "start": 23.33,
+        "end": 27.17
+      }
+    ]
+  },
+  "157": {
+    "poemId": 157,
+    "title": "八阵图",
+    "lines": [
+      {
+        "index": 0,
+        "text": "功盖三分国，",
+        "url": "line-audios/poem-157-line-1.mp3",
+        "start": 4.79,
+        "end": 6.31
+      },
+      {
+        "index": 1,
+        "text": "名成八阵图。",
+        "url": "line-audios/poem-157-line-2.mp3",
+        "start": 6.77,
+        "end": 8.45
+      },
+      {
+        "index": 2,
+        "text": "江流石不转，",
+        "url": "line-audios/poem-157-line-3.mp3",
+        "start": 9.21,
+        "end": 10.65
+      },
+      {
+        "index": 3,
+        "text": "遗恨失吞吴。",
+        "url": "line-audios/poem-157-line-4.mp3",
+        "start": 11.03,
+        "end": 13.135
+      }
+    ]
+  },
+  "158": {
+    "poemId": 158,
+    "title": "前出塞",
+    "lines": [
+      {
+        "index": 0,
+        "text": "挽弓当挽强，",
+        "url": "line-audios/poem-158-line-1.mp3",
+        "start": 1.67,
+        "end": 2.95
+      },
+      {
+        "index": 1,
+        "text": "用箭当用长。",
+        "url": "line-audios/poem-158-line-2.mp3",
+        "start": 3.19,
+        "end": 4.55
+      },
+      {
+        "index": 2,
+        "text": "射人先射马，",
+        "url": "line-audios/poem-158-line-3.mp3",
+        "start": 4.71,
+        "end": 6.09
+      },
+      {
+        "index": 3,
+        "text": "擒贼先擒王。",
+        "url": "line-audios/poem-158-line-4.mp3",
+        "start": 6.25,
+        "end": 7.675
+      }
+    ]
+  },
+  "159": {
+    "poemId": 159,
+    "title": "赠花卿",
+    "lines": [
+      {
+        "index": 0,
+        "text": "锦城丝管日纷纷，",
+        "url": "line-audios/poem-159-line-1.mp3",
+        "start": 1.73,
+        "end": 3.61
+      },
+      {
+        "index": 1,
+        "text": "半入江风半入云。",
+        "url": "line-audios/poem-159-line-2.mp3",
+        "start": 3.77,
+        "end": 5.63
+      },
+      {
+        "index": 2,
+        "text": "此曲只应天上有，",
+        "url": "line-audios/poem-159-line-3.mp3",
+        "start": 5.79,
+        "end": 7.65
+      },
+      {
+        "index": 3,
+        "text": "人间能得几回闻。",
+        "url": "line-audios/poem-159-line-4.mp3",
+        "start": 7.81,
+        "end": 9.505
+      }
+    ]
+  },
+  "160": {
+    "poemId": 160,
+    "title": "江村",
+    "lines": [
+      {
+        "index": 0,
+        "text": "清江一曲抱村流，",
+        "url": "line-audios/poem-160-line-1.mp3",
+        "start": 6.95,
+        "end": 10.49
+      },
+      {
+        "index": 1,
+        "text": "长夏江村事事幽。",
+        "url": "line-audios/poem-160-line-2.mp3",
+        "start": 12.09,
+        "end": 16.555
+      },
+      {
+        "index": 2,
+        "text": "自去自来梁上燕，",
+        "url": "line-audios/poem-160-line-3.mp3",
+        "start": 18.43,
+        "end": 21.75
+      },
+      {
+        "index": 3,
+        "text": "相亲相近水中鸥。",
+        "url": "line-audios/poem-160-line-4.mp3",
+        "start": 23.13,
+        "end": 27.13
+      }
+    ]
+  },
+  "161": {
+    "poemId": 161,
+    "title": "春夜喜雨",
+    "lines": [
+      {
+        "index": 0,
+        "text": "好雨知时节，",
+        "url": "line-audios/poem-161-line-1.mp3",
+        "start": 5.03,
+        "end": 6.69
+      },
+      {
+        "index": 1,
+        "text": "当春乃发生。",
+        "url": "line-audios/poem-161-line-2.mp3",
+        "start": 7.11,
+        "end": 8.65
+      },
+      {
+        "index": 2,
+        "text": "随风潜入夜，",
+        "url": "line-audios/poem-161-line-3.mp3",
+        "start": 9.43,
+        "end": 10.99
+      },
+      {
+        "index": 3,
+        "text": "润物细无声。",
+        "url": "line-audios/poem-161-line-4.mp3",
+        "start": 11.39,
+        "end": 12.95
+      }
+    ]
+  },
+  "162": {
+    "poemId": 162,
+    "title": "闻官军收河南河北",
+    "lines": [
+      {
+        "index": 0,
+        "text": "剑外忽传收蓟北，",
+        "url": "line-audios/poem-162-line-1.mp3",
+        "start": 6.21,
+        "end": 8.309
+      },
+      {
+        "index": 1,
+        "text": "初闻涕泪满衣裳。",
+        "url": "line-audios/poem-162-line-2.mp3",
+        "start": 8.67,
+        "end": 10.63
+      },
+      {
+        "index": 2,
+        "text": "却看妻子愁何在，",
+        "url": "line-audios/poem-162-line-3.mp3",
+        "start": 11.53,
+        "end": 13.57
+      },
+      {
+        "index": 3,
+        "text": "漫卷诗书喜欲狂。",
+        "url": "line-audios/poem-162-line-4.mp3",
+        "start": 13.99,
+        "end": 16.13
+      }
+    ]
+  },
+  "163": {
+    "poemId": 163,
+    "title": "江畔独步寻花其六",
+    "lines": [
+      {
+        "index": 0,
+        "text": "黄四娘家花满蹊，",
+        "url": "line-audios/poem-163-line-1.mp3",
+        "start": 3.89,
+        "end": 5.89
+      },
+      {
+        "index": 1,
+        "text": "千朵万朵压枝低。",
+        "url": "line-audios/poem-163-line-2.mp3",
+        "start": 6.17,
+        "end": 7.97
+      },
+      {
+        "index": 2,
+        "text": "留连戏蝶时时舞，",
+        "url": "line-audios/poem-163-line-3.mp3",
+        "start": 8.05,
+        "end": 9.99
+      },
+      {
+        "index": 3,
+        "text": "自在娇莺恰恰啼。",
+        "url": "line-audios/poem-163-line-4.mp3",
+        "start": 10.19,
+        "end": 12.295
+      }
+    ]
+  },
+  "164": {
+    "poemId": 164,
+    "title": "大林寺桃花",
+    "lines": [
+      {
+        "index": 0,
+        "text": "人间四月芳菲尽，",
+        "url": "line-audios/poem-164-line-1.mp3",
+        "start": 5.35,
+        "end": 8.53
+      },
+      {
+        "index": 1,
+        "text": "山寺桃花始盛开。",
+        "url": "line-audios/poem-164-line-2.mp3",
+        "start": 9.19,
+        "end": 12.41
+      },
+      {
+        "index": 2,
+        "text": "长恨春归无觅处，",
+        "url": "line-audios/poem-164-line-3.mp3",
+        "start": 13.61,
+        "end": 16.53
+      },
+      {
+        "index": 3,
+        "text": "不知转入此中来。",
+        "url": "line-audios/poem-164-line-4.mp3",
+        "start": 16.97,
+        "end": 20.545
+      }
+    ]
+  },
+  "165": {
+    "poemId": 165,
+    "title": "暮江吟",
+    "lines": [
+      {
+        "index": 0,
+        "text": "一道残阳铺水中，",
+        "url": "line-audios/poem-165-line-1.mp3",
+        "start": 10.22,
+        "end": 14.32
+      },
+      {
+        "index": 1,
+        "text": "半江瑟瑟半江红。",
+        "url": "line-audios/poem-165-line-2.mp3",
+        "start": 15.62,
+        "end": 20.06
+      },
+      {
+        "index": 2,
+        "text": "可怜九月初三夜，",
+        "url": "line-audios/poem-165-line-3.mp3",
+        "start": 22.64,
+        "end": 27.085
+      },
+      {
+        "index": 3,
+        "text": "露似真珠月似弓。",
+        "url": "line-audios/poem-165-line-4.mp3",
+        "start": 29.03,
+        "end": 35.645
+      }
+    ]
+  },
+  "166": {
+    "poemId": 166,
+    "title": "钱塘湖春行",
+    "lines": [
+      {
+        "index": 0,
+        "text": "孤山寺北贾亭西，",
+        "url": "line-audios/poem-166-line-1.mp3",
+        "start": 5.98,
+        "end": 9.1
+      },
+      {
+        "index": 1,
+        "text": "水面初平云脚低。",
+        "url": "line-audios/poem-166-line-2.mp3",
+        "start": 10.06,
+        "end": 13.54
+      },
+      {
+        "index": 2,
+        "text": "几处早莺争暖树，",
+        "url": "line-audios/poem-166-line-3.mp3",
+        "start": 14.56,
+        "end": 17.12
+      },
+      {
+        "index": 3,
+        "text": "谁家新燕啄春泥。",
+        "url": "line-audios/poem-166-line-4.mp3",
+        "start": 17.62,
+        "end": 20.66
+      }
+    ]
+  },
+  "167": {
+    "poemId": 167,
+    "title": "问刘十九",
+    "lines": [
+      {
+        "index": 0,
+        "text": "绿蚁新醅酒，",
+        "url": "line-audios/poem-167-line-1.mp3",
+        "start": 9.36,
+        "end": 12.1
+      },
+      {
+        "index": 1,
+        "text": "红泥小火炉。",
+        "url": "line-audios/poem-167-line-2.mp3",
+        "start": 13.62,
+        "end": 16.94
+      },
+      {
+        "index": 2,
+        "text": "晚来天欲雪，",
+        "url": "line-audios/poem-167-line-3.mp3",
+        "start": 18.82,
+        "end": 21.66
+      },
+      {
+        "index": 3,
+        "text": "能饮一杯无。",
+        "url": "line-audios/poem-167-line-4.mp3",
+        "start": 23.24,
+        "end": 27.515
+      }
+    ]
+  },
+  "168": {
+    "poemId": 168,
+    "title": "遗爱寺",
+    "lines": [
+      {
+        "index": 0,
+        "text": "弄石临溪坐，",
+        "url": "line-audios/poem-168-line-1.mp3",
+        "start": 1.69,
+        "end": 3.01
+      },
+      {
+        "index": 1,
+        "text": "寻花绕寺行。",
+        "url": "line-audios/poem-168-line-2.mp3",
+        "start": 3.19,
+        "end": 4.55
+      },
+      {
+        "index": 2,
+        "text": "时时闻鸟语，",
+        "url": "line-audios/poem-168-line-3.mp3",
+        "start": 4.77,
+        "end": 6.03
+      },
+      {
+        "index": 3,
+        "text": "处处是泉声。",
+        "url": "line-audios/poem-168-line-4.mp3",
+        "start": 6.21,
+        "end": 7.585
+      }
+    ]
+  },
+  "169": {
+    "poemId": 169,
+    "title": "村夜",
+    "lines": [
+      {
+        "index": 0,
+        "text": "霜草苍苍虫切切，",
+        "url": "line-audios/poem-169-line-1.mp3",
+        "start": 4.67,
+        "end": 7.09
+      },
+      {
+        "index": 1,
+        "text": "村南村北行人绝。",
+        "url": "line-audios/poem-169-line-2.mp3",
+        "start": 7.43,
+        "end": 9.59
+      },
+      {
+        "index": 2,
+        "text": "独出门前望野田，",
+        "url": "line-audios/poem-169-line-3.mp3",
+        "start": 10.41,
+        "end": 12.39
+      },
+      {
+        "index": 3,
+        "text": "月明荞麦花如雪。",
+        "url": "line-audios/poem-169-line-4.mp3",
+        "start": 12.83,
+        "end": 15.625
+      }
+    ]
+  },
+  "170": {
+    "poemId": 170,
+    "title": "菊花",
+    "lines": [
+      {
+        "index": 0,
+        "text": "秋丛绕舍似陶家，",
+        "url": "line-audios/poem-170-line-1.mp3",
+        "start": 1.43,
+        "end": 3.25
+      },
+      {
+        "index": 1,
+        "text": "遍绕篱边日渐斜。",
+        "url": "line-audios/poem-170-line-2.mp3",
+        "start": 3.43,
+        "end": 5.15
+      },
+      {
+        "index": 2,
+        "text": "不是花中偏爱菊，",
+        "url": "line-audios/poem-170-line-3.mp3",
+        "start": 5.25,
+        "end": 6.99
+      },
+      {
+        "index": 3,
+        "text": "此花开尽更无花。",
+        "url": "line-audios/poem-170-line-4.mp3",
+        "start": 7.21,
+        "end": 8.995
+      }
+    ]
+  },
+  "171": {
+    "poemId": 171,
+    "title": "离思",
+    "lines": [
+      {
+        "index": 0,
+        "text": "曾经沧海难为水，",
+        "url": "line-audios/poem-171-line-1.mp3",
+        "start": 1.37,
+        "end": 3.19
+      },
+      {
+        "index": 1,
+        "text": "除却巫山不是云。",
+        "url": "line-audios/poem-171-line-2.mp3",
+        "start": 3.43,
+        "end": 5.15
+      },
+      {
+        "index": 2,
+        "text": "取次花丛懒回顾，",
+        "url": "line-audios/poem-171-line-3.mp3",
+        "start": 5.31,
+        "end": 7.07
+      },
+      {
+        "index": 3,
+        "text": "半缘修道半缘君。",
+        "url": "line-audios/poem-171-line-4.mp3",
+        "start": 7.17,
+        "end": 9.055
+      }
+    ]
+  }
+}

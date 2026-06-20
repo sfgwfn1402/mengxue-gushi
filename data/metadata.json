@@ -1,0 +1,72 @@
+{
+  "total": 50,
+  "levels": [
+    { "level": 1, "name": "启蒙级", "count": 20 },
+    { "level": 2, "name": "进阶级", "count": 15 },
+    { "level": 3, "name": "挑战级", "count": 15 }
+  ],
+  "poets": [
+    { "name": "李白", "dynasty": "唐", "count": 8, "poemIds": [1, 12, 17, 19, 21, 22, 43, 44, 45, 46] },
+    { "name": "杜甫", "dynasty": "唐", "count": 5, "poemIds": [13, 39, 40, 41, 42] },
+    { "name": "白居易", "dynasty": "唐", "count": 4, "poemIds": [11, 34, 36, 37, 38] },
+    { "name": "王维", "dynasty": "唐", "count": 2, "poemIds": [4, 5] },
+    { "name": "孟浩然", "dynasty": "唐", "count": 1, "poemIds": [2] },
+    { "name": "王之涣", "dynasty": "唐", "count": 1, "poemIds": [3] },
+    { "name": "李绅", "dynasty": "唐", "count": 1, "poemIds": [6] },
+    { "name": "柳宗元", "dynasty": "唐", "count": 1, "poemIds": [7] },
+    { "name": "孟郊", "dynasty": "唐", "count": 1, "poemIds": [8] },
+    { "name": "骆宾王", "dynasty": "唐", "count": 1, "poemIds": [9] },
+    { "name": "杜牧", "dynasty": "唐", "count": 1, "poemIds": [10] },
+    { "name": "张继", "dynasty": "唐", "count": 1, "poemIds": [14] },
+    { "name": "王昌龄", "dynasty": "唐", "count": 2, "poemIds": [15, 24] },
+    { "name": "贺知章", "dynasty": "唐", "count": 2, "poemIds": [16, 20] },
+    { "name": "王翰", "dynasty": "唐", "count": 1, "poemIds": [18] },
+    { "name": "陈子昂", "dynasty": "唐", "count": 1, "poemIds": [23] },
+    { "name": "林升", "dynasty": "宋", "count": 1, "poemIds": [25] },
+    { "name": "陆游", "dynasty": "宋", "count": 2, "poemIds": [26, 27] },
+    { "name": "叶绍翁", "dynasty": "宋", "count": 1, "poemIds": [28] },
+    { "name": "王冕", "dynasty": "元", "count": 1, "poemIds": [29] },
+    { "name": "于谦", "dynasty": "明", "count": 1, "poemIds": [30] },
+    { "name": "郑燮", "dynasty": "清", "count": 1, "poemIds": [31] },
+    { "name": "杨万里", "dynasty": "宋", "count": 1, "poemIds": [32] },
+    { "name": "范成大", "dynasty": "宋", "count": 1, "poemIds": [33] },
+    { "name": "王安石", "dynasty": "宋", "count": 1, "poemIds": [35] },
+    { "name": "李贺", "dynasty": "唐", "count": 2, "poemIds": [47, 48] },
+    { "name": "朱熹", "dynasty": "宋", "count": 1, "poemIds": [49] },
+    { "name": "赵翼", "dynasty": "清", "count": 1, "poemIds": [50] }
+  ],
+  "tags": [
+    { "name": "思乡", "count": 5 },
+    { "name": "友情", "count": 4 },
+    { "name": "春天", "count": 12 },
+    { "name": "风景", "count": 10 },
+    { "name": "边塞", "count": 5 },
+    { "name": "战争", "count": 6 },
+    { "name": "母爱", "count": 1 },
+    { "name": "童年", "count": 3 },
+    { "name": "爱国", "count": 4 },
+    { "name": "自然", "count": 6 }
+  ],
+  "seasons": [
+    { "name": "spring", "label": "春天", "count": 12 },
+    { "name": "summer", "label": "夏天", "count": 4 },
+    { "name": "autumn", "label": "秋天", "count": 10 },
+    { "name": "winter", "label": "冬天", "count": 3 },
+    { "name": "any", "label": "不限", "count": 21 }
+  ],
+  "dynasties": [
+    { "name": "唐", "count": 38 },
+    { "name": "宋", "count": 9 },
+    { "name": "元", "count": 1 },
+    { "name": "明", "count": 1 },
+    { "name": "清", "count": 2 }
+  ],
+  "sources": [
+    "poems-level1.json",
+    "poems-level2.json", 
+    "poems-level3.json",
+    "metadata.json"
+  ],
+  "version": "1.0",
+  "created": "2025-04-30"
+}

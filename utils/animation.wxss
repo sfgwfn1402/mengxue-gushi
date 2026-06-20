@@ -1,0 +1,107 @@
+/* 动画样式 */
+
+/* 弹跳动画 */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20rpx); }
+}
+
+/* 摇晃动画 */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10rpx); }
+  75% { transform: translateX(10rpx); }
+}
+
+/* 放大缩小 */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* 淡入 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 旋转 */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 星星闪烁 */
+@keyframes starBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* 正确答案动画 */
+.correct-anim {
+  animation: pulse 0.5s ease;
+}
+
+/* 错误答案动画 */
+.wrong-anim {
+  animation: shake 0.5s ease;
+}
+
+/* 打卡成功动画 */
+.checkin-success {
+  animation: bounce 0.5s ease;
+}
+
+/* 页面进入动画 */
+.fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+/* 按钮点击效果 */
+.btn-active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+/* 卡片悬停效果 */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:active {
+  transform: scale(0.98);
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.1);
+}
+
+/* 进度条动画 */
+.progress-anim {
+  transition: width 0.5s ease;
+}
+
+/* 成就徽章动画 */
+.badge-anim {
+  animation: starBlink 2s ease infinite;
+}
+
+/* 答题正确特效 */
+.correct-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.correct-particle {
+  position: absolute;
+  font-size: 40rpx;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* 背景装饰动画 */
+.bg-decoration {
+  animation: rotate 20s linear infinite;
+}

@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/warehouse/warehouse",
+    "pages/learn/learn",
+    "pages/follow-landscape/follow-landscape",
+    "pages/practice/practice",
+    "pages/create/create",
+    "pages/challenge/challenge",
+    "pages/profile/profile",
+    "pages/works/works",
+    "pages/work-detail/work-detail",
+    "pages/feedback/feedback",
+    "pages/quiz/quiz",
+    "pages/animation/animation"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFD700",
+    "navigationBarTitleText": "萌学古诗",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFF8DC"
+  },
+  "tabBar": {
+    "color": "#8A8F98",
+    "selectedColor": "#FF6B6B",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/home-normal.png",
+        "selectedIconPath": "images/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/warehouse/warehouse",
+        "text": "诗园",
+        "iconPath": "images/tabbar/garden-normal.png",
+        "selectedIconPath": "images/tabbar/garden-active.png"
+      },
+      {
+        "pagePath": "pages/create/create",
+        "text": "创作",
+        "iconPath": "images/tabbar/create-normal.png",
+        "selectedIconPath": "images/tabbar/create-active.png"
+      },
+      {
+        "pagePath": "pages/challenge/challenge",
+        "text": "诗光",
+        "iconPath": "images/tabbar/star-normal.png",
+        "selectedIconPath": "images/tabbar/star-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tabbar/me-normal.png",
+        "selectedIconPath": "images/tabbar/me-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "permission": {
+    "scope.record": {
+      "desc": "用于朗诵录音和逐句跟读练习"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "pageOrientation": "auto"
+}

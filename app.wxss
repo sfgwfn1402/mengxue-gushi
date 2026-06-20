@@ -1,0 +1,64 @@
+/** app.wxss **/
+@import 'utils/animation.wxss';
+
+page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #F7F8FC 0%, #FFF6E9 100%);
+  color: #1D1D1F;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+/* iOS Soft Card 基础质感 */
+.ios-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1rpx solid rgba(255, 255, 255, 0.86);
+  border-radius: 32rpx;
+  box-shadow: 0 18rpx 42rpx rgba(31, 35, 46, 0.08), 0 2rpx 8rpx rgba(31, 35, 46, 0.04);
+}
+
+.ios-pressable {
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.ios-pressable:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+/* 全局动画类 */
+.bounce { animation: bounce 0.5s ease; }
+.shake { animation: shake 0.5s ease; }
+.pulse { animation: pulse 0.5s ease; }
+.fade-in { animation: fadeIn 0.5s ease; }
+
+/* 通用按钮样式 */
+.btn {
+  border-radius: 999rpx;
+  font-size: 30rpx;
+  padding: 24rpx 0;
+  border: none;
+  transition: all 0.22s ease;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #FF9F4A 0%, #FF7A45 100%);
+  color: #fff;
+  box-shadow: 0 12rpx 24rpx rgba(255, 122, 69, 0.24), inset 0 1rpx 0 rgba(255,255,255,0.35);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.92);
+  color: #FF7A45;
+  border: 1rpx solid rgba(255,122,69,0.22);
+  box-shadow: 0 8rpx 18rpx rgba(31, 35, 46, 0.06);
+}

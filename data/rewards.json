@@ -1,0 +1,47 @@
+{
+  "stars": {
+    "learnPoem": 3,
+    "answerCorrect": 1,
+    "perfectQuiz": 5,
+    "dailyLogin": 2,
+    "streakBonus": 3,
+    "shareCard": 2,
+    "watchVideo": 5,
+    "collectCard": 10
+  },
+  "ranks": [
+    { "id": 1, "name": "小诗童", "minStars": 0, "emoji": "🌱", "color": "#90EE90" },
+    { "id": 2, "name": "小诗迷", "minStars": 50, "emoji": "🌿", "color": "#98FB98" },
+    { "id": 3, "name": "小诗人", "minStars": 150, "emoji": "🌳", "color": "#90EE90" },
+    { "id": 4, "name": "诗童", "minStars": 400, "emoji": "🎋", "color": "#FFD700" },
+    { "id": 5, "name": "诗人", "minStars": 800, "emoji": "📜", "color": "#FFA500" },
+    { "id": 6, "name": "诗仙", "minStars": 1500, "emoji": "✨", "color": "#FF69B4" },
+    { "id": 7, "name": "大诗仙", "minStars": 3000, "emoji": "🌟", "color": "#9400D3" },
+    { "id": 8, "name": "诗神", "minStars": 6000, "emoji": "🏆", "color": "#FFD700" }
+  ],
+  "badges": [
+    { "id": "first_poem", "name": "初学者", "desc": "学习第一首古诗", "emoji": "📖", "condition": { "type": "learnCount", "value": 1 } },
+    { "id": "five_poems", "name": "小书虫", "desc": "学习5首古诗", "emoji": "🐛", "condition": { "type": "learnCount", "value": 5 } },
+    { "id": "ten_poems", "name": "书香门第", "desc": "学习10首古诗", "emoji": "📚", "condition": { "type": "learnCount", "value": 10 } },
+    { "id": "streak_7", "name": "坚持之星", "desc": "连续学习7天", "emoji": "🔥", "condition": { "type": "streak", "value": 7 } },
+    { "id": "streak_30", "name": "毅力王者", "desc": "连续学习30天", "emoji": "👑", "condition": { "type": "streak", "value": 30 } },
+    { "id": "perfect_5", "name": "满分达人", "desc": "连续答对5题", "emoji": "💯", "condition": { "type": "perfectStreak", "value": 5 } },
+    { "id": "collector", "name": "收藏家", "desc": "集齐10张诗词卡片", "emoji": "🃏", "condition": { "type": "cardCount", "value": 10 } },
+    { "id": "master", "name": "古诗大师", "desc": "学习全部50首", "emoji": "🎓", "condition": { "type": "learnCount", "value": 50 } }
+  ],
+  "dailyTasks": [
+    { "id": "learn1", "name": "今日学习", "desc": "学习1首新古诗", "stars": 3, "repeatable": false },
+    { "id": "quiz3", "name": "答题挑战", "desc": "答对3道题", "stars": 3, "repeatable": false },
+    { "id": "review3", "name": "复习巩固", "desc": "复习3首已学古诗", "stars": 2, "repeatable": false }
+  ],
+  "streakRewards": [
+    { "day": 7, "stars": 50, "card": "lucky_star" },
+    { "day": 30, "stars": 200, "card": "golden_poem" },
+    { "day": 100, "stars": 500, "card": "poem_master" }
+  ],
+  "levelNames": {
+    "1": "启蒙",
+    "2": "进阶",
+    "3": "挑战"
+  }
+}

@@ -1,0 +1,48 @@
+<view class="landscape-page">
+  <image wx:if="{{poem.imageUrl}}" class="bg" src="{{poem.imageUrl}}" mode="aspectFill"></image>
+  <view wx:else class="bg fallback-bg"></view>
+  <view class="veil"></view>
+
+  <view class="header">
+    <view class="back-btn" bindtap="exitLandscape">‹ 退出</view>
+    <view class="title-box">
+      <view class="title">{{poem.title || '跟读练习'}}</view>
+      <view class="author">{{poem.dynasty}} · {{poem.author}}</view>
+    </view>
+    <view class="step-pill">{{followLineIndex + 1}} / {{poemLines.length}}</view>
+  </view>
+
+  <view class="content">
+    <view class="left-panel">
+      <view class="mode-label">沉浸跟读</view>
+      <view class="phase-text playing" wx:if="{{followPhase === 'playing'}}">先听标准朗读</view>
+      <view class="phase-text recording" wx:elif="{{followPhase === 'recording'}}">轮到你读啦</view>
+      <view class="phase-text preview" wx:elif="{{followPhase === 'preview'}}">正在回放</view>
+      <view class="phase-text done" wx:elif="{{followPhase === 'done'}}">全诗完成</view>
+      <view class="phase-text" wx:else>准备好了吗？</view>
+      <view class="hint">听一句，读一句，读完整首自动记录学习进度。</view>
+    </view>
+
+    <view class="center-panel">
+      <view class="line-card">
+        <view class="line-index">第 {{followLineIndex + 1}} 句</view>
+        <view class="line-text">{{poemLines[followLineIndex] || '加载中...'}}</view>
+      </view>
+      <view class="dots">
+        <view
+          wx:for="{{poemLines}}"
+          wx:key="index"
+          class="dot-item {{followLineDone[index] ? 'done' : ''}} {{followLineIndex === index ? 'active' : ''}}"
+          data-index="{{index}}"
+          bindtap="selectLine"
+        >{{index + 1}}</view>
+      </view>
+    </view>
+
+    <view class="right-panel">
+      <button class="main-btn {{followPhase}}" bindtap="handleMainAction">{{mainButtonText}}</button>
+      <button class="side-btn" bindtap="replayLine">重听</button>
+      <button class="side-btn" bindtap="skipToNext">下一句</button>
+    </view>
+  </view>
+</view>

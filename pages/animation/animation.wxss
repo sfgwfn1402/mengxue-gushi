@@ -1,0 +1,192 @@
+/* pages/animation/animation.wxss */
+.page {
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 20rpx;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+}
+
+.poem-header {
+  text-align: center;
+  padding: 30rpx 0;
+}
+
+.poem-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 10rpx;
+  text-shadow: 0 2rpx 10rpx rgba(255, 215, 0, 0.5);
+}
+
+.poem-author {
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.video-container {
+  width: 100%;
+  height: 500rpx;
+  margin: 20rpx 0;
+  border-radius: 16rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.poem-video {
+  width: 100%;
+  height: 100%;
+}
+
+.scene-container {
+  width: 100%;
+  height: 500rpx;
+  background: linear-gradient(180deg, #0a0a1a 0%, #1a1a3a 60%, #2a2a5a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.moon {
+  position: absolute;
+  top: 30rpx;
+  right: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 20rpx #fff, 0 0 40rpx #fff, 0 0 60rpx rgba(255,255,255,0.5);
+  animation: moonGlow 3s ease-in-out infinite;
+}
+
+@keyframes moonGlow {
+  0%, 100% { box-shadow: 0 0 20rpx #fff, 0 0 40rpx #fff, 0 0 60rpx rgba(255,255,255,0.5); }
+  50% { box-shadow: 0 0 30rpx #fff, 0 0 60rpx #fff, 0 0 80rpx rgba(255,255,255,0.6); }
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  width: 4rpx;
+  height: 4rpx;
+  background: #fff;
+  border-radius: 50%;
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.s1 { top: 40rpx; left: 50rpx; }
+.s2 { top: 80rpx; left: 150rpx; animation-delay: 0.3s; }
+.s3 { top: 60rpx; left: 250rpx; animation-delay: 0.6s; }
+.s4 { top: 100rpx; left: 350rpx; animation-delay: 0.9s; }
+.s5 { top: 50rpx; left: 450rpx; animation-delay: 1.2s; }
+.s6 { top: 90rpx; left: 520rpx; animation-delay: 1.5s; }
+.s7 { top: 70rpx; left: 300rpx; animation-delay: 0.4s; }
+.s8 { top: 120rpx; left: 400rpx; animation-delay: 0.7s; }
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.poem-lines {
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.line {
+  font-size: 32rpx;
+  color: #FFD700;
+  font-family: 'KaiTi', 'STKaiti', serif;
+  opacity: 0;
+  animation: lineAnim 4s ease-in-out forwards;
+  margin: 15rpx 0;
+  text-shadow: 0 0 10rpx rgba(255, 215, 0, 0.8);
+}
+
+.l1 { animation-delay: 0s; }
+.l2 { animation-delay: 3s; }
+.l3 { animation-delay: 6s; }
+.l4 { animation-delay: 9s; }
+
+@keyframes lineAnim {
+  0% { opacity: 0; transform: translateY(20rpx); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0.8; transform: translateY(0); }
+}
+
+.explanation {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16rpx;
+  padding: 25rpx;
+  margin: 20rpx 0;
+}
+
+.exp-title {
+  font-size: 28rpx;
+  color: #FFD700;
+  margin-bottom: 15rpx;
+  font-weight: bold;
+}
+
+.exp-content {
+  font-size: 26rpx;
+  color: #ddd;
+  line-height: 1.8;
+}
+
+.controls {
+  text-align: center;
+  margin: 20rpx 0;
+}
+
+.btn-replay {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50rpx;
+  padding: 25rpx 60rpx;
+  font-size: 30rpx;
+  box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.4);
+}
+
+.btn-replay:active {
+  transform: scale(0.95);
+  box-shadow: 0 4rpx 10rpx rgba(102, 126, 234, 0.3);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  border-radius: 40rpx;
+  padding: 20rpx 35rpx;
+  font-size: 26rpx;
+}
+
+.nav-btn:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn[disabled] {
+  opacity: 0.4;
+}
