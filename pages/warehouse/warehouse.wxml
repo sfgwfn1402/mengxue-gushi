@@ -111,6 +111,12 @@
       bindtap="goToLearn"
       data-id="{{item.id}}"
     >
+      <view class="poem-thumb-wrap">
+        <image wx:if="{{item.imageUrl}}" class="poem-thumb" src="{{item.imageUrl}}" mode="aspectFill" lazy-load="true"></image>
+        <view wx:else class="poem-thumb fallback">
+          <text>诗</text>
+        </view>
+      </view>
       <view class="poem-card-left">
         <view class="poem-level-tag level-{{item.difficulty}}">
           {{item.difficulty === 1 ? '🌱' : item.difficulty === 2 ? '🌿' : '🏔️'}}
