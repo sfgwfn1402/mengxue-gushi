@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="hero-card">
+    <view class="hero-icon">🛠</view>
+    <view class="hero-title">管理员中心</view>
+    <view class="hero-desc">查看用户反馈、审核内容和处理运营事项。</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">正在校验权限...</view>
+
+  <view wx:elif="{{isAdmin}}" class="admin-grid">
+    <view class="admin-card" bindtap="openFeedback">
+      <view class="admin-card-icon">📮</view>
+      <view class="admin-card-main">
+        <view class="admin-card-title">用户反馈</view>
+        <view class="admin-card-desc">查看家长提交的问题和建议</view>
+      </view>
+      <view class="admin-card-arrow">›</view>
+    </view>
+
+    <view class="admin-card disabled">
+      <view class="admin-card-icon">🎙</view>
+      <view class="admin-card-main">
+        <view class="admin-card-title">朗读审核</view>
+        <view class="admin-card-desc">后续接入</view>
+      </view>
+    </view>
+
+    <view class="admin-card disabled">
+      <view class="admin-card-icon">🖼</view>
+      <view class="admin-card-main">
+        <view class="admin-card-title">诗画审核</view>
+        <view class="admin-card-desc">后续接入</view>
+      </view>
+    </view>
+  </view>
+</view>

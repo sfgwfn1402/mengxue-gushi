@@ -23,7 +23,8 @@ Page({
     modalItems: [],
     modalText: '',
     aboutLines: [],
-    appVersion: versionInfo.version || ''
+    appVersion: versionInfo.version || '',
+    isAdmin: false
   },
 
   onShow() {
@@ -44,7 +45,8 @@ Page({
         this.setData({
           userProfile: user,
           nicknameInput: nickname,
-          avatarUrl
+          avatarUrl,
+          isAdmin: user.role === 'admin'
         })
       })
       .catch(err => {
@@ -225,6 +227,7 @@ Page({
     if (action === 'records') this.openRecords()
     if (action === 'achievements') this.openAchievements()
     if (action === 'feedback') this.openFeedback()
+    if (action === 'admin') wx.navigateTo({ url: '/pages/admin/admin' })
     if (action === 'settings') this.openSettings()
   },
 

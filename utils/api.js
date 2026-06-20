@@ -586,6 +586,19 @@ function submitParentFeedback(payload) {
   })
 }
 
+function listAdminFeedback(params) {
+  return authed({ url: `/admin/feedback${toQuery(params || {})}` })
+}
+
+function updateAdminFeedbackStatus(id, payload) {
+  return authed({
+    url: `/admin/feedback/${id}/status`,
+    method: 'POST',
+    data: payload || {},
+    header: { 'Content-Type': 'application/json' }
+  })
+}
+
 module.exports = {
   config,
   request,
@@ -636,5 +649,7 @@ module.exports = {
   addFavorite,
   removeFavorite,
   submitParentFeedback,
+  listAdminFeedback,
+  updateAdminFeedbackStatus,
   normalizePoemFromApi
 }

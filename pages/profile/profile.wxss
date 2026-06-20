@@ -105,6 +105,7 @@ page {
 .menu-records { background: linear-gradient(145deg, #F0EEFF 0%, #DDD6FE 100%); }
 .menu-achievements { background: linear-gradient(145deg, #FFF0E8 0%, #FFD2BE 100%); }
 .menu-feedback { background: linear-gradient(145deg, #EFFFF5 0%, #C9F5DA 100%); }
+.menu-admin { background: linear-gradient(145deg, #FFF4E6 0%, #FFD7A8 100%); }
 .menu-settings { background: linear-gradient(145deg, #F4F6FA 0%, #E3E8F0 100%); }
 
 .reminder { margin-top: 28rpx; padding: 30rpx; text-align: center; background: linear-gradient(180deg, #71B8FF 0%, #3D8CFF 100%); box-shadow: 0 16rpx 32rpx rgba(61,140,255,0.20); }

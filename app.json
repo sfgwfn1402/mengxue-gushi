@@ -11,6 +11,8 @@
     "pages/works/works",
     "pages/work-detail/work-detail",
     "pages/feedback/feedback",
+    "pages/admin/admin",
+    "pages/admin-feedback/admin-feedback",
     "pages/quiz/quiz",
     "pages/animation/animation"
   ],

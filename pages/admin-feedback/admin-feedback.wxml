@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="header-card">
+    <view>
+      <view class="page-title">用户反馈</view>
+      <view class="page-sub">共 {{total}} 条，按提交时间倒序</view>
+    </view>
+  </view>
+
+  <scroll-view class="status-scroll" scroll-x="true">
+    <view class="status-tabs">
+      <view wx:for="{{statusTabs}}" wx:key="value" class="status-tab {{status === item.value ? 'active' : ''}}" data-status="{{item.value}}" bindtap="switchStatus">{{item.label}}</view>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{!loading && !items.length}}" class="empty">暂无反馈</view>
+
+  <view class="feedback-list">
+    <view class="feedback-card" wx:for="{{items}}" wx:key="id">
+      <view class="card-head">
+        <view>
+          <view class="card-title">{{item.typeLabel}} · {{item.age || '未填年龄'}}</view>
+          <view class="card-time">{{item.createdText}}</view>
+        </view>
+        <view class="status-pill status-{{item.status}}">{{item.statusLabel}}</view>
+      </view>
+
+      <view class="field-block">
+        <view class="field-label">孩子困难</view>
+        <view class="field-text">{{item.painText}}</view>
+      </view>
+      <view class="field-block">
+        <view class="field-label">改进建议</view>
+        <view class="field-text">{{item.suggestionText}}</view>
+      </view>
+      <view class="field-block contact" bindtap="copyContact" data-text="{{item.contactText}}">
+        <view class="field-label">联系方式</view>
+        <view class="field-text">{{item.contactText}}</view>
+      </view>
+
+      <view class="card-actions">
+        <button class="action-btn done" wx:if="{{item.status !== 'resolved'}}" data-id="{{item.id}}" bindtap="markResolved">标记已处理</button>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+  <view wx:if="{{!hasMore && items.length}}" class="no-more">没有更多了</view>
+</view>

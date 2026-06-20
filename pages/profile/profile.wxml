@@ -66,6 +66,11 @@
       <text class="menu-text">家长心声</text>
       <text class="menu-desc">建议反馈</text>
     </button>
+    <button wx:if="{{isAdmin}}" class="menu-item menu-button menu-admin" data-action="admin" bindtap="handleMenuTap">
+      <view class="menu-icon-wrap"><text class="menu-icon">🛠</text></view>
+      <text class="menu-text">管理员中心</text>
+      <text class="menu-desc">反馈 · 审核 · 数据</text>
+    </button>
     <button class="menu-item menu-button menu-settings" data-action="settings" bindtap="handleMenuTap">
       <view class="menu-icon-wrap"><text class="menu-icon">⚙️</text></view>
       <text class="menu-text">设置</text>
