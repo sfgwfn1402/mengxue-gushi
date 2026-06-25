@@ -9,10 +9,14 @@ Page({
     items: [],
     formatTimeMap: {},
     playingId: '',
+    recitationCount: 0,
+    artworkCount: 0,
+    totalWorksCount: 0,
+    latestWorkText: '还没有作品，今天可以留下第一份古诗记忆',
     statusTextMap: {
-      active: '私有',
-      submitted: '已发布',
-      public: '已公开',
+      active: '仅自己可见',
+      submitted: '待审核',
+      public: '已发布',
       rejected: '未通过'
     }
   },
@@ -22,6 +26,7 @@ Page({
   },
 
   onShow() {
+    this.loadOverview()
     this.loadWorks()
   },
 
@@ -37,10 +42,41 @@ Page({
     this.loadWorks()
   },
 
+  loadOverview() {
+    Promise.all([
+      api.listMyRecitations({ limit: 100 }).catch(() => ({ items: [] })),
+      api.listArtworks({ mine: true, limit: 100 }).catch(() => ({ items: [] })),
+      api.listAllPoems().catch(() => ({ items: [] }))
+    ]).then(([recitations, artworks, poems]) => {
+      const poemMap = {}
+      ;(poems.items || []).forEach(poem => { poemMap[Number(poem.id)] = poem })
+      const recitationItems = (recitations.items || []).map(item => {
+        const poem = poemMap[Number(item.poem_id || item.poemId)]
+        return poem ? Object.assign({}, item, { poem_title: poem.title, poem_author: poem.author, poem_dynasty: poem.dynasty }) : item
+      })
+      const artworkItems = artworks.items || []
+      const allItems = recitationItems.map(item => Object.assign({ __type: 'recitation' }, item))
+        .concat(artworkItems.map(item => Object.assign({ __type: 'artwork' }, item)))
+      allItems.sort((a, b) => String(b.created_at || b.createdAt || '').localeCompare(String(a.created_at || a.createdAt || '')))
+      const latest = allItems[0]
+      const latestTitle = latest ? (latest.poem_title || latest.poemTitle || latest.title || '古诗作品') : ''
+      const latestDate = latest ? this.formatDate(latest.created_at || latest.createdAt) : ''
+      const latestWorkText = latest
+        ? `${latestDate || '最近'}留下了《${latestTitle}》${latest.__type === 'recitation' ? '朗读' : '诗画'}`
+        : '还没有作品，今天可以留下第一份古诗记忆'
+      this.setData({
+        recitationCount: recitationItems.length,
+        artworkCount: artworkItems.length,
+        totalWorksCount: recitationItems.length + artworkItems.length,
+        latestWorkText
+      })
+    })
+  },
+
   loadWorks() {
     this.setData({ loading: true })
     const req = this.data.tab === 'recitations'
-      ? Promise.all([api.listMyRecitations({ limit: 100 }), api.listPoems({ page: 1, page_size: 500 })])
+      ? Promise.all([api.listMyRecitations({ limit: 100 }), api.listAllPoems()])
           .then(([res, poems]) => this.attachPoemTitles(res, poems))
       : api.listArtworks({ mine: true, limit: 100 })
     req.then(res => {
@@ -137,6 +173,10 @@ Page({
     this.setData({ playingId: '' })
   },
 
+  goCreate() {
+    wx.switchTab({ url: '/pages/create/create' })
+  },
+
   openDetail(e) {
     const index = Number(e.currentTarget.dataset.index || 0)
     const item = this.data.items[index]
@@ -173,14 +213,14 @@ Page({
 
   submitWork(id) {
     wx.showModal({
-      title: '发布到发现？',
-      content: '发布后，其他用户可以在发现中看到/听到这个作品。',
-      confirmText: '发布',
+      title: '提交审核？',
+      content: '提交后会进入管理员审核队列，审核通过后才会出现在发现页。',
+      confirmText: '提交',
       success: res => {
         if (!res.confirm) return
         const req = this.data.tab === 'recitations' ? api.submitRecitation(id) : api.submitArtwork(id)
-        req.then(() => { wx.showToast({ title: '已发布到发现', icon: 'success' }); this.loadWorks() })
-          .catch(err => { console.warn('发布失败', err); wx.showToast({ title: '发布失败', icon: 'none' }) })
+        req.then(() => { wx.showToast({ title: '已提交审核', icon: 'success' }); this.loadWorks() })
+          .catch(err => { console.warn('提交失败', err); wx.showToast({ title: '提交失败', icon: 'none' }) })
       }
     })
   },
@@ -255,12 +295,13 @@ Page({
 
   drawShareCard(item) {
     const isArtwork = this.data.tab === 'artworks'
+    const workType = isArtwork ? 'artwork' : 'recitation'
     const poemTitle = item.poem_title || item.poemTitle || '古诗作品'
     const workTitle = item.title || (isArtwork ? '我的诗配画' : '我的朗读')
     const date = (this.data.formatTimeMap && this.data.formatTimeMap[item.id]) || ''
     const artworkUrl = isArtwork ? this.normalizeMediaUrl(item.image_url || item.imageUrl) : ''
 
-    const draw = (imagePath) => new Promise((resolve, reject) => {
+    const draw = ({ imagePath, qrcodePath }) => new Promise((resolve, reject) => {
       const ctx = wx.createCanvasContext('shareCanvas', this)
       const W = 600
       const H = 900
@@ -311,15 +352,27 @@ Page({
       ctx.fillText(date ? `完成于 ${date}` : '我的古诗成长作品', W / 2, 732)
 
       ctx.setFillStyle('#FFFFFF')
-      this.roundRect(ctx, 72, 770, 456, 76, 38)
+      this.roundRect(ctx, 64, 760, 472, 104, 28)
       ctx.fill()
-      ctx.setFillStyle('#FF6B4A')
-      ctx.setFontSize(28)
-      ctx.fillText('打开小程序，查看作品入口', W / 2, 818)
+      if (qrcodePath) {
+        ctx.drawImage(qrcodePath, 82, 774, 76, 76)
+        ctx.setTextAlign('left')
+        ctx.setFillStyle('#FF6B4A')
+        ctx.setFontSize(27)
+        ctx.fillText(isArtwork ? '扫码查看我的诗画' : '扫码听我的朗读', 176, 812)
+        ctx.setFillStyle('#9CA3AF')
+        ctx.setFontSize(20)
+        ctx.fillText('小程序码直达作品详情', 176, 842)
+        ctx.setTextAlign('center')
+      } else {
+        ctx.setFillStyle('#FF6B4A')
+        ctx.setFontSize(28)
+        ctx.fillText('打开小程序，查看作品入口', W / 2, 818)
+      }
 
       ctx.setFillStyle('#9CA3AF')
       ctx.setFontSize(20)
-      ctx.fillText('作品默认私有，分享由家长主动发起', W / 2, 870)
+      ctx.fillText('作品默认私有，分享由家长主动发起', W / 2, 890)
 
       ctx.draw(false, () => {
         wx.canvasToTempFilePath({
@@ -334,10 +387,14 @@ Page({
       })
     })
 
-    if (!artworkUrl) return draw('')
-    return new Promise(resolve => {
-      wx.getImageInfo({ src: artworkUrl, success: res => resolve(res.path), fail: () => resolve('') })
-    }).then(draw)
+    const loadImage = artworkUrl
+      ? new Promise(resolve => wx.getImageInfo({ src: artworkUrl, success: res => resolve(res.path), fail: () => resolve('') }))
+      : Promise.resolve('')
+    const qrcodeUrl = item.id ? api.getWorkQrcodeUrl(workType, item.id) : ''
+    const loadQrcode = qrcodeUrl
+      ? new Promise(resolve => wx.getImageInfo({ src: qrcodeUrl, success: res => resolve(res.path), fail: err => { console.warn('加载作品小程序码失败', err, qrcodeUrl); resolve('') } }))
+      : Promise.resolve('')
+    return Promise.all([loadImage, loadQrcode]).then(([imagePath, qrcodePath]) => draw({ imagePath, qrcodePath }))
   },
 
   roundRect(ctx, x, y, w, h, r) {
@@ -381,7 +438,7 @@ Page({
     const type = this.data.tab === 'recitations' ? 'recitation' : 'artwork'
     return {
       title: this.data.tab === 'recitations' ? `我朗读了《${title}》` : `我画了《${title}》`,
-      path: item.id ? `pages/work-detail/work-detail?type=${type}&id=${item.id}` : `pages/works/works?tab=${this.data.tab}`
+      path: item.id ? `/pages/work-detail/work-detail?type=${type}&id=${item.id}` : `/pages/works/works?tab=${this.data.tab}`
     }
   }
 })

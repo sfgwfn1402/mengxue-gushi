@@ -10,22 +10,27 @@
   </view>
 
   <view class="form-card">
-    <view class="field-label">选择关联古诗</view>
-    <input class="search-input" placeholder="输入诗名、作者或诗句搜索" value="{{poemSearch}}" bindinput="onPoemSearchInput" />
-    <view class="selected-poem">当前：{{selectedPoemTitle}}</view>
-    <view class="poem-list-hint">{{poemListHint}}</view>
-    <view class="poem-result-list">
-      <view
-        class="poem-result {{selectedPoemId === item.id ? 'active' : ''}}"
-        wx:for="{{filteredPoems}}"
-        wx:key="id"
-        data-id="{{item.id}}"
-        bindtap="selectPoem"
-      >
-        <view class="poem-result-title">《{{item.title}}》</view>
-        <view class="poem-result-sub">{{item.dynasty}} · {{item.author}}</view>
-      </view>
+    <view class="field-label-row">
+      <view class="field-label">选择关联古诗</view>
+      <view class="poem-toggle" bindtap="togglePoemList">{{poemListExpanded ? '收起' : '展开'}}</view>
     </view>
+    <input class="search-input" placeholder="输入诗名、作者或诗句搜索" value="{{poemSearch}}" bindfocus="onPoemSearchFocus" bindinput="onPoemSearchInput" />
+    <view class="selected-poem">当前：{{selectedPoemTitle}}</view>
+    <block wx:if="{{poemListExpanded}}">
+      <view class="poem-list-hint">{{poemListHint}}</view>
+      <view class="poem-result-list">
+        <view
+          class="poem-result {{selectedPoemId === item.id ? 'active' : ''}}"
+          wx:for="{{filteredPoems}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="selectPoem"
+        >
+          <view class="poem-result-title">《{{item.title}}》</view>
+          <view class="poem-result-sub">{{item.dynasty}} · {{item.author}}</view>
+        </view>
+      </view>
+    </block>
   </view>
 
   <view class="form-card" wx:if="{{mode === 'recitation'}}">
@@ -35,9 +40,13 @@
       <view class="record-text">{{recording ? '正在录音…' : (recordFilePath ? '录音已准备好' : '点击开始录音')}}</view>
       <view class="record-duration" wx:if="{{recordDuration}}">{{recordDuration}} 秒</view>
     </view>
-    <button class="primary-btn" wx:if="{{!recording}}" bindtap="startRecord">开始录音</button>
-    <button class="danger-btn" wx:else bindtap="stopRecord">完成录音</button>
-    <button class="publish-btn" loading="{{publishing}}" disabled="{{publishing}}" bindtap="publishRecitation">发布朗诵</button>
+    <button class="primary-btn" wx:if="{{!recording && !recordFilePath}}" bindtap="startRecord">开始录音</button>
+    <button class="danger-btn" wx:elif="{{recording}}" bindtap="stopRecord">完成录音</button>
+    <view class="record-actions" wx:elif="{{recordFilePath}}">
+      <button class="secondary-btn" bindtap="previewRecord">🔊 试听</button>
+      <button class="outline-btn" bindtap="startRecord">重录</button>
+    </view>
+    <button class="publish-btn" loading="{{publishing}}" disabled="{{publishing || !recordFilePath}}" bindtap="publishRecitation">发布朗诵</button>
   </view>
 
   <view class="form-card" wx:if="{{mode === 'artwork'}}">

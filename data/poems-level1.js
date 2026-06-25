@@ -1009,10 +1009,10 @@ module.exports = {
       "title": "游子吟",
       "author": "孟郊",
       "dynasty": "唐",
-      "content": "慈母手中线，游子身上衣。临行密密缝，意恐迟迟归。",
-      "pinyin": "cí mǔ shǒu zhōng xiàn, yóu zǐ shēn shàng yī. lín xíng mì mì feng, yǐ kǒng chí chí guī.",
-      "translation": "慈祥的母亲手里的针线，为远行的儿子缝制衣服。临行前细细地缝好线，担心儿子迟迟不归来。",
-      "story": "孟郊要出远门，他的老母亲连夜为他缝制衣服。这首诗写出了伟大的母爱，母亲一针一线地缝衣服，只担心儿子出远门不能早点回来。",
+      "content": "慈母手中线，游子身上衣。临行密密缝，意恐迟迟归。谁言寸草心，报得三春晖。",
+      "pinyin": "cí mǔ shǒu zhōng xiàn, yóu zǐ shēn shàng yī. lín xíng mì mì féng, yì kǒng chí chí guī. shuí yán cùn cǎo xīn, bào dé sān chūn huī.",
+      "translation": "慈祥的母亲手里的针线，为远行的儿子缝制衣服。临行前细细地缝好线，担心儿子迟迟不归来。谁说像小草一样微弱的心意，能报答春天阳光般深厚的母爱呢？",
+      "story": "孟郊要出远门，他的老母亲连夜为他缝制衣服。这首诗写出了伟大的母爱：母亲一针一线地缝衣服，只担心儿子出远门不能早点回来。诗人感叹，儿女像小草一样的心意，很难报答母亲春晖般温暖深厚的爱。",
       "difficulty": 1,
       "tags": [
         "母爱",
@@ -1023,31 +1023,31 @@ module.exports = {
       "season": "any",
       "videoAvailable": false,
       "cardUnlocked": false,
-      "parentGuide": "可以先让孩子闭上眼睛听一遍，想象《游子吟》里的画面。这首诗是唐代孟郊写的，主题可以抓住“母爱、亲情、离别、感恩”。妈妈讲的时候，不必逐字翻译，可以按画面来讲：慈祥的母亲手里的针线，为远行的儿子缝制衣服。临行前细细地缝好线，担心儿子迟迟不归来。然后再补一句背景：孟郊要出远门，他的老母亲连夜为他缝制衣服。这首诗写出了伟大的母爱，母亲一针一线地缝衣服，只担心儿子出远门不能早点回来。最后问孩子一两个小问题，比如：你听到了什么？你觉得诗人当时开心、想家、安静还是勇敢？这样孩子会更容易把诗句和感受连起来。如果孩子还小，只要记住最有画面感的一句就可以；如果孩子大一点，可以再聊聊这首诗为什么和不限定季节、母爱、亲情、离别、感恩有关。",
+      "parentGuide": "可以先让孩子闭上眼睛听一遍，想象《游子吟》里的画面。这首诗是唐代孟郊写的，主题可以抓住“母爱、亲情、离别、感恩”。妈妈讲的时候，不必逐字翻译，可以按画面来讲：慈祥的母亲手里的针线，为远行的儿子缝制衣服。临行前细细地缝好线，担心儿子迟迟不归来。谁说像小草一样的心意，能报答春天阳光般深厚的母爱呢？然后再补一句背景：孟郊要出远门，他的老母亲连夜为他缝制衣服。这首诗写出了伟大的母爱，母亲一针一线地缝衣服，只担心儿子出远门不能早点回来；最后两句是在说，孩子再怎么爱妈妈，也很难完全报答妈妈像春天阳光一样温暖的爱。最后问孩子一两个小问题，比如：你听到了什么？你觉得诗人当时开心、想家、安静还是勇敢？这样孩子会更容易把诗句和感受连起来。如果孩子还小，只要记住最有画面感的一句就可以；如果孩子大一点，可以再聊聊这首诗为什么和不限定季节、母爱、亲情、离别、感恩有关。",
       "annotatedContent": [
         {
           "char": "慈",
-          "pinyin": "cí",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "母",
-          "pinyin": "mǔ",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "手",
-          "pinyin": "shǒu",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "中",
-          "pinyin": "zhōng",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "线",
-          "pinyin": "xiàn",
+          "pinyin": "",
           "punct": false
         },
         {
@@ -1057,27 +1057,27 @@ module.exports = {
         },
         {
           "char": "游",
-          "pinyin": "yóu",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "子",
-          "pinyin": "zǐ",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "身",
-          "pinyin": "shēn",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "上",
-          "pinyin": "shàng",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "衣",
-          "pinyin": "yī",
+          "pinyin": "",
           "punct": false
         },
         {
@@ -1087,27 +1087,27 @@ module.exports = {
         },
         {
           "char": "临",
-          "pinyin": "lín",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "行",
-          "pinyin": "xíng",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "密",
-          "pinyin": "mì",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "密",
-          "pinyin": "mì",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "缝",
-          "pinyin": "feng",
+          "pinyin": "",
           "punct": false
         },
         {
@@ -1117,27 +1117,87 @@ module.exports = {
         },
         {
           "char": "意",
-          "pinyin": "yǐ",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "恐",
-          "pinyin": "kǒng",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "迟",
-          "pinyin": "chí",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "迟",
-          "pinyin": "chí",
+          "pinyin": "",
           "punct": false
         },
         {
           "char": "归",
-          "pinyin": "guī",
+          "pinyin": "",
+          "punct": false
+        },
+        {
+          "char": "。",
+          "pinyin": "",
+          "punct": true
+        },
+        {
+          "char": "谁",
+          "pinyin": "",
+          "punct": false
+        },
+        {
+          "char": "言",
+          "pinyin": "",
+          "punct": false
+        },
+        {
+          "char": "寸",
+          "pinyin": "",
+          "punct": false
+        },
+        {
+          "char": "草",
+          "pinyin": "",
+          "punct": false
+        },
+        {
+          "char": "心",
+          "pinyin": "",
+          "punct": false
+        },
+        {
+          "char": "，",
+          "pinyin": "",
+          "punct": true
+        },
+        {
+          "char": "报",
+          "pinyin": "",
+          "punct": false
+        },
+        {
+          "char": "得",
+          "pinyin": "",
+          "punct": false
+        },
+        {
+          "char": "三",
+          "pinyin": "",
+          "punct": false
+        },
+        {
+          "char": "春",
+          "pinyin": "",
+          "punct": false
+        },
+        {
+          "char": "晖",
+          "pinyin": "",
           "punct": false
         },
         {

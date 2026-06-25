@@ -14,7 +14,7 @@
 .play-btn { margin-top: 36rpx; height: 82rpx; line-height: 82rpx; padding: 0 50rpx; border-radius: 999rpx; background: #60A5FA; color: #fff; font-size: 30rpx; font-weight: 900; }
 .work-title { margin-top: 24rpx; font-size: 34rpx; font-weight: 900; color: #2F2A1F; text-align: center; }
 .desc { margin-top: 12rpx; color: #6B7280; font-size: 26rpx; line-height: 1.55; text-align: center; }
-.actions { margin-top: 24rpx; display: flex; justify-content: center; gap: 16rpx; }
+.actions { margin-top: 24rpx; display: flex; justify-content: center; gap: 16rpx; flex-wrap: wrap; }
 .compact-actions { align-items: center; }
 .action { margin: 0; min-width: 176rpx; height: 62rpx; line-height: 62rpx; padding: 0 30rpx; border-radius: 999rpx; background: #F3F4F6; color: #4B5563; font-size: 25rpx; font-weight: 900; }
 .action.primary { background: linear-gradient(180deg,#67B7FF,#3B82F6); color: #fff; box-shadow: 0 8rpx 18rpx rgba(59,130,246,.18); }

@@ -303,43 +303,59 @@ module.exports = {
   "8": {
     "poemId": 8,
     "title": "游子吟",
-    "lineCount": 4,
-    "status": "manual_4line_cropfix",
+    "lineCount": 6,
+    "status": "funasr_aligned_v3_id8_textfix",
     "matchRatio": 1,
     "weakLines": 0,
-    "recognizedText": "慈母手中线游子身上衣，临行密密缝，意恐迟迟归。",
+    "recognizedText": "游子吟，孟郊，唐代慈母手中线游子身上衣，临行密密缝，意恐迟迟归，谁言寸草心，报得三春晖。",
     "lines": [
       {
         "index": 0,
         "text": "慈母手中线，",
-        "start": 0.05,
-        "end": 2.05,
+        "start": 4.65,
+        "end": 6.25,
         "segments": 5,
-        "source": "manual_4line_cropfix"
+        "source": "funasr_align"
       },
       {
         "index": 1,
         "text": "游子身上衣。",
-        "start": 2.05,
-        "end": 4.35,
+        "start": 6.69,
+        "end": 8.229,
         "segments": 5,
-        "source": "manual_4line_cropfix"
+        "source": "funasr_align"
       },
       {
         "index": 2,
         "text": "临行密密缝，",
-        "start": 4.35,
-        "end": 6.2,
+        "start": 9.01,
+        "end": 10.55,
         "segments": 5,
-        "source": "manual_4line_cropfix"
+        "source": "funasr_align"
       },
       {
         "index": 3,
         "text": "意恐迟迟归。",
-        "start": 6.2,
-        "end": 8.2,
+        "start": 10.93,
+        "end": 12.53,
         "segments": 5,
-        "source": "manual_4line_cropfix"
+        "source": "funasr_align"
+      },
+      {
+        "index": 4,
+        "text": "谁言寸草心，",
+        "start": 13.27,
+        "end": 14.91,
+        "segments": 5,
+        "source": "funasr_align"
+      },
+      {
+        "index": 5,
+        "text": "报得三春晖。",
+        "start": 15.27,
+        "end": 17.395,
+        "segments": 5,
+        "source": "funasr_align"
       }
     ]
   },
@@ -1267,13 +1283,13 @@ module.exports = {
     "title": "石灰吟",
     "lineCount": 4,
     "status": "funasr_aligned_v3",
-    "matchRatio": 0.929,
+    "matchRatio": 1,
     "weakLines": 0,
     "recognizedText": "石灰吟于谦明代千锤万凿出深山烈火焚烧若等闲，粉骨碎身浑不怕，要留清白在人间。",
     "lines": [
       {
         "index": 0,
-        "text": "千锤万击出深山，",
+        "text": "千锤万凿出深山，",
         "start": 8.11,
         "end": 11.17,
         "segments": 7,
@@ -1289,7 +1305,7 @@ module.exports = {
       },
       {
         "index": 2,
-        "text": "粉身碎骨全不怕，",
+        "text": "粉骨碎身浑不怕，",
         "start": 17.25,
         "end": 20.37,
         "segments": 5,
@@ -1395,42 +1411,42 @@ module.exports = {
     "poemId": 33,
     "title": "四时田园杂兴",
     "lineCount": 4,
-    "status": "manual_fixed",
+    "status": "funasr_tool_guwendao_real_v9",
     "matchRatio": 1,
     "weakLines": 0,
-    "recognizedText": "四时田园杂兴范成大昼出耘田夜绩麻，村庄儿女各当家。童孙未解供耕织，也傍桑阴学种瓜。",
+    "recognizedText": "四时田园杂兴其三十一范成大，宋代昼出耘田夜绩麻，村庄、儿女各当家，童孙未解供耕织也。傍桑阴学种瓜。",
     "lines": [
       {
         "index": 0,
         "text": "昼出耘田夜绩麻，",
-        "start": 6.678,
-        "end": 9.63,
+        "start": 0.0,
+        "end": 2.268,
         "segments": 7,
-        "source": "manual_fixed"
+        "source": "funasr_tool_guwendao_real_v9"
       },
       {
         "index": 1,
         "text": "村庄儿女各当家。",
-        "start": 10.08,
-        "end": 13.32,
+        "start": 2.718,
+        "end": 4.914,
         "segments": 7,
-        "source": "manual_fixed"
+        "source": "funasr_tool_guwendao_real_v9"
       },
       {
         "index": 2,
         "text": "童孙未解供耕织，",
-        "start": 13.77,
-        "end": 16.362,
+        "start": 5.364,
+        "end": 7.524,
         "segments": 7,
-        "source": "manual_fixed"
+        "source": "funasr_tool_guwendao_real_v9"
       },
       {
         "index": 3,
         "text": "也傍桑阴学种瓜。",
-        "start": 16.812,
-        "end": 19.44,
+        "start": 7.974,
+        "end": 10.818,
         "segments": 7,
-        "source": "manual_fixed"
+        "source": "funasr_tool_guwendao_real_v9"
       }
     ]
   },
@@ -1679,131 +1695,148 @@ module.exports = {
     ]
   },
   "38": {
-    "poemId": 38,
-    "title": "琵琶行",
-    "lineCount": 6,
-    "status": "funasr_aligned_v3",
-    "matchRatio": 1,
-    "weakLines": 0,
-    "recognizedText": "琵琶行，唐，白居易，元和十年于左迁，九将郡司马明年秋。宋客盆蒲口闻舟中夜弹琵琶声问其音，铮铮然有经都生问其人本长安昌女，年学琵琶与木曹二善财年长色衰委身，为古人腹岁命。九、使快痰数取取罢泯然自叙少小时。欢乐事今飘轮憔悴，转喜于江湖间，于出关二年，恬然自安敢私人言世兮，始觉有千折矣。因为长句歌以赠之，凡六百一十六元，命曰琵琶行浔阳江头。夜送客，枫叶荻花秋。瑟瑟主人下马，客在船举酒，欲饮无管。闲醉不成欢，惨将别别时茫茫。江浸月，忽闻水上琵琶声。主人忘归客，不发寻声暗问。谈者谁琵琶声停欲雨，池移船相近，遥相见，添九回灯，重开宴，千呼万唤始出来。犹抱琵琶半遮面转轴，拨弦三两声未成曲调先有情浅浅演绎声声似四诉。平生不得志，低眉信手续续弹，说尽心中无限事。青龙慢捻抹复挑，初为泥厂后，六幺大闲草草如急，羽小贤切妾如私语嘈曹切切错杂谈大珠小珠落玉盘见关莺语花底黄幽夜全留冰下难冰泉冷涩弦。凝绝凝觉不通声。间歇别有忧愁，暗恨生嗯，此时无声胜有声，银瓶乍破水将迸铁骑突出，刀枪鸣，曲终收拨当心话四弦一声如裂帛。东船西舫悄无言，唯见江心秋月白。沉吟放拨插弦中整顿衣裳，起脸容。自言本是京城女家，在蛤蟆陵下住。十三、学得琵琶，成名，属教方第一部血罢。罗娇积结束，帝成美被秋娘渡。帝龄年少征缠渡。帝走红宵不结束，殿投云璧积结碎殿色罗裙积结物。今年欢笑复明年一月，春宵等闲渡暮走，从军阿已死。五、从从君阿渡啊，故门前冷落车马稀，老大嫁作商人妇伤人重利轻别离。前月浮梁买茶去去来江口，守空船，绕船月明。江水寒，夜深忽梦少年事梦啼妆泪红阑干。我闻琵琶已叹息，幼文词语重唧唧。同是天涯沦落人相逢何必曾相识，我从去年辞帝京，谪居卧病浔阳城。浔阳地僻，无音乐，终岁不闻丝竹声住尽盘江地低湿黄芦，苦竹绕宅生。其间旦暮闻何物杜鹃题，血猿哀鸣春江花朝秋月夜，往往取酒还独清，岂无山歌与村笛。欧鸦招札难为听。今夜闻君，琵琶语莫听。仙乐耳。暂行莫辞更坐琵琶曲，莫君更作琵琶行感。我此言良久，立却坐促弦弦转急，凄凄，不似向前声满座重闻，皆掩泣座中泣下，谁最多江州司马青衫湿。",
-    "lines": [
-      {
-        "index": 0,
-        "text": "浔阳江头夜送客，",
-        "start": 85.86,
-        "end": 89.375,
-        "segments": 7,
-        "source": "funasr_align"
-      },
-      {
-        "index": 1,
-        "text": "枫叶荻花秋瑟瑟。",
-        "start": 90.79,
-        "end": 94.565,
-        "segments": 7,
-        "source": "funasr_align"
-      },
-      {
-        "index": 2,
-        "text": "主人下马客在船，",
-        "start": 96.47,
-        "end": 99.775,
-        "segments": 7,
-        "source": "funasr_align"
-      },
-      {
-        "index": 3,
-        "text": "举酒欲饮无管弦。",
-        "start": 101.11,
-        "end": 104.715,
-        "segments": 7,
-        "source": "funasr_align"
-      },
-      {
-        "index": 4,
-        "text": "醉不成欢惨将别，",
-        "start": 106.54,
-        "end": 109.945,
-        "segments": 7,
-        "source": "funasr_align"
-      },
-      {
-        "index": 5,
-        "text": "别时茫茫江浸月。",
-        "start": 111.1,
-        "end": 114.845,
-        "segments": 7,
-        "source": "funasr_align"
-      }
-    ]
-  },
+  "poemId": 38,
+  "title": "琵琶行",
+  "lineCount": 6,
+  "status": "funasr_tool_bai_guwendao_p38_58_30",
+  "matchRatio": 1,
+  "weakLines": 0,
+  "recognizedText": "杜言命曰，琵琶行浔阳江头夜送客，枫叶笛花秋瑟瑟。主人下马客在船举酒，欲饮无管弦，醉不成欢惨江，别别时茫茫。将进月，忽闻水上将进声忽人忘归客，不发寻生暗问弹者，谁琵琶声停欲语池。",
+  "sourceAudio": "/tmp/poem38-bai-windows/p38-58-30.mp3",
+  "sourceUrl": "https://ziyuan.guwendao.net/song/gushiwen/qionghua/0581b0ba8bb4.mp3",
+  "version": "20260621-pipaxing-bai-guwendao-p38_58_30",
+  "lines": [
+    {
+      "index": 0,
+      "text": "浔阳江头夜送客，",
+      "start": 0.0,
+      "end": 2.412,
+      "source_start": 3.47,
+      "source_end": 5.79,
+      "source": "funasr_tool"
+    },
+    {
+      "index": 1,
+      "text": "枫叶荻花秋瑟瑟。",
+      "start": 2.862,
+      "end": 5.274,
+      "source_start": 6.15,
+      "source_end": 8.49,
+      "source": "funasr_tool"
+    },
+    {
+      "index": 2,
+      "text": "主人下马客在船，",
+      "start": 5.724,
+      "end": 7.848,
+      "source_start": 9.09,
+      "source_end": 11.11,
+      "source": "funasr_tool"
+    },
+    {
+      "index": 3,
+      "text": "举酒欲饮无管弦。",
+      "start": 8.298,
+      "end": 10.638,
+      "source_start": 11.43,
+      "source_end": 13.69,
+      "source": "funasr_tool"
+    },
+    {
+      "index": 4,
+      "text": "醉不成欢惨将别，",
+      "start": 11.088,
+      "end": 13.248,
+      "source_start": 14.61,
+      "source_end": 16.67,
+      "source": "funasr_tool"
+    },
+    {
+      "index": 5,
+      "text": "别时茫茫江浸月。",
+      "start": 13.698,
+      "end": 16.11,
+      "source_start": 16.97,
+      "source_end": 19.31,
+      "source": "funasr_tool"
+    }
+  ]
+},
   "39": {
-    "poemId": 39,
-    "title": "兵车行",
-    "lineCount": 7,
-    "status": "funasr_aligned_v3",
-    "matchRatio": 0.927,
-    "weakLines": 0,
-    "recognizedText": "兵车行杜甫，唐代车林林马萧萧，行人弓箭个载腰爷娘，妻子无相送，或哀不见。咸阳桥千衣顿足栏道哭尘哀不见全雨。田君不过者，问行人，逢人留云点行田，或从十五北防头，便至十十西营田去十里征，与果头归来投北，还防田边至留百城防，水边至开边意未矣。君不闻汉家山东二百田边赴秦暮生京起，纵有见父，把行篱或生龙母，无东西，况赴留云城防田边驱不见泉与积长者虽有问一夫感深恨，且如今年冬未休官息，卒县官及所租，租税从何出，信之生难恶。凡是生女，好生女，犹得嫁比邻，生南埋，莫随百草。君不见，青海头，古来，白骨无人收，新鬼烦冤旧鬼哭。天阴雨，湿声啾啾。",
-    "lines": [
-      {
-        "index": 0,
-        "text": "车辚辚，",
-        "start": 0.33,
-        "end": 2.27,
-        "segments": 3,
-        "source": "funasr_align"
-      },
-      {
-        "index": 1,
-        "text": "马萧萧，",
-        "start": 6.27,
-        "end": 7.23,
-        "segments": 3,
-        "source": "funasr_align"
-      },
-      {
-        "index": 2,
-        "text": "行人弓箭各在腰。",
-        "start": 7.69,
-        "end": 9.63,
-        "segments": 7,
-        "source": "funasr_align"
-      },
-      {
-        "index": 3,
-        "text": "耶娘妻子走相送，",
-        "start": 10.33,
-        "end": 12.45,
-        "segments": 7,
-        "source": "funasr_align"
-      },
-      {
-        "index": 4,
-        "text": "尘埃不见咸阳桥。",
-        "start": 12.81,
-        "end": 14.85,
-        "segments": 7,
-        "source": "funasr_align"
-      },
-      {
-        "index": 5,
-        "text": "牵衣顿足拦道哭，",
-        "start": 15.79,
-        "end": 17.79,
-        "segments": 7,
-        "source": "funasr_align"
-      },
-      {
-        "index": 6,
-        "text": "哭声直上干云霄。",
-        "start": 89.76,
-        "end": 92.985,
-        "segments": 4,
-        "source": "funasr_align"
-      }
-    ]
-  },
+  "poemId": 39,
+  "title": "兵车行",
+  "lineCount": 7,
+  "status": "funasr_tool_bingchexing_excerpt_v4_tail",
+  "matchRatio": 1,
+  "weakLines": 0,
+  "recognizedText": "兵车行杜甫，唐代车林林马萧萧，行人弓箭个载腰爷娘，妻子无相送，或哀不见。咸阳桥千衣顿足栏道哭哭声直上干云霄。田君不过者，问行人，逢人留云点行田，或从十五北防头，便至十十西营田去十里征，与果头归来投北，还防田边至留百城防，水边至开边意未矣。君不闻汉家山东二百田边赴秦暮生京起，纵有见父，把行篱或生龙母，无东西，况赴留云城防田边驱不见泉与积长者虽有问一夫感深恨，且如今年冬未休官息，卒县官及所租，租税从何出，信之生难恶。凡是生女，好生女，犹得嫁比邻，生南埋，莫随百草。君不见，青海头，古来，白骨无人收，新鬼烦冤旧鬼哭。天阴雨，湿声啾啾。",
+  "version": "20260621-bingchexing-excerpt-funasr-v4-tail",
+  "lines": [
+    {
+      "index": 0,
+      "text": "车辚辚，",
+      "start": 0.0,
+      "end": 0.98,
+      "source_start": 4.87,
+      "source_end": 5.85,
+      "source": "funasr_tool_tail_adjusted"
+    },
+    {
+      "index": 1,
+      "text": "马萧萧，",
+      "start": 1.43,
+      "end": 2.45,
+      "source_start": 6.27,
+      "source_end": 7.29,
+      "source": "funasr_tool_tail_adjusted"
+    },
+    {
+      "index": 2,
+      "text": "行人弓箭各在腰。",
+      "start": 2.9,
+      "end": 4.9,
+      "source_start": 7.69,
+      "source_end": 9.69,
+      "source": "funasr_tool_tail_adjusted"
+    },
+    {
+      "index": 3,
+      "text": "耶娘妻子走相送，",
+      "start": 5.35,
+      "end": 7.53,
+      "source_start": 10.33,
+      "source_end": 12.51,
+      "source": "funasr_tool_tail_adjusted"
+    },
+    {
+      "index": 4,
+      "text": "尘埃不见咸阳桥。",
+      "start": 7.98,
+      "end": 10.08,
+      "source_start": 12.81,
+      "source_end": 14.91,
+      "source": "funasr_tool_tail_adjusted"
+    },
+    {
+      "index": 5,
+      "text": "牵衣顿足拦道哭，",
+      "start": 10.53,
+      "end": 12.59,
+      "source_start": 15.79,
+      "source_end": 17.85,
+      "source": "funasr_tool_tail_adjusted"
+    },
+    {
+      "index": 6,
+      "text": "哭声直上干云霄。",
+      "start": 13.04,
+      "end": 15.5,
+      "source_start": 18.19,
+      "source_end": 20.65,
+      "source": "funasr_tool_tail_adjusted"
+    }
+  ]
+},
   "40": {
     "poemId": 40,
     "title": "茅屋为秋风所破歌",

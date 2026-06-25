@@ -7,15 +7,34 @@ const MINIO_BASE_URL = config.minioBaseUrl
 const MEDIA_BASE_URL = config.mediaBaseUrl || config.minioBaseUrl
 
 const FALLBACK_POEM_AUDIO_VERSION = {
-  33: '20260620-real-v4'
+  // id=8《游子吟》正文已补齐为六句；复用 id=74 的完整六句官方朗读，避免线上 poem-8 旧四句音频缓存。
+  8: '20260621-full6',
+  33: '20260621-real-guwendao-funasr-v9',
+  38: '20260621-pipaxing-bai-guwendao-p38_58_30',
+  39: '20260621-bingchexing-excerpt-funasr-v4-tail'
+}
+
+const POEM_AUDIO_ID_ALIAS = {
+  8: 74
+}
+
+// 文本已齐全、但真人朗读/跟读音频尚未生成的诗（id 172~177，比 seed 多出的 6 首新诗）。
+// 音频补齐并上传 MinIO 后，从这里移除对应 id 即可恢复朗读/跟读入口。
+const POEM_AUDIO_PENDING = new Set([172, 173, 174, 175, 176, 177])
+
+function isPoemAudioPending(poem) {
+  return !!poem && POEM_AUDIO_PENDING.has(Number(poem.id))
 }
 
 function getRemotePoemAudioPath(poem) {
   if (!poem || !poem.id) return ''
+  if (isPoemAudioPending(poem)) return '' // 音频整理中，不给候选 URL，避免 404 哑播
   // 官方朗读使用 MinIO 中的真人音频；公网短路径 /audios/ 由 Nginx 映射到 MinIO audios-id/。
   // 长期方案：后端返回 audio_version；小程序把它拼到 URL 上，音频更新后自动绕过本地缓存。
-  const version = poem.audioVersion || poem.audio_version || FALLBACK_POEM_AUDIO_VERSION[poem.id]
-  return `${MEDIA_BASE_URL}/audios/poem-${poem.id}.mp3${version ? `?v=${version}` : ''}`
+  const poemId = Number(poem.id)
+  const audioId = POEM_AUDIO_ID_ALIAS[poemId] || poemId
+  const version = poem.audioVersion || poem.audio_version || FALLBACK_POEM_AUDIO_VERSION[poemId]
+  return `${MEDIA_BASE_URL}/audios/poem-${audioId}.mp3${version ? `?v=${version}` : ''}`
 }
 
 function getPoemAudioCandidates(poem) {
@@ -74,6 +93,7 @@ module.exports = {
   getAudioPath,
   getAudioCandidates,
   getRemotePoemAudioPath,
+  isPoemAudioPending,
   audioExists,
   pickAvailableAudio
 }

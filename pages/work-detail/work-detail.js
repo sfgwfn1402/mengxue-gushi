@@ -22,7 +22,7 @@ Page({
 
   loadWork() {
     const cached = wx.getStorageSync('currentWorkDetail')
-    if (cached && cached.id === this.data.id && cached.type === this.data.type) {
+    if (cached && String(cached.id) === String(this.data.id) && cached.type === this.data.type) {
       this.applyWork(cached.item)
       return
     }
@@ -250,7 +250,7 @@ Page({
     const title = this.data.work ? (this.data.work.poem_title || this.data.work.poemTitle || '古诗作品') : '我的古诗作品'
     return {
       title: this.data.type === 'recitation' ? `我朗读了《${title}》` : `我画了《${title}》`,
-      path: this.data.id ? `pages/work-detail/work-detail?type=${this.data.type}&id=${this.data.id}` : 'pages/index/index'
+      path: this.data.id ? `/pages/work-detail/work-detail?type=${this.data.type}&id=${this.data.id}` : '/pages/index/index'
     }
   }
 })

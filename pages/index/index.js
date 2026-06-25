@@ -38,6 +38,11 @@ Page({
     dataSource: '本地数据',
     backendError: '',
     playingRecitationId: '',
+    todayRecitationPages: [],
+    carouselIndex: 0,
+    weeklyRankPages: [],
+    weeklyRankIndex: 0,
+    recitationShowTab: 'hot', // 'hot' | 'rank'
     homeTab: 'learn',
     discoverFilter: 'all',
     discoverItems: [],
@@ -45,7 +50,12 @@ Page({
     discoverPage: 1,
     discoverPageSize: 10,
     discoverLoading: false,
-    discoverHasMore: true
+    discoverHasMore: true,
+    recentResult: null,
+    recentResultText: '',
+    streak: 0,
+    todayChecked: false,
+    streakSub: ''
   },
 
   onLoad() {
@@ -54,8 +64,60 @@ Page({
   },
 
   onShow() {
+    this.loadRecentResult()
+    this.loadStreak() // 每次回到首页都刷新，学习/打卡后连续天数即时更新
     if (this._loadedOnce) return
     this._loadedOnce = true
+  },
+
+  loadStreak() {
+    api.getStats()
+      .then(stats => {
+        const streak = stats.streak || 0
+        const todayChecked = !!stats.today_checked
+        let streakSub = ''
+        if (todayChecked) {
+          streakSub = '今天已经学习啦，真棒！'
+        } else if (streak > 0) {
+          streakSub = '别让连续中断啦，今天再学一首'
+        } else {
+          streakSub = '今天开启第一天，点亮一首诗吧'
+        }
+        this.setData({ streak, todayChecked, streakSub })
+      })
+      .catch(err => console.warn('读取连续学习天数失败', err))
+  },
+
+  goChallenge() {
+    wx.switchTab({ url: '/pages/challenge/challenge' })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '萌学古诗：每天读一点，慢慢爱上古诗',
+      path: '/pages/index/index'
+    }
+  },
+
+  onShareTimeline() {
+    return {
+      title: '萌学古诗：每天读一点，慢慢爱上古诗'
+    }
+  },
+
+  loadRecentResult() {
+    const history = wx.getStorageSync('learningResultHistory') || []
+    const result = (Array.isArray(history) && history[0]) || wx.getStorageSync('lastLearningResult')
+    if (!result || !result.poemId) {
+      this.setData({ recentResult: null, recentResultText: '' })
+      return
+    }
+    const actionMap = { follow: '刚完成跟读', learned: '刚点亮', recitation: '刚生成朗诵', artwork: '刚发布诗画', preview: '正在学习' }
+    this.setData({
+      recentResult: result,
+      recentResultText: `${actionMap[result.kind] || '学习了'}《${result.poemTitle || '古诗'}》`,
+      recentActionText: result.kind === 'artwork' ? '再画一张' : '录朗诵'
+    })
   },
 
   refreshList() {
@@ -161,8 +223,35 @@ Page({
   },
 
   loadPopularRecitations() {
-    api.getPopularRecitations()
-      .then(res => this.setData({ popularRecitations: res.items || [] }))
+    // 人气朗诵：后端已做"最新100条 → 点赞前30 → 随机10条"
+    api.getHotRecitationPick()
+      .then(res => {
+        const items = res.items || []
+        const carouselPages = []
+        for (let i = 0; i < items.length; i += 2) {
+          carouselPages.push(items.slice(i, i + 2))
+        }
+
+        // 本周排行：请求全部热度数据，按点赞数取前 10
+        api.getPopularRecitations({ limit: 50 })
+          .then(res2 => {
+            const all = res2.items || []
+            all.sort((a, b) => b.recitation.like_count - a.recitation.like_count)
+            const top10 = all.slice(0, 10).map((item, i) => ({ ...item, _rankIndex: i + 1 }))
+            const rankPages = []
+            for (let i = 0; i < top10.length; i += 2) {
+              rankPages.push(top10.slice(i, i + 2))
+            }
+            this.setData({ weeklyRankPages: rankPages, weeklyRankIndex: 0 })
+          })
+          .catch(() => {})
+
+        this.setData({
+          popularRecitations: [],
+          todayRecitationPages: carouselPages,
+          carouselIndex: 0
+        })
+      })
       .catch(err => console.warn('读取人气朗诵失败', err))
   },
 
@@ -170,6 +259,80 @@ Page({
     const tab = e.currentTarget.dataset.tab || 'learn'
     this.setData({ homeTab: tab })
     if (tab === 'discover') this.loadDiscoverItems({ reset: true })
+  },
+
+  switchRecitationShowTab(e) {
+    const tab = e.currentTarget.dataset.tab || 'hot'
+    if (tab === this.data.recitationShowTab) return
+    // 切换标签时停止当前播放
+    if (this.carouselAudio) {
+      try { this.carouselAudio.destroy() } catch (e) {}
+      this.carouselAudio = null
+    }
+    this.setData({
+      recitationShowTab: tab,
+      playingRecitationId: ''
+    })
+  },
+
+  onCarouselChange(e) {
+    this.setData({ carouselIndex: e.detail.current })
+  },
+
+  onWeeklyRankChange(e) {
+    this.setData({ weeklyRankIndex: e.detail.current })
+  },
+
+  async playCarouselRecitation(e) {
+    const { id } = e.currentTarget.dataset
+    if (!id) return
+
+    // 如果点的是正在播放的，停止
+    if (this.data.playingRecitationId === id) {
+      audioManager.destroy('index-carousel-recitation')
+      this.carouselAudio = null
+      this.setData({ playingRecitationId: '' })
+      return
+    }
+
+    // 停止之前所有音频（包括轮播和排行）
+    audioManager.destroyAll()
+    this.carouselAudio = null
+    this.setData({ playingRecitationId: '' })
+
+    const url = `${api.config.apiBaseUrl}/recitations/${id}/audio`
+    let audioPath = url
+    try {
+      audioPath = await audioCache.downloadAndCache(url, { tag: 'recitation-audio' })
+    } catch (err) {
+      console.warn('轮播朗诵缓存失败，尝试直接播放', err)
+    }
+
+    this.carouselAudio = audioManager.create('index-carousel-recitation')
+    this.carouselAudio.onEnded(() => {
+      this.setData({ playingRecitationId: '' })
+      this.carouselAudio = null
+    })
+    this.carouselAudio.onStop(() => {
+      this.setData({ playingRecitationId: '' })
+      this.carouselAudio = null
+    })
+    this.carouselAudio.onError(err => {
+      console.warn('轮播朗诵播放失败', err)
+      this.setData({ playingRecitationId: '' })
+      this.carouselAudio = null
+      wx.showToast({ title: '播放失败', icon: 'none' })
+    })
+    this.carouselAudio.src = audioPath
+    this.setData({ playingRecitationId: id })
+    setTimeout(() => {
+      if (this.carouselAudio && this.data.playingRecitationId === id) {
+        audioManager.playWithRetry(this.carouselAudio, {
+          attempts: 3,
+          delay: 220
+        })
+      }
+    }, 100)
   },
 
   switchDiscoverFilter(e) {
@@ -278,6 +441,30 @@ Page({
     })
   },
 
+
+  openRecentResult() {
+    const result = this.data.recentResult
+    if (!result || !result.poemId) return
+    wx.navigateTo({ url: `/pages/learn/learn?id=${result.poemId}&type=poem` })
+  },
+
+  createRecentWork() {
+    const result = this.data.recentResult
+    if (!result || !result.poemId) return
+    wx.setStorageSync('createSelectedPoem', {
+      id: result.poemId,
+      title: result.poemTitle,
+      author: result.poemAuthor,
+      dynasty: result.poemDynasty,
+      mode: result.kind === 'artwork' ? 'artwork' : 'recitation',
+      updatedAt: Date.now()
+    })
+    wx.switchTab({ url: '/pages/create/create' })
+  },
+
+  openWorksFromRecent() {
+    wx.navigateTo({ url: '/pages/works/works?tab=recitations' })
+  },
 
   goToLearn(e) {
     const { id, type } = e.currentTarget.dataset

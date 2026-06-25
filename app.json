@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/warehouse/warehouse",
     "pages/learn/learn",
+    "pages/recite/recite",
     "pages/follow-landscape/follow-landscape",
     "pages/practice/practice",
     "pages/create/create",
@@ -13,6 +14,8 @@
     "pages/feedback/feedback",
     "pages/admin/admin",
     "pages/admin-feedback/admin-feedback",
+    "pages/admin-recitation-review/admin-recitation-review",
+    "pages/admin-artwork-review/admin-artwork-review",
     "pages/quiz/quiz",
     "pages/animation/animation"
   ],

@@ -190,6 +190,14 @@ function normalizeWorkList(data) {
   return normalizeWorkItem(data)
 }
 
+function sanitizeAuthUser(data) {
+  if (!data || typeof data !== 'object') return data || {}
+  const user = Object.assign({}, data)
+  delete user.session_key
+  delete user.sessionKey
+  return user
+}
+
 function devLogin(openid) {
   return request({
     url: '/auth/dev-login',
@@ -197,9 +205,10 @@ function devLogin(openid) {
     data: { openid: openid || 'dev-openid-local' },
     header: { 'Content-Type': 'application/json' }
   }).then(data => {
-    setToken(data.token)
-    wx.setStorageSync('apiUser', data)
-    return data
+    const user = sanitizeAuthUser(data)
+    setToken(user.token)
+    wx.setStorageSync('apiUser', user)
+    return user
   })
 }
 
@@ -210,9 +219,10 @@ function wechatLogin(code) {
     data: { code },
     header: { 'Content-Type': 'application/json' }
   }).then(data => {
-    setToken(data.token)
-    wx.setStorageSync('apiUser', data)
-    return data
+    const user = sanitizeAuthUser(data)
+    setToken(user.token)
+    wx.setStorageSync('apiUser', user)
+    return user
   })
 }
 
@@ -265,6 +275,10 @@ function getPopularRecitations(params) {
   return authed({ url: `/home/popular-recitations${toQuery(params || {})}` }).then(normalizeWorkList)
 }
 
+function getHotRecitationPick() {
+  return authed({ url: '/home/hot-recitation-pick' }).then(normalizeWorkList)
+}
+
 function listThemes() {
   return request({ url: '/themes' })
 }
@@ -275,6 +289,29 @@ function listPoems(params) {
   }).then(data => Object.assign({}, data, {
     items: (data.items || []).map(normalizePoemFromApi)
   }))
+}
+
+// 后端 page_size 上限为 100；需要完整诗词目录的页面用它翻页拉全，
+// 避免只取第 1 页导致 100 首之后的诗对用户隐形。
+function listAllPoems(params) {
+  const pageSize = 100
+  const baseParams = Object.assign({}, params || {})
+  delete baseParams.page
+  delete baseParams.page_size
+  const all = []
+  const fetchPage = (page) => {
+    if (page > 50) return Promise.resolve({ items: all, total: all.length }) // 安全上限，防失控翻页
+    return listPoems(Object.assign({}, baseParams, { page, page_size: pageSize })).then(res => {
+      const items = res.items || []
+      all.push(...items)
+      const total = typeof res.total === 'number' ? res.total : all.length
+      if (items.length >= pageSize && all.length < total) {
+        return fetchPage(page + 1)
+      }
+      return { items: all, total: typeof res.total === 'number' ? res.total : all.length }
+    })
+  }
+  return fetchPage(1)
 }
 
 function getPoem(id) {
@@ -599,6 +636,36 @@ function updateAdminFeedbackStatus(id, payload) {
   })
 }
 
+function listAdminRecitations(params) {
+  return authed({ url: `/admin/recitations${toQuery(params || {})}` }).then(normalizeWorkList)
+}
+
+function reviewRecitation(recitationId, status) {
+  const id = requireId(recitationId, 'recitationId')
+  if (typeof id !== 'string') return id
+  return authed({
+    url: `/admin/recitations/${encodeURIComponent(id)}/review`,
+    method: 'POST',
+    data: { status },
+    header: { 'Content-Type': 'application/json' }
+  })
+}
+
+function listAdminArtworks(params) {
+  return authed({ url: `/admin/artworks${toQuery(params || {})}` }).then(normalizeWorkList)
+}
+
+function reviewArtwork(artworkId, status) {
+  const id = requireId(artworkId, 'artworkId')
+  if (typeof id !== 'string') return id
+  return authed({
+    url: `/admin/artworks/${encodeURIComponent(id)}/review`,
+    method: 'POST',
+    data: { status },
+    header: { 'Content-Type': 'application/json' }
+  })
+}
+
 module.exports = {
   config,
   request,
@@ -612,8 +679,10 @@ module.exports = {
   getContinueLearning,
   getHomeRecommendations,
   getPopularRecitations,
+  getHotRecitationPick,
   listThemes,
   listPoems,
+  listAllPoems,
   getPoem,
   getFeaturedRecitation,
   listRecitationsTop,
@@ -651,5 +720,9 @@ module.exports = {
   submitParentFeedback,
   listAdminFeedback,
   updateAdminFeedbackStatus,
+  listAdminRecitations,
+  reviewRecitation,
+  listAdminArtworks,
+  reviewArtwork,
   normalizePoemFromApi
 }

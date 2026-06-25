@@ -17,20 +17,22 @@
       <view class="admin-card-arrow">›</view>
     </view>
 
-    <view class="admin-card disabled">
+    <view class="admin-card" bindtap="openRecitationReview">
       <view class="admin-card-icon">🎙</view>
       <view class="admin-card-main">
         <view class="admin-card-title">朗读审核</view>
-        <view class="admin-card-desc">后续接入</view>
+        <view class="admin-card-desc">审核用户上传的朗读作品</view>
       </view>
+      <view class="admin-card-arrow">›</view>
     </view>
 
-    <view class="admin-card disabled">
+    <view class="admin-card" bindtap="openArtworkReview">
       <view class="admin-card-icon">🖼</view>
       <view class="admin-card-main">
         <view class="admin-card-title">诗画审核</view>
-        <view class="admin-card-desc">后续接入</view>
+        <view class="admin-card-desc">审核用户上传的诗配画</view>
       </view>
+      <view class="admin-card-arrow">›</view>
     </view>
   </view>
 </view>

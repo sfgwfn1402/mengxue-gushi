@@ -1,7 +1,23 @@
 <view class="page">
   <view class="hero">
     <view class="hero-title">我的诗集</view>
-    <view class="hero-subtitle">保存小诗人的朗读和诗画，先只自己可见</view>
+    <view class="hero-subtitle">这里是孩子的古诗成长册，保存朗读、诗画和每一次进步</view>
+    <view class="hero-summary">{{latestWorkText}}</view>
+  </view>
+
+  <view class="growth-stats">
+    <view class="growth-stat">
+      <view class="growth-value">{{totalWorksCount}}</view>
+      <view class="growth-label">成长作品</view>
+    </view>
+    <view class="growth-stat">
+      <view class="growth-value">{{recitationCount}}</view>
+      <view class="growth-label">朗读</view>
+    </view>
+    <view class="growth-stat">
+      <view class="growth-value">{{artworkCount}}</view>
+      <view class="growth-label">诗画</view>
+    </view>
   </view>
 
   <view class="tabs">
@@ -17,7 +33,8 @@
   <view wx:elif="{{!items.length}}" class="empty">
     <view class="empty-icon">{{tab === 'recitations' ? '🎙️' : '🎨'}}</view>
     <view>{{tab === 'recitations' ? '还没有上传朗读作品' : '还没有上传诗画作品'}}</view>
-    <view class="empty-tip">去学习页朗读，或去创作页画一幅诗画吧</view>
+    <view class="empty-tip">从今天学过的一首诗开始，留下孩子的声音或画面。</view>
+    <button class="empty-action" bindtap="goCreate">去创作第一份作品</button>
   </view>
 
   <view class="work-list" wx:else>
@@ -33,7 +50,8 @@
           <button wx:if="{{tab === 'recitations'}}" class="action primary" data-id="{{item.id}}" bindtap="playRecitation">{{playingId === item.id ? '停止' : '回听'}}</button>
           <button wx:if="{{tab === 'artworks'}}" class="action primary" data-url="{{item.image_url || item.imageUrl}}" bindtap="previewArtwork">查看</button>
           <button class="action" data-index="{{index}}" bindtap="openDetail">详情</button>
-          <button class="action" data-index="{{index}}" bindtap="openShareMenu">分享</button>
+          <button class="action" data-index="{{index}}" bindtap="makeShareCard">海报</button>
+          <button class="action" data-index="{{index}}" open-type="share">转发</button>
         </view>
       </view>
     </view>

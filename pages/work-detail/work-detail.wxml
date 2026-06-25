@@ -28,7 +28,8 @@
     <view class="actions compact-actions">
       <button wx:if="{{type === 'artwork'}}" class="action primary" bindtap="previewArtwork">查看大图</button>
       <button wx:else class="action primary" bindtap="toggleAudio">{{playing ? '停止' : '回听'}}</button>
-      <button class="action" bindtap="openShareMenu">分享</button>
+      <button class="action" bindtap="makeShareCard">海报</button>
+      <button class="action" open-type="share">转发</button>
     </view>
     <view class="delete-link" bindtap="deleteWork">删除作品</view>
 

@@ -1,0 +1,49 @@
+/* pages/recite/recite.wxss */
+.recite-container { min-height: 100vh; background: #FFF8DC; padding: 32rpx 28rpx 60rpx; box-sizing: border-box; }
+.recite-loading { text-align: center; color: #8A8F98; padding-top: 200rpx; font-size: 30rpx; }
+
+.recite-head { text-align: center; margin-bottom: 28rpx; }
+.recite-title { font-size: 44rpx; font-weight: 900; color: #5B3300; }
+.recite-author { font-size: 26rpx; color: #B5651D; margin-top: 8rpx; }
+
+.recite-progress { margin-bottom: 32rpx; }
+.recite-progress-bar { height: 20rpx; background: #FFE6C2; border-radius: 999rpx; overflow: hidden; }
+.recite-progress-fill { height: 100%; background: linear-gradient(90deg, #FFD36B, #FF7A45); border-radius: 999rpx; transition: width 0.3s ease; }
+.recite-progress-text { text-align: center; font-size: 26rpx; font-weight: 800; color: #FF6B35; margin-top: 12rpx; }
+
+.recite-lines { background: #fff; border-radius: 30rpx; padding: 24rpx 20rpx; box-shadow: 0 10rpx 28rpx rgba(0,0,0,0.06); }
+.recite-line { display: flex; align-items: center; gap: 14rpx; padding: 18rpx 14rpx; border-radius: 20rpx; margin-bottom: 10rpx; }
+.recite-line.current { background: #FFF1D6; }
+.recite-line.done { opacity: 0.85; }
+.recite-line-no { font-size: 22rpx; color: #C7AE86; width: 30rpx; text-align: center; flex-shrink: 0; }
+.recite-cells { flex: 1; display: flex; flex-wrap: wrap; align-items: center; }
+.recite-cell { font-size: 40rpx; font-weight: 700; color: #2F2A1F; line-height: 1.5; min-width: 18rpx; }
+.recite-cell.masked { display: inline-block; width: 44rpx; height: 44rpx; margin: 0 4rpx; border-radius: 10rpx; background: #EDEFF2; border: 2rpx dashed #C9CDD4; }
+.recite-line.current .recite-cell.masked { background: #FFE0A8; border-color: #F0A94B; }
+.recite-done-check { color: #4CAF50; font-size: 32rpx; font-weight: 900; flex-shrink: 0; }
+
+.recite-controls { display: flex; gap: 16rpx; margin-top: 36rpx; }
+.recite-footer { margin-top: 36rpx; }
+.recite-btn { flex: 1; text-align: center; border-radius: 999rpx; padding: 24rpx 0; font-size: 28rpx; font-weight: 800; }
+.recite-btn.primary { background: linear-gradient(135deg, #FFD36B, #FFB347); color: #7A3E00; box-shadow: 0 8rpx 20rpx rgba(255,160,60,0.28); }
+.recite-btn.ghost { background: #fff; color: #8A6D3B; border: 2rpx solid #F0DDBE; }
+
+/* 庆祝（与学习页同款） */
+.celebrate-mask { position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 200; animation: celebrate-fade 0.25s ease; }
+@keyframes celebrate-fade { from { opacity: 0; } to { opacity: 1; } }
+.celebrate-card { width: 76%; max-width: 580rpx; background: linear-gradient(160deg, #FFFDF5, #FFF1D6); border-radius: 36rpx; padding: 48rpx 36rpx 36rpx; text-align: center; box-shadow: 0 20rpx 60rpx rgba(0,0,0,0.25); animation: celebrate-pop 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); }
+@keyframes celebrate-pop { 0% { transform: scale(0.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.celebrate-stars { height: 80rpx; position: relative; margin-bottom: 12rpx; }
+.celebrate-stars .cs { position: absolute; top: 0; font-size: 44rpx; animation: cs-rise 0.9s ease both; }
+.cs1 { left: 12%; animation-delay: 0.05s; }
+.cs2 { left: 31%; font-size: 32rpx; animation-delay: 0.15s; }
+.cs3 { left: 48%; font-size: 56rpx; animation-delay: 0s; }
+.cs4 { left: 66%; font-size: 32rpx; animation-delay: 0.2s; }
+.cs5 { left: 82%; animation-delay: 0.1s; }
+@keyframes cs-rise { 0% { transform: translateY(30rpx) scale(0.4); opacity: 0; } 50% { transform: translateY(-10rpx) scale(1.2); opacity: 1; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
+.celebrate-title { font-size: 38rpx; font-weight: 900; color: #7A3E00; margin-top: 8rpx; }
+.celebrate-count { font-size: 28rpx; color: #B5651D; margin-top: 16rpx; }
+.celebrate-actions { display: flex; gap: 18rpx; margin-top: 36rpx; }
+.celebrate-btn { flex: 1; border-radius: 999rpx; padding: 22rpx 0; font-size: 28rpx; font-weight: 800; }
+.celebrate-btn.primary { background: linear-gradient(135deg, #FFD36B, #FFB347); color: #7A3E00; }
+.celebrate-btn.ghost { background: #fff; color: #8A8F98; border: 2rpx solid #EEE; }

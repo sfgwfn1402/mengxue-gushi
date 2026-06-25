@@ -5,6 +5,18 @@
 - 小程序前端：`/Users/duwei/workspace/mengxue-gushi`
 - Rust 后端：`/Users/duwei/workspace/xiaochengxu/mengxuegushi-rust`
 
+## 文档索引
+
+| 文档 | 说明 |
+|---|---|
+| [docs/architecture.md](docs/architecture.md) | 系统全景架构图、数据流、部署拓扑 |
+| [docs/pages-guide.md](docs/pages-guide.md) | 17 个页面的功能和路由关系 |
+| [docs/api-reference.md](docs/api-reference.md) | 前端视角的 API 完整列表 |
+| [docs/poem-audio-status.md](docs/poem-audio-status.md) | 每首诗的音频状态清单（朗读/跟读/时间轴） |
+| [docs/audio-workflow.md](docs/audio-workflow.md) | 音频维护流程（真人朗读→MinIO→验证） |
+| [docs/audio-funasr-workflow.md](docs/audio-funasr-workflow.md) | FunASR 自动识别时间轴工作流 |
+| [RELEASES.md](RELEASES.md) | 发版记录 |
+
 ## 环境约定：默认操作生产
 
 萌学古诗当前所有真实调试、验证和问题排查都以生产环境为准：

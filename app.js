@@ -96,7 +96,7 @@ App({
     if (!api.config.useBackendPoems) return
 
     api.login()
-      .then(() => api.listPoems({ page: 1, page_size: 100 }))
+      .then(() => api.listAllPoems())
       .then(res => {
         if (res.items && res.items.length) {
           this.globalData.poems = res.items
@@ -115,7 +115,7 @@ App({
   },
 
   refreshPoemsFromBackend(params) {
-    return api.listPoems(params || { page: 1, page_size: 100 })
+    return api.listAllPoems(params)
       .then(res => {
         this.globalData.poems = res.items || []
         this.globalData.poemsLoadedFromBackend = true

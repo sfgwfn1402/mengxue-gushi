@@ -7,7 +7,7 @@ Page({
     completedCount: 0,
     stars: 0,
     streak: 0,
-    maxStars: 8,
+    maxStars: 6,
     showReward: false,
     learnedPoemCount: 0
   },
@@ -25,15 +25,14 @@ Page({
     return [
       { id: 'learn1', name: '今日学习', desc: '学习1首新古诗', emoji: '📖', stars: 3, completed: false },
       { id: 'quiz3', name: '答题练习', desc: '答题答对3题', emoji: '🧠', stars: 3, completed: false },
-      { id: 'review3', name: '复习巩固', desc: '复习1首已学古诗', emoji: '🔄', stars: 2, completed: false },
-      { id: 'share', name: '分享打卡', desc: '分享今日学习', emoji: '📤', stars: 2, completed: false }
+      { id: 'review3', name: '复习巩固', desc: '复习1首已学古诗', emoji: '🔄', stars: 2, completed: false }
     ]
   },
 
   loadTasks(doneIds) {
     const done = doneIds || []
     const tasks = this.baseTasks().map(t => ({ ...t, completed: done.includes(t.id) }))
-    this.setData({ tasks, completedCount: done.length })
+    this.setData({ tasks, completedCount: tasks.filter(t => t.completed).length })
   },
 
   loadStats() {
@@ -73,11 +72,6 @@ Page({
       return
     }
 
-    if (id === 'share') {
-      this.completeTask(task)
-      return
-    }
-
     this.completeTask(task)
   },
 
@@ -91,6 +85,19 @@ Page({
         console.warn('完成任务失败', err)
         wx.showToast({ title: '服务维护中', icon: 'none' })
       })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: `我在萌学古诗收集了 ${this.data.stars || 0} 点诗光，一起读古诗吧`,
+      path: '/pages/challenge/challenge'
+    }
+  },
+
+  onShareTimeline() {
+    return {
+      title: `我在萌学古诗收集了 ${this.data.stars || 0} 点诗光，一起读古诗吧`
+    }
   },
 
   showStatsHelp() {

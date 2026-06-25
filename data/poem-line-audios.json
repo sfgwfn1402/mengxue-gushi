@@ -244,30 +244,44 @@
       {
         "index": 0,
         "text": "慈母手中线，",
-        "url": "line-audios/poem-8-line-1.mp3",
-        "start": 0.05,
-        "end": 2.05
+        "url": "line-audios/poem-74-line-1.mp3",
+        "start": 4.65,
+        "end": 6.25
       },
       {
         "index": 1,
         "text": "游子身上衣。",
-        "url": "line-audios/poem-8-line-2.mp3",
-        "start": 2.05,
-        "end": 4.35
+        "url": "line-audios/poem-74-line-2.mp3",
+        "start": 6.69,
+        "end": 8.229
       },
       {
         "index": 2,
         "text": "临行密密缝，",
-        "url": "line-audios/poem-8-line-3.mp3",
-        "start": 4.35,
-        "end": 6.2
+        "url": "line-audios/poem-74-line-3.mp3",
+        "start": 9.01,
+        "end": 10.55
       },
       {
         "index": 3,
         "text": "意恐迟迟归。",
-        "url": "line-audios/poem-8-line-4.mp3",
-        "start": 6.2,
-        "end": 8.2
+        "url": "line-audios/poem-74-line-4.mp3",
+        "start": 10.93,
+        "end": 12.53
+      },
+      {
+        "index": 4,
+        "text": "谁言寸草心，",
+        "url": "line-audios/poem-74-line-5.mp3",
+        "start": 13.27,
+        "end": 14.91
+      },
+      {
+        "index": 5,
+        "text": "报得三春晖。",
+        "url": "line-audios/poem-74-line-6.mp3",
+        "start": 15.27,
+        "end": 17.395
       }
     ]
   },
@@ -1005,7 +1019,7 @@
     "lines": [
       {
         "index": 0,
-        "text": "千锤万击出深山，",
+        "text": "千锤万凿出深山，",
         "url": "line-audios/poem-30-line-1.mp3",
         "start": 8.11,
         "end": 11.17
@@ -1019,7 +1033,7 @@
       },
       {
         "index": 2,
-        "text": "粉身碎骨全不怕，",
+        "text": "粉骨碎身浑不怕，",
         "url": "line-audios/poem-30-line-3.mp3",
         "start": 17.25,
         "end": 20.37
@@ -1109,29 +1123,29 @@
         "index": 0,
         "text": "昼出耘田夜绩麻，",
         "url": "line-audios/poem-33-line-1.mp3",
-        "start": 6.678,
-        "end": 9.63
+        "start": 0.0,
+        "end": 2.268
       },
       {
         "index": 1,
         "text": "村庄儿女各当家。",
         "url": "line-audios/poem-33-line-2.mp3",
-        "start": 10.08,
-        "end": 13.32
+        "start": 2.718,
+        "end": 4.914
       },
       {
         "index": 2,
         "text": "童孙未解供耕织，",
         "url": "line-audios/poem-33-line-3.mp3",
-        "start": 13.77,
-        "end": 16.362
+        "start": 5.364,
+        "end": 7.524
       },
       {
         "index": 3,
         "text": "也傍桑阴学种瓜。",
         "url": "line-audios/poem-33-line-4.mp3",
-        "start": 16.812,
-        "end": 19.44
+        "start": 7.974,
+        "end": 10.818
       }
     ]
   },
@@ -1337,103 +1351,145 @@
   "38": {
     "poemId": 38,
     "title": "琵琶行",
+    "version": "20260621-pipaxing-bai-guwendao-p38_58_30",
+    "sourceUrl": "https://ziyuan.guwendao.net/song/gushiwen/qionghua/0581b0ba8bb4.mp3",
     "lines": [
       {
         "index": 0,
         "text": "浔阳江头夜送客，",
         "url": "line-audios/poem-38-line-1.mp3",
-        "start": 85.86,
-        "end": 89.375
+        "start": 0.0,
+        "end": 2.412,
+        "full_start": 0.0,
+        "full_end": 2.412,
+        "duration": 2.412
       },
       {
         "index": 1,
         "text": "枫叶荻花秋瑟瑟。",
         "url": "line-audios/poem-38-line-2.mp3",
-        "start": 90.79,
-        "end": 94.565
+        "start": 2.862,
+        "end": 5.274,
+        "full_start": 2.862,
+        "full_end": 5.274,
+        "duration": 2.412
       },
       {
         "index": 2,
         "text": "主人下马客在船，",
         "url": "line-audios/poem-38-line-3.mp3",
-        "start": 96.47,
-        "end": 99.775
+        "start": 5.724,
+        "end": 7.848,
+        "full_start": 5.724,
+        "full_end": 7.848,
+        "duration": 2.124
       },
       {
         "index": 3,
         "text": "举酒欲饮无管弦。",
         "url": "line-audios/poem-38-line-4.mp3",
-        "start": 101.11,
-        "end": 104.715
+        "start": 8.298,
+        "end": 10.638,
+        "full_start": 8.298,
+        "full_end": 10.638,
+        "duration": 2.34
       },
       {
         "index": 4,
         "text": "醉不成欢惨将别，",
         "url": "line-audios/poem-38-line-5.mp3",
-        "start": 106.54,
-        "end": 109.945
+        "start": 11.088,
+        "end": 13.248,
+        "full_start": 11.088,
+        "full_end": 13.248,
+        "duration": 2.16
       },
       {
         "index": 5,
         "text": "别时茫茫江浸月。",
         "url": "line-audios/poem-38-line-6.mp3",
-        "start": 111.1,
-        "end": 114.845
+        "start": 13.698,
+        "end": 16.11,
+        "full_start": 13.698,
+        "full_end": 16.11,
+        "duration": 2.412
       }
     ]
   },
   "39": {
     "poemId": 39,
     "title": "兵车行",
+    "version": "20260621-bingchexing-excerpt-funasr-v4-tail",
     "lines": [
       {
         "index": 0,
         "text": "车辚辚，",
         "url": "line-audios/poem-39-line-1.mp3",
-        "start": 0.33,
-        "end": 2.27
+        "start": 0.0,
+        "end": 0.98,
+        "full_start": 0.0,
+        "full_end": 0.98,
+        "duration": 1.08
       },
       {
         "index": 1,
         "text": "马萧萧，",
         "url": "line-audios/poem-39-line-2.mp3",
-        "start": 6.27,
-        "end": 7.23
+        "start": 1.43,
+        "end": 2.45,
+        "full_start": 1.43,
+        "full_end": 2.45,
+        "duration": 1.116
       },
       {
         "index": 2,
         "text": "行人弓箭各在腰。",
         "url": "line-audios/poem-39-line-3.mp3",
-        "start": 7.69,
-        "end": 9.63
+        "start": 2.9,
+        "end": 4.9,
+        "full_start": 2.9,
+        "full_end": 4.9,
+        "duration": 2.088
       },
       {
         "index": 3,
         "text": "耶娘妻子走相送，",
         "url": "line-audios/poem-39-line-4.mp3",
-        "start": 10.33,
-        "end": 12.45
+        "start": 5.35,
+        "end": 7.53,
+        "full_start": 5.35,
+        "full_end": 7.53,
+        "duration": 2.268
       },
       {
         "index": 4,
         "text": "尘埃不见咸阳桥。",
         "url": "line-audios/poem-39-line-5.mp3",
-        "start": 12.81,
-        "end": 14.85
+        "start": 7.98,
+        "end": 10.08,
+        "full_start": 7.98,
+        "full_end": 10.08,
+        "duration": 2.196
       },
       {
         "index": 5,
         "text": "牵衣顿足拦道哭，",
         "url": "line-audios/poem-39-line-6.mp3",
-        "start": 15.79,
-        "end": 17.79
+        "start": 10.53,
+        "end": 12.59,
+        "full_start": 10.53,
+        "full_end": 12.59,
+        "duration": 2.16
       },
       {
         "index": 6,
         "text": "哭声直上干云霄。",
         "url": "line-audios/poem-39-line-7.mp3",
-        "start": 89.76,
-        "end": 92.985
+        "start": 13.04,
+        "end": 15.5,
+        "full_start": 13.04,
+        "full_end": 15.5,
+        "duration": 2.556
       }
     ]
   },

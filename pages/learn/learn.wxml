@@ -18,7 +18,8 @@
       <view class="poem-author">{{poem.dynasty}} · {{poem.author}}</view>
 
       <view class="top-actions {{featuredRecitation ? 'has-featured' : ''}}">
-        <button class="top-read-btn {{playing ? 'playing' : ''}}" bindtap="readAloud">
+        <button wx:if="{{audioPending}}" class="top-read-btn pending" disabled="true">🎵 朗读音频整理中</button>
+        <button wx:else class="top-read-btn {{playing ? 'playing' : ''}}" bindtap="readAloud">
           {{playing ? '⏹ 停止朗读' : '🔊 官方朗读'}}
         </button>
         <view wx:if="{{featuredRecitation}}" class="featured-read-wrap">
@@ -51,7 +52,28 @@
 
       <view class="reading-hint" wx:if="{{playing}}">正在朗读第 {{currentLineIndex + 1}} / {{poemLines.length}} 句</view>
 
-      <view class="follow-entry {{followExpanded ? 'open' : ''}}">
+      <view class="learning-result-card {{currentPoemLearned || followAllDone ? 'done' : ''}}">
+        <view class="result-badge">{{currentPoemLearned || followAllDone ? '🎉 已点亮' : '✨ 成长作品'}}</view>
+        <view class="result-title">把今天学会的《{{poem.title}}》晒出来</view>
+        <view class="result-subtitle">生成一张成长卡，或录一段朗诵，发给家人看看孩子的进步。</view>
+        <view class="result-actions">
+          <button class="result-primary" bindtap="makeLearningCard" loading="{{resultCardGenerating}}">生成成长卡</button>
+          <button class="result-secondary" bindtap="openResultMenu">更多成果</button>
+        </view>
+      </view>
+
+      <view wx:if="{{audioPending}}" class="follow-entry pending-entry">
+        <view class="follow-entry-head">
+          <view class="follow-entry-icon-wrap">
+            <view class="follow-entry-icon">🎵</view>
+          </view>
+          <view class="follow-entry-copy">
+            <view class="follow-entry-title">跟读音频整理中</view>
+            <view class="follow-entry-subtitle">这首诗的跟读音频还在准备，先读拼音、看诗意吧</view>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="follow-entry {{followExpanded ? 'open' : ''}}">
         <view class="follow-entry-head" bindtap="openLandscapeFollow">
           <view class="follow-entry-icon-wrap">
             <view class="follow-entry-icon">🎙️</view>
@@ -67,6 +89,21 @@
           </view>
         </view>
 
+      </view>
+
+      <view class="follow-entry recite-entry" bindtap="goRecite">
+        <view class="follow-entry-head">
+          <view class="follow-entry-icon-wrap">
+            <view class="follow-entry-icon">🎯</view>
+          </view>
+          <view class="follow-entry-copy">
+            <view class="follow-entry-title">背诵闯关</view>
+            <view class="follow-entry-subtitle">逐句遮挡、提示首字，把这首诗真正背下来</view>
+          </view>
+          <view class="follow-entry-right">
+            <text class="follow-chevron">去背诵 →</text>
+          </view>
+        </view>
       </view>
 
       <view class="child-guide-grid">
@@ -175,6 +212,8 @@
     </block>
   </view>
 
+  <canvas canvas-id="learningResultCanvas" class="share-canvas"></canvas>
+
   <view class="immersive-follow {{isLandscapeViewport ? 'landscape-mode' : 'portrait-mode'}}" wx:if="{{landscapeFollowVisible}}">
     <image wx:if="{{poem.imageUrl}}" class="immersive-bg" src="{{poem.imageUrl}}" mode="aspectFill"></image>
     <view wx:else class="immersive-bg fallback"></view>
@@ -227,5 +266,25 @@
   <!-- 进度提示 -->
   <view class="progress">
     <text>已学习 {{learnedCount}} 首古诗，{{learnedIdiomCount}} 个成语</text>
+  </view>
+
+  <!-- 首次点亮庆祝 -->
+  <view class="celebrate-mask" wx:if="{{celebrateVisible}}" bindtap="closeCelebrate">
+    <view class="celebrate-card" catchtap="noop">
+      <view class="celebrate-stars">
+        <text class="cs cs1">⭐</text>
+        <text class="cs cs2">✨</text>
+        <text class="cs cs3">🌟</text>
+        <text class="cs cs4">✨</text>
+        <text class="cs cs5">⭐</text>
+      </view>
+      <view class="celebrate-title">《{{celebrateTitle}}》已点亮！</view>
+      <view wx:if="{{celebrateLearnedCount}}" class="celebrate-count">你的诗集已点亮 {{celebrateLearnedCount}} 首 📖</view>
+      <view wx:if="{{celebrateMilestone}}" class="celebrate-badge">🏆 解锁里程碑 · 学会 {{celebrateMilestone}} 首！</view>
+      <view class="celebrate-actions">
+        <view class="celebrate-btn primary" bindtap="goMyCollection">看我的诗集</view>
+        <view class="celebrate-btn ghost" bindtap="closeCelebrate">继续学习</view>
+      </view>
+    </view>
   </view>
 </view>

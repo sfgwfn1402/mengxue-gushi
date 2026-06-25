@@ -8,6 +8,9 @@ page { min-height: 100vh; background: linear-gradient(180deg, #F6F8FC 0%, #FFF7E
 .mode-tab.active { background: linear-gradient(180deg, #FFB15D 0%, #FF7A45 100%); color: #fff; }
 .form-card { padding: 28rpx; border-radius: 30rpx; background: rgba(255,255,255,0.94); margin-bottom: 22rpx; box-shadow: 0 16rpx 36rpx rgba(31,35,46,0.07); }
 .field-label { font-size: 28rpx; font-weight: 900; margin-bottom: 16rpx; }
+.field-label-row { display: flex; align-items: center; justify-content: space-between; gap: 20rpx; margin-bottom: 16rpx; }
+.field-label-row .field-label { margin-bottom: 0; }
+.poem-toggle { flex-shrink: 0; padding: 8rpx 18rpx; border-radius: 999rpx; background: #FFF0D0; color: #B86B00; font-size: 23rpx; font-weight: 900; }
 .picker-box { padding: 24rpx; border-radius: 24rpx; background: #F8FAFF; color: #1F2937; font-size: 29rpx; font-weight: 800; }
 .search-input { height: 78rpx; padding: 0 24rpx; border-radius: 22rpx; background: #F8FAFF; font-size: 28rpx; margin-bottom: 14rpx; }
 .selected-poem { padding: 16rpx 20rpx; border-radius: 20rpx; background: #FFF8E8; color: #9A5B00; font-size: 25rpx; font-weight: 800; margin-bottom: 14rpx; }
@@ -24,6 +27,11 @@ page { min-height: 100vh; background: linear-gradient(180deg, #F6F8FC 0%, #FFF7E
 .primary-btn, .danger-btn, .publish-btn { height: 82rpx; line-height: normal; display: flex; align-items: center; justify-content: center; border-radius: 999rpx; color: #fff; font-size: 30rpx; font-weight: 900; border: none; margin-top: 18rpx; padding: 0; }
 .primary-btn { background: linear-gradient(180deg, #6DD98A 0%, #45B96C 100%); }
 .danger-btn { background: linear-gradient(180deg, #FF7A7A 0%, #E84A5F 100%); }
+.secondary-btn, .outline-btn { height: 82rpx; line-height: normal; display: flex; align-items: center; justify-content: center; border-radius: 999rpx; font-size: 28rpx; font-weight: 700; border: none; margin-top: 12rpx; padding: 0; }
+.secondary-btn { background: #E8F5E9; color: #2E7D32; }
+.outline-btn { background: #FFF3E0; color: #E65100; }
+.record-actions { display: flex; gap: 18rpx; }
+.record-actions button { flex: 1; margin-top: 18rpx; }
 .publish-btn { background: linear-gradient(180deg, #FFB15D 0%, #FF7A45 100%); }
 button::after { border: none; }
 .art-preview { height: 360rpx; border-radius: 28rpx; overflow: hidden; background: #FFF8E8; display: flex; align-items: center; justify-content: center; margin-bottom: 18rpx; }

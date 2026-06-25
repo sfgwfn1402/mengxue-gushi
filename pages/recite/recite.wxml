@@ -1,0 +1,55 @@
+<!--pages/recite/recite.wxml-->
+<view class="recite-container" wx:if="{{poem}}">
+  <view class="recite-head">
+    <view class="recite-title">{{poem.title}}</view>
+    <view class="recite-author">{{poem.dynasty}} · {{poem.author}}</view>
+  </view>
+
+  <view class="recite-progress">
+    <view class="recite-progress-bar">
+      <view class="recite-progress-fill" style="width: {{total ? doneCount / total * 100 : 0}}%"></view>
+    </view>
+    <view class="recite-progress-text">背出 {{doneCount}} / {{total}} 句 ✨</view>
+  </view>
+
+  <view class="recite-lines">
+    <view class="recite-line {{line.isCurrent ? 'current' : ''}} {{line.done ? 'done' : ''}}" wx:for="{{lines}}" wx:key="index" wx:for-item="line">
+      <text class="recite-line-no">{{index + 1}}</text>
+      <view class="recite-cells">
+        <text class="recite-cell {{cell.masked ? 'masked' : ''}}" wx:for="{{line.cells}}" wx:key="index" wx:for-item="cell">{{cell.masked ? '' : cell.t}}</text>
+      </view>
+      <text class="recite-done-check" wx:if="{{line.done}}">✓</text>
+    </view>
+  </view>
+
+  <view class="recite-controls" wx:if="{{!finished}}">
+    <view class="recite-btn ghost" bindtap="hint">💡 提示一个字</view>
+    <view class="recite-btn ghost" bindtap="reveal">👀 看答案</view>
+    <view class="recite-btn primary" bindtap="markDone">背出来了 ✓</view>
+  </view>
+
+  <view class="recite-footer" wx:if="{{finished}}">
+    <view class="recite-btn ghost" bindtap="restart">🔁 再背一次</view>
+  </view>
+</view>
+
+<view class="recite-loading" wx:else>加载中…</view>
+
+<!-- 全部背出庆祝 -->
+<view class="celebrate-mask" wx:if="{{celebrateVisible}}" bindtap="closeCelebrate">
+  <view class="celebrate-card" catchtap="noop">
+    <view class="celebrate-stars">
+      <text class="cs cs1">⭐</text>
+      <text class="cs cs2">✨</text>
+      <text class="cs cs3">🌟</text>
+      <text class="cs cs4">✨</text>
+      <text class="cs cs5">⭐</text>
+    </view>
+    <view class="celebrate-title">《{{celebrateTitle}}》全部背出！</view>
+    <view wx:if="{{learnedCount}}" class="celebrate-count">你的诗集已点亮 {{learnedCount}} 首 📖</view>
+    <view class="celebrate-actions">
+      <view class="celebrate-btn primary" bindtap="goMyCollection">看我的诗集</view>
+      <view class="celebrate-btn ghost" bindtap="closeCelebrate">再读一遍</view>
+    </view>
+  </view>
+</view>

@@ -44,9 +44,9 @@
       <view class="task-action">
         <button
           wx:if="{{!item.completed}}"
-          class="task-btn {{item.completed ? 'done' : ''}}"
+          class="task-btn"
           bindtap="doTask" data-id="{{item.id}}"
-        >{{item.completed ? '✅' : '去完成'}}</button>
+        >去完成</button>
         <text wx:else class="task-done">✅ 已完成</text>
       </view>
     </view>

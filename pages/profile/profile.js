@@ -22,17 +22,33 @@ Page({
     modalType: '',
     modalItems: [],
     modalText: '',
+    collectionGroups: [],
+    collectionLearned: 0,
+    collectionTotal: 0,
+    collectionEmptyHint: '',
+    collectionBadges: [],
+    collectionLearnedTitles: [],
+    collectionCardGenerating: false,
     aboutLines: [],
     appVersion: versionInfo.version || '',
-    isAdmin: false
+    isAdmin: false,
+    recentResult: null,
+    recentResultText: '',
+    recentResultDate: ''
   },
 
   onShow() {
     this.loadProfile()
     this.loadData()
+    this.loadRecentResult()
     this.initCalendar()
     this.checkTodayStatus()
     this.updateEncourageMessage()
+    // 从学习页庆祝弹窗“看我的诗集”跳来时，自动弹开诗集墙
+    if (app.globalData && app.globalData.openCollectionOnShow) {
+      app.globalData.openCollectionOnShow = false
+      this.openLearnedPoems()
+    }
   },
 
   loadProfile() {
@@ -124,6 +140,63 @@ Page({
         this.setData({ profileSaving: false })
         wx.showToast({ title: '保存失败，请稍后重试', icon: 'none' })
       })
+  },
+
+  loadRecentResult() {
+    const history = wx.getStorageSync('learningResultHistory') || []
+    const result = (Array.isArray(history) && history[0]) || wx.getStorageSync('lastLearningResult')
+    if (!result || !result.poemId) {
+      this.setData({ recentResult: null, recentResultText: '', recentResultDate: '' })
+      return
+    }
+    const actionMap = {
+      follow: '完成了跟读',
+      learned: '点亮了古诗',
+      recitation: '生成了朗诵作品',
+      artwork: '发布了诗配画',
+      preview: '正在学习'
+    }
+    this.setData({
+      recentResult: result,
+      recentResultText: `${actionMap[result.kind] || '学习了'}《${result.poemTitle || '古诗'}》`,
+      recentResultDate: this.formatRecentDate(result.completedAt),
+      recentActionText: result.kind === 'artwork' ? '再画一张' : '录朗诵'
+    })
+  },
+
+  formatRecentDate(value) {
+    if (!value) return ''
+    const d = new Date(value)
+    if (Number.isNaN(d.getTime())) return ''
+    const now = new Date()
+    const sameDay = d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth() && d.getDate() === now.getDate()
+    const hm = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
+    if (sameDay) return `今天 ${hm}`
+    return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')} ${hm}`
+  },
+
+  openRecentPoem() {
+    const result = this.data.recentResult
+    if (!result || !result.poemId) return
+    wx.navigateTo({ url: `/pages/learn/learn?type=poem&id=${result.poemId}` })
+  },
+
+  createRecentRecitation() {
+    const result = this.data.recentResult
+    if (!result || !result.poemId) return
+    wx.setStorageSync('createSelectedPoem', {
+      id: result.poemId,
+      title: result.poemTitle,
+      author: result.poemAuthor,
+      dynasty: result.poemDynasty,
+      mode: result.kind === 'artwork' ? 'artwork' : 'recitation',
+      updatedAt: Date.now()
+    })
+    wx.switchTab({ url: '/pages/create/create' })
+  },
+
+  openMyWorks() {
+    wx.navigateTo({ url: '/pages/works/works?tab=recitations' })
   },
 
   loadData() {
@@ -238,37 +311,94 @@ Page({
   },
 
   openLearnedPoems() {
-    Promise.all([api.listProgress(), api.listPoems({ page: 1, page_size: 500 })])
+    Promise.all([api.listProgress(), api.listAllPoems()])
       .then(([progressRes, poemRes]) => {
         const progressItems = Array.isArray(progressRes) ? progressRes : (progressRes.items || [])
-        const poemMap = {}
-        ;(poemRes.items || []).forEach(p => { poemMap[p.id] = p })
-        const learned = progressItems
-          .filter(item => !!item.learned)
-          .sort((a, b) => String(b.last_learned_at || '').localeCompare(String(a.last_learned_at || '')))
-          .map(item => {
-            const poem = poemMap[item.poem_id] || poemMap[item.poemId]
-            if (!poem) return null
-            return {
-              id: poem.id,
-              type: 'poem',
-              title: `《${poem.title}》`,
-              desc: `${poem.dynasty || ''} · ${poem.author || ''}${item.last_learned_at ? `｜${item.last_learned_at}` : ''}`
-            }
-          })
-          .filter(Boolean)
+        const progressMap = {}
+        progressItems.forEach(item => {
+          const pid = Number(item.poem_id != null ? item.poem_id : item.poemId)
+          if (pid) progressMap[pid] = item
+        })
+
+        // 启蒙=1 / 进阶=2 / 挑战=3，与诗园分级一致
+        const groups = [
+          { key: 1, label: '启蒙', learned: 0, total: 0, cells: [] },
+          { key: 2, label: '进阶', learned: 0, total: 0, cells: [] },
+          { key: 3, label: '挑战', learned: 0, total: 0, cells: [] }
+        ]
+        const groupByKey = { 1: groups[0], 2: groups[1], 3: groups[2] }
+
+        let learnedCount = 0
+        const learnedTitles = []
+        const allPoems = (poemRes.items || []).slice().sort((a, b) => Number(a.id) - Number(b.id))
+        allPoems.forEach(poem => {
+          const diff = Number(poem.difficulty) || 1
+          const group = groupByKey[diff] || groups[0]
+          const cell = this.buildCollectionCell(poem, progressMap[Number(poem.id)])
+          group.total += 1
+          if (cell.state === 'learned') {
+            group.learned += 1
+            learnedCount += 1
+            learnedTitles.push(poem.title)
+          }
+          group.cells.push(cell)
+        })
+
+        const collectionBadges = [10, 20, 50, 100].map(value => ({
+          value,
+          earned: learnedCount >= value
+        }))
+
         this.setData({
           modalVisible: true,
-          modalTitle: `📚 已学古诗（${learned.length}）`,
-          modalType: 'list',
-          modalItems: learned,
-          modalText: learned.length ? '' : '还没有学会的古诗。去诗园挑一首，点击“学会”后这里就会出现。'
+          modalTitle: '📚 我的诗集',
+          modalType: 'collection',
+          modalItems: [],
+          modalText: '',
+          collectionGroups: groups.filter(g => g.total > 0),
+          collectionLearned: learnedCount,
+          collectionTotal: allPoems.length,
+          collectionEmptyHint: learnedCount ? '' : '挑一首点亮第一颗星 ⭐',
+          collectionBadges,
+          collectionLearnedTitles: learnedTitles
         })
       })
       .catch(err => {
-        console.warn('读取已学古诗失败', err)
+        console.warn('读取我的诗集失败', err)
         wx.showToast({ title: '读取失败，请稍后重试', icon: 'none' })
       })
+  },
+
+  // 计算单首诗在诗集墙上的状态与星级（复用后端已有进度字段，不新增接口）
+  buildCollectionCell(poem, progress) {
+    let state = 'untouched'
+    let star = 0
+    if (progress) {
+      const readCount = Number(progress.read_count) || 0
+      const quizCorrect = Number(progress.quiz_correct_count) || 0
+      if (progress.learned) {
+        state = 'learned'
+        star = 1                                  // 学会
+        if (readCount >= 3) star = 2              // 学会 + 读过≥3遍
+        if (readCount >= 3 && quizCorrect >= 1) star = 3 // 会读又答对过题
+      } else if (readCount >= 1) {
+        state = 'learning'                        // 读过但还没点“学会”
+      }
+    }
+    return {
+      id: poem.id,
+      title: poem.title,
+      state,
+      star,
+      stars: star > 0 ? '⭐'.repeat(star) : (state === 'learning' ? '✨' : '')
+    }
+  },
+
+  openCollectionCell(e) {
+    const id = e.currentTarget.dataset.id
+    if (!id) return
+    this.closeModal()
+    wx.navigateTo({ url: `/pages/learn/learn?id=${id}&type=poem` })
   },
 
   openFavorites() {
@@ -392,6 +522,137 @@ Page({
   getTodayKey() {
     const now = new Date()
     return `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${now.getDate()}`
+  },
+
+  // 从诗集墙生成「成长档案」成就卡，给家长晒孩子的整体进度
+  shareCollectionCard() {
+    if (this.data.collectionCardGenerating) return
+    if (!this.data.collectionLearned) {
+      wx.showToast({ title: '先点亮一首诗再来晒成果吧', icon: 'none' })
+      return
+    }
+    this.setData({ collectionCardGenerating: true })
+    wx.showLoading({ title: '生成卡片…' })
+    this.drawCollectionCard()
+      .then(filePath => {
+        wx.hideLoading()
+        this.setData({ collectionCardGenerating: false })
+        wx.showActionSheet({
+          itemList: ['预览卡片', '保存到相册'],
+          success: res => {
+            if (res.tapIndex === 0) wx.previewImage({ urls: [filePath], current: filePath })
+            if (res.tapIndex === 1) this.saveCollectionCard(filePath)
+          }
+        })
+      })
+      .catch(err => {
+        wx.hideLoading()
+        console.warn('生成成就卡失败', err)
+        this.setData({ collectionCardGenerating: false })
+        wx.showToast({ title: '生成失败', icon: 'none' })
+      })
+  },
+
+  drawCollectionCard() {
+    const apiUser = wx.getStorageSync('apiUser') || {}
+    const nickname = apiUser.nickname || (this.data.userProfile && this.data.userProfile.nickname) || '小诗童'
+    const learned = this.data.collectionLearned || 0
+    const total = this.data.collectionTotal || 0
+    const badges = (this.data.collectionBadges || []).filter(b => b.earned)
+    const titles = (this.data.collectionLearnedTitles || []).slice(-6) // 最近点亮的几首
+    const dateText = this.formatCardDate(Date.now())
+    return new Promise((resolve, reject) => {
+      const ctx = wx.createCanvasContext('collectionCard', this)
+      const W = 600, H = 900
+      ctx.setFillStyle('#FFF7E8'); ctx.fillRect(0, 0, W, H)
+      // 顶部渐变头
+      const grd = ctx.createLinearGradient(0, 0, W, 300)
+      grd.addColorStop(0, '#FFD36B'); grd.addColorStop(1, '#FF8A65')
+      ctx.setFillStyle(grd); ctx.fillRect(0, 0, W, 300)
+      ctx.setTextAlign('center')
+      ctx.setFillStyle('#5B3300')
+      ctx.setFontSize(30); ctx.fillText('萌学古诗 · 成长档案', W / 2, 86)
+      ctx.setFontSize(40); ctx.fillText(`${nickname} 的古诗成就`, W / 2, 150)
+      // 大数字
+      ctx.setFillStyle('#FFFFFF')
+      ctx.setFontSize(120); ctx.fillText(`${learned}`, W / 2 - 40, 252)
+      ctx.setFontSize(40); ctx.fillText(`/ ${total} 首`, W / 2 + 90, 252)
+
+      // 进度条
+      const barX = 64, barY = 332, barW = 472, barH = 28
+      ctx.setFillStyle('#FFE6C2'); this.cardRoundRect(ctx, barX, barY, barW, barH, 14); ctx.fill()
+      const ratio = total ? Math.max(0.02, Math.min(1, learned / total)) : 0
+      ctx.setFillStyle('#FF7A45'); this.cardRoundRect(ctx, barX, barY, barW * ratio, barH, 14); ctx.fill()
+      ctx.setFillStyle('#9A5B00'); ctx.setFontSize(24)
+      ctx.fillText(`已点亮 ${total ? Math.round(learned / total * 100) : 0}% 的古诗`, W / 2, 404)
+
+      // 里程碑徽章
+      ctx.setFillStyle('#7A3E00'); ctx.setFontSize(28)
+      const badgeText = badges.length
+        ? '🏆 ' + badges.map(b => `学会${b.value}首`).join('  ')
+        : '继续加油，点亮第一个里程碑 🏆'
+      ctx.fillText(badgeText, W / 2, 464)
+
+      // 最近点亮
+      ctx.setFillStyle('#FFFFFF'); this.cardRoundRect(ctx, 48, 500, 504, 250, 28); ctx.fill()
+      ctx.setFillStyle('#B5651D'); ctx.setFontSize(26); ctx.fillText('最近点亮的诗', W / 2, 548)
+      ctx.setFillStyle('#2F2A1F'); ctx.setFontSize(30)
+      const titleText = titles.length ? titles.map(t => `《${t}》`).join('  ') : '快去诗园点亮第一首吧'
+      const wrapped = this.wrapCardText(titleText, 14)
+      wrapped.slice(0, 4).forEach((line, i) => ctx.fillText(line, W / 2, 596 + i * 44))
+
+      // 底部
+      ctx.setFillStyle('#9A5B00'); ctx.setFontSize(24); ctx.fillText(`截至 ${dateText}`, W / 2, 800)
+      ctx.setFillStyle('#A66A23'); ctx.setFontSize(24); ctx.fillText('和孩子一起，每天读一点古诗 📖', W / 2, 842)
+
+      ctx.draw(false, () => {
+        wx.canvasToTempFilePath({
+          canvasId: 'collectionCard', width: W, height: H, destWidth: W * 2, destHeight: H * 2,
+          success: res => resolve(res.tempFilePath),
+          fail: reject
+        }, this)
+      })
+    })
+  },
+
+  saveCollectionCard(filePath) {
+    wx.saveImageToPhotosAlbum({
+      filePath,
+      success: () => wx.showToast({ title: '已保存到相册', icon: 'success' }),
+      fail: err => {
+        console.warn('保存成就卡失败', err)
+        wx.showToast({ title: '保存失败，请检查相册权限', icon: 'none' })
+      }
+    })
+  },
+
+  // 简单按字数折行，适配中文标题串
+  wrapCardText(text, perLine) {
+    const lines = []
+    let cur = ''
+    for (const ch of String(text)) {
+      cur += ch
+      if (cur.length >= perLine) { lines.push(cur); cur = '' }
+    }
+    if (cur) lines.push(cur)
+    return lines
+  },
+
+  cardRoundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath()
+    ctx.moveTo(x + r, y)
+    ctx.arcTo(x + w, y, x + w, y + h, r)
+    ctx.arcTo(x + w, y + h, x, y + h, r)
+    ctx.arcTo(x, y + h, x, y, r)
+    ctx.arcTo(x, y, x + w, y, r)
+    ctx.closePath()
+  },
+
+  formatCardDate(value) {
+    const d = new Date(value)
+    const m = String(d.getMonth() + 1).padStart(2, '0')
+    const day = String(d.getDate()).padStart(2, '0')
+    return `${d.getFullYear()}.${m}.${day}`
   },
 
   noop() {},

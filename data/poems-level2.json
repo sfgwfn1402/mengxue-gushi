@@ -149,7 +149,7 @@
       "title": "石灰吟",
       "author": "于谦",
       "dynasty": "明",
-      "content": "千锤万击出深山，烈火焚烧若等闲。粉身碎骨全不怕，要留清白在人间。",
+      "content": "千锤万凿出深山，烈火焚烧若等闲。粉骨碎身浑不怕，要留清白在人间。",
       "level": 2,
       "difficulty": 2,
       "tags": [
@@ -158,7 +158,8 @@
         "清白",
         "坚强"
       ],
-      "season": "any"
+      "season": "any",
+      "pinyin": "qiān chuí wàn záo chū shēn shān, liè huǒ fén shāo ruò děng xián. fěn gǔ suì shēn hún bù pà, yào liú qīng bái zài rén jiān."
     },
     {
       "id": 31,

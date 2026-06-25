@@ -1,7 +1,7 @@
 // pages/learn/learn.js
 const app = getApp()
 const api = require('../../utils/api')
-const { getAudioCandidates, pickAvailableAudio } = require('../../utils/tts')
+const { getAudioCandidates, pickAvailableAudio, isPoemAudioPending } = require('../../utils/tts')
 const lineTimings = require('../../data/poem-line-timings')
 const lineAudios = require('../../data/poem-line-audios')
 const lineAudioDurations = require('../../data/poem-line-audio-durations')
@@ -21,6 +21,7 @@ Page({
     id: null,
     type: null,
     poem: null,
+    audioPending: false,
     idiom: null,
     learnedCount: 0,
     learnedIdiomCount: 0,
@@ -29,6 +30,10 @@ Page({
     favorite: false,
     progressSynced: false,
     currentPoemLearned: false,
+    celebrateVisible: false,
+    celebrateTitle: '',
+    celebrateLearnedCount: 0,
+    celebrateMilestone: 0,
     poemLines: [],
     poemLineRich: [],
     currentLineIndex: -1,
@@ -66,7 +71,8 @@ Page({
     parentGuideExpanded: false,
     followPlayingLine: false,
     landscapeFollowVisible: false,
-    isLandscapeViewport: false
+    isLandscapeViewport: false,
+    resultCardGenerating: false
   },
 
   onReady() {
@@ -195,6 +201,7 @@ Page({
     const childGuide = this.buildChildGuide(poem)
     this.setData({
       poem,
+      audioPending: isPoemAudioPending(poem), // 朗读/跟读音频整理中：禁用相关入口
       poemLines,
       poemLineRich,
       followLines,
@@ -429,7 +436,7 @@ Page({
     
     if (!candidates.length) {
       wx.showToast({
-        title: '暂无朗读音频',
+        title: this.data.audioPending ? '朗读音频整理中，先看拼音和诗意吧' : '暂无朗读音频',
         icon: 'none'
       })
       return
@@ -468,6 +475,10 @@ Page({
 
       this.recreateAudio()
       this.audio.src = audioPath
+      const officialStartTime = this.getOfficialReadingStartTime(type)
+      if (officialStartTime > 0) {
+        this.audio.startTime = officialStartTime
+      }
       setTimeout(() => {
         if (this.canPlayAudio() && taskId === this.readingTaskId && this.audio) {
           audioManager.playWithRetry(this.audio, {
@@ -488,6 +499,16 @@ Page({
         icon: 'none'
       })
     }
+  },
+
+  getOfficialReadingStartTime(type) {
+    if (type !== 'poem') return 0
+    const timingLines = this.data.lineTiming && this.data.lineTiming.lines
+    if (!timingLines || !timingLines.length) return 0
+    const firstStart = Number(timingLines[0] && timingLines[0].start)
+    // 有些官方音频来自“组诗/二首”，前面会先朗读标题或另一首诗。
+    // 页面只展示当前诗正文，所以从第一句正文时间点开始播放，避免“音频有、文字没有”。
+    return firstStart > 2 ? firstStart : 0
   },
 
   stopReading(options = {}) {
@@ -903,7 +924,7 @@ Page({
     // 跟读只播放切好的单句音频：MinIO IP / line-audios/poem-{id}-line-{n}.mp3
     // 不影响、不复用朗读整首音频。
     const lineAudioItem = this.data.lineAudio && this.data.lineAudio.lines ? this.data.lineAudio.lines[followLineIndex] : null
-    const lineAudioVersionValue = (poem && (poem.audioVersion || poem.audio_version)) || (poem && poem.id === 33 ? '20260620-real-v4' : '')
+    const lineAudioVersionValue = (poem && (poem.audioVersion || poem.audio_version)) || (poem && poem.id === 33 ? '20260620-real-v5' : '')
     const lineAudioVersion = lineAudioVersionValue ? `?v=${lineAudioVersionValue}` : ''
     const lineAudioUrl = lineAudioItem && lineAudioItem.url ? `${api.config.minioBaseUrl}/${lineAudioItem.url}${lineAudioVersion}` : ''
     let audioPath = lineAudioUrl
@@ -1128,13 +1149,17 @@ Page({
 
   completeFollowPoem() {
     const { id } = this.data
+    const wasLearned = this.data.currentPoemLearned
     wx.showToast({ title: '全诗跟读完成 🎉', icon: 'none' })
     api.updateProgress(id, { learned: true, read_count_delta: 1 })
       .then(() => this.completePoemTask())
       .then(task => {
         this.setData({ progressSynced: true, currentPoemLearned: true, followAutoMode: false, followWaitingRead: false, followPhase: 'done' })
+        this.rememberLearningResult('follow')
         this.updateProgress()
-        if (task.starsAdded > 0) {
+        if (!wasLearned) {
+          this.celebrateLearned()
+        } else if (task.starsAdded > 0) {
           wx.showToast({ title: `${task.toast} +${task.starsAdded}✨`, icon: 'none', duration: 1800 })
         }
       })
@@ -1143,6 +1168,7 @@ Page({
 
   markAsLearned() {
     const { id, type } = this.data
+    const wasLearned = this.data.currentPoemLearned
 
     if (type === 'poem') {
       wx.showLoading({ title: '同步中...' })
@@ -1151,12 +1177,17 @@ Page({
         .then(task => {
           wx.hideLoading()
           this.setData({ progressSynced: true, currentPoemLearned: true, followAutoMode: false, followWaitingRead: false, followPhase: 'done' })
+          this.rememberLearningResult('learned')
           this.updateProgress()
-          wx.showToast({
-            title: task.starsAdded > 0 ? `${task.toast} +${task.starsAdded}✨` : '今天已获得过诗光啦',
-            icon: 'none',
-            duration: 1800
-          })
+          if (!wasLearned) {
+            this.celebrateLearned()
+          } else {
+            wx.showToast({
+              title: task.starsAdded > 0 ? `${task.toast} +${task.starsAdded}✨` : '今天已获得过诗光啦',
+              icon: 'none',
+              duration: 1800
+            })
+          }
         })
         .catch(err => {
           wx.hideLoading()
@@ -1176,6 +1207,46 @@ Page({
         wx.showToast({ title: '服务维护中，请稍后再试', icon: 'none' })
       })
   },
+
+  // 首次点亮一首诗时的庆祝动画：落点是孩子的诗集，强化“我的墙又亮一格”的成就感。
+  celebrateLearned() {
+    const poem = this.data.poem || {}
+    const title = poem.title || '这首诗'
+    const milestones = [10, 20, 50, 100]
+    const show = (count) => {
+      const milestone = milestones.indexOf(count) >= 0 ? count : 0
+      this.setData({
+        celebrateVisible: true,
+        celebrateTitle: title,
+        celebrateLearnedCount: count,
+        celebrateMilestone: milestone
+      })
+      if (wx.vibrateShort) wx.vibrateShort({ type: 'light', fail: () => {} })
+    }
+    api.getStats()
+      .then(stats => show(stats.learned_poem_count || 0))
+      .catch(() => show(0)) // 统计失败也庆祝，只是不显示总数
+  },
+
+  closeCelebrate() {
+    this.setData({ celebrateVisible: false })
+  },
+
+  goMyCollection() {
+    this.setData({ celebrateVisible: false })
+    const app = getApp()
+    if (app && app.globalData) app.globalData.openCollectionOnShow = true
+    wx.switchTab({ url: '/pages/profile/profile' })
+  },
+
+  goRecite() {
+    const { id, type } = this.data
+    if (type !== 'poem' || !id) return
+    this.stopReading()
+    wx.navigateTo({ url: `/pages/recite/recite?id=${id}` })
+  },
+
+  noop() {},
 
   addToFavorites() {
     const { id, type, favorite } = this.data
@@ -1360,7 +1431,8 @@ Page({
       .then(() => {
         wx.hideLoading()
         this.setData({ uploadingRecitation: false, recordFilePath: '', recordDuration: 0 })
-        wx.showToast({ title: '上传成功 🎉', icon: 'none' })
+        this.rememberLearningResult('recitation')
+        wx.showToast({ title: '已生成朗诵作品 🎉', icon: 'none' })
         this.loadRecitations()
         this.loadFeaturedRecitation()
       })
@@ -1460,12 +1532,195 @@ Page({
       })
   },
 
+
+  rememberLearningResult(kind) {
+    if (this.data.type !== 'poem' || !this.data.poem) return
+    const poem = this.data.poem
+    const apiUser = wx.getStorageSync('apiUser') || {}
+    const result = {
+      kind: kind || 'learned',
+      poemId: poem.id,
+      poemTitle: poem.title,
+      poemAuthor: poem.author,
+      poemDynasty: poem.dynasty,
+      nickname: apiUser.nickname || '小诗童',
+      completedAt: Date.now()
+    }
+    try {
+      wx.setStorageSync('lastLearningResult', result)
+      const history = wx.getStorageSync('learningResultHistory') || []
+      const next = [result].concat((Array.isArray(history) ? history : [])
+        .filter(item => !(Number(item.poemId) === Number(result.poemId) && item.kind === result.kind)))
+        .slice(0, 5)
+      wx.setStorageSync('learningResultHistory', next)
+    } catch (e) {}
+  },
+
+  openResultMenu() {
+    if (this.data.type !== 'poem' || !this.data.poem) return
+    const items = ['生成成长卡', '录一段朗诵', '查看我的诗集']
+    wx.showActionSheet({
+      itemList: items,
+      success: res => {
+        if (res.tapIndex === 0) this.makeLearningCard()
+        if (res.tapIndex === 1) this.goCreateRecitation()
+        if (res.tapIndex === 2) this.goMyWorks()
+      }
+    })
+  },
+
+  goCreateRecitation() {
+    const poem = this.data.poem
+    if (!poem) return
+    try {
+      wx.setStorageSync('createSelectedPoem', {
+        id: poem.id,
+        title: poem.title,
+        author: poem.author,
+        dynasty: poem.dynasty,
+        content: poem.content,
+        updatedAt: Date.now()
+      })
+    } catch (e) {}
+    wx.switchTab({ url: '/pages/create/create' })
+  },
+
+  goMyWorks() {
+    wx.navigateTo({ url: '/pages/works/works?tab=recitations' })
+  },
+
+  makeLearningCard() {
+    if (!this.data.poem || this.data.resultCardGenerating) return
+    this.rememberLearningResult(this.data.currentPoemLearned ? 'learned' : 'preview')
+    this.setData({ resultCardGenerating: true })
+    wx.showLoading({ title: '生成卡片…' })
+    this.drawLearningCard()
+      .then(filePath => {
+        wx.hideLoading()
+        this.setData({ resultCardGenerating: false })
+        wx.showActionSheet({
+          itemList: ['预览卡片', '保存到相册', '分享给好友'],
+          success: res => {
+            if (res.tapIndex === 0) wx.previewImage({ urls: [filePath], current: filePath })
+            if (res.tapIndex === 1) this.saveResultCard(filePath)
+            if (res.tapIndex === 2) wx.showToast({ title: '请点右上角转发给好友', icon: 'none' })
+          }
+        })
+      })
+      .catch(err => {
+        wx.hideLoading()
+        console.warn('生成学习成果卡失败', err)
+        this.setData({ resultCardGenerating: false })
+        wx.showToast({ title: '生成失败', icon: 'none' })
+      })
+  },
+
+  drawLearningCard() {
+    const poem = this.data.poem
+    const apiUser = wx.getStorageSync('apiUser') || {}
+    const nickname = apiUser.nickname || '小诗童'
+    const learnedCount = this.data.learnedCount || 0
+    const dateText = this.formatResultDate(Date.now())
+    return new Promise((resolve, reject) => {
+      const ctx = wx.createCanvasContext('learningResultCanvas', this)
+      const W = 600, H = 900
+      ctx.setFillStyle('#FFF7E8'); ctx.fillRect(0, 0, W, H)
+      const grd = ctx.createLinearGradient(0, 0, W, 300)
+      grd.addColorStop(0, '#FFE08A'); grd.addColorStop(1, '#FF8A65')
+      ctx.setFillStyle(grd); ctx.fillRect(0, 0, W, 300)
+      ctx.setFillStyle('rgba(255,255,255,0.22)'); this.resultRoundRect(ctx, 46, 42, 508, 210, 34); ctx.fill()
+      ctx.setFillStyle('#5B3300'); ctx.setTextAlign('center')
+      ctx.setFontSize(30); ctx.fillText('萌学古诗 · 成长记录', W / 2, 88)
+      ctx.setFontSize(48); ctx.fillText(`${nickname} 学会了`, W / 2, 154)
+      ctx.setFontSize(56); ctx.fillText(`《${poem.title}》`, W / 2, 226)
+
+      ctx.setFillStyle('#FFFFFF'); this.resultRoundRect(ctx, 48, 332, 504, 350, 32); ctx.fill()
+      ctx.setFillStyle('#2F2A1F'); ctx.setFontSize(30); ctx.fillText(`${poem.dynasty || ''} · ${poem.author || ''}`, W / 2, 386)
+      const lines = this.splitPoemLines(poem.content).slice(0, 6)
+      ctx.setFontSize(lines.length > 4 ? 30 : 34)
+      ctx.setFillStyle('#4B5563')
+      lines.forEach((line, index) => ctx.fillText(line, W / 2, 452 + index * 48))
+
+      ctx.setFillStyle('#FFF0C2'); this.resultRoundRect(ctx, 64, 718, 472, 98, 26); ctx.fill()
+      ctx.setFillStyle('#9A5B00'); ctx.setFontSize(26); ctx.fillText(`完成于 ${dateText}`, W / 2, 756)
+      ctx.setFontSize(24); ctx.fillText(`已点亮 ${learnedCount || 1} 首古诗 · 每天读一点`, W / 2, 792)
+      ctx.setFillStyle('#A66A23'); ctx.setFontSize(22); ctx.fillText('让孩子学会的每一首诗，都变成成长里的小闪光', W / 2, 858)
+
+      ctx.draw(false, () => {
+        wx.canvasToTempFilePath({
+          canvasId: 'learningResultCanvas',
+          width: W,
+          height: H,
+          destWidth: W * 2,
+          destHeight: H * 2,
+          success: res => resolve(res.tempFilePath),
+          fail: reject
+        }, this)
+      })
+    })
+  },
+
+  saveResultCard(filePath) {
+    wx.saveImageToPhotosAlbum({
+      filePath,
+      success: () => wx.showToast({ title: '已保存到相册', icon: 'success' }),
+      fail: err => {
+        console.warn('保存学习成果卡失败', err)
+        wx.showToast({ title: '保存失败，请检查相册权限', icon: 'none' })
+      }
+    })
+  },
+
+  formatResultDate(value) {
+    const d = new Date(value)
+    const m = String(d.getMonth() + 1).padStart(2, '0')
+    const day = String(d.getDate()).padStart(2, '0')
+    return `${d.getFullYear()}.${m}.${day}`
+  },
+
+  resultRoundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath()
+    ctx.moveTo(x + r, y)
+    ctx.arcTo(x + w, y, x + w, y + h, r)
+    ctx.arcTo(x + w, y + h, x, y + h, r)
+    ctx.arcTo(x, y + h, x, y, r)
+    ctx.arcTo(x, y, x + w, y, r)
+    ctx.closePath()
+  },
+
   goBack() {
     this.pageActive = false
     this.cleanupFollowSession()
     this.stopReading({ recreate: false })
     audioManager.destroyAll()
     wx.navigateBack()
+  },
+
+  onShareAppMessage() {
+    if (this.data.type === 'poem' && this.data.poem) {
+      const poem = this.data.poem
+      return {
+        title: `一起读《${poem.title}》｜萌学古诗`,
+        path: `/pages/learn/learn?type=poem&id=${poem.id}`
+      }
+    }
+    if (this.data.type === 'idiom' && this.data.idiom) {
+      return {
+        title: `一起学成语「${this.data.idiom.word}」｜萌学古诗`,
+        path: `/pages/learn/learn?type=idiom&id=${this.data.id}`
+      }
+    }
+    return {
+      title: '萌学古诗：每天读一点，慢慢爱上古诗',
+      path: '/pages/index/index'
+    }
+  },
+
+  onShareTimeline() {
+    if (this.data.type === 'poem' && this.data.poem) {
+      return { title: `一起读《${this.data.poem.title}》｜萌学古诗` }
+    }
+    return { title: '萌学古诗：每天读一点，慢慢爱上古诗' }
   },
 
   onResize() {

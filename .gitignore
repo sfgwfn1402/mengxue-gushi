@@ -29,3 +29,5 @@ line-audios/*.mp3
 # Temporary files
 tmp/
 temp/
+
+.idea/

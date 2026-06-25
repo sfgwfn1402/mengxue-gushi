@@ -40,6 +40,21 @@
     </button>
   </view>
 
+  <view class="recent-result" wx:if="{{recentResult}}">
+    <view class="recent-glow"></view>
+    <view class="recent-head">
+      <view>✨ 最近成长</view>
+      <text>{{recentResultDate}}</text>
+    </view>
+    <view class="recent-title">{{recentResultText}}</view>
+    <view class="recent-subtitle">趁热录一段朗诵，或放进我的诗集慢慢收藏。</view>
+    <view class="recent-actions">
+      <button class="recent-action primary" bindtap="createRecentRecitation">{{recentActionText || '录朗诵'}}</button>
+      <button class="recent-action" bindtap="openRecentPoem">再看看</button>
+      <button class="recent-action" bindtap="openMyWorks">诗集</button>
+    </view>
+  </view>
+
   <view class="menu-list">
     <button class="menu-item menu-button menu-works" data-action="works" bindtap="handleMenuTap">
       <view class="menu-icon-wrap"><text class="menu-icon">🎧</text></view>
@@ -101,6 +116,30 @@
           <view class="modal-item-desc">{{item.desc}}</view>
         </view>
       </view>
+      <view wx:if="{{modalType === 'collection'}}" class="collection-wrap">
+        <view class="collection-summary">已点亮 {{collectionLearned}}/{{collectionTotal}}</view>
+        <view class="collection-badges">
+          <view class="badge-chip {{item.earned ? 'earned' : 'locked'}}" wx:for="{{collectionBadges}}" wx:key="value">
+            <text class="badge-icon">{{item.earned ? '🏆' : '🔒'}}</text>
+            <text class="badge-label">学会{{item.value}}首</text>
+          </view>
+        </view>
+        <view wx:if="{{collectionLearned}}" class="collection-share-btn {{collectionCardGenerating ? 'loading' : ''}}" bindtap="shareCollectionCard">
+          📤 生成成就卡，晒给家人看
+        </view>
+        <view wx:if="{{collectionEmptyHint}}" class="collection-empty">{{collectionEmptyHint}}</view>
+        <view class="collection-group" wx:for="{{collectionGroups}}" wx:key="key" wx:for-item="group">
+          <view class="collection-group-title">{{group.label}} {{group.learned}}/{{group.total}}</view>
+          <view class="collection-grid">
+            <view class="collection-cell state-{{cell.state}}" wx:for="{{group.cells}}" wx:key="id" wx:for-item="cell" bindtap="openCollectionCell" data-id="{{cell.id}}">
+              <view class="cell-stars">{{cell.stars}}</view>
+              <view class="cell-title">{{cell.title}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
+
+  <canvas canvas-id="collectionCard" class="collection-canvas"></canvas>
 </view>

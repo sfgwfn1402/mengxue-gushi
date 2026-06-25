@@ -1625,10 +1625,10 @@ module.exports = {
       "title": "石灰吟",
       "author": "于谦",
       "dynasty": "明",
-      "content": "千锤万击出深山，烈火焚烧若等闲。粉身碎骨全不怕，要留清白在人间。",
-      "pinyin": "qiān chuí wàn jī chū shēn shān, liè huǒ fēn shāo ruò děng xián. fěn shēn suǒ gǔ quán bù pà, yào liú qīng bái zài rén jiān.",
-      "translation": "经过千万次锤打才走出深山，烈火焚烧像平常小事。粉身碎骨全不怕，只想留下清白在人间。",
-      "story": "于谦是明代著名的清官和民族英雄。他写石灰的经历，表明自己不怕困难，要做一个清白的人。石灰经历千锤百炼才变成，但保持清白的品格。",
+      "content": "千锤万凿出深山，烈火焚烧若等闲。粉骨碎身浑不怕，要留清白在人间。",
+      "pinyin": "qiān chuí wàn záo chū shēn shān, liè huǒ fén shāo ruò děng xián. fěn gǔ suì shēn hún bù pà, yào liú qīng bái zài rén jiān.",
+      "translation": "经过千万次锤打开凿才从深山里出来，把烈火焚烧看作平常小事。即使粉身碎骨也全然不怕，只愿把清白留在人间。",
+      "story": "于谦是明代著名的清官和民族英雄。他借石灰从深山开凿、经烈火焚烧仍保持洁白的经历，表达自己不怕磨难、坚守清白品格的志向。",
       "difficulty": 2,
       "tags": [
         "石灰",
@@ -1639,7 +1639,7 @@ module.exports = {
       "season": "any",
       "videoAvailable": false,
       "cardUnlocked": false,
-      "parentGuide": "可以先让孩子闭上眼睛听一遍，想象《石灰吟》里的画面。这首诗是明代于谦写的，主题可以抓住“石灰、品格、清白、坚强”。妈妈讲的时候，不必逐字翻译，可以按画面来讲：经过千万次锤打才走出深山，烈火焚烧像平常小事。粉身碎骨全不怕，只想留下清白在人间。然后再补一句背景：于谦是明代著名的清官和民族英雄。他写石灰的经历，表明自己不怕困难，要做一个清白的人。石灰经历千锤百炼才变成，但保持清白的品格。最后问孩子一两个小问题，比如：你听到了什么？你觉得诗人当时开心、想家、安静还是勇敢？这样孩子会更容易把诗句和感受连起来。如果孩子还小，只要记住最有画面感的一句就可以；如果孩子大一点，可以再聊聊这首诗为什么和不限定季节、石灰、品格、清白、坚强有关。",
+      "parentGuide": "可以先让孩子闭上眼睛听一遍，想象《石灰吟》里的画面。这首诗是明代于谦写的，主题可以抓住“石灰、品格、清白、坚强”。妈妈讲的时候，不必逐字翻译，可以按画面来讲：石灰石经过千万次锤打开凿才从深山里出来，把烈火焚烧看作平常小事。即使粉骨碎身也全然不怕，只愿把清白留在人间。然后再补一句背景：于谦是明代著名的清官和民族英雄。他借石灰的经历，表达自己不怕困难、坚守清白品格的志向。最后问孩子一两个小问题，比如：石灰经历了什么？你觉得“清白”是什么意思？这样孩子会更容易把诗句和品格连起来。",
       "annotatedContent": [
         {
           "char": "千",
@@ -1657,8 +1657,8 @@ module.exports = {
           "punct": false
         },
         {
-          "char": "击",
-          "pinyin": "jī",
+          "char": "凿",
+          "pinyin": "záo",
           "punct": false
         },
         {
@@ -1693,7 +1693,7 @@ module.exports = {
         },
         {
           "char": "焚",
-          "pinyin": "fēn",
+          "pinyin": "fén",
           "punct": false
         },
         {
@@ -1727,23 +1727,23 @@ module.exports = {
           "punct": false
         },
         {
-          "char": "身",
-          "pinyin": "shēn",
-          "punct": false
-        },
-        {
-          "char": "碎",
-          "pinyin": "suǒ",
-          "punct": false
-        },
-        {
           "char": "骨",
           "pinyin": "gǔ",
           "punct": false
         },
         {
-          "char": "全",
-          "pinyin": "quán",
+          "char": "碎",
+          "pinyin": "suì",
+          "punct": false
+        },
+        {
+          "char": "身",
+          "pinyin": "shēn",
+          "punct": false
+        },
+        {
+          "char": "浑",
+          "pinyin": "hún",
           "punct": false
         },
         {

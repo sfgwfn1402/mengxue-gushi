@@ -1,0 +1,66 @@
+<view class="container">
+  <view class="header-card">
+    <view>
+      <view class="page-title">诗配画审核</view>
+      <view class="page-sub">共 {{total}} 条 · 审核通过后会出现在"发现"</view>
+    </view>
+    <view class="header-stat">
+      <view class="header-stat-num">{{pendingCount}}</view>
+      <view class="header-stat-text">待处理</view>
+    </view>
+  </view>
+
+  <scroll-view class="status-scroll" scroll-x="true">
+    <view class="status-tabs">
+      <view wx:for="{{statusTabs}}" wx:key="value" class="status-tab {{status === item.value ? 'active' : ''}}" data-status="{{item.value}}" bindtap="switchStatus">{{item.label}}</view>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{!loading && !items.length}}" class="empty">暂无记录</view>
+
+  <view class="art-list">
+    <view class="art-card" wx:for="{{items}}" wx:key="id">
+      <view class="card-head" data-id="{{item.id}}" bindtap="toggleItem">
+        <view class="card-main">
+          <view class="card-title">{{item.poemText}}</view>
+          <view class="card-title-sub">{{item.title || '我的诗配画'}}</view>
+          <view class="card-meta">
+            <text class="meta-user">{{item.nickname || '匿名小诗人'}}</text>
+            <text class="meta-dot">·</text>
+            <text class="meta-likes">♥ {{item.like_count || 0}}</text>
+          </view>
+          <view class="card-time">{{item.createdText}}</view>
+        </view>
+        <view class="card-thumb" catchtap="previewImage" data-url="{{item.imageUrl}}" wx:if="{{item.imageUrl}}">
+          <image src="{{item.imageUrl}}" mode="aspectFill" class="thumb-image"></image>
+        </view>
+        <view class="card-right">
+          <view class="status-pill status-{{item.status}}">{{item.statusLabel}}</view>
+          <view class="expand-indicator">{{expandedId === item.id ? '收起' : '展开'}}</view>
+        </view>
+      </view>
+
+      <view wx:if="{{expandedId === item.id}}" class="art-detail" catchtap="noop">
+        <view class="detail-row">
+          <view class="detail-label">用户 ID</view>
+          <view class="detail-text mono">{{item.user_id}}</view>
+        </view>
+        <view class="detail-row">
+          <view class="detail-label">作品 ID</view>
+          <view class="detail-text mono">{{item.id}}</view>
+        </view>
+        <view class="detail-row description">
+          <view class="detail-label">说明</view>
+          <view class="detail-text">{{item.descriptionText}}</view>
+        </view>
+        <view class="card-actions" wx:if="{{item.status === 'submitted'}}">
+          <button class="action-btn reject" data-id="{{item.id}}" catchtap="reject">驳回</button>
+          <button class="action-btn approve" data-id="{{item.id}}" catchtap="approve">通过并发布</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+  <view wx:if="{{!hasMore && items.length}}" class="no-more">没有更多了</view>
+</view>

@@ -22,9 +22,66 @@
 .status-badge.public { background: #DCFCE7; color: #15803D; }
 .status-badge.rejected { background: #FEE2E2; color: #B91C1C; }
 .work-desc { margin-top: 10rpx; font-size: 25rpx; color: #6B7280; line-height: 1.4; }
-.actions { margin-top: 16rpx; display: flex; gap: 10rpx; }
+.actions { margin-top: 16rpx; display: flex; gap: 10rpx; flex-wrap: wrap; }
 .compact-actions { align-items: center; justify-content: flex-start; }
-.action { flex: 1; margin: 0; padding: 0; min-width: 0; height: 50rpx; line-height: 50rpx; border-radius: 999rpx; background: #F3F4F6; color: #4B5563; font-size: 23rpx; font-weight: 800; }
+.action { flex: 1 1 112rpx; margin: 0; padding: 0; min-width: 104rpx; height: 50rpx; line-height: 50rpx; border-radius: 999rpx; background: #F3F4F6; color: #4B5563; font-size: 23rpx; font-weight: 800; }
 .action.primary { background: linear-gradient(180deg,#67B7FF,#3B82F6); color: #fff; box-shadow: 0 6rpx 14rpx rgba(59,130,246,.18); }
 .delete-link { display: inline-block; margin-top: 14rpx; color: #C08497; font-size: 22rpx; font-weight: 700; }
 .share-canvas { position: fixed; left: -9999px; top: -9999px; }
+
+.hero-summary {
+  margin-top: 20rpx;
+  padding: 16rpx 20rpx;
+  border-radius: 22rpx;
+  background: rgba(255,255,255,.36);
+  color: #704100;
+  font-size: 24rpx;
+  font-weight: 850;
+  line-height: 1.45;
+}
+
+.growth-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14rpx;
+  margin: 18rpx 0 22rpx;
+}
+
+.growth-stat {
+  padding: 20rpx 10rpx;
+  border-radius: 26rpx;
+  background: rgba(255,255,255,.92);
+  text-align: center;
+  box-shadow: 0 8rpx 18rpx rgba(120,80,20,.07);
+}
+
+.growth-value {
+  color: #FF7043;
+  font-size: 42rpx;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.growth-label {
+  margin-top: 8rpx;
+  color: #8A5A10;
+  font-size: 23rpx;
+  font-weight: 850;
+}
+
+.empty-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 360rpx;
+  height: 76rpx;
+  margin: 26rpx auto 0;
+  padding: 0;
+  border: none;
+  border-radius: 999rpx;
+  color: #fff;
+  background: linear-gradient(180deg,#FFB15D,#FF7A45);
+  font-size: 27rpx;
+  font-weight: 900;
+  box-shadow: 0 12rpx 22rpx rgba(255,122,69,.18);
+}

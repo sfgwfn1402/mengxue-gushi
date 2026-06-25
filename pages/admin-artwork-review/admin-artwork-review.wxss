@@ -1,0 +1,42 @@
+page { min-height: 100vh; background: linear-gradient(180deg, #F6F8FC 0%, #EAF3FF 100%); }
+.container { padding: 28rpx 24rpx 44rpx; box-sizing: border-box; }
+.header-card { display: flex; justify-content: space-between; align-items: center; padding: 30rpx; border-radius: 32rpx; background: linear-gradient(145deg, #E5F0FF 0%, #B6D4FF 100%); box-shadow: 0 18rpx 38rpx rgba(45,107,224,0.14); margin-bottom: 20rpx; }
+.page-title { font-size: 38rpx; font-weight: 900; color: #1F2937; }
+.page-sub { margin-top: 8rpx; font-size: 24rpx; color: #2C4A91; font-weight: 800; }
+.header-stat { text-align: right; }
+.header-stat-num { font-size: 46rpx; font-weight: 900; color: #2C66E5; line-height: 1; }
+.header-stat-text { margin-top: 6rpx; font-size: 22rpx; color: #2C4A91; font-weight: 800; }
+.status-scroll { white-space: nowrap; margin-bottom: 20rpx; }
+.status-tabs { display: inline-flex; gap: 12rpx; }
+.status-tab { padding: 14rpx 24rpx; border-radius: 999rpx; background: #fff; color: #8A8F98; font-size: 25rpx; font-weight: 900; box-shadow: 0 8rpx 20rpx rgba(31,35,46,0.06); }
+.status-tab.active { color: #fff; background: linear-gradient(135deg, #5DA9FF 0%, #2C66E5 100%); }
+.art-list { display: flex; flex-direction: column; gap: 18rpx; }
+.art-card { padding: 26rpx; border-radius: 30rpx; background: rgba(255,255,255,0.96); box-shadow: 0 14rpx 32rpx rgba(31,35,46,0.08); }
+.card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16rpx; }
+.card-main { flex: 1; min-width: 0; }
+.card-right { flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 8rpx; }
+.card-thumb { width: 140rpx; height: 140rpx; border-radius: 22rpx; overflow: hidden; flex: none; background: #F1F5F9; box-shadow: 0 8rpx 18rpx rgba(31,35,46,0.08); }
+.thumb-image { width: 100%; height: 100%; }
+.card-title { font-size: 30rpx; color: #1F2937; font-weight: 900; }
+.card-title-sub { margin-top: 4rpx; color: #5165D6; font-size: 26rpx; font-weight: 800; }
+.card-meta { margin-top: 8rpx; color: #5F6672; font-size: 24rpx; font-weight: 800; display: flex; align-items: center; gap: 8rpx; flex-wrap: wrap; }
+.card-time { margin-top: 6rpx; color: #9AA1AD; font-size: 23rpx; font-weight: 700; }
+.expand-indicator { color: #2C66E5; font-size: 22rpx; font-weight: 900; }
+.status-pill { flex: none; padding: 8rpx 16rpx; border-radius: 999rpx; font-size: 22rpx; font-weight: 900; background: #F1F5F9; color: #64748B; }
+.status-submitted { background: #FFF4D6; color: #B86B00; }
+.status-public { background: #EFFFF5; color: #20A45B; }
+.status-rejected { background: #FCE5E1; color: #C0392B; }
+.status-active { background: #EEF2FF; color: #5165D6; }
+.status-deleted { background: #F1F5F9; color: #8A8F98; }
+.art-detail { margin-top: 18rpx; }
+.detail-row { display: flex; gap: 16rpx; padding: 10rpx 0; align-items: baseline; }
+.detail-row.description { align-items: flex-start; }
+.detail-label { flex: none; width: 140rpx; color: #2C4A91; font-size: 23rpx; font-weight: 900; }
+.detail-text { flex: 1; min-width: 0; color: #3B4250; font-size: 26rpx; font-weight: 700; word-break: break-all; }
+.detail-text.mono { font-family: monospace; font-size: 23rpx; color: #5F6672; }
+.card-actions { display: flex; justify-content: flex-end; gap: 14rpx; margin-top: 18rpx; }
+.action-btn { margin: 0; height: 64rpx; line-height: 64rpx; padding: 0 26rpx; border-radius: 999rpx; font-size: 25rpx; font-weight: 900; border: none; }
+.action-btn::after { border: none; }
+.action-btn.reject { color: #C0392B; background: #FFF1EE; }
+.action-btn.approve { color: #fff; background: linear-gradient(135deg, #45D483 0%, #20A45B 100%); }
+.empty, .loading, .no-more { padding: 40rpx 0; text-align: center; color: #9AA1AD; font-size: 25rpx; font-weight: 800; }

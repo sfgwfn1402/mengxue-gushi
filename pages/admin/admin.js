@@ -31,5 +31,13 @@ Page({
 
   openFeedback() {
     wx.navigateTo({ url: '/pages/admin-feedback/admin-feedback' })
+  },
+
+  openRecitationReview() {
+    wx.navigateTo({ url: '/pages/admin-recitation-review/admin-recitation-review' })
+  },
+
+  openArtworkReview() {
+    wx.navigateTo({ url: '/pages/admin-artwork-review/admin-artwork-review' })
   }
 })
