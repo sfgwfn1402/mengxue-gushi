@@ -404,7 +404,7 @@ page {
   max-width: 150rpx;
   text-align: center;
   margin-left: 24rpx;
-  margin-right: 36rpx;
+  margin-right: 72rpx;
 }
 .carousel-user-name {
   font-size: 22rpx;
