@@ -75,7 +75,9 @@ Page({
     onboardDoneCount: 0,
     onboardTotal: 0,
     onboardAllDone: true,
-    onboardExpanded: false
+    onboardExpanded: false,
+    inviteWelcomeVisible: false,
+    inviteWelcomeText: ''
   },
 
   onLoad() {
@@ -165,9 +167,42 @@ Page({
     this.loadStreak() // 每次回到首页都刷新，学习/打卡后连续天数即时更新
     this.loadReviewDue() // 复习数量随学习/复习即时更新
     this.loadOnboarding()
+    this.maybeShowInviteWelcome() // 被邀请者落地欢迎语
     this.startDrift() // 悬浮球自动飘动
     if (this._loadedOnce) return
     this._loadedOnce = true
+  },
+
+  maybeShowInviteWelcome() {
+    const code = app.globalData && app.globalData.inviteWelcomeCode
+    if (!code || this.data.inviteWelcomeVisible) return
+    if (wx.getStorageSync('inviteWelcomeShown')) {
+      app.globalData.inviteWelcomeCode = ''
+      return
+    }
+    // 标记只展示一次，避免来回切页重复弹
+    app.globalData.inviteWelcomeCode = ''
+    wx.setStorageSync('inviteWelcomeShown', true)
+    api.getInviter(code)
+      .then(res => {
+        const name = res && res.nickname ? res.nickname : ''
+        const text = name
+          ? `你的好友「${name}」邀请你一起学古诗 🎉`
+          : '你的好友邀请你一起学古诗 🎉'
+        this.setData({ inviteWelcomeVisible: true, inviteWelcomeText: text })
+      })
+      .catch(() => {
+        this.setData({ inviteWelcomeVisible: true, inviteWelcomeText: '你的好友邀请你一起学古诗 🎉' })
+      })
+  },
+
+  dismissInviteWelcome() {
+    this.setData({ inviteWelcomeVisible: false })
+  },
+
+  startFromInvite() {
+    this.setData({ inviteWelcomeVisible: false })
+    wx.switchTab({ url: '/pages/warehouse/warehouse' })
   },
 
   loadOnboarding() {

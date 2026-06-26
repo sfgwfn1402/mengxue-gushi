@@ -990,6 +990,15 @@ page {
 .welcome-p { font-size: 28rpx; color: #8A6D3B; line-height: 1.7; margin-top: 18rpx; }
 .welcome-btn { margin-top: 20rpx; text-align: center; background: linear-gradient(135deg, #FFD36B, #FFB347); color: #7A3E00; border-radius: 999rpx; padding: 26rpx 0; font-size: 32rpx; font-weight: 900; box-shadow: 0 10rpx 24rpx rgba(255,160,60,0.3); }
 
+/* 被邀请者落地欢迎弹层 */
+.invite-welcome-mask { position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0,0,0,0.55); display: flex; align-items: center; justify-content: center; z-index: 600; }
+.invite-welcome-card { width: 78%; max-width: 580rpx; background: linear-gradient(180deg, #FFFDF7 0%, #FFF4E2 100%); border-radius: 36rpx; padding: 48rpx 36rpx 32rpx; text-align: center; box-shadow: 0 20rpx 60rpx rgba(0,0,0,0.32); }
+.invite-welcome-emoji { font-size: 96rpx; }
+.invite-welcome-title { font-size: 36rpx; font-weight: 900; color: #5B3300; margin-top: 16rpx; line-height: 1.5; }
+.invite-welcome-sub { font-size: 26rpx; color: #8A6D3B; line-height: 1.7; margin-top: 18rpx; }
+.invite-welcome-btn { margin-top: 32rpx; text-align: center; background: linear-gradient(135deg, #FF8A5B, #FF6B6B); color: #fff; border-radius: 999rpx; padding: 26rpx 0; font-size: 32rpx; font-weight: 900; box-shadow: 0 10rpx 24rpx rgba(255,107,107,0.3); }
+.invite-welcome-skip { margin-top: 18rpx; font-size: 26rpx; color: #B79B6E; }
+
 .recent-growth-card {
   position: relative;
   overflow: hidden;

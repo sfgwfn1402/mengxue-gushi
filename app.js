@@ -31,6 +31,10 @@ App({
       // 仅在登录前存储，login 后会清除
       if (!wx.getStorageSync('apiUser')) {
         wx.setStorageSync('pendingInvite', invite)
+        // 首次通过邀请进入，且从未展示过欢迎语 → 让首页弹一次欢迎提示
+        if (!wx.getStorageSync('inviteWelcomeShown')) {
+          this.globalData.inviteWelcomeCode = invite
+        }
       }
     }
   },
@@ -163,6 +167,7 @@ App({
     backendError: '',
     learnedPoemCount: 0,
     appActive: true,
+    inviteWelcomeCode: '',
     api,
     idioms: [
       { id: 1, word: '画龙点睛', pinyin: 'huà lóng diǎn jīng', meaning: '比喻在关键地方加上精辟的语句，使内容更加生动有力。', story: '梁代画家张僧繇画龙点睛，龙飞走了。', difficulty: 1 },

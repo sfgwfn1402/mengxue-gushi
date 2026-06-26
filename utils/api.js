@@ -618,6 +618,11 @@ function getInviteInfo() {
   return authed({ url: '/me/invite-info' })
 }
 
+function getInviter(code) {
+  // 公开接口，无需登录态
+  return request({ url: `/invite/inviter/${encodeURIComponent(code)}` })
+}
+
 function completeTask(taskId, stars) {
   return authed({
     url: '/me/tasks',
@@ -769,6 +774,7 @@ module.exports = {
   checkin,
   subscribeReminder,
   getInviteInfo,
+  getInviter,
   completeTask,
   clearUserData,
   listProgress,

@@ -282,4 +282,14 @@
       <view class="welcome-btn" bindtap="dismissWelcome">开始体验</view>
     </view>
   </view>
+
+  <view class="invite-welcome-mask" wx:if="{{inviteWelcomeVisible}}" catchtap="dismissInviteWelcome">
+    <view class="invite-welcome-card" catchtap="noop">
+      <view class="invite-welcome-emoji">🎁</view>
+      <view class="invite-welcome-title">{{inviteWelcomeText}}</view>
+      <view class="invite-welcome-sub">这里有 160+ 首古诗，听读背全都有，还能录朗诵、得勋章～</view>
+      <view class="invite-welcome-btn" bindtap="startFromInvite">开始学第一首 →</view>
+      <view class="invite-welcome-skip" bindtap="dismissInviteWelcome">先逛逛</view>
+    </view>
+  </view>
 </view>
