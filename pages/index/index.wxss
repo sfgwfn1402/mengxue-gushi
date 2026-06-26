@@ -378,6 +378,7 @@ page {
 .carousel-item-body {
   flex: 1;
   min-width: 0;
+  text-align: center;
 }
 .carousel-poem-title {
   font-size: 28rpx;
