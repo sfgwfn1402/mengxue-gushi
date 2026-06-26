@@ -375,10 +375,10 @@ page {
 .item-sky .carousel-rank {
   background: linear-gradient(135deg, #818CF8, #6366F1);
 }
-.carousel-item-body {
+/* 第一列：诗 */
+.carousel-poem-col {
   flex: 1;
   min-width: 0;
-  text-align: center;
 }
 .carousel-poem-title {
   font-size: 28rpx;
@@ -389,13 +389,34 @@ page {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.carousel-meta {
+.carousel-poem-sub {
   font-size: 20rpx;
   color: #8A8F98;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/* 第二列：用户名 */
+.carousel-user-col {
+  flex-shrink: 0;
+  width: 130rpx;
+  text-align: center;
+  margin: 0 14rpx;
+}
+.carousel-user-name {
+  font-size: 22rpx;
+  font-weight: 800;
+  color: #5A6478;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.carousel-user-likes {
+  font-size: 20rpx;
+  font-weight: 700;
+  color: #FF6B6B;
+  margin-top: 4rpx;
 }
 .carousel-play-wrap {
   margin-left: 12rpx;

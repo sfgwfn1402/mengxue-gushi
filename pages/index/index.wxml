@@ -130,9 +130,13 @@
                 <view class="carousel-rank">
                   <text class="carousel-rank-num">{{loopIndex0 + 1}}</text>
                 </view>
-                <view class="carousel-item-body">
+                <view class="carousel-poem-col">
                   <view class="carousel-poem-title">《{{rec.poem_title}}》</view>
-                  <view class="carousel-meta">{{rec.recitation.nickname || '小诗童'}} · {{rec.recitation.like_count}} 赞 · {{rec.poem_dynasty || ''}}{{rec.poem_author ? '· ' + rec.poem_author : ''}}</view>
+                  <view class="carousel-poem-sub">{{rec.poem_dynasty || ''}}{{rec.poem_author ? ' · ' + rec.poem_author : ''}}</view>
+                </view>
+                <view class="carousel-user-col">
+                  <view class="carousel-user-name">{{rec.recitation.nickname || '小诗童'}}</view>
+                  <view class="carousel-user-likes">❤ {{rec.recitation.like_count}}</view>
                 </view>
                 <view class="carousel-play-wrap">
                   <view class="carousel-play-btn {{playingRecitationId === rec.recitation.id ? 'playing' : ''}}" catchtap="playCarouselRecitation" data-id="{{rec.recitation.id}}">
@@ -156,9 +160,13 @@
                 <view class="carousel-rank">
                   <text class="carousel-rank-num">{{rec._rankIndex}}</text>
                 </view>
-                <view class="carousel-item-body">
+                <view class="carousel-poem-col">
                   <view class="carousel-poem-title">《{{rec.poem_title}}》</view>
-                  <view class="carousel-meta">{{rec.recitation.nickname || '小诗童'}} · {{rec.recitation.like_count}} 赞 · {{rec.poem_dynasty || ''}}{{rec.poem_author ? '· ' + rec.poem_author : ''}}</view>
+                  <view class="carousel-poem-sub">{{rec.poem_dynasty || ''}}{{rec.poem_author ? ' · ' + rec.poem_author : ''}}</view>
+                </view>
+                <view class="carousel-user-col">
+                  <view class="carousel-user-name">{{rec.recitation.nickname || '小诗童'}}</view>
+                  <view class="carousel-user-likes">❤ {{rec.recitation.like_count}}</view>
                 </view>
                 <view class="carousel-play-wrap">
                   <view class="carousel-play-btn {{playingRecitationId === rec.recitation.id ? 'playing' : ''}}" catchtap="playCarouselRecitation" data-id="{{rec.recitation.id}}">
