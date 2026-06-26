@@ -977,13 +977,13 @@ page {
 .review-banner-cta { font-size: 24rpx; font-weight: 800; color: #fff; background: rgba(74, 124, 200, 0.92); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; }
 
 /* 邀请有礼入口（悬浮球面板内） */
-.invite-banner { display: flex; align-items: center; gap: 18rpx; margin: 0 0 22rpx; padding: 22rpx 24rpx; border-radius: 30rpx; background: linear-gradient(135deg, #FFF1DD 0%, #FFE2C2 100%); box-shadow: 0 12rpx 28rpx rgba(255,150,70,0.16); border: none; line-height: 1.4; text-align: left; }
+.invite-banner { display: flex; align-items: center; gap: 18rpx; width: 100%; box-sizing: border-box; margin: 0 0 22rpx; padding: 22rpx 24rpx; border-radius: 28rpx; background: linear-gradient(135deg, #FFF1DD 0%, #FFE2C2 100%); box-shadow: 0 12rpx 28rpx rgba(255,150,70,0.16); border: none; line-height: 1.4; text-align: left; }
 .invite-banner::after { border: none; }
-.invite-banner-icon { font-size: 52rpx; line-height: 1; }
-.invite-banner-main { flex: 1; }
-.invite-banner-title { font-size: 30rpx; font-weight: 800; color: #8A4B00; }
-.invite-banner-sub { font-size: 24rpx; color: #B5731F; margin-top: 6rpx; }
-.invite-banner-cta { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #FF8A5B, #FF6B6B); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; }
+.invite-banner-icon { font-size: 48rpx; line-height: 1; flex-shrink: 0; }
+.invite-banner-main { flex: 1; min-width: 0; }
+.invite-banner-title { font-size: 28rpx; font-weight: 800; color: #8A4B00; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.invite-banner-sub { font-size: 22rpx; color: #B5731F; margin-top: 6rpx; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.invite-banner-cta { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #FF8A5B, #FF6B6B); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; flex-shrink: 0; }
 
 /* 社区人气条 */
 .community-bar { display: flex; align-items: center; gap: 10rpx; margin: 0 0 22rpx; padding: 16rpx 24rpx; border-radius: 999rpx; background: #FFF4E0; }
@@ -1007,7 +1007,7 @@ page {
 .study-ball-num { font-size: 24rpx; font-weight: 900; color: #fff; margin-top: 2rpx; position: relative; z-index: 1; text-shadow: 0 1rpx 2rpx rgba(150,60,0,0.5); }
 .study-ball-dot { position: absolute; top: 8rpx; right: 12rpx; width: 20rpx; height: 20rpx; border-radius: 50%; background: #FF3B30; border: 3rpx solid #fff; z-index: 2; }
 .study-mask { position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 100; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 200rpx; box-sizing: border-box; }
-.study-panel { width: 90%; max-width: 660rpx; background: #FFF8EA; border-radius: 32rpx; padding: 26rpx 24rpx 12rpx; box-shadow: 0 18rpx 50rpx rgba(0,0,0,0.25); animation: study-rise 0.28s ease; }
+.study-panel { width: 90%; max-width: 660rpx; max-height: 72vh; overflow-y: auto; -webkit-overflow-scrolling: touch; background: #FFF8EA; border-radius: 32rpx; padding: 26rpx 24rpx 16rpx; box-shadow: 0 18rpx 50rpx rgba(0,0,0,0.25); animation: study-rise 0.28s ease; }
 @keyframes study-rise { from { transform: translateY(40rpx); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 .study-panel-title { font-size: 30rpx; font-weight: 900; color: #7A3E00; margin-bottom: 16rpx; padding-left: 4rpx; }
 
