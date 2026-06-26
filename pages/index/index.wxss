@@ -393,16 +393,18 @@ page {
   font-size: 20rpx;
   color: #8A8F98;
   font-weight: 700;
+  padding-left: 10rpx; /* 对齐「《」括号后的诗名首字 */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* 第二列：用户名 */
+/* 第二列：用户名（居中、与播放键拉开间距，往中间靠） */
 .carousel-user-col {
   flex-shrink: 0;
-  width: 130rpx;
+  max-width: 150rpx;
   text-align: center;
-  margin: 0 14rpx;
+  margin-left: 24rpx;
+  margin-right: 36rpx;
 }
 .carousel-user-name {
   font-size: 22rpx;
