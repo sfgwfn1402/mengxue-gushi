@@ -40,7 +40,6 @@ Page({
     themes: [],
     totalPoems: 0,
     todayPoem: null,
-    lastPoem: null,
     recommendedPoems: [],
     recommendReason: '',
     recommendShortReason: '猜你喜欢',
@@ -432,10 +431,8 @@ Page({
 
   refreshList() {
     const poems = (app.getPoems && app.getPoems()) || []
-    const lastPoem = wx.getStorageSync('lastLearnPoem') || null
     this.setData({
       totalPoems: poems.length,
-      lastPoem,
       dataSource: app.globalData.poemsLoadedFromBackend ? '后端数据库' : '服务维护中',
       backendError: app.globalData.backendError || ''
     })
@@ -456,24 +453,11 @@ Page({
     return pool[dayIndex] || pool[0] || null
   },
 
-  pickLastPoem(poems, progressItems) {
-    const poemMap = {}
-    poems.forEach(p => { poemMap[Number(p.id)] = p })
-    const latest = (progressItems || [])
-      .filter(item => item.last_learned_at && poemMap[Number(item.poem_id || item.poemId)])
-      .sort((a, b) => String(b.last_learned_at).localeCompare(String(a.last_learned_at)))[0]
-    if (latest) return poemMap[Number(latest.poem_id || latest.poemId)]
-    const cached = wx.getStorageSync('lastLearnPoem') || null
-    return cached && poemMap[Number(cached.id)] ? poemMap[Number(cached.id)] : cached
-  },
-
   applyHomePoems(poems, progressItems) {
     const todayPoem = this.pickTodayPoem(poems, progressItems)
-    const lastPoem = this.pickLastPoem(poems, progressItems)
     this.setData({
       totalPoems: poems.length,
       todayPoem,
-      lastPoem,
       dataSource: '后端数据库',
       backendError: ''
     })
@@ -511,16 +495,12 @@ Page({
   forceRefreshBackend() {
     if (!api.config.useBackendPoems) return
     api.login()
-      .then(() => Promise.all([
-        api.getTodayPoem(),
-        api.getContinueLearning()
-      ]))
-      .then(([todayPoem, continuePoem]) => {
+      .then(() => api.getTodayPoem())
+      .then(todayPoem => {
         app.globalData.poemsLoadedFromBackend = true
         app.globalData.backendError = ''
         this.setData({
           todayPoem,
-          lastPoem: continuePoem || wx.getStorageSync('lastLearnPoem') || null,
           dataSource: '后端数据库',
           backendError: ''
         })

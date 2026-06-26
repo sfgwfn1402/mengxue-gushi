@@ -176,16 +176,6 @@
       </view>
     </view>
 
-    <view class="continue-card" wx:if="{{lastPoem}}" bindtap="goToLearn" data-id="{{lastPoem.id}}" data-type="poem">
-      <view class="continue-icon">🔖</view>
-      <view class="continue-main">
-        <view class="continue-label">继续学习</view>
-        <view class="continue-title">《{{lastPoem.title}}》</view>
-        <view class="continue-sub">{{lastPoem.dynasty}} · {{lastPoem.author}} · 接着听、跟读、背一背</view>
-      </view>
-      <view class="continue-go">›</view>
-    </view>
-
     <view class="section-title row-title">
       <text>🚀 今天怎么学</text>
       <text class="more" bindtap="openWarehouse">更多诗 ›</text>
