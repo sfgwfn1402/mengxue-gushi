@@ -54,13 +54,27 @@
         <view class="streak-cta">{{todayChecked ? '今天已学 ✓' : '去打卡 →'}}</view>
       </view>
 
-      <view class="review-banner" wx:if="{{reviewDueCount > 0}}" bindtap="goReview">
-        <view class="review-banner-icon">📖</view>
-        <view class="review-banner-main">
-          <view class="review-banner-title">今日复习 {{reviewDueCount}} 首</view>
-          <view class="review-banner-sub">学过的诗别忘啦，温故而知新</view>
+      <!-- 今日学习计划：1首新诗 + 到期复习 -->
+      <view class="plan-card" wx:if="{{dailyPlan && !dailyPlan.empty}}">
+        <view class="plan-head">
+          <view class="plan-title">📅 今天的功课</view>
+          <view class="plan-progress">{{dailyPlan.doneCount}}/{{dailyPlan.total}}</view>
         </view>
-        <view class="review-banner-cta">去复习 →</view>
+        <view class="plan-bar"><view class="plan-bar-fill" style="width: {{dailyPlan.doneCount / dailyPlan.total * 100}}%"></view></view>
+        <view class="plan-item {{item.done ? 'done' : ''}}" wx:for="{{dailyPlan.items}}" wx:key="id" data-id="{{item.id}}" data-kind="{{item.kind}}" catchtap="goPlanItem">
+          <view class="plan-check">{{item.done ? '✅' : (item.kind === 'new' ? '🌱' : '🔁')}}</view>
+          <view class="plan-item-main">
+            <view class="plan-item-title">{{item.kind === 'new' ? '学新诗' : '复习'}}《{{item.title}}》</view>
+            <view class="plan-item-sub">{{item.sub}}</view>
+          </view>
+          <view class="plan-item-cta" wx:if="{{!item.done}}">{{item.kind === 'new' ? '去学 →' : '去复习 →'}}</view>
+          <view class="plan-item-cta done-tag" wx:else>已完成</view>
+        </view>
+        <view wx:if="{{dailyPlan.allDone}}" class="plan-alldone">🎉 今天的功课全部完成，太棒啦！</view>
+      </view>
+      <view wx:elif="{{dailyPlan && dailyPlan.empty}}" class="plan-card plan-empty">
+        <view class="plan-empty-emoji">🌟</view>
+        <view class="plan-empty-text">今天没有必做功课，自由挑一首喜欢的诗读读吧～</view>
       </view>
 
       <button class="invite-banner" open-type="share">
@@ -159,29 +173,6 @@
   </view>
 
   <block wx:if="{{todayPoem}}">
-    <!-- 今日学习计划：1首新诗 + 到期复习，跟着做完即可 -->
-    <view class="plan-card" wx:if="{{dailyPlan && !dailyPlan.empty}}">
-      <view class="plan-head">
-        <view class="plan-title">📅 今天的功课</view>
-        <view class="plan-progress">{{dailyPlan.doneCount}}/{{dailyPlan.total}}</view>
-      </view>
-      <view class="plan-bar"><view class="plan-bar-fill" style="width: {{dailyPlan.doneCount / dailyPlan.total * 100}}%"></view></view>
-      <view class="plan-item {{item.done ? 'done' : ''}}" wx:for="{{dailyPlan.items}}" wx:key="id" data-id="{{item.id}}" data-kind="{{item.kind}}" bindtap="goPlanItem">
-        <view class="plan-check">{{item.done ? '✅' : (item.kind === 'new' ? '🌱' : '🔁')}}</view>
-        <view class="plan-item-main">
-          <view class="plan-item-title">{{item.kind === 'new' ? '学新诗' : '复习'}}《{{item.title}}》</view>
-          <view class="plan-item-sub">{{item.sub}}</view>
-        </view>
-        <view class="plan-item-cta" wx:if="{{!item.done}}">{{item.kind === 'new' ? '去学 →' : '去复习 →'}}</view>
-        <view class="plan-item-cta done-tag" wx:else>已完成</view>
-      </view>
-      <view wx:if="{{dailyPlan.allDone}}" class="plan-alldone">🎉 今天的功课全部完成，太棒啦！</view>
-    </view>
-    <view wx:elif="{{dailyPlan && dailyPlan.empty}}" class="plan-card plan-empty">
-      <view class="plan-empty-emoji">🌟</view>
-      <view class="plan-empty-text">今天没有必做功课，自由挑一首喜欢的诗读读吧～</view>
-    </view>
-
     <view class="today-card" wx:if="{{todayPoem}}" bindtap="goToLearn" data-id="{{todayPoem.id}}" data-type="poem">
       <image wx:if="{{todayPoem.imageUrl}}" class="today-image" src="{{todayPoem.imageUrl}}" mode="aspectFill"></image>
       <view class="today-label">📚 今日一诗</view>
