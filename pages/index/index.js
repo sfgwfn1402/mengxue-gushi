@@ -45,10 +45,10 @@ Page({
     recommendShortReason: '猜你喜欢',
     popularRecitations: [],
     learningPaths: [
-      { id: 'must', emoji: '📖', title: '启蒙必背', desc: '从最简单的诗开始', category: 'level1' },
-      { id: 'follow', emoji: '🎙️', title: '跟读练习', desc: '听一句，读一句', mode: 'follow' },
-      { id: 'spring', emoji: '🌸', title: '春天的诗', desc: '花开、鸟鸣和春风', keyword: '春天' },
-      { id: 'animal', emoji: '🦢', title: '小动物的诗', desc: '鹅、鸟、鱼和蝉', keyword: '动物' }
+      { id: 'must', emoji: '📖', title: '启蒙必背', desc: '从最简单的诗开始', action: 'category', category: 'level1' },
+      { id: 'follow', emoji: '🎙️', title: '跟读练习', desc: '听一句，读一句', action: 'mode', mode: 'follow' },
+      { id: 'recite', emoji: '🎯', title: '背诵闯关', desc: '遮字背一背', action: 'challenge' },
+      { id: 'review', emoji: '🔁', title: '我的复习', desc: '温故而知新', action: 'review' }
     ],
     childThemes: [
       { emoji: '🌸', name: '春天', keyword: '春天' },
@@ -59,11 +59,6 @@ Page({
       { emoji: '👋', name: '送别', keyword: '送别' },
       { emoji: '🔥', name: '励志', keyword: '励志' },
       { emoji: '🎐', name: '节日', keyword: '节日' }
-    ],
-    dailyTasks: [
-      { emoji: '👂', title: '听一首诗', desc: '先听官方朗读，感受古诗的节奏' },
-      { emoji: '🎙️', title: '跟读一首诗', desc: '一句一句练，像小诗人一样读出来' },
-      { emoji: '🌱', title: '读懂一首诗', desc: '看看画面和讲解，和孩子聊一聊' }
     ],
     dataSource: '本地数据',
     backendError: '',
@@ -803,6 +798,14 @@ Page({
   },
 
 
+  // 「今天怎么学」入口分发：分类/模式跳诗园，背诵闯关跳诗光，复习跳复习页
+  tapLearnEntry(e) {
+    const action = e.currentTarget.dataset.action
+    if (action === 'challenge') return this.goChallenge()
+    if (action === 'review') return this.goReview()
+    this.openLearningPath(e)
+  },
+
   openLearningPath(e) {
     const { keyword, category, mode } = e.currentTarget.dataset
     wx.setStorageSync('warehouseDefaultCategory', category || 'all')
@@ -831,15 +834,6 @@ Page({
 
   openChallenge() {
     wx.switchTab({ url: '/pages/challenge/challenge' })
-  },
-
-  openDailyTask(e) {
-    const id = e.currentTarget.dataset.id
-    if (id) {
-      wx.navigateTo({ url: `/pages/learn/learn?id=${id}&type=poem` })
-      return
-    }
-    this.openWarehouse()
   },
 
   async playPopularRecitation(e) {

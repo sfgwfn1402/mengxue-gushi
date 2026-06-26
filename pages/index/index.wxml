@@ -89,73 +89,6 @@
     </view>
   </view>
 
-  <!-- 朗诵秀：人气朗诵 + 本周排行 双Tab切换 -->
-  <view class="recitation-show">
-    <view class="show-tabs">
-      <view class="show-tab {{recitationShowTab === 'hot' ? 'active' : ''}}" bindtap="switchRecitationShowTab" data-tab="hot">
-        <text>🎙️ 古诗人气朗诵</text>
-        <view class="tab-underline" wx:if="{{recitationShowTab === 'hot'}}"></view>
-      </view>
-      <view class="show-tab {{recitationShowTab === 'rank' ? 'active' : ''}}" bindtap="switchRecitationShowTab" data-tab="rank">
-        <text>🏆 本周朗诵排行</text>
-        <view class="tab-underline" wx:if="{{recitationShowTab === 'rank'}}"></view>
-      </view>
-    </view>
-    <!-- 人气朗诵 -->
-    <block wx:if="{{recitationShowTab === 'hot' && todayRecitationPages.length}}">
-      <swiper class="carousel-swiper" autoplay interval="5000" circular indicator-dots="{{false}}" current="{{carouselIndex}}" bindchange="onCarouselChange">
-        <swiper-item wx:for="{{todayRecitationPages}}" wx:key="page">
-          <view class="carousel-page">
-            <view class="carousel-item {{loopIndex0 === 0 ? 'item-coral' : 'item-sky'}}" wx:for="{{item}}" wx:key="recitation.id" wx:for-item="rec" wx:for-index="loopIndex0">
-              <view class="carousel-rank">
-                <text class="carousel-rank-num">{{loopIndex0 + 1}}</text>
-              </view>
-              <view class="carousel-item-body">
-                <view class="carousel-poem-title">《{{rec.poem_title}}》</view>
-                <view class="carousel-meta">{{rec.recitation.nickname || '小诗童'}} · {{rec.recitation.like_count}} 赞 · {{rec.poem_dynasty || ''}}{{rec.poem_author ? '· ' + rec.poem_author : ''}}</view>
-              </view>
-              <view class="carousel-play-wrap">
-                <view class="carousel-play-btn {{playingRecitationId === rec.recitation.id ? 'playing' : ''}}" catchtap="playCarouselRecitation" data-id="{{rec.recitation.id}}">
-                  <text>{{playingRecitationId === rec.recitation.id ? '■' : '▶'}}</text>
-                </view>
-              </view>
-            </view>
-          </view>
-        </swiper-item>
-      </swiper>
-      <view class="carousel-dots">
-        <view class="carousel-dot {{carouselIndex === index ? 'active' : ''}}" wx:for="{{todayRecitationPages}}" wx:key="page" wx:for-index="index"></view>
-      </view>
-    </block>
-    <!-- 本周排行 -->
-    <block wx:if="{{recitationShowTab === 'rank' && weeklyRankPages.length}}">
-      <swiper class="carousel-swiper" autoplay interval="5000" circular indicator-dots="{{false}}" current="{{weeklyRankIndex}}" bindchange="onWeeklyRankChange">
-        <swiper-item wx:for="{{weeklyRankPages}}" wx:key="page">
-          <view class="carousel-page">
-            <view class="carousel-item {{loopIndex0 === 0 ? 'item-coral' : 'item-sky'}}" wx:for="{{item}}" wx:key="recitation.id" wx:for-item="rec" wx:for-index="loopIndex0">
-              <view class="carousel-rank">
-                <text class="carousel-rank-num">{{rec._rankIndex}}</text>
-              </view>
-              <view class="carousel-item-body">
-                <view class="carousel-poem-title">《{{rec.poem_title}}》</view>
-                <view class="carousel-meta">{{rec.recitation.nickname || '小诗童'}} · {{rec.recitation.like_count}} 赞 · {{rec.poem_dynasty || ''}}{{rec.poem_author ? '· ' + rec.poem_author : ''}}</view>
-              </view>
-              <view class="carousel-play-wrap">
-                <view class="carousel-play-btn {{playingRecitationId === rec.recitation.id ? 'playing' : ''}}" catchtap="playCarouselRecitation" data-id="{{rec.recitation.id}}">
-                  <text>{{playingRecitationId === rec.recitation.id ? '■' : '▶'}}</text>
-                </view>
-              </view>
-            </view>
-          </view>
-        </swiper-item>
-      </swiper>
-      <view class="carousel-dots">
-        <view class="carousel-dot {{weeklyRankIndex === index ? 'active' : ''}}" wx:for="{{weeklyRankPages}}" wx:key="page" wx:for-index="index"></view>
-      </view>
-    </block>
-    <view class="show-empty" wx:if="{{recitationShowTab === 'rank' && !weeklyRankPages.length}}">本周还没有朗诵，快去创作第一个吧～</view>
-  </view>
-
   <view class="maintenance" wx:if="{{!todayPoem}}">
     <view class="maintenance-title">{{backendError ? '服务维护中' : '古诗加载中'}}</view>
     <view class="maintenance-desc">{{backendError || '正在准备今日古诗，请稍等一下～'}}</view>
@@ -176,12 +109,79 @@
       </view>
     </view>
 
+    <!-- 朗诵秀：人气朗诵 + 本周排行 双Tab切换 -->
+    <view class="recitation-show">
+      <view class="show-tabs">
+        <view class="show-tab {{recitationShowTab === 'hot' ? 'active' : ''}}" bindtap="switchRecitationShowTab" data-tab="hot">
+          <text>🎙️ 古诗人气朗诵</text>
+          <view class="tab-underline" wx:if="{{recitationShowTab === 'hot'}}"></view>
+        </view>
+        <view class="show-tab {{recitationShowTab === 'rank' ? 'active' : ''}}" bindtap="switchRecitationShowTab" data-tab="rank">
+          <text>🏆 本周朗诵排行</text>
+          <view class="tab-underline" wx:if="{{recitationShowTab === 'rank'}}"></view>
+        </view>
+      </view>
+      <!-- 人气朗诵 -->
+      <block wx:if="{{recitationShowTab === 'hot' && todayRecitationPages.length}}">
+        <swiper class="carousel-swiper" autoplay interval="5000" circular indicator-dots="{{false}}" current="{{carouselIndex}}" bindchange="onCarouselChange">
+          <swiper-item wx:for="{{todayRecitationPages}}" wx:key="page">
+            <view class="carousel-page">
+              <view class="carousel-item {{loopIndex0 === 0 ? 'item-coral' : 'item-sky'}}" wx:for="{{item}}" wx:key="recitation.id" wx:for-item="rec" wx:for-index="loopIndex0">
+                <view class="carousel-rank">
+                  <text class="carousel-rank-num">{{loopIndex0 + 1}}</text>
+                </view>
+                <view class="carousel-item-body">
+                  <view class="carousel-poem-title">《{{rec.poem_title}}》</view>
+                  <view class="carousel-meta">{{rec.recitation.nickname || '小诗童'}} · {{rec.recitation.like_count}} 赞 · {{rec.poem_dynasty || ''}}{{rec.poem_author ? '· ' + rec.poem_author : ''}}</view>
+                </view>
+                <view class="carousel-play-wrap">
+                  <view class="carousel-play-btn {{playingRecitationId === rec.recitation.id ? 'playing' : ''}}" catchtap="playCarouselRecitation" data-id="{{rec.recitation.id}}">
+                    <text>{{playingRecitationId === rec.recitation.id ? '■' : '▶'}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </swiper-item>
+        </swiper>
+        <view class="carousel-dots">
+          <view class="carousel-dot {{carouselIndex === index ? 'active' : ''}}" wx:for="{{todayRecitationPages}}" wx:key="page" wx:for-index="index"></view>
+        </view>
+      </block>
+      <!-- 本周排行 -->
+      <block wx:if="{{recitationShowTab === 'rank' && weeklyRankPages.length}}">
+        <swiper class="carousel-swiper" autoplay interval="5000" circular indicator-dots="{{false}}" current="{{weeklyRankIndex}}" bindchange="onWeeklyRankChange">
+          <swiper-item wx:for="{{weeklyRankPages}}" wx:key="page">
+            <view class="carousel-page">
+              <view class="carousel-item {{loopIndex0 === 0 ? 'item-coral' : 'item-sky'}}" wx:for="{{item}}" wx:key="recitation.id" wx:for-item="rec" wx:for-index="loopIndex0">
+                <view class="carousel-rank">
+                  <text class="carousel-rank-num">{{rec._rankIndex}}</text>
+                </view>
+                <view class="carousel-item-body">
+                  <view class="carousel-poem-title">《{{rec.poem_title}}》</view>
+                  <view class="carousel-meta">{{rec.recitation.nickname || '小诗童'}} · {{rec.recitation.like_count}} 赞 · {{rec.poem_dynasty || ''}}{{rec.poem_author ? '· ' + rec.poem_author : ''}}</view>
+                </view>
+                <view class="carousel-play-wrap">
+                  <view class="carousel-play-btn {{playingRecitationId === rec.recitation.id ? 'playing' : ''}}" catchtap="playCarouselRecitation" data-id="{{rec.recitation.id}}">
+                    <text>{{playingRecitationId === rec.recitation.id ? '■' : '▶'}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </swiper-item>
+        </swiper>
+        <view class="carousel-dots">
+          <view class="carousel-dot {{weeklyRankIndex === index ? 'active' : ''}}" wx:for="{{weeklyRankPages}}" wx:key="page" wx:for-index="index"></view>
+        </view>
+      </block>
+      <view class="show-empty" wx:if="{{recitationShowTab === 'rank' && !weeklyRankPages.length}}">本周还没有朗诵，快去创作第一个吧～</view>
+    </view>
+
     <view class="section-title row-title">
       <text>🚀 今天怎么学</text>
       <text class="more" bindtap="openWarehouse">更多诗 ›</text>
     </view>
     <view class="learning-path-grid">
-      <view class="learning-path-card path-{{index % 4}}" wx:for="{{learningPaths}}" wx:key="id" bindtap="openLearningPath" data-keyword="{{item.keyword}}" data-category="{{item.category}}" data-mode="{{item.mode}}">
+      <view class="learning-path-card path-{{index % 4}}" wx:for="{{learningPaths}}" wx:key="id" bindtap="tapLearnEntry" data-action="{{item.action}}" data-keyword="{{item.keyword}}" data-category="{{item.category}}" data-mode="{{item.mode}}">
         <view class="path-emoji">{{item.emoji}}</view>
         <view class="path-title">{{item.title}}</view>
         <view class="path-desc">{{item.desc}}</view>
@@ -211,19 +211,6 @@
         <view class="child-theme-name">{{item.name}}</view>
       </view>
     </view>
-
-    <view class="section-title">🎯 今日小任务</view>
-    <view class="task-list">
-      <view class="task-card" wx:for="{{dailyTasks}}" wx:key="title" bindtap="openDailyTask" data-index="{{index}}" data-id="{{todayPoem.id}}" data-type="poem">
-        <view class="task-emoji">{{item.emoji}}</view>
-        <view class="task-main">
-          <view class="task-title">{{item.title}}</view>
-          <view class="task-sub">{{item.desc}}</view>
-        </view>
-        <view class="task-go">›</view>
-      </view>
-    </view>
-
 
   </block>
   </block>

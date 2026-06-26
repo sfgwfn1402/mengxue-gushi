@@ -814,8 +814,7 @@ page {
 }
 
 .learning-path-card:active,
-.child-theme:active,
-.task-card:active { transform: scale(0.985); opacity: 0.92; }
+.child-theme:active { transform: scale(0.985); opacity: 0.92; }
 
 .path-0 { background: linear-gradient(135deg, #FFF4C2 0%, #FFD66B 100%); }
 .path-1 { background: linear-gradient(135deg, #FFE0E9 0%, #FF9FBE 100%); }
@@ -848,30 +847,6 @@ page {
 .child-theme-emoji { font-size: 42rpx; }
 .child-theme-name { margin-top: 8rpx; font-size: 24rpx; font-weight: 900; color: #374151; }
 
-.task-list { display: flex; flex-direction: column; gap: 14rpx; }
-.task-card {
-  display: flex;
-  align-items: center;
-  padding: 22rpx 24rpx;
-  border-radius: 28rpx;
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 14rpx 30rpx rgba(31,35,46,0.07);
-}
-.task-emoji {
-  width: 74rpx;
-  height: 74rpx;
-  border-radius: 24rpx;
-  background: #FFF3D1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 36rpx;
-  margin-right: 18rpx;
-}
-.task-main { flex: 1; min-width: 0; }
-.task-title { font-size: 29rpx; font-weight: 900; color: #1F2937; }
-.task-sub { margin-top: 5rpx; font-size: 23rpx; color: #8A8F98; font-weight: 700; }
-.task-go { font-size: 38rpx; color: #C8CDD6; }
 
 .home-tabs { position: sticky; top: 0; z-index: 20; display: flex; justify-content: center; gap: 18rpx; margin: -28rpx -24rpx 24rpx; padding: 22rpx 24rpx 18rpx; background: rgba(246,248,252,0.96); backdrop-filter: blur(18rpx); }
 .home-tab { padding: 14rpx 34rpx; border-radius: 999rpx; color: #8A8F98; font-size: 30rpx; font-weight: 900; background: rgba(255,255,255,0.86); }
