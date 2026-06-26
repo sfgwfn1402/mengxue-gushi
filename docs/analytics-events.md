@@ -51,6 +51,9 @@
 | `invite_landed` | 邀请落地 | `index.js` maybeShowInviteWelcome | `{ from }` | 邀请真转化了吗 |
 | `review_done` | 复习一首 | `review.js` remembered | `{ poem_id }` | 复习功能有人用吗 |
 | `reminder_subscribed` | 开启提醒 | `profile.js` openStudyReminder 授权成功 | — | 提醒订阅有人开吗 |
+| `daily_plan_view` | 看到今日计划 | `index.js` buildDailyPlan | `{ total }` | 今日计划有多少人看到 |
+| `daily_plan_tap` | 点今日计划项 | `index.js` goPlanItem | `{ kind }` | 计划项有人点吗(新诗/复习) |
+| `daily_plan_complete` | 完成今日计划 | `index.js` buildDailyPlan(全完成) | `{ total }` | 多少人真把当天功课做完 |
 
 ### share_clicked 的 props
 

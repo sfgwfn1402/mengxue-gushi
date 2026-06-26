@@ -14,7 +14,10 @@ const EVENT_LABELS = {
   recitation_play: '听社区朗诵',
   invite_landed: '邀请落地',
   review_done: '复习一首',
-  reminder_subscribed: '开启提醒'
+  reminder_subscribed: '开启提醒',
+  daily_plan_view: '看到今日计划',
+  daily_plan_tap: '点今日计划项',
+  daily_plan_complete: '完成今日计划'
 }
 
 Page({

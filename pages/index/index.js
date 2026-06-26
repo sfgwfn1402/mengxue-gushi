@@ -5,7 +5,27 @@ const { track } = require('../../utils/track')
 const audioManager = require('../../utils/audio-manager')
 const audioCache = require('../../utils/audio-cache')
 const onboarding = require('../../utils/onboarding')
-const { getPoemImageUrl } = require('../../utils/tts')
+const { getPoemImageUrl, isPoemAudioPending } = require('../../utils/tts')
+
+function pad2(n) { return n < 10 ? '0' + n : '' + n }
+function localDateStr(d) { return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}` }
+function parseServerTime(s) {
+  if (!s) return null
+  const t = new Date(String(s).replace(' ', 'T') + 'Z')
+  return isNaN(t.getTime()) ? null : t
+}
+function isToday(s) {
+  const t = parseServerTime(s)
+  return !!t && localDateStr(t) === localDateStr(new Date())
+}
+function daysSince(s) {
+  const t = parseServerTime(s)
+  if (!t) return 9999
+  return Math.floor((Date.now() - t.getTime()) / 86400000)
+}
+
+const REVIEW_INTERVAL_DAYS = 2
+const PLAN_REVIEW_CAP = 2
 
 function formatDuration(sec) {
   const s = Math.max(0, Math.round(Number(sec) || 0))
@@ -58,6 +78,7 @@ Page({
     discoverFilter: 'all',
     discoverItems: [],
     failedCovers: {},
+    dailyPlan: null,
     visibleDiscoverItems: [],
     discoverPage: 1,
     discoverPageSize: 10,
@@ -273,14 +294,12 @@ Page({
     api.listProgress()
       .then(items => {
         const list = Array.isArray(items) ? items : (items.items || [])
-        const now = Date.now()
-        const due = list.filter(it => {
-          if (!it.learned || !it.last_learned_at) return false
-          const t = new Date(String(it.last_learned_at).replace(' ', 'T') + 'Z').getTime()
-          if (isNaN(t)) return false
-          return (now - t) / 86400000 >= 2
-        }).length
+        const due = list.filter(it =>
+          it.learned && it.last_learned_at && daysSince(it.last_learned_at) >= REVIEW_INTERVAL_DAYS
+        ).length
         this.setData({ reviewDueCount: due })
+        this._lastProgress = list
+        this.buildDailyPlan(list) // 复用同一份进度数据生成今日计划
         // 已学会过诗 → 自动勾上"学会第一首诗"
         if (!onboarding.isStepDone('learn') && list.some(it => it.learned)) {
           onboarding.markStep('learn')
@@ -288,6 +307,75 @@ Page({
         }
       })
       .catch(err => console.warn('读取复习数量失败', err))
+  },
+
+  // 生成「今日学习计划」：1 首新诗 + 最多 2 首到期复习；当天锁定，完成项打勾
+  buildDailyPlan(progressList) {
+    const poems = (app.getPoems && app.getPoems()) || []
+    if (!poems.length) { this.setData({ dailyPlan: null }); return }
+
+    const pm = {}
+    progressList.forEach(it => {
+      const pid = Number(it.poem_id != null ? it.poem_id : it.poemId)
+      if (pid) pm[pid] = it
+    })
+
+    const today = localDateStr(new Date())
+    const storeKey = `dailyPlan_${today}`
+    let saved = wx.getStorageSync(storeKey)
+
+    if (!saved || saved.reviewIds === undefined) {
+      // 新诗：未学过(无进度或 learned=false)，排除缺音频的诗，按难度→id 取第一首
+      const newCandidates = poems
+        .filter(p => !(pm[p.id] && pm[p.id].learned) && !isPoemAudioPending(p))
+        .sort((a, b) => (a.level || 9) - (b.level || 9) || a.id - b.id)
+      const newId = newCandidates.length ? newCandidates[0].id : null
+      // 复习：已学且到期，最早的优先
+      const reviewIds = poems
+        .filter(p => pm[p.id] && pm[p.id].learned && daysSince(pm[p.id].last_learned_at) >= REVIEW_INTERVAL_DAYS)
+        .sort((a, b) => parseServerTime(pm[a.id].last_learned_at) - parseServerTime(pm[b.id].last_learned_at))
+        .slice(0, PLAN_REVIEW_CAP)
+        .map(p => p.id)
+      saved = { newId, reviewIds }
+      wx.setStorageSync(storeKey, saved)
+    }
+
+    const poemMap = {}
+    poems.forEach(p => { poemMap[p.id] = p })
+    const items = []
+    if (saved.newId && poemMap[saved.newId]) {
+      const p = poemMap[saved.newId]
+      const done = !!(pm[p.id] && pm[p.id].learned && isToday(pm[p.id].last_learned_at))
+      items.push({ kind: 'new', id: p.id, title: p.title, sub: `${p.dynasty || ''} · ${p.author || ''}`, done })
+    }
+    ;(saved.reviewIds || []).forEach(rid => {
+      if (!poemMap[rid]) return
+      const p = poemMap[rid]
+      const done = !!(pm[rid] && isToday(pm[rid].last_learned_at))
+      items.push({ kind: 'review', id: rid, title: p.title, sub: '复习巩固', done })
+    })
+
+    if (!items.length) {
+      this.setData({ dailyPlan: { empty: true } })
+      return
+    }
+    const doneCount = items.filter(it => it.done).length
+    const allDone = doneCount === items.length
+    this.setData({ dailyPlan: { items, doneCount, total: items.length, allDone, empty: false } })
+
+    if (!this._planViewTracked) { this._planViewTracked = true; track('daily_plan_view', { total: items.length }) }
+    if (allDone && !this._planDoneTracked) { this._planDoneTracked = true; track('daily_plan_complete', { total: items.length }) }
+  },
+
+  goPlanItem(e) {
+    const { id, kind } = e.currentTarget.dataset
+    if (!id) return
+    track('daily_plan_tap', { kind })
+    if (kind === 'review') {
+      wx.navigateTo({ url: '/pages/review/review' })
+    } else {
+      wx.navigateTo({ url: `/pages/learn/learn?id=${id}&type=poem` })
+    }
   },
 
   goReview() {
@@ -368,6 +456,10 @@ Page({
       dataSource: app.globalData.poemsLoadedFromBackend ? '后端数据库' : '服务维护中',
       backendError: app.globalData.backendError || ''
     })
+    // 进度先到、诗词后到的时序兜底：诗词就绪后补建今日计划
+    if (poems.length && this._lastProgress && !this.data.dailyPlan) {
+      this.buildDailyPlan(this._lastProgress)
+    }
   },
 
   pickTodayPoem(poems, progressItems) {
