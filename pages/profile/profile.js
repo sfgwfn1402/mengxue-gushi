@@ -11,7 +11,7 @@ Page({
     level: 1,
     streak: 0,
     todayChecked: false,
-    calendar: [],
+    recentDays: [],
     encourageMessage: '今天的古诗背了吗？加油！💪',
     userProfile: null,
     nicknameInput: '',
@@ -211,6 +211,7 @@ Page({
           streak: stats.streak || 0,
           todayChecked: !!stats.today_checked
         })
+        this.initCalendar()
       })
       .catch(err => {
         console.warn('读取后端学习统计失败', err)
@@ -218,22 +219,25 @@ Page({
       })
   },
 
+  // 学习打卡条：展示最近 7 天的坚持情况（非日历服务，避免整月日历类目问题）
   initCalendar() {
     const now = new Date()
-    const year = now.getFullYear()
-    const month = now.getMonth()
-    const today = now.getDate()
-    const firstDay = new Date(year, month, 1).getDay()
-    const daysInMonth = new Date(year, month + 1, 0).getDate()
-    const checkins = []
-    const calendar = []
-
-    for (let i = 0; i < firstDay; i++) calendar.push({ day: '', checked: false, today: false })
-    for (let day = 1; day <= daysInMonth; day++) {
-      const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`
-      calendar.push({ day, checked: checkins.includes(dateStr), today: day === today })
+    const streak = this.data.streak || 0
+    const todayChecked = !!this.data.todayChecked
+    const weekChar = ['日', '一', '二', '三', '四', '五', '六']
+    const recentDays = []
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i)
+      const isToday = i === 0
+      // 最近连续 streak 天视为已坚持；今天以打卡状态为准
+      const checked = isToday ? todayChecked : i < streak
+      recentDays.push({
+        label: isToday ? '今天' : `周${weekChar[d.getDay()]}`,
+        checked,
+        today: isToday
+      })
     }
-    this.setData({ calendar })
+    this.setData({ recentDays })
   },
 
   checkTodayStatus() {
@@ -301,6 +305,7 @@ Page({
     if (action === 'achievements') this.openAchievements()
     if (action === 'feedback') this.openFeedback()
     if (action === 'admin') wx.navigateTo({ url: '/pages/admin/admin' })
+    if (action === 'voice-agreement') wx.navigateTo({ url: '/pages/voice-agreement/voice-agreement' })
     if (action === 'settings') this.openSettings()
   },
 

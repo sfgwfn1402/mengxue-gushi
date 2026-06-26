@@ -106,22 +106,6 @@
         </view>
       </view>
 
-      <view class="child-guide-grid">
-        <view class="child-guide-card">
-          <view class="child-guide-title">🌈 这首诗讲什么？</view>
-          <view class="child-guide-content">{{childExplain}}</view>
-        </view>
-        <view class="child-guide-card warm">
-          <view class="child-guide-title">🖼️ 里面有什么画面？</view>
-          <view class="child-guide-content">{{pictureGuide}}</view>
-        </view>
-      </view>
-
-      <view class="section parent-questions" wx:if="{{parentQuestions.length}}">
-        <view class="section-title">💬 可以问孩子</view>
-        <view class="question-chip" wx:for="{{parentQuestions}}" wx:key="index">{{item}}</view>
-      </view>
-
       <view class="recitation-section">
         <view class="recitation-head">
           <view class="recitation-icon">🎙</view>
@@ -146,6 +130,9 @@
           <view class="record-tools" wx:if="{{recordFilePath}}">
             <view class="tool-btn preview" bindtap="previewMyRecitation">
               {{previewingRecord ? '停止试听' : '试听'}}
+            </view>
+            <view class="tool-btn score {{scoringRecitation ? 'disabled' : ''}}" bindtap="scoreMyRecitation">
+              {{scoringRecitation ? '评分中' : '🎯 AI评分'}}
             </view>
             <view class="tool-btn upload {{uploadingRecitation ? 'disabled' : ''}}" bindtap="uploadMyRecitation">
               {{uploadingRecitation ? '上传中' : '上传作品'}}
@@ -176,6 +163,22 @@
             </view>
           </view>
         </view>
+      </view>
+
+      <view class="child-guide-grid">
+        <view class="child-guide-card">
+          <view class="child-guide-title">🌈 这首诗讲什么？</view>
+          <view class="child-guide-content">{{childExplain}}</view>
+        </view>
+        <view class="child-guide-card warm">
+          <view class="child-guide-title">🖼️ 里面有什么画面？</view>
+          <view class="child-guide-content">{{pictureGuide}}</view>
+        </view>
+      </view>
+
+      <view class="section parent-questions" wx:if="{{parentQuestions.length}}">
+        <view class="section-title">💬 可以问孩子</view>
+        <view class="question-chip" wx:for="{{parentQuestions}}" wx:key="index">{{item}}</view>
       </view>
 
       <view class="section parent-guide {{parentGuideExpanded ? 'open' : ''}}" wx:if="{{poem.parentGuide}}">
@@ -266,6 +269,28 @@
   <!-- 进度提示 -->
   <view class="progress">
     <text>已学习 {{learnedCount}} 首古诗，{{learnedIdiomCount}} 个成语</text>
+  </view>
+
+  <!-- AI 朗诵评分结果 -->
+  <view class="score-mask" wx:if="{{scoreVisible}}" bindtap="closeScore">
+    <view class="score-card" catchtap="noop">
+      <view class="score-ring">
+        <text class="score-num">{{scoreResult.score}}</text>
+        <text class="score-unit">分</text>
+      </view>
+      <view class="score-sub">读对 {{scoreResult.matched}} / {{scoreResult.total}} 字</view>
+      <view class="score-lines">
+        <view class="score-line {{line.ok ? 'ok' : 'warn'}}" wx:for="{{scoreResult.lines}}" wx:key="index" wx:for-item="line">
+          <text class="score-line-mark">{{line.ok ? '✅' : '⚠️'}}</text>
+          <text class="score-line-text">{{line.text}}</text>
+          <text class="score-line-count">{{line.correct}}/{{line.total}}</text>
+        </view>
+      </view>
+      <view class="score-actions">
+        <view class="score-btn ghost" bindtap="closeScore">知道了</view>
+        <view class="score-btn primary" bindtap="rescoreRecord">重录试试</view>
+      </view>
+    </view>
   </view>
 
   <!-- 首次点亮庆祝 -->

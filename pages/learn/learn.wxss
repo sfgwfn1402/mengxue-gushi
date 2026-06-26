@@ -2162,6 +2162,26 @@ page {
 .celebrate-btn.primary { background: linear-gradient(135deg, #FFD36B, #FFB347); color: #7A3E00; }
 .celebrate-btn.ghost { background: #fff; color: #8A8F98; border: 2rpx solid #EEE; }
 
+/* AI 朗诵评分结果 */
+.score-mask { position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 200; animation: celebrate-fade 0.25s ease; }
+.score-card { width: 78%; max-width: 600rpx; max-height: 80vh; overflow-y: auto; background: #FFFDF7; border-radius: 36rpx; padding: 44rpx 32rpx 32rpx; text-align: center; box-shadow: 0 20rpx 60rpx rgba(0,0,0,0.25); animation: celebrate-pop 0.4s cubic-bezier(0.18,0.89,0.32,1.28); }
+.score-ring { width: 180rpx; height: 180rpx; margin: 0 auto; border-radius: 50%; background: linear-gradient(135deg, #FFD36B, #FF8A65); display: flex; align-items: baseline; justify-content: center; box-shadow: 0 10rpx 26rpx rgba(255,138,101,0.35); }
+.score-num { font-size: 80rpx; font-weight: 900; color: #fff; line-height: 1.6; }
+.score-unit { font-size: 30rpx; color: #fff; margin-left: 4rpx; }
+.score-sub { font-size: 28rpx; color: #B5651D; font-weight: 800; margin: 22rpx 0 8rpx; }
+.score-lines { text-align: left; margin: 12rpx 0 8rpx; }
+.score-line { display: flex; align-items: center; gap: 12rpx; padding: 14rpx 18rpx; border-radius: 18rpx; margin-bottom: 10rpx; }
+.score-line.ok { background: #EAF7EC; }
+.score-line.warn { background: #FFF1D6; }
+.score-line-mark { font-size: 30rpx; flex-shrink: 0; }
+.score-line-text { flex: 1; font-size: 30rpx; font-weight: 700; color: #2F2A1F; }
+.score-line-count { font-size: 24rpx; color: #8A8F98; flex-shrink: 0; }
+.score-actions { display: flex; gap: 18rpx; margin-top: 28rpx; }
+.score-btn { flex: 1; border-radius: 999rpx; padding: 22rpx 0; font-size: 28rpx; font-weight: 800; }
+.score-btn.primary { background: linear-gradient(135deg, #FFD36B, #FFB347); color: #7A3E00; }
+.score-btn.ghost { background: #fff; color: #8A8F98; border: 2rpx solid #EEE; }
+.tool-btn.score { background: linear-gradient(135deg,#FFE08A,#FFB347); color: #7A3E00; }
+
 /* 音频整理中：朗读/跟读入口降级态 */
 .top-read-btn.pending { background: #EFEFF2; color: #9AA0A8; box-shadow: none; }
 .follow-entry.pending-entry { opacity: 0.7; }

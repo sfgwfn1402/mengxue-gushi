@@ -1,0 +1,14 @@
+/* pages/voice-agreement/voice-agreement.wxss */
+.agreement { min-height: 100vh; background: #FFF8DC; padding: 36rpx 32rpx 60rpx; box-sizing: border-box; }
+.ag-title { font-size: 42rpx; font-weight: 900; color: #5B3300; text-align: center; }
+.ag-update { font-size: 24rpx; color: #B5651D; text-align: center; margin: 10rpx 0 28rpx; }
+.ag-section { background: #fff; border-radius: 24rpx; padding: 26rpx 24rpx; margin-bottom: 20rpx; box-shadow: 0 8rpx 20rpx rgba(0,0,0,0.04); }
+.ag-h { font-size: 30rpx; font-weight: 900; color: #2F2A1F; margin-bottom: 12rpx; }
+.ag-p { font-size: 27rpx; color: #4B5563; line-height: 1.7; }
+.ag-li { font-size: 27rpx; color: #4B5563; line-height: 1.7; margin-top: 6rpx; }
+.ag-tip { font-size: 26rpx; color: #8A6D3B; line-height: 1.6; margin: 14rpx 4rpx 28rpx; }
+.ag-actions { display: flex; flex-direction: column; align-items: center; gap: 16rpx; }
+.ag-btn { width: 80%; text-align: center; border-radius: 999rpx; padding: 26rpx 0; font-size: 30rpx; font-weight: 800; }
+.ag-btn.primary { background: linear-gradient(135deg, #FFD36B, #FFB347); color: #7A3E00; box-shadow: 0 10rpx 24rpx rgba(255,160,60,0.3); }
+.ag-btn.ghost { background: #fff; color: #8A8F98; border: 2rpx solid #EEE; }
+.ag-state { font-size: 28rpx; font-weight: 800; color: #4CAF50; }

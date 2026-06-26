@@ -4,6 +4,7 @@ const { getAudioCandidates, pickAvailableAudio } = require('../../utils/tts')
 const audioManager = require('../../utils/audio-manager')
 const lineTimings = require('../../data/poem-line-timings')
 const { ensureRecordPermission } = require('../../utils/record-permission')
+const voiceConsent = require('../../utils/voice-consent')
 
 const fallbackPoems = [
   { id: 1, title: '静夜思', author: '李白', dynasty: '唐', content: '床前明月光，疑是地上霜。举头望明月，低头思故乡。', audio: '/audios/poem-1.mp3' },
@@ -257,6 +258,10 @@ Page({
   },
 
   startRecord() {
+    if (!voiceConsent.hasConsent()) {
+      voiceConsent.ensureVoiceConsent().then(() => this.startRecord()).catch(() => {})
+      return
+    }
     const begin = () => {
       try {
         this.getRecorder().start({

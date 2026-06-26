@@ -17,7 +17,8 @@
     "pages/admin-recitation-review/admin-recitation-review",
     "pages/admin-artwork-review/admin-artwork-review",
     "pages/quiz/quiz",
-    "pages/animation/animation"
+    "pages/animation/animation",
+    "pages/voice-agreement/voice-agreement"
   ],
   "window": {
     "backgroundTextStyle": "light",

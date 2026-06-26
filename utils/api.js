@@ -379,6 +379,47 @@ function uploadRecitation(poemId, filePath, durationSeconds) {
     })
 }
 
+// AI 朗诵评分：上传录音到后端，后端转 FunASR 评分服务，返回字准确率结果。
+function scoreRecitation(poemId, filePath) {
+  const doUpload = () => new Promise((resolve, reject) => {
+    wx.uploadFile({
+      url: `${config.apiBaseUrl}/poems/${poemId}/recitations/score`,
+      filePath,
+      name: 'file',
+      timeout: 60000, // 冷启含模型加载可能数十秒
+      header: { Authorization: `Bearer ${getToken()}` },
+      success(res) {
+        const status = res.statusCode || 0
+        let data = res.data
+        try {
+          data = typeof data === 'string' ? JSON.parse(data) : data
+        } catch (err) {
+          const error = new Error(`评分响应解析失败 ${status}`)
+          error.statusCode = status
+          reject(error)
+          return
+        }
+        if (status >= 200 && status < 300) {
+          resolve(data)
+          return
+        }
+        const error = new Error((data && data.message) || `评分失败 ${status}`)
+        error.statusCode = status
+        reject(error)
+      },
+      fail: reject
+    })
+  })
+
+  return login()
+    .then(doUpload)
+    .catch(err => {
+      if (!isUnauthorizedError(err)) throw err
+      clearAuth()
+      return login(true).then(doUpload)
+    })
+}
+
 function uploadArtwork(poemId, filePath, payload) {
   const doUpload = () => new Promise((resolve, reject) => {
     wx.uploadFile({
@@ -687,6 +728,7 @@ module.exports = {
   getFeaturedRecitation,
   listRecitationsTop,
   uploadRecitation,
+  scoreRecitation,
   uploadArtwork,
   listArtworks,
   listMyRecitations,

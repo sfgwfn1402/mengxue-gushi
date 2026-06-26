@@ -2,15 +2,13 @@
 <view class="container">
   <view class="checkin-card">
     <view class="checkin-header">
-      <view class="checkin-title">📅 每日打卡</view>
+      <view class="checkin-title">🔥 学习打卡</view>
       <view class="checkin-streak">连续 {{streak}} 天</view>
     </view>
-    <view class="checkin-calendar">
-      <view class="weekdays">
-        <text>日</text><text>一</text><text>二</text><text>三</text><text>四</text><text>五</text><text>六</text>
-      </view>
-      <view class="days">
-        <view class="day {{item.checked ? 'checked' : ''}} {{item.today ? 'today' : ''}}" wx:for="{{calendar}}" wx:key="index">{{item.day}}</view>
+    <view class="streak-week">
+      <view class="streak-day {{item.checked ? 'checked' : ''}} {{item.today ? 'today' : ''}}" wx:for="{{recentDays}}" wx:key="index">
+        <text class="streak-dot">{{item.checked ? '🔥' : '·'}}</text>
+        <text class="streak-label">{{item.label}}</text>
       </view>
     </view>
     <button class="checkin-btn {{todayChecked ? 'checked-btn' : ''}}" bindtap="doCheckin" disabled="{{todayChecked}}">
@@ -85,6 +83,11 @@
       <view class="menu-icon-wrap"><text class="menu-icon">🛠</text></view>
       <text class="menu-text">管理员中心</text>
       <text class="menu-desc">反馈 · 审核 · 数据</text>
+    </button>
+    <button class="menu-item menu-button menu-voice" data-action="voice-agreement" bindtap="handleMenuTap">
+      <view class="menu-icon-wrap"><text class="menu-icon">🎙</text></view>
+      <text class="menu-text">声纹授权协议</text>
+      <text class="menu-desc">录音授权与撤回</text>
     </button>
     <button class="menu-item menu-button menu-settings" data-action="settings" bindtap="handleMenuTap">
       <view class="menu-icon-wrap"><text class="menu-icon">⚙️</text></view>

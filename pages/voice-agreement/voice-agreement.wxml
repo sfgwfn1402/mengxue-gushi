@@ -1,0 +1,43 @@
+<!--pages/voice-agreement/voice-agreement.wxml-->
+<view class="agreement">
+  <view class="ag-title">声纹授权协议</view>
+  <view class="ag-update">更新日期：2026-06-26</view>
+
+  <view class="ag-section">
+    <view class="ag-h">一、我们收集什么</view>
+    <view class="ag-p">在你主动点击“录音/朗诵”时，我们通过设备麦克风录制孩子的朗诵声音（即语音/声纹信息）。不录音时，我们不会采集任何声音。</view>
+  </view>
+
+  <view class="ag-section">
+    <view class="ag-h">二、用来做什么</view>
+    <view class="ag-p">录制的声音仅用于以下功能：</view>
+    <view class="ag-li">1. 生成你的“朗诵作品”，保存在“我的作品”中；</view>
+    <view class="ag-li">2. 逐句跟读练习时的录音回放；</view>
+    <view class="ag-li">3. AI 朗诵评分：识别朗诵内容并给出读字准确率评分。</view>
+  </view>
+
+  <view class="ag-section">
+    <view class="ag-h">三、如何使用与存储</view>
+    <view class="ag-p">录音会上传到我们的服务器用于上述功能。朗诵作品默认仅你自己可见，只有你主动点击“发布到发现”后才会公开；你可随时撤回公开或删除作品。AI 评分用于即时打分。</view>
+  </view>
+
+  <view class="ag-section">
+    <view class="ag-h">四、我们不会做什么</view>
+    <view class="ag-p">我们不会将你的声纹/录音用于身份识别等本协议之外的用途，不会出售或向无关第三方提供。</view>
+  </view>
+
+  <view class="ag-section">
+    <view class="ag-h">五、你的权利</view>
+    <view class="ag-p">你可以拒绝授权（拒绝后将无法使用录音、跟读录音和 AI 评分功能，其余功能不受影响）；你可以随时删除已上传的朗诵作品；你可以在本页“撤回授权”。</view>
+  </view>
+
+  <view class="ag-tip">点击下方“我已阅读并同意”，表示你同意本《声纹授权协议》。</view>
+
+  <view class="ag-actions">
+    <view wx:if="{{!agreed}}" class="ag-btn primary" bindtap="agreeAndBack">我已阅读并同意</view>
+    <block wx:else>
+      <view class="ag-state">✅ 你已同意本协议</view>
+      <view class="ag-btn ghost" bindtap="revoke">撤回授权</view>
+    </block>
+  </view>
+</view>

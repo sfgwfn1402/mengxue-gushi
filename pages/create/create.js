@@ -1,6 +1,7 @@
 const app = getApp()
 const api = require('../../utils/api')
 const { ensureRecordPermission } = require('../../utils/record-permission')
+const voiceConsent = require('../../utils/voice-consent')
 
 Page({
   data: {
@@ -186,6 +187,10 @@ Page({
   startRecord() {
     if (!this.data.selectedPoem) {
       wx.showToast({ title: '请先选择古诗', icon: 'none' })
+      return
+    }
+    if (!voiceConsent.hasConsent()) {
+      voiceConsent.ensureVoiceConsent().then(() => this.startRecord()).catch(() => {})
       return
     }
     ensureRecordPermission({

@@ -8,6 +8,7 @@ const lineAudioDurations = require('../../data/poem-line-audio-durations')
 const audioManager = require('../../utils/audio-manager')
 const audioCache = require('../../utils/audio-cache')
 const { ensureRecordPermission } = require('../../utils/record-permission')
+const voiceConsent = require('../../utils/voice-consent')
 
 const fallbackPoems = [
   { id: 1, title: '静夜思', author: '李白', dynasty: '唐', content: '床前明月光，疑是地上霜。举头望明月，低头思故乡。', audio: '/audios/poem-1.mp3', pinyin: 'chuáng qián míng yuè guāng, yí shì dì shàng shuāng.', translation: '明亮的月光洒在床前，好像地上的霜。抬起头来看明月，低下头去思念故乡。', story: '李白25岁离开家乡四川，长期漫游在外。一个深秋夜晚看到月光想起故乡。', difficulty: 1, tags: ['思乡'], season: 'autumn' },
@@ -43,6 +44,9 @@ Page({
     recorderStarted: false,
     recordFilePath: '',
     recordDuration: 0,
+    scoringRecitation: false,
+    scoreResult: null,
+    scoreVisible: false,
     uploadingRecitation: false,
     playingRecitationId: '',
     previewingRecord: false,
@@ -1086,6 +1090,10 @@ Page({
     const token = flowToken || this.followFlowToken
     if (!this.isCurrentFollowFlow(token)) return
     if (this.data.type !== 'poem') return
+    if (!voiceConsent.hasConsent()) {
+      voiceConsent.ensureVoiceConsent().then(() => this.startFollowRecord(token)).catch(() => {})
+      return
+    }
     this.stopReading()
     this.destroyFollowPreviewAudio && this.destroyFollowPreviewAudio()
     const begin = () => {
@@ -1330,6 +1338,10 @@ Page({
       wx.showToast({ title: '正在录音中', icon: 'none' })
       return
     }
+    if (!voiceConsent.hasConsent()) {
+      voiceConsent.ensureVoiceConsent().then(() => this.startRecord()).catch(() => {})
+      return
+    }
     this.stopReading()
     if (this.previewAudio) {
       try { this.previewAudio.stop() } catch (e) {}
@@ -1444,6 +1456,42 @@ Page({
       })
   },
 
+  // AI 朗诵评分：把录音发后端 → FunASR 字准确率 → 展示结果
+  scoreMyRecitation() {
+    const { id, recordFilePath, scoringRecitation } = this.data
+    if (scoringRecitation) return
+    if (!recordFilePath) {
+      wx.showToast({ title: '请先录一段朗诵', icon: 'none' })
+      return
+    }
+    if (this.previewAudio) {
+      try { this.previewAudio.stop() } catch (e) {}
+      this.setData({ previewingRecord: false })
+    }
+    this.setData({ scoringRecitation: true })
+    wx.showLoading({ title: 'AI 评分中…', mask: true })
+    api.scoreRecitation(id, recordFilePath)
+      .then(res => {
+        wx.hideLoading()
+        this.setData({ scoringRecitation: false, scoreResult: res, scoreVisible: true })
+        if (wx.vibrateShort) wx.vibrateShort({ type: 'light', fail: () => {} })
+      })
+      .catch(err => {
+        wx.hideLoading()
+        console.warn('朗诵评分失败', err)
+        this.setData({ scoringRecitation: false })
+        wx.showToast({ title: err.message || '评分失败，请重试', icon: 'none' })
+      })
+  },
+
+  closeScore() {
+    this.setData({ scoreVisible: false })
+  },
+
+  rescoreRecord() {
+    this.setData({ scoreVisible: false })
+    this.startRecord()
+  },
 
   loadFeaturedRecitation() {
     const { id, type } = this.data
