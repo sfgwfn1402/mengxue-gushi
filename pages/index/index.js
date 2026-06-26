@@ -514,8 +514,24 @@ Page({
       .catch(err => console.warn('读取人气朗诵失败', err))
   },
 
+  // 停止本页所有朗诵音频并复位状态（发现页/轮播共用）
+  stopPageRecitation() {
+    this._playToken = null // 中止仍在下载中的播放
+    if (this.audio) {
+      try { this.audio.destroy() } catch (e) {}
+      this.audio = null
+    }
+    if (this.carouselAudio) {
+      try { this.carouselAudio.destroy() } catch (e) {}
+      this.carouselAudio = null
+    }
+    audioManager.stopAll()
+    if (this.data.playingRecitationId) this.setData({ playingRecitationId: '' })
+  },
+
   switchHomeTab(e) {
     const tab = e.currentTarget.dataset.tab || 'learn'
+    if (tab !== this.data.homeTab) this.stopPageRecitation() // 切换发现/诗旅时停掉正在播放的朗诵
     this.setData({ homeTab: tab })
     if (tab === 'discover') this.loadDiscoverItems({ reset: true })
   },
@@ -524,6 +540,7 @@ Page({
     const tab = e.currentTarget.dataset.tab || 'hot'
     if (tab === this.data.recitationShowTab) return
     // 切换标签时停止当前播放
+    this._playToken = null
     if (this.carouselAudio) {
       try { this.carouselAudio.destroy() } catch (e) {}
       this.carouselAudio = null
@@ -559,6 +576,8 @@ Page({
     this.carouselAudio = null
     this.setData({ playingRecitationId: '' })
 
+    const token = `carousel:${id}:${Date.now()}`
+    this._playToken = token
     const url = `${api.config.apiBaseUrl}/recitations/${id}/audio`
     let audioPath = url
     try {
@@ -567,6 +586,7 @@ Page({
       console.warn('轮播朗诵缓存失败，尝试直接播放', err)
     }
 
+    if (this._playToken !== token) return // 已离开/切走，放弃本次播放
     this.carouselAudio = audioManager.create('index-carousel-recitation')
     this.carouselAudio.onEnded(() => {
       this.setData({ playingRecitationId: '' })
@@ -804,6 +824,9 @@ Page({
       try { this.audio.destroy() } catch (e) {}
       this.audio = null
     }
+    // 播放令牌：下载是异步的，若期间离开页面/切tab则中止，避免“缓存完才在别的页响起”
+    const token = `${id}:${Date.now()}`
+    this._playToken = token
     let audioPath = url
     wx.showLoading({ title: '加载音频...' })
     try {
@@ -813,6 +836,7 @@ Page({
       audioPath = url
     }
     wx.hideLoading()
+    if (this._playToken !== token) return // 已离开/切走，放弃本次播放
     this.audio = audioManager.create('index-popular-recitation')
     this.audio.onEnded(() => this.setData({ playingRecitationId: '' }))
     this.audio.onStop(() => this.setData({ playingRecitationId: '' }))
@@ -835,16 +859,13 @@ Page({
   },
 
   onHide() {
-    audioManager.stopAll()
+    this.stopPageRecitation() // 离开首页(切tab/进其他页)立即停掉朗诵并复位
     this.stopDrift()
   },
 
   onUnload() {
+    this.stopPageRecitation()
     audioManager.destroyAll()
     this.stopDrift()
-    if (this.audio) {
-      this.audio.destroy()
-      this.audio = null
-    }
   }
 })
