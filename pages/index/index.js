@@ -84,8 +84,6 @@ Page({
     discoverPageSize: 10,
     discoverLoading: false,
     discoverHasMore: true,
-    recentResult: null,
-    recentResultText: '',
     streak: 0,
     todayChecked: false,
     streakSub: '',
@@ -197,7 +195,6 @@ Page({
   },
 
   onShow() {
-    this.loadRecentResult()
     this.loadStreak() // 每次回到首页都刷新，学习/打卡后连续天数即时更新
     this.loadReviewDue() // 复习数量随学习/复习即时更新
     this.loadOnboarding()
@@ -432,20 +429,6 @@ Page({
     }
   },
 
-  loadRecentResult() {
-    const history = wx.getStorageSync('learningResultHistory') || []
-    const result = (Array.isArray(history) && history[0]) || wx.getStorageSync('lastLearningResult')
-    if (!result || !result.poemId) {
-      this.setData({ recentResult: null, recentResultText: '' })
-      return
-    }
-    const actionMap = { follow: '刚完成跟读', learned: '刚点亮', recitation: '刚生成朗诵', artwork: '刚发布诗画', preview: '正在学习' }
-    this.setData({
-      recentResult: result,
-      recentResultText: `${actionMap[result.kind] || '学习了'}《${result.poemTitle || '古诗'}》`,
-      recentActionText: result.kind === 'artwork' ? '再画一张' : '录朗诵'
-    })
-  },
 
   refreshList() {
     const poems = (app.getPoems && app.getPoems()) || []
@@ -833,30 +816,6 @@ Page({
     })
   },
 
-
-  openRecentResult() {
-    const result = this.data.recentResult
-    if (!result || !result.poemId) return
-    wx.navigateTo({ url: `/pages/learn/learn?id=${result.poemId}&type=poem` })
-  },
-
-  createRecentWork() {
-    const result = this.data.recentResult
-    if (!result || !result.poemId) return
-    wx.setStorageSync('createSelectedPoem', {
-      id: result.poemId,
-      title: result.poemTitle,
-      author: result.poemAuthor,
-      dynasty: result.poemDynasty,
-      mode: result.kind === 'artwork' ? 'artwork' : 'recitation',
-      updatedAt: Date.now()
-    })
-    wx.switchTab({ url: '/pages/create/create' })
-  },
-
-  openWorksFromRecent() {
-    wx.navigateTo({ url: '/pages/works/works?tab=recitations' })
-  },
 
   goToLearn(e) {
     const { id, type } = e.currentTarget.dataset

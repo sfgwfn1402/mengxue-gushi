@@ -86,17 +86,6 @@
         <view class="invite-banner-cta">去邀请 →</view>
       </button>
 
-      <view class="recent-growth-card" wx:if="{{recentResult}}">
-        <view class="recent-growth-main" bindtap="openRecentResult">
-          <view class="recent-growth-kicker">✨ 上次成长</view>
-          <view class="recent-growth-title">{{recentResultText}}</view>
-          <view class="recent-growth-sub">接着读、录朗诵，或放进我的诗集</view>
-        </view>
-        <view class="recent-growth-actions">
-          <button bindtap="createRecentWork">{{recentActionText || '录朗诵'}}</button>
-          <button bindtap="openWorksFromRecent">诗集</button>
-        </view>
-      </view>
     </view>
   </view>
 
