@@ -4,6 +4,8 @@
     "pages/warehouse/warehouse",
     "pages/learn/learn",
     "pages/recite/recite",
+    "pages/review/review",
+    "pages/parent-report/parent-report",
     "pages/follow-landscape/follow-landscape",
     "pages/practice/practice",
     "pages/create/create",

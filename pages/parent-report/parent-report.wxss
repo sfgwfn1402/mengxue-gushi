@@ -1,0 +1,28 @@
+/* pages/parent-report/parent-report.wxss */
+.report-container { min-height: 100vh; background: #FFF8DC; padding: 36rpx 32rpx 60rpx; box-sizing: border-box; }
+.report-loading { text-align: center; color: #8A8F98; padding-top: 200rpx; font-size: 30rpx; }
+
+.report-head { text-align: center; margin-bottom: 28rpx; }
+.report-title { font-size: 42rpx; font-weight: 900; color: #5B3300; }
+.report-range { font-size: 26rpx; color: #B5651D; margin-top: 8rpx; }
+
+.report-week-card { background: linear-gradient(135deg, #FFD36B, #FF8A65); border-radius: 32rpx; padding: 44rpx 30rpx; text-align: center; box-shadow: 0 14rpx 32rpx rgba(255,138,101,0.3); margin-bottom: 24rpx; }
+.report-week-num { font-size: 96rpx; font-weight: 900; color: #fff; line-height: 1.4; }
+.report-week-label { font-size: 28rpx; color: #fff; font-weight: 700; }
+
+.report-stats { display: flex; flex-wrap: wrap; gap: 16rpx; margin-bottom: 24rpx; }
+.report-stat { width: calc((100% - 16rpx) / 2); box-sizing: border-box; background: #fff; border-radius: 24rpx; padding: 28rpx 20rpx; text-align: center; box-shadow: 0 8rpx 20rpx rgba(0,0,0,0.04); }
+.report-stat-num { font-size: 44rpx; font-weight: 900; color: #FF6B35; }
+.report-stat-label { font-size: 24rpx; color: #8A8F98; margin-top: 8rpx; }
+
+.report-section { background: #fff; border-radius: 24rpx; padding: 26rpx 24rpx; margin-bottom: 24rpx; box-shadow: 0 8rpx 20rpx rgba(0,0,0,0.04); }
+.report-section-title { font-size: 30rpx; font-weight: 900; color: #2F2A1F; margin-bottom: 14rpx; }
+.report-poem { display: flex; align-items: center; gap: 12rpx; padding: 18rpx 8rpx; border-bottom: 1rpx solid #F4EEE2; }
+.report-poem:last-child { border-bottom: none; }
+.report-poem-title { font-size: 30rpx; font-weight: 700; color: #2F2A1F; }
+.report-poem-author { font-size: 24rpx; color: #8A8F98; flex: 1; }
+.report-poem-arrow { font-size: 36rpx; color: #C7AE86; }
+.report-empty { background: #fff; border-radius: 24rpx; padding: 50rpx 24rpx; text-align: center; color: #8A6D3B; font-size: 28rpx; margin-bottom: 24rpx; }
+
+.report-share { width: 100%; background: linear-gradient(135deg, #FFD36B, #FFB347); color: #7A3E00; border-radius: 999rpx; font-size: 30rpx; font-weight: 800; padding: 24rpx 0; margin: 8rpx 0; border: none; }
+.report-tip { text-align: center; font-size: 24rpx; color: #B5651D; margin-top: 18rpx; line-height: 1.6; }

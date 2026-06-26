@@ -9,6 +9,7 @@ const audioManager = require('../../utils/audio-manager')
 const audioCache = require('../../utils/audio-cache')
 const { ensureRecordPermission } = require('../../utils/record-permission')
 const voiceConsent = require('../../utils/voice-consent')
+const onboarding = require('../../utils/onboarding')
 
 const fallbackPoems = [
   { id: 1, title: '静夜思', author: '李白', dynasty: '唐', content: '床前明月光，疑是地上霜。举头望明月，低头思故乡。', audio: '/audios/poem-1.mp3', pinyin: 'chuáng qián míng yuè guāng, yí shì dì shàng shuāng.', translation: '明亮的月光洒在床前，好像地上的霜。抬起头来看明月，低下头去思念故乡。', story: '李白25岁离开家乡四川，长期漫游在外。一个深秋夜晚看到月光想起故乡。', difficulty: 1, tags: ['思乡'], season: 'autumn' },
@@ -552,6 +553,7 @@ Page({
 
   openLandscapeFollow() {
     if (this.data.type !== 'poem' || !this.data.poem) return
+    onboarding.markStep('follow') // 新手引导：试过逐句跟读
     this.updateViewportMode()
     this.resetFollowSession()
     this.setData({ landscapeFollowVisible: true, followExpanded: true })

@@ -6,24 +6,74 @@
   </view>
 
   <block wx:if="{{homeTab === 'learn'}}">
-  <view class="streak-banner {{todayChecked ? 'done' : 'todo'}}" bindtap="goChallenge">
-    <view class="streak-flame">🔥</view>
-    <view class="streak-main">
-      <view class="streak-num">连续学习 <text class="streak-days">{{streak}}</text> 天</view>
-      <view class="streak-sub">{{streakSub}}</view>
-    </view>
-    <view class="streak-cta">{{todayChecked ? '今天已学 ✓' : '去打卡 →'}}</view>
+  <view class="community-bar" wx:if="{{showCommunity}}">
+    <text class="community-dot">📖</text>
+    <text class="community-text">已有 <text class="community-num">{{communityLearners}}</text> 位小朋友在学 · {{communitySubText}}</text>
   </view>
 
-  <view class="recent-growth-card" wx:if="{{recentResult}}">
-    <view class="recent-growth-main" bindtap="openRecentResult">
-      <view class="recent-growth-kicker">✨ 上次成长</view>
-      <view class="recent-growth-title">{{recentResultText}}</view>
-      <view class="recent-growth-sub">接着读、录朗诵，或放进我的诗集</view>
+  <view class="onboard-card {{onboardExpanded ? 'open' : 'collapsed'}}" wx:if="{{!onboardAllDone}}">
+    <view class="onboard-head" bindtap="toggleOnboard">
+      <view class="onboard-head-left">
+        <view class="onboard-title">🎓 新手引导 {{onboardDoneCount}}/{{onboardTotal}}</view>
+        <view class="onboard-subtitle">{{onboardExpanded ? '跟着做一遍，就会用啦' : '点开看看怎么玩'}}</view>
+      </view>
+      <view class="onboard-toggle">{{onboardExpanded ? '收起 ⌃' : '展开 ⌄'}}</view>
     </view>
-    <view class="recent-growth-actions">
-      <button bindtap="createRecentWork">{{recentActionText || '录朗诵'}}</button>
-      <button bindtap="openWorksFromRecent">诗集</button>
+    <block wx:if="{{onboardExpanded}}">
+      <view class="onboard-step {{item.done ? 'done' : ''}}" wx:for="{{onboardSteps}}" wx:key="key" data-target="{{item.target}}" bindtap="tapOnboardStep">
+        <view class="onboard-check">{{item.done ? '✅' : item.index}}</view>
+        <view class="onboard-step-main">
+          <view class="onboard-step-label">{{item.label}}</view>
+          <view class="onboard-step-desc">{{item.desc}}</view>
+        </view>
+        <view class="onboard-step-arrow" wx:if="{{!item.done}}">去做 →</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 学习状态悬浮球：点开看 连续/复习/上次成长 -->
+  <view class="study-ball {{ballHover ? 'hover' : ''}}" style="left: {{ballX}}px; top: {{ballY}}px;"
+        bindmouseenter="onBallHover" bindmouseleave="onBallLeave"
+        catchtouchstart="onBallTouchStart" catchtouchmove="onBallTouchMove" catchtouchend="onBallTouchEnd">
+    <view class="study-ball-gloss"></view>
+    <text class="study-ball-icon">🔥</text>
+    <text class="study-ball-num">{{streak}}</text>
+    <view class="study-ball-dot" wx:if="{{reviewDueCount > 0 || !todayChecked}}"></view>
+  </view>
+
+  <view class="study-mask" wx:if="{{studyPanelOpen}}" bindtap="closeStudyPanel">
+    <view class="study-panel" catchtap="noop">
+      <view class="study-panel-title">我的学习</view>
+
+      <view class="streak-banner {{todayChecked ? 'done' : 'todo'}}" bindtap="goChallenge">
+        <view class="streak-flame">🔥</view>
+        <view class="streak-main">
+          <view class="streak-num">连续学习 <text class="streak-days">{{streak}}</text> 天</view>
+          <view class="streak-sub">{{streakSub}}</view>
+        </view>
+        <view class="streak-cta">{{todayChecked ? '今天已学 ✓' : '去打卡 →'}}</view>
+      </view>
+
+      <view class="review-banner" wx:if="{{reviewDueCount > 0}}" bindtap="goReview">
+        <view class="review-banner-icon">📖</view>
+        <view class="review-banner-main">
+          <view class="review-banner-title">今日复习 {{reviewDueCount}} 首</view>
+          <view class="review-banner-sub">学过的诗别忘啦，温故而知新</view>
+        </view>
+        <view class="review-banner-cta">去复习 →</view>
+      </view>
+
+      <view class="recent-growth-card" wx:if="{{recentResult}}">
+        <view class="recent-growth-main" bindtap="openRecentResult">
+          <view class="recent-growth-kicker">✨ 上次成长</view>
+          <view class="recent-growth-title">{{recentResultText}}</view>
+          <view class="recent-growth-sub">接着读、录朗诵，或放进我的诗集</view>
+        </view>
+        <view class="recent-growth-actions">
+          <button bindtap="createRecentWork">{{recentActionText || '录朗诵'}}</button>
+          <button bindtap="openWorksFromRecent">诗集</button>
+        </view>
+      </view>
     </view>
   </view>
 
@@ -208,4 +258,28 @@
     </view>
     <view class="discover-empty" wx:else>还没有作品，去“创作”发布第一条吧～</view>
   </block>
+
+  <!-- 首次欢迎引导 -->
+  <view class="welcome-mask" wx:if="{{showWelcome}}">
+    <view class="welcome-card">
+      <swiper class="welcome-swiper" indicator-dots="true" indicator-active-color="#FF8A65" circular="false">
+        <swiper-item>
+          <view class="welcome-emoji">📖</view>
+          <view class="welcome-h">欢迎来到萌学古诗</view>
+          <view class="welcome-p">陪孩子每天读一点古诗，多听、多读、多探索，慢慢爱上古诗。</view>
+        </swiper-item>
+        <swiper-item>
+          <view class="welcome-emoji">🎙️</view>
+          <view class="welcome-h">听 → 学 → 背 → 复习</view>
+          <view class="welcome-p">先听官方朗读，逐句跟读，再背诵闯关；学过的诗会定时提醒复习，记得更牢。</view>
+        </swiper-item>
+        <swiper-item>
+          <view class="welcome-emoji">⭐</view>
+          <view class="welcome-h">看孩子点亮的诗集</view>
+          <view class="welcome-p">每学会一首就点亮一颗星，还能录朗诵、AI 评分、生成成长卡分享给家人。</view>
+        </swiper-item>
+      </swiper>
+      <view class="welcome-btn" bindtap="dismissWelcome">开始体验</view>
+    </view>
+  </view>
 </view>

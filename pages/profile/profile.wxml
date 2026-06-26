@@ -14,6 +14,7 @@
     <button class="checkin-btn {{todayChecked ? 'checked-btn' : ''}}" bindtap="doCheckin" disabled="{{todayChecked}}">
       {{todayChecked ? '✅ 今日已打卡' : '📌 立即打卡'}}
     </button>
+    <view class="reminder-link" bindtap="openStudyReminder">🔔 开启每日学习提醒</view>
   </view>
 
   <view class="profile-header">
@@ -68,6 +69,11 @@
       <view class="menu-icon-wrap"><text class="menu-icon">📖</text></view>
       <text class="menu-text">学习记录</text>
       <text class="menu-desc">成长足迹</text>
+    </button>
+    <button class="menu-item menu-button menu-report" data-action="parent-report" bindtap="handleMenuTap">
+      <view class="menu-icon-wrap"><text class="menu-icon">📊</text></view>
+      <text class="menu-text">家长周报</text>
+      <text class="menu-desc">本周成长 · 可分享</text>
     </button>
     <button class="menu-item menu-button menu-achievements" data-action="achievements" bindtap="handleMenuTap">
       <view class="menu-icon-wrap"><text class="menu-icon">🏆</text></view>

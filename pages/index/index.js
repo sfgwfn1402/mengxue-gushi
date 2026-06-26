@@ -3,6 +3,7 @@ const app = getApp()
 const api = require('../../utils/api')
 const audioManager = require('../../utils/audio-manager')
 const audioCache = require('../../utils/audio-cache')
+const onboarding = require('../../utils/onboarding')
 
 Page({
   data: {
@@ -55,19 +56,191 @@ Page({
     recentResultText: '',
     streak: 0,
     todayChecked: false,
-    streakSub: ''
+    streakSub: '',
+    reviewDueCount: 0,
+    communityLearners: 0,
+    communitySubText: '',
+    showCommunity: false,
+    studyPanelOpen: false,
+    ballHover: false,
+    ballX: 300,
+    ballY: 500,
+    vx: 1.5,
+    vy: -1.2,
+    winW: 375,
+    winH: 667,
+    ballSize: 56,
+    showWelcome: false,
+    onboardSteps: [],
+    onboardDoneCount: 0,
+    onboardTotal: 0,
+    onboardAllDone: true,
+    onboardExpanded: false
   },
 
   onLoad() {
     this.refreshList()
     this.loadHomeData()
+    this.initBallPosition()
+  },
+
+  initBallPosition() {
+    try {
+      const info = wx.getSystemInfoSync()
+      const W = info.windowWidth
+      const H = info.windowHeight
+      const ball = Math.round(112 * W / 750) // 112rpx 换算成 px
+      this.setData({
+        winW: W,
+        winH: H,
+        ballSize: ball,
+        ballX: W - ball - 12,
+        ballY: H - ball - 90
+      })
+    } catch (e) {}
+  },
+
+  startDrift() {
+    if (this._driftTimer) return
+    this._driftTimer = setInterval(() => {
+      // 拖动中 / 面板展开 / 鼠标悬停时暂停飘动
+      if (this._drag || this.data.studyPanelOpen || this.data.ballHover) return
+      let { ballX, ballY, vx, vy, winW, winH, ballSize } = this.data
+      let nx = ballX + vx
+      let ny = ballY + vy
+      const minX = 4, maxX = winW - ballSize - 4, minY = 40, maxY = winH - ballSize - 40
+      if (nx <= minX) { nx = minX; vx = Math.abs(vx); vy += (Math.random() - 0.5) * 0.6 }
+      else if (nx >= maxX) { nx = maxX; vx = -Math.abs(vx); vy += (Math.random() - 0.5) * 0.6 }
+      if (ny <= minY) { ny = minY; vy = Math.abs(vy); vx += (Math.random() - 0.5) * 0.6 }
+      else if (ny >= maxY) { ny = maxY; vy = -Math.abs(vy); vx += (Math.random() - 0.5) * 0.6 }
+      // 限速，避免越弹越快
+      vx = Math.max(-2.2, Math.min(2.2, vx))
+      vy = Math.max(-2.2, Math.min(2.2, vy))
+      this.setData({ ballX: nx, ballY: ny, vx, vy })
+    }, 50)
+  },
+
+  stopDrift() {
+    if (this._driftTimer) {
+      clearInterval(this._driftTimer)
+      this._driftTimer = null
+    }
+  },
+
+  onBallHover() {
+    this.setData({ ballHover: true }) // 鼠标悬停：停下并放大
+  },
+
+  onBallLeave() {
+    this.setData({ ballHover: false })
+  },
+
+  onBallTouchStart(e) {
+    const t = e.touches[0]
+    this._drag = { x: t.clientX, y: t.clientY, bx: this.data.ballX, by: this.data.ballY, moved: false }
+    this.setData({ ballHover: true }) // 按住：停下并放大（飘动循环检测 _drag 已暂停）
+  },
+
+  onBallTouchMove(e) {
+    if (!this._drag) return
+    const t = e.touches[0]
+    const dx = t.clientX - this._drag.x
+    const dy = t.clientY - this._drag.y
+    if (Math.abs(dx) > 4 || Math.abs(dy) > 4) this._drag.moved = true
+    const { winW, winH, ballSize } = this.data
+    const nx = Math.max(4, Math.min(winW - ballSize - 4, this._drag.bx + dx))
+    const ny = Math.max(40, Math.min(winH - ballSize - 40, this._drag.by + dy))
+    this.setData({ ballX: nx, ballY: ny })
+  },
+
+  onBallTouchEnd() {
+    const moved = this._drag && this._drag.moved
+    this._drag = null
+    this.setData({ ballHover: false }) // 松开：恢复大小并继续飘动
+    if (!moved) this.toggleStudyPanel() // 没拖动=轻点，展开面板
   },
 
   onShow() {
     this.loadRecentResult()
     this.loadStreak() // 每次回到首页都刷新，学习/打卡后连续天数即时更新
+    this.loadReviewDue() // 复习数量随学习/复习即时更新
+    this.loadOnboarding()
+    this.startDrift() // 悬浮球自动飘动
     if (this._loadedOnce) return
     this._loadedOnce = true
+  },
+
+  loadOnboarding() {
+    const steps = onboarding.getSteps()
+    const doneCount = onboarding.doneCount()
+    const patch = {
+      showWelcome: !onboarding.welcomeSeen(),
+      onboardSteps: steps,
+      onboardDoneCount: doneCount,
+      onboardTotal: onboarding.total,
+      onboardAllDone: onboarding.allDone()
+    }
+    // 只初始化一次默认展开态：全新用户(0步)默认展开引导，做过任意一步则默认收起
+    if (!this._onboardInit) {
+      this._onboardInit = true
+      patch.onboardExpanded = doneCount === 0
+    }
+    this.setData(patch)
+  },
+
+  toggleOnboard() {
+    this.setData({ onboardExpanded: !this.data.onboardExpanded })
+  },
+
+  toggleStudyPanel() {
+    this.setData({ studyPanelOpen: !this.data.studyPanelOpen })
+  },
+
+  closeStudyPanel() {
+    this.setData({ studyPanelOpen: false })
+  },
+
+  noop() {},
+
+  dismissWelcome() {
+    onboarding.setWelcomeSeen()
+    this.setData({ showWelcome: false })
+  },
+
+  tapOnboardStep(e) {
+    const target = e.currentTarget.dataset.target
+    if (target === 'profile') {
+      if (app.globalData) app.globalData.openCollectionOnShow = true
+      wx.switchTab({ url: '/pages/profile/profile' })
+    } else {
+      wx.switchTab({ url: '/pages/warehouse/warehouse' })
+    }
+  },
+
+  // 今日该复习的诗数量：学会且距上次学习≥2天
+  loadReviewDue() {
+    api.listProgress()
+      .then(items => {
+        const list = Array.isArray(items) ? items : (items.items || [])
+        const now = Date.now()
+        const due = list.filter(it => {
+          if (!it.learned || !it.last_learned_at) return false
+          const t = new Date(String(it.last_learned_at).replace(' ', 'T') + 'Z').getTime()
+          if (isNaN(t)) return false
+          return (now - t) / 86400000 >= 2
+        }).length
+        this.setData({ reviewDueCount: due })
+        // 已学会过诗 → 自动勾上"学会第一首诗"
+        if (!onboarding.isStepDone('learn') && list.some(it => it.learned)) {
+          onboarding.markStep('learn')
+          this.loadOnboarding()
+        }
+      })
+      .catch(err => console.warn('读取复习数量失败', err))
+  },
+
+  goReview() {
+    wx.navigateTo({ url: '/pages/review/review' })
   },
 
   loadStreak() {
@@ -165,9 +338,29 @@ Page({
     })
   },
 
+  loadCommunityStats() {
+    api.getCommunityStats()
+      .then(res => {
+        const learners = res.learners || 0
+        const todayLit = res.today_lit || 0
+        const totalLit = res.total_lit || 0
+        // 今天有学习就显示今日，否则显示累计（始终>0，不显冷清）
+        const sub = todayLit > 0
+          ? `今天点亮了 ${todayLit} 首诗`
+          : `累计点亮了 ${totalLit} 首古诗`
+        this.setData({
+          communityLearners: learners,
+          communitySubText: sub,
+          showCommunity: learners > 0
+        })
+      })
+      .catch(err => console.warn('读取社区数据失败', err))
+  },
+
   loadHomeData() {
     // 域名 HTTPS 入口偶发 reset 时，首屏并发越高越容易丢请求；分批加载更稳。
     this.forceRefreshBackend()
+    setTimeout(() => this.loadCommunityStats(), 80)
     setTimeout(() => this.loadThemes(), 120)
     setTimeout(() => this.loadRecommendations(), 260)
     setTimeout(() => this.loadPopularRecitations(), 420)
@@ -556,10 +749,12 @@ Page({
 
   onHide() {
     audioManager.stopAll()
+    this.stopDrift()
   },
 
   onUnload() {
     audioManager.destroyAll()
+    this.stopDrift()
     if (this.audio) {
       this.audio.destroy()
       this.audio = null

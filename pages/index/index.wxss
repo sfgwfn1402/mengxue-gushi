@@ -928,6 +928,68 @@ page {
 }
 .streak-banner.done .streak-cta { background: rgba(76, 175, 80, 0.9); }
 
+.review-banner { display: flex; align-items: center; gap: 18rpx; margin: 0 0 22rpx; padding: 22rpx 24rpx; border-radius: 30rpx; background: linear-gradient(135deg, #E3F0FF 0%, #D6E8FF 100%); box-shadow: 0 12rpx 28rpx rgba(80,130,220,0.14); }
+.review-banner-icon { font-size: 52rpx; line-height: 1; }
+.review-banner-main { flex: 1; }
+.review-banner-title { font-size: 30rpx; font-weight: 800; color: #2A4A7A; }
+.review-banner-sub { font-size: 24rpx; color: #5A7BB0; margin-top: 6rpx; }
+.review-banner-cta { font-size: 24rpx; font-weight: 800; color: #fff; background: rgba(74, 124, 200, 0.92); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; }
+
+/* 社区人气条 */
+.community-bar { display: flex; align-items: center; gap: 10rpx; margin: 0 0 22rpx; padding: 16rpx 24rpx; border-radius: 999rpx; background: #FFF4E0; }
+.community-dot { font-size: 30rpx; }
+.community-text { font-size: 25rpx; color: #8A6D3B; font-weight: 600; }
+.community-num { font-size: 28rpx; font-weight: 900; color: #FF6B35; }
+
+/* 学习状态悬浮球 + 弹出面板 */
+/* 苹果质感立体球：径向高光 + 内高光/内阴影 + 外投影 */
+.study-ball { position: fixed; width: 112rpx; height: 112rpx; border-radius: 50%; overflow: hidden;
+  background: radial-gradient(circle at 34% 28%, #FFE6B0 0%, #FFB15D 42%, #FF7A2E 78%, #EC6716 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: 0 14rpx 28rpx rgba(236,103,22,0.45),
+              inset 0 6rpx 12rpx rgba(255,255,255,0.55),
+              inset 0 -12rpx 20rpx rgba(180,70,0,0.4);
+  z-index: 90; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.study-ball.hover { transform: scale(1.22); box-shadow: 0 20rpx 38rpx rgba(236,103,22,0.5), inset 0 6rpx 12rpx rgba(255,255,255,0.6), inset 0 -12rpx 20rpx rgba(180,70,0,0.4); }
+.study-ball-gloss { position: absolute; top: 10rpx; left: 18rpx; width: 56rpx; height: 38rpx; border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0)); transform: rotate(-18deg); pointer-events: none; }
+.study-ball-icon { font-size: 40rpx; line-height: 1; position: relative; z-index: 1; }
+.study-ball-num { font-size: 24rpx; font-weight: 900; color: #fff; margin-top: 2rpx; position: relative; z-index: 1; text-shadow: 0 1rpx 2rpx rgba(150,60,0,0.5); }
+.study-ball-dot { position: absolute; top: 8rpx; right: 12rpx; width: 20rpx; height: 20rpx; border-radius: 50%; background: #FF3B30; border: 3rpx solid #fff; z-index: 2; }
+.study-mask { position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 100; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 200rpx; box-sizing: border-box; }
+.study-panel { width: 90%; max-width: 660rpx; background: #FFF8EA; border-radius: 32rpx; padding: 26rpx 24rpx 12rpx; box-shadow: 0 18rpx 50rpx rgba(0,0,0,0.25); animation: study-rise 0.28s ease; }
+@keyframes study-rise { from { transform: translateY(40rpx); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.study-panel-title { font-size: 30rpx; font-weight: 900; color: #7A3E00; margin-bottom: 16rpx; padding-left: 4rpx; }
+
+/* 新手引导清单 */
+.onboard-card { margin: 0 0 22rpx; padding: 26rpx 24rpx; border-radius: 30rpx; background: linear-gradient(135deg, #FFFDF5, #FFF1D6); border: 1rpx solid rgba(255,186,92,0.42); box-shadow: 0 12rpx 28rpx rgba(255,160,60,0.12); }
+.onboard-card.collapsed { padding: 22rpx 24rpx; }
+.onboard-head { display: flex; align-items: center; justify-content: space-between; }
+.onboard-card.open .onboard-head { margin-bottom: 18rpx; }
+.onboard-head-left { flex: 1; }
+.onboard-title { font-size: 32rpx; font-weight: 900; color: #7A3E00; }
+.onboard-subtitle { font-size: 24rpx; color: #B5651D; margin-top: 6rpx; }
+.onboard-toggle { font-size: 24rpx; font-weight: 800; color: #FF7A45; flex-shrink: 0; padding-left: 16rpx; }
+.onboard-step { display: flex; align-items: center; gap: 16rpx; padding: 18rpx 14rpx; border-radius: 20rpx; background: #fff; margin-bottom: 12rpx; }
+.onboard-step.done { opacity: 0.6; }
+.onboard-check { width: 48rpx; height: 48rpx; border-radius: 50%; background: #FFE6C2; color: #B5651D; font-size: 26rpx; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.onboard-step.done .onboard-check { background: transparent; }
+.onboard-step-main { flex: 1; }
+.onboard-step-label { font-size: 28rpx; font-weight: 800; color: #2F2A1F; }
+.onboard-step.done .onboard-step-label { text-decoration: line-through; color: #9AA0A8; }
+.onboard-step-desc { font-size: 23rpx; color: #8A8F98; margin-top: 4rpx; }
+.onboard-step-arrow { font-size: 24rpx; font-weight: 800; color: #FF7A45; flex-shrink: 0; }
+
+/* 首次欢迎 */
+.welcome-mask { position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0,0,0,0.55); display: flex; align-items: center; justify-content: center; z-index: 500; }
+.welcome-card { width: 80%; max-width: 600rpx; background: #FFFDF7; border-radius: 36rpx; padding: 40rpx 32rpx 32rpx; box-shadow: 0 20rpx 60rpx rgba(0,0,0,0.3); }
+.welcome-swiper { height: 440rpx; }
+.welcome-swiper swiper-item { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 20rpx; box-sizing: border-box; }
+.welcome-emoji { font-size: 120rpx; margin-top: 20rpx; }
+.welcome-h { font-size: 38rpx; font-weight: 900; color: #5B3300; margin-top: 20rpx; }
+.welcome-p { font-size: 28rpx; color: #8A6D3B; line-height: 1.7; margin-top: 18rpx; }
+.welcome-btn { margin-top: 20rpx; text-align: center; background: linear-gradient(135deg, #FFD36B, #FFB347); color: #7A3E00; border-radius: 999rpx; padding: 26rpx 0; font-size: 32rpx; font-weight: 900; box-shadow: 0 10rpx 24rpx rgba(255,160,60,0.3); }
+
 .recent-growth-card {
   position: relative;
   overflow: hidden;

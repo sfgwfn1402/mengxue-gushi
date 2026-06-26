@@ -1,0 +1,39 @@
+<!--pages/review/review.wxml-->
+<view class="review-container">
+  <view wx:if="{{loading}}" class="review-loading">加载中…</view>
+
+  <block wx:elif="{{finished}}">
+    <view class="review-done">
+      <view class="review-done-emoji">{{total > 0 ? '🎉' : '☀️'}}</view>
+      <view class="review-done-title">{{total > 0 ? '今日复习完成！' : '今天没有要复习的诗'}}</view>
+      <view class="review-done-sub">{{total > 0 ? '复习了 ' + doneCount + ' 首，记得越牢啦' : '学过的诗过几天会出现在这里，温故而知新'}}</view>
+      <view class="review-done-btn" bindtap="goHome">回首页</view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="review-progress">
+      <view class="review-progress-bar"><view class="review-progress-fill" style="width: {{total ? doneCount / total * 100 : 0}}%"></view></view>
+      <view class="review-progress-text">复习 {{doneCount}} / {{total}} 首</view>
+    </view>
+
+    <view class="review-card">
+      <view class="review-card-kicker">还记得这首吗？</view>
+      <view class="review-card-title">{{cards[index].title}}</view>
+      <view class="review-card-author">{{cards[index].dynasty}} · {{cards[index].author}}</view>
+
+      <view wx:if="{{revealed}}" class="review-lines">
+        <view class="review-line" wx:for="{{cards[index].lines}}" wx:key="index">{{item}}</view>
+      </view>
+      <view wx:else class="review-hint" bindtap="reveal">
+        <view class="review-hint-icon">🤔</view>
+        <view class="review-hint-text">先在心里背一背，点这里看答案</view>
+      </view>
+    </view>
+
+    <view class="review-actions">
+      <view class="review-btn ghost" bindtap="reviewAgain">📖 再读一遍</view>
+      <view class="review-btn primary" bindtap="remembered">✅ 记住了</view>
+    </view>
+  </block>
+</view>

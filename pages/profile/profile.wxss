@@ -29,6 +29,7 @@ page {
 .streak-day.checked .streak-label { color: #B5651D; }
 .checkin-btn { width: 100%; height: 82rpx; line-height: 82rpx; background: linear-gradient(180deg, #FFB15D 0%, #FF7A45 100%); color: #fff; border-radius: 999rpx; font-size: 30rpx; font-weight: 900; padding: 0; border: none; box-shadow: 0 12rpx 24rpx rgba(255,122,69,0.22); }
 .checkin-btn.checked-btn { background: linear-gradient(180deg, #6DD98A 0%, #45B96C 100%); }
+.reminder-link { text-align: center; margin-top: 16rpx; font-size: 25rpx; font-weight: 700; color: #FF7A45; }
 
 .profile-header { display: flex; align-items: center; padding: 30rpx; margin-bottom: 20rpx; gap: 20rpx; }
 .avatar { width: 112rpx; height: 112rpx; border-radius: 32rpx; background: linear-gradient(180deg, #FFD66B 0%, #FFAD32 100%); display: flex; align-items: center; justify-content: center; font-size: 56rpx; box-shadow: inset 0 1rpx 0 rgba(255,255,255,0.4), 0 12rpx 22rpx rgba(255,173,50,0.18); overflow: hidden; }

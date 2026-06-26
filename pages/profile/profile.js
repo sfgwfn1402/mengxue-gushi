@@ -2,6 +2,7 @@
 const app = getApp()
 const api = require('../../utils/api')
 const versionInfo = require('../../config/version')
+const onboarding = require('../../utils/onboarding')
 
 Page({
   data: {
@@ -279,11 +280,33 @@ Page({
       .then(res => {
         const added = res && typeof res.stars_added === 'number' ? res.stars_added : 0
         wx.showToast({ title: added > 0 ? `打卡成功 +${added}⭐` : '打卡成功！🎉', icon: 'none', duration: 1800 })
+        // 打卡后顺势引导开启学习提醒（一次性订阅，需用户点击触发）
+        setTimeout(() => this.openStudyReminder(), 1500)
       })
       .catch(err => {
         console.warn('打卡失败', err)
         wx.showToast({ title: '服务维护中', icon: 'none' })
       })
+  },
+
+  // 申请"学习提醒"订阅（一次性订阅：每授权一次后端 +1 额度）
+  openStudyReminder() {
+    if (!wx.requestSubscribeMessage) {
+      wx.showToast({ title: '当前微信版本不支持提醒', icon: 'none' })
+      return
+    }
+    const tmplId = 'fzZRTV2ni_DCk03oCTkFz5bRsJ5bzEbaOdl09q3zp3g'
+    wx.requestSubscribeMessage({
+      tmplIds: [tmplId],
+      success: (res) => {
+        if (res[tmplId] === 'accept') {
+          api.subscribeReminder()
+            .then(() => wx.showToast({ title: '已开启学习提醒 🔔', icon: 'none' }))
+            .catch(err => console.warn('记录订阅失败', err))
+        }
+      },
+      fail: (err) => console.warn('请求订阅失败', err)
+    })
   },
 
   updateStreak() {
@@ -305,6 +328,7 @@ Page({
     if (action === 'achievements') this.openAchievements()
     if (action === 'feedback') this.openFeedback()
     if (action === 'admin') wx.navigateTo({ url: '/pages/admin/admin' })
+    if (action === 'parent-report') wx.navigateTo({ url: '/pages/parent-report/parent-report' })
     if (action === 'voice-agreement') wx.navigateTo({ url: '/pages/voice-agreement/voice-agreement' })
     if (action === 'settings') this.openSettings()
   },
@@ -316,6 +340,7 @@ Page({
   },
 
   openLearnedPoems() {
+    onboarding.markStep('collection') // 新手引导：看过诗集墙
     Promise.all([api.listProgress(), api.listAllPoems()])
       .then(([progressRes, poemRes]) => {
         const progressItems = Array.isArray(progressRes) ? progressRes : (progressRes.items || [])

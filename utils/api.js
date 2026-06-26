@@ -283,6 +283,11 @@ function listThemes() {
   return request({ url: '/themes' })
 }
 
+// 首页人气：社区聚合数据（公开，无需登录）
+function getCommunityStats() {
+  return request({ url: '/home/community-stats' })
+}
+
 function listPoems(params) {
   return request({
     url: `/poems${toQuery(Object.assign({ page: 1, page_size: 100 }, params || {}))}`
@@ -602,6 +607,11 @@ function checkin() {
   return authed({ url: '/me/checkin', method: 'POST' })
 }
 
+// 用户授权学习提醒订阅一次 → 后端额度 +1
+function subscribeReminder() {
+  return authed({ url: '/me/reminder-subscribe', method: 'POST' })
+}
+
 function completeTask(taskId, stars) {
   return authed({
     url: '/me/tasks',
@@ -722,6 +732,7 @@ module.exports = {
   getPopularRecitations,
   getHotRecitationPick,
   listThemes,
+  getCommunityStats,
   listPoems,
   listAllPoems,
   getPoem,
@@ -750,6 +761,7 @@ module.exports = {
   uploadAvatar,
   getStats,
   checkin,
+  subscribeReminder,
   completeTask,
   clearUserData,
   listProgress,

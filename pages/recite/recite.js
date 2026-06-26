@@ -1,6 +1,7 @@
 // pages/recite/recite.js - 背诵模式：逐句遮挡、提示首字、看答案、逐句背出
 const app = getApp()
 const api = require('../../utils/api')
+const onboarding = require('../../utils/onboarding')
 
 const PUNCT = '，。！？；、,.!?;'
 
@@ -129,6 +130,7 @@ Page({
   finish() {
     if (this.data.finished) return
     this.setData({ finished: true })
+    onboarding.markStep('recite') // 新手引导：背完一首
     const poem = this.data.poem || {}
     // 背完即点亮（与学习页“学会”同一进度口径）
     api.updateProgress(poem.id, { learned: true, read_count_delta: 1 }).catch(err => console.warn('背诵完成同步失败', err))

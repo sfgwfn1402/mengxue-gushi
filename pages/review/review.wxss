@@ -1,0 +1,29 @@
+/* pages/review/review.wxss */
+.review-container { min-height: 100vh; background: #FFF8DC; padding: 36rpx 32rpx 60rpx; box-sizing: border-box; }
+.review-loading { text-align: center; color: #8A8F98; padding-top: 200rpx; font-size: 30rpx; }
+
+.review-progress { margin-bottom: 30rpx; }
+.review-progress-bar { height: 20rpx; background: #FFE6C2; border-radius: 999rpx; overflow: hidden; }
+.review-progress-fill { height: 100%; background: linear-gradient(90deg, #FFD36B, #FF7A45); border-radius: 999rpx; transition: width 0.3s ease; }
+.review-progress-text { text-align: center; font-size: 26rpx; font-weight: 800; color: #FF6B35; margin-top: 12rpx; }
+
+.review-card { background: #fff; border-radius: 32rpx; padding: 48rpx 36rpx; box-shadow: 0 12rpx 30rpx rgba(0,0,0,0.06); text-align: center; min-height: 380rpx; }
+.review-card-kicker { font-size: 26rpx; color: #B5651D; font-weight: 800; }
+.review-card-title { font-size: 48rpx; font-weight: 900; color: #5B3300; margin-top: 18rpx; }
+.review-card-author { font-size: 26rpx; color: #B5651D; margin-top: 8rpx; }
+.review-lines { margin-top: 32rpx; }
+.review-line { font-size: 38rpx; font-weight: 700; color: #2F2A1F; line-height: 1.9; }
+.review-hint { margin-top: 40rpx; padding: 40rpx 20rpx; background: #FFF8EA; border-radius: 24rpx; border: 2rpx dashed #F0C97B; }
+.review-hint-icon { font-size: 60rpx; }
+.review-hint-text { font-size: 28rpx; color: #8A6D3B; margin-top: 14rpx; }
+
+.review-actions { display: flex; gap: 18rpx; margin-top: 40rpx; }
+.review-btn { flex: 1; text-align: center; border-radius: 999rpx; padding: 26rpx 0; font-size: 30rpx; font-weight: 800; }
+.review-btn.primary { background: linear-gradient(135deg, #FFD36B, #FFB347); color: #7A3E00; box-shadow: 0 10rpx 24rpx rgba(255,160,60,0.3); }
+.review-btn.ghost { background: #fff; color: #8A6D3B; border: 2rpx solid #F0DDBE; }
+
+.review-done { text-align: center; padding-top: 140rpx; }
+.review-done-emoji { font-size: 120rpx; }
+.review-done-title { font-size: 40rpx; font-weight: 900; color: #5B3300; margin-top: 20rpx; }
+.review-done-sub { font-size: 28rpx; color: #B5651D; margin-top: 16rpx; line-height: 1.6; padding: 0 40rpx; }
+.review-done-btn { display: inline-block; margin-top: 48rpx; padding: 22rpx 60rpx; border-radius: 999rpx; background: linear-gradient(135deg, #FFD36B, #FFB347); color: #7A3E00; font-size: 30rpx; font-weight: 800; }
