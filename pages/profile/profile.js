@@ -40,7 +40,8 @@ Page({
     inviteCode: '',
     inviteBadge: '',
     inviteBadgeLabel: '',
-    inviteNextAt: 0
+    inviteNextAt: 0,
+    shareCardPath: ''
   },
 
   onShow() {
@@ -72,30 +73,12 @@ Page({
       .catch(() => {})
   },
 
+  // 邀请/成就卡分享统一走 onShareAppMessage（按钮 open-type="share" 触发）。
+  // 这里仅在没有邀请码时给个提示，不阻断系统分享。
   shareInvite() {
-    const inviteCode = this.data.inviteCode
-    if (!inviteCode) {
-      wx.showToast({ title: '获取邀请码中，请稍后', icon: 'none' })
-      return
+    if (!this.data.inviteCode) {
+      wx.showToast({ title: '正在准备邀请码…', icon: 'none' })
     }
-    wx.showShareMenu({ withShareTicket: false, menus: ['shareAppMessage'] })
-    // 触发分享弹窗，实际分享由 onShareAppMessage 拦截
-    this.setData({ _triggerShare: Date.now() })
-    wx.showModal({
-      title: '邀请好友一起学古诗',
-      content: `把小程序分享给好友，好友首次进入即算成功邀请！\n当前已邀请 ${this.data.inviteCount} 位`,
-      confirmText: '去分享',
-      cancelText: '取消',
-      success: (res) => {
-        if (res.confirm) {
-          wx.shareAppMessage({
-            title: '孩子学古诗，就用萌学古诗！',
-            path: `/pages/index/index?invite=${inviteCode}`,
-            imageUrl: ''
-          })
-        }
-      }
-    })
   },
 
   loadProfile() {
@@ -612,7 +595,8 @@ Page({
     this.drawCollectionCard()
       .then(filePath => {
         wx.hideLoading()
-        this.setData({ collectionCardGenerating: false })
+        // 存下卡片图作为"分享给好友"的缩略图，并显示分享按钮
+        this.setData({ collectionCardGenerating: false, shareCardPath: filePath })
         wx.showActionSheet({
           itemList: ['预览卡片', '保存到相册'],
           success: res => {
@@ -733,12 +717,21 @@ Page({
 
   noop() {},
 
-  onShareAppMessage() {
+  onShareAppMessage(e) {
     const inviteCode = this.data.inviteCode
+    const path = inviteCode ? `/pages/index/index?invite=${inviteCode}` : '/pages/index/index'
+    const shareType = e && e.target && e.target.dataset ? e.target.dataset.shareType : ''
+    // 成就卡分享：用生成的卡片图作缩略图
+    if (shareType === 'card' && this.data.shareCardPath) {
+      return {
+        title: `我家孩子已学会 ${this.data.collectionLearned} 首古诗，一起来萌学古诗吧！`,
+        path,
+        imageUrl: this.data.shareCardPath
+      }
+    }
     return {
       title: '孩子学古诗，就用萌学古诗！趣味互动，轻松学会100首古诗',
-      path: inviteCode ? `/pages/index/index?invite=${inviteCode}` : '/pages/index/index',
-      imageUrl: ''
+      path
     }
   },
 

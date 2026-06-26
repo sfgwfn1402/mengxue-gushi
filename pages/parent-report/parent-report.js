@@ -11,11 +11,25 @@ Page({
     level: 1,
     weekCount: 0,
     weekPoems: [],
-    weekRangeText: ''
+    weekRangeText: '',
+    inviteCode: ''
   },
 
   onShow() {
     this.loadReport()
+    this.loadInviteCode()
+  },
+
+  loadInviteCode() {
+    const apiUser = wx.getStorageSync('apiUser') || {}
+    const code = apiUser.user_id || apiUser.id || ''
+    if (code) this.setData({ inviteCode: code })
+    // 兜底：本地没有时再请求一次
+    if (!code) {
+      api.getInviteInfo().then(info => {
+        if (info && info.invite_code) this.setData({ inviteCode: info.invite_code })
+      }).catch(() => {})
+    }
   },
 
   loadReport() {
@@ -82,9 +96,10 @@ Page({
   },
 
   onShareAppMessage() {
+    const code = this.data.inviteCode
     return {
-      title: `我家孩子已经学会 ${this.data.learnedTotal} 首古诗啦！`,
-      path: '/pages/index/index'
+      title: `我家孩子已经学会 ${this.data.learnedTotal} 首古诗啦！一起来萌学古诗吧`,
+      path: code ? `/pages/index/index?invite=${code}` : '/pages/index/index'
     }
   }
 })

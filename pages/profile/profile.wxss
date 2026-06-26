@@ -145,6 +145,19 @@ page {
   box-shadow: 0 8rpx 20rpx rgba(255, 160, 60, 0.28);
 }
 .collection-share-btn.loading { opacity: 0.6; }
+.collection-share-friend {
+  margin: 0 0 18rpx;
+  width: 100%;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  font-size: 28rpx; font-weight: 800; color: #fff;
+  background: linear-gradient(135deg, #FF8A5B, #FF6B6B);
+  border-radius: 999rpx; padding: 0;
+  border: none;
+  box-shadow: 0 8rpx 20rpx rgba(255, 107, 107, 0.28);
+}
+.collection-share-friend::after { border: none; }
 .collection-canvas {
   position: fixed; left: -9999rpx; top: -9999rpx;
   width: 600px; height: 900px; pointer-events: none;

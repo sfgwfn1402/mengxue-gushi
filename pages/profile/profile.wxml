@@ -71,7 +71,7 @@
       <view class="invite-badge-item {{inviteCount >= 5 ? 'earned' : ''}}"><text>🌟</text><text>诗坛大使</text><text>×5</text></view>
       <view class="invite-badge-item {{inviteCount >= 10 ? 'earned' : ''}}"><text>👑</text><text>诗坛领袖</text><text>×10</text></view>
     </view>
-    <button class="invite-btn" bindtap="shareInvite" open-type="share">分享邀请，一起学古诗 →</button>
+    <button class="invite-btn" bindtap="shareInvite" open-type="share" data-share-type="invite">分享邀请，一起学古诗 →</button>
   </view>
 
   <view class="menu-list">
@@ -156,6 +156,7 @@
         <view wx:if="{{collectionLearned}}" class="collection-share-btn {{collectionCardGenerating ? 'loading' : ''}}" bindtap="shareCollectionCard">
           📤 生成成就卡，晒给家人看
         </view>
+        <button wx:if="{{shareCardPath}}" class="collection-share-friend" open-type="share" data-share-type="card">🎁 把成就卡分享给好友</button>
         <view wx:if="{{collectionEmptyHint}}" class="collection-empty">{{collectionEmptyHint}}</view>
         <view class="collection-group" wx:for="{{collectionGroups}}" wx:key="key" wx:for-item="group">
           <view class="collection-group-title">{{group.label}} {{group.learned}}/{{group.total}}</view>
