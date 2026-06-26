@@ -63,6 +63,15 @@
         <view class="review-banner-cta">去复习 →</view>
       </view>
 
+      <button class="invite-banner" open-type="share">
+        <view class="invite-banner-icon">🎁</view>
+        <view class="invite-banner-main">
+          <view class="invite-banner-title">邀请好友，一起学古诗</view>
+          <view class="invite-banner-sub">{{inviteCount > 0 ? '已邀请 ' + inviteCount + ' 位 · 集勋章' : '好友进来即解锁勋章'}}</view>
+        </view>
+        <view class="invite-banner-cta">去邀请 →</view>
+      </button>
+
       <view class="recent-growth-card" wx:if="{{recentResult}}">
         <view class="recent-growth-main" bindtap="openRecentResult">
           <view class="recent-growth-kicker">✨ 上次成长</view>

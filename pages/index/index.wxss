@@ -935,6 +935,15 @@ page {
 .review-banner-sub { font-size: 24rpx; color: #5A7BB0; margin-top: 6rpx; }
 .review-banner-cta { font-size: 24rpx; font-weight: 800; color: #fff; background: rgba(74, 124, 200, 0.92); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; }
 
+/* 邀请有礼入口（悬浮球面板内） */
+.invite-banner { display: flex; align-items: center; gap: 18rpx; margin: 0 0 22rpx; padding: 22rpx 24rpx; border-radius: 30rpx; background: linear-gradient(135deg, #FFF1DD 0%, #FFE2C2 100%); box-shadow: 0 12rpx 28rpx rgba(255,150,70,0.16); border: none; line-height: 1.4; text-align: left; }
+.invite-banner::after { border: none; }
+.invite-banner-icon { font-size: 52rpx; line-height: 1; }
+.invite-banner-main { flex: 1; }
+.invite-banner-title { font-size: 30rpx; font-weight: 800; color: #8A4B00; }
+.invite-banner-sub { font-size: 24rpx; color: #B5731F; margin-top: 6rpx; }
+.invite-banner-cta { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #FF8A5B, #FF6B6B); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; }
+
 /* 社区人气条 */
 .community-bar { display: flex; align-items: center; gap: 10rpx; margin: 0 0 22rpx; padding: 16rpx 24rpx; border-radius: 999rpx; background: #FFF4E0; }
 .community-dot { font-size: 30rpx; }

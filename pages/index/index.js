@@ -58,6 +58,8 @@ Page({
     todayChecked: false,
     streakSub: '',
     reviewDueCount: 0,
+    inviteCount: 0,
+    inviteCode: '',
     communityLearners: 0,
     communitySubText: '',
     showCommunity: false,
@@ -167,6 +169,7 @@ Page({
     this.loadStreak() // 每次回到首页都刷新，学习/打卡后连续天数即时更新
     this.loadReviewDue() // 复习数量随学习/复习即时更新
     this.loadOnboarding()
+    this.loadInviteInfo() // 邀请数据，供悬浮球面板入口展示
     this.maybeShowInviteWelcome() // 被邀请者落地欢迎语
     this.startDrift() // 悬浮球自动飘动
     if (this._loadedOnce) return
@@ -300,16 +303,30 @@ Page({
     wx.switchTab({ url: '/pages/challenge/challenge' })
   },
 
+  loadInviteInfo() {
+    api.getInviteInfo()
+      .then(info => {
+        this.setData({
+          inviteCount: (info && info.invite_count) || 0,
+          inviteCode: (info && info.invite_code) || ''
+        })
+      })
+      .catch(() => {})
+  },
+
   onShareAppMessage() {
+    const code = this.data.inviteCode
     return {
       title: '萌学古诗：每天读一点，慢慢爱上古诗',
-      path: '/pages/index/index'
+      path: code ? `/pages/index/index?invite=${code}` : '/pages/index/index'
     }
   },
 
   onShareTimeline() {
+    const code = this.data.inviteCode
     return {
-      title: '萌学古诗：每天读一点，慢慢爱上古诗'
+      title: '萌学古诗：每天读一点，慢慢爱上古诗',
+      query: code ? `invite=${code}` : ''
     }
   },
 
