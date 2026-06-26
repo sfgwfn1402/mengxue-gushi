@@ -213,15 +213,17 @@ function devLogin(openid) {
 }
 
 function wechatLogin(code) {
+  const invite_from = wx.getStorageSync('pendingInvite') || undefined
   return request({
     url: '/auth/wechat-login',
     method: 'POST',
-    data: { code },
+    data: invite_from ? { code, invite_from } : { code },
     header: { 'Content-Type': 'application/json' }
   }).then(data => {
     const user = sanitizeAuthUser(data)
     setToken(user.token)
     wx.setStorageSync('apiUser', user)
+    wx.removeStorageSync('pendingInvite')
     return user
   })
 }
@@ -612,6 +614,10 @@ function subscribeReminder() {
   return authed({ url: '/me/reminder-subscribe', method: 'POST' })
 }
 
+function getInviteInfo() {
+  return authed({ url: '/me/invite-info' })
+}
+
 function completeTask(taskId, stars) {
   return authed({
     url: '/me/tasks',
@@ -762,6 +768,7 @@ module.exports = {
   getStats,
   checkin,
   subscribeReminder,
+  getInviteInfo,
   completeTask,
   clearUserData,
   listProgress,

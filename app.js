@@ -3,24 +3,36 @@ const api = require('./utils/api')
 const audioManager = require('./utils/audio-manager')
 
 App({
-  onLaunch() {
+  onLaunch(options) {
     this.globalData.appActive = true
     this.checkForAppUpdate()
     this.installAudioErrorFilter()
     if (wx.setInnerAudioOption) {
       wx.setInnerAudioOption({ obeyMuteSwitch: false, fail: () => {} })
     }
+    this.captureInvite(options)
     this.initData()
     this.initBackend()
   },
 
-  onShow() {
+  onShow(options) {
     this.globalData.appActive = true
+    this.captureInvite(options)
   },
 
   onHide() {
     this.globalData.appActive = false
     audioManager.stopAll()
+  },
+
+  captureInvite(options) {
+    const invite = options && options.query && options.query.invite
+    if (invite && typeof invite === 'string' && invite.length > 10) {
+      // 仅在登录前存储，login 后会清除
+      if (!wx.getStorageSync('apiUser')) {
+        wx.setStorageSync('pendingInvite', invite)
+      }
+    }
   },
 
   onPageNotFound(res) {

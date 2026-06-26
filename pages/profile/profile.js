@@ -35,7 +35,12 @@ Page({
     isAdmin: false,
     recentResult: null,
     recentResultText: '',
-    recentResultDate: ''
+    recentResultDate: '',
+    inviteCount: 0,
+    inviteCode: '',
+    inviteBadge: '',
+    inviteBadgeLabel: '',
+    inviteNextAt: 0
   },
 
   onShow() {
@@ -45,11 +50,52 @@ Page({
     this.initCalendar()
     this.checkTodayStatus()
     this.updateEncourageMessage()
-    // 从学习页庆祝弹窗“看我的诗集”跳来时，自动弹开诗集墙
+    this.loadInviteInfo()
+    // 从学习页庆祝弹窗”看我的诗集”跳来时，自动弹开诗集墙
     if (app.globalData && app.globalData.openCollectionOnShow) {
       app.globalData.openCollectionOnShow = false
       this.openLearnedPoems()
     }
+  },
+
+  loadInviteInfo() {
+    api.getInviteInfo()
+      .then(info => {
+        this.setData({
+          inviteCode: info.invite_code || '',
+          inviteCount: info.invite_count || 0,
+          inviteBadge: info.badge || '',
+          inviteBadgeLabel: info.badge_label || '',
+          inviteNextAt: info.next_badge_at || 0
+        })
+      })
+      .catch(() => {})
+  },
+
+  shareInvite() {
+    const inviteCode = this.data.inviteCode
+    if (!inviteCode) {
+      wx.showToast({ title: '获取邀请码中，请稍后', icon: 'none' })
+      return
+    }
+    wx.showShareMenu({ withShareTicket: false, menus: ['shareAppMessage'] })
+    // 触发分享弹窗，实际分享由 onShareAppMessage 拦截
+    this.setData({ _triggerShare: Date.now() })
+    wx.showModal({
+      title: '邀请好友一起学古诗',
+      content: `把小程序分享给好友，好友首次进入即算成功邀请！\n当前已邀请 ${this.data.inviteCount} 位`,
+      confirmText: '去分享',
+      cancelText: '取消',
+      success: (res) => {
+        if (res.confirm) {
+          wx.shareAppMessage({
+            title: '孩子学古诗，就用萌学古诗！',
+            path: `/pages/index/index?invite=${inviteCode}`,
+            imageUrl: ''
+          })
+        }
+      }
+    })
   },
 
   loadProfile() {
@@ -686,6 +732,15 @@ Page({
   },
 
   noop() {},
+
+  onShareAppMessage() {
+    const inviteCode = this.data.inviteCode
+    return {
+      title: '孩子学古诗，就用萌学古诗！趣味互动，轻松学会100首古诗',
+      path: inviteCode ? `/pages/index/index?invite=${inviteCode}` : '/pages/index/index',
+      imageUrl: ''
+    }
+  },
 
   closeModal() {
     this.setData({

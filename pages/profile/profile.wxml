@@ -54,6 +54,26 @@
     </view>
   </view>
 
+  <view class="invite-card">
+    <view class="invite-head">
+      <view class="invite-title">👥 邀请好友学古诗</view>
+      <view wx:if="{{inviteBadge}}" class="invite-badge-chip">{{inviteBadge}} {{inviteBadgeLabel}}</view>
+    </view>
+    <view class="invite-stats">
+      <view class="invite-num">{{inviteCount}}</view>
+      <view class="invite-num-label">已成功邀请</view>
+      <view wx:if="{{inviteNextAt && inviteNextAt > inviteCount}}" class="invite-progress">再邀 {{inviteNextAt - inviteCount}} 人解锁下一勋章</view>
+      <view wx:elif="{{!inviteNextAt}}" class="invite-progress">已达最高等级 👑</view>
+    </view>
+    <view class="invite-badges">
+      <view class="invite-badge-item {{inviteCount >= 1 ? 'earned' : ''}}"><text>🎖</text><text>小推官</text><text>×1</text></view>
+      <view class="invite-badge-item {{inviteCount >= 3 ? 'earned' : ''}}"><text>📜</text><text>传播者</text><text>×3</text></view>
+      <view class="invite-badge-item {{inviteCount >= 5 ? 'earned' : ''}}"><text>🌟</text><text>诗坛大使</text><text>×5</text></view>
+      <view class="invite-badge-item {{inviteCount >= 10 ? 'earned' : ''}}"><text>👑</text><text>诗坛领袖</text><text>×10</text></view>
+    </view>
+    <button class="invite-btn" bindtap="shareInvite" open-type="share">分享邀请，一起学古诗 →</button>
+  </view>
+
   <view class="menu-list">
     <button class="menu-item menu-button menu-works" data-action="works" bindtap="handleMenuTap">
       <view class="menu-icon-wrap"><text class="menu-icon">🎧</text></view>
