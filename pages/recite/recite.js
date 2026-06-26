@@ -2,6 +2,7 @@
 const app = getApp()
 const api = require('../../utils/api')
 const onboarding = require('../../utils/onboarding')
+const { track } = require('../../utils/track')
 
 const PUNCT = '，。！？；、,.!?;'
 
@@ -132,6 +133,7 @@ Page({
     this.setData({ finished: true })
     onboarding.markStep('recite') // 新手引导：背完一首
     const poem = this.data.poem || {}
+    track('poem_recite', { poem_id: poem.id })
     // 背完即点亮（与学习页“学会”同一进度口径）
     api.updateProgress(poem.id, { learned: true, read_count_delta: 1 }).catch(err => console.warn('背诵完成同步失败', err))
     if (wx.vibrateShort) wx.vibrateShort({ type: 'light', fail: () => {} })

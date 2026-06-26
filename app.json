@@ -18,6 +18,7 @@
     "pages/admin-feedback/admin-feedback",
     "pages/admin-recitation-review/admin-recitation-review",
     "pages/admin-artwork-review/admin-artwork-review",
+    "pages/admin-analytics/admin-analytics",
     "pages/quiz/quiz",
     "pages/animation/animation",
     "pages/voice-agreement/voice-agreement"

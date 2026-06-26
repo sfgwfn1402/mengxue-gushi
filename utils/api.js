@@ -623,6 +623,21 @@ function getInviter(code) {
   return request({ url: `/invite/inviter/${encodeURIComponent(code)}` })
 }
 
+function trackEvents(events) {
+  // 埋点上报：不重试、带 token 即记 user_id，失败静默
+  return request({
+    url: '/events',
+    method: 'POST',
+    data: { events: events || [] },
+    header: { 'Content-Type': 'application/json' },
+    retries: 0
+  })
+}
+
+function getAnalytics(days) {
+  return authed({ url: `/admin/analytics${toQuery({ days })}` })
+}
+
 function completeTask(taskId, stars) {
   return authed({
     url: '/me/tasks',
@@ -775,6 +790,8 @@ module.exports = {
   subscribeReminder,
   getInviteInfo,
   getInviter,
+  trackEvents,
+  getAnalytics,
   completeTask,
   clearUserData,
   listProgress,

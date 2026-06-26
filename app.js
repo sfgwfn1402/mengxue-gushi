@@ -23,6 +23,7 @@ App({
   onHide() {
     this.globalData.appActive = false
     audioManager.stopAll()
+    try { require('./utils/track').flush() } catch (e) {}
   },
 
   captureInvite(options) {

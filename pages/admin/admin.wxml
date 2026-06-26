@@ -8,6 +8,15 @@
   <view wx:if="{{loading}}" class="loading">正在校验权限...</view>
 
   <view wx:elif="{{isAdmin}}" class="admin-grid">
+    <view class="admin-card" bindtap="openAnalytics">
+      <view class="admin-card-icon">📊</view>
+      <view class="admin-card-main">
+        <view class="admin-card-title">数据看板</view>
+        <view class="admin-card-desc">功能使用情况 · 活跃用户 · 热门诗</view>
+      </view>
+      <view class="admin-card-arrow">›</view>
+    </view>
+
     <view class="admin-card" bindtap="openFeedback">
       <view class="admin-card-icon">📮</view>
       <view class="admin-card-main">

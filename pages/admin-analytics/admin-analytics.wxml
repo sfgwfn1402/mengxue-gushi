@@ -1,0 +1,60 @@
+<view class="container">
+  <view class="range-tabs">
+    <view class="range-tab {{days === 7 ? 'active' : ''}}" data-days="7" bindtap="switchRange">近 7 天</view>
+    <view class="range-tab {{days === 30 ? 'active' : ''}}" data-days="30" bindtap="switchRange">近 30 天</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">加载中…</view>
+
+  <block wx:else>
+    <view class="summary">
+      <view class="summary-card">
+        <view class="summary-num">{{activeUsers}}</view>
+        <view class="summary-label">活跃用户</view>
+      </view>
+      <view class="summary-card">
+        <view class="summary-num">{{totalEvents}}</view>
+        <view class="summary-label">总事件数</view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">📈 每日活跃</view>
+      <view wx:if="{{dailyRows.length}}" class="daily-chart">
+        <view class="daily-bar-row" wx:for="{{dailyRows}}" wx:key="day">
+          <text class="daily-day">{{item.day}}</text>
+          <view class="daily-bar-track">
+            <view class="daily-bar-fill" style="width: {{item.events / dailyMax * 100}}%"></view>
+          </view>
+          <text class="daily-val">{{item.events}}事件 · {{item.users}}人</text>
+        </view>
+      </view>
+      <view wx:else class="empty">暂无数据</view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">🎯 功能使用次数</view>
+      <view wx:if="{{eventRows.length}}" class="event-list">
+        <view class="event-row" wx:for="{{eventRows}}" wx:key="name">
+          <text class="event-label">{{item.label}}</text>
+          <text class="event-count">{{item.count}}</text>
+        </view>
+      </view>
+      <view wx:else class="empty">暂无埋点数据，等用户开始使用后即可看到</view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">🏆 热门诗 Top 10</view>
+      <view wx:if="{{topPoems.length}}" class="poem-list">
+        <view class="poem-row" wx:for="{{topPoems}}" wx:key="rank">
+          <text class="poem-rank">{{item.rank}}</text>
+          <text class="poem-title">《{{item.title}}》</text>
+          <text class="poem-count">{{item.count}} 次</text>
+        </view>
+      </view>
+      <view wx:else class="empty">暂无数据</view>
+    </view>
+
+    <view class="tip">数据来自前端埋点，含页面访问与核心学习行为。</view>
+  </block>
+</view>

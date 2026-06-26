@@ -3,6 +3,7 @@ const app = getApp()
 const api = require('../../utils/api')
 const versionInfo = require('../../config/version')
 const onboarding = require('../../utils/onboarding')
+const { track } = require('../../utils/track')
 
 Page({
   data: {
@@ -52,6 +53,7 @@ Page({
     this.checkTodayStatus()
     this.updateEncourageMessage()
     this.loadInviteInfo()
+    track('page_view', { name: 'profile' })
     // 从学习页庆祝弹窗”看我的诗集”跳来时，自动弹开诗集墙
     if (app.globalData && app.globalData.openCollectionOnShow) {
       app.globalData.openCollectionOnShow = false
@@ -304,6 +306,7 @@ Page({
           streak: res.streak || 0
         })
         this.initCalendar()
+        track('checkin', { streak: res.streak || 0 })
         return api.completeTask('share', 2)
       })
       .then(res => {
@@ -329,6 +332,7 @@ Page({
       tmplIds: [tmplId],
       success: (res) => {
         if (res[tmplId] === 'accept') {
+          track('reminder_subscribed')
           api.subscribeReminder()
             .then(() => wx.showToast({ title: '已开启学习提醒 🔔', icon: 'none' }))
             .catch(err => console.warn('记录订阅失败', err))
@@ -721,6 +725,7 @@ Page({
     const inviteCode = this.data.inviteCode
     const path = inviteCode ? `/pages/index/index?invite=${inviteCode}` : '/pages/index/index'
     const shareType = e && e.target && e.target.dataset ? e.target.dataset.shareType : ''
+    track('share_clicked', { type: shareType || 'invite', from: 'profile' })
     // 成就卡分享：用生成的卡片图作缩略图
     if (shareType === 'card' && this.data.shareCardPath) {
       return {

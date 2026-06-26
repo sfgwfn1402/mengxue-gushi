@@ -1,5 +1,6 @@
 // pages/parent-report/parent-report.js - 家长周报：给家长看孩子的学习价值
 const api = require('../../utils/api')
+const { track } = require('../../utils/track')
 
 Page({
   data: {
@@ -97,6 +98,7 @@ Page({
 
   onShareAppMessage() {
     const code = this.data.inviteCode
+    track('share_clicked', { type: 'report', from: 'parent-report' })
     return {
       title: `我家孩子已经学会 ${this.data.learnedTotal} 首古诗啦！一起来萌学古诗吧`,
       path: code ? `/pages/index/index?invite=${code}` : '/pages/index/index'

@@ -1,6 +1,7 @@
 // pages/index/index.js
 const app = getApp()
 const api = require('../../utils/api')
+const { track } = require('../../utils/track')
 const audioManager = require('../../utils/audio-manager')
 const audioCache = require('../../utils/audio-cache')
 const onboarding = require('../../utils/onboarding')
@@ -172,6 +173,7 @@ Page({
     this.loadInviteInfo() // 邀请数据，供悬浮球面板入口展示
     this.maybeShowInviteWelcome() // 被邀请者落地欢迎语
     this.startDrift() // 悬浮球自动飘动
+    track('page_view', { name: 'index' })
     if (this._loadedOnce) return
     this._loadedOnce = true
   },
@@ -186,6 +188,7 @@ Page({
     // 标记只展示一次，避免来回切页重复弹
     app.globalData.inviteWelcomeCode = ''
     wx.setStorageSync('inviteWelcomeShown', true)
+    track('invite_landed', { from: code })
     api.getInviter(code)
       .then(res => {
         const name = res && res.nickname ? res.nickname : ''
@@ -316,6 +319,7 @@ Page({
 
   onShareAppMessage() {
     const code = this.data.inviteCode
+    track('share_clicked', { type: 'home', from: 'index' })
     return {
       title: '萌学古诗：每天读一点，慢慢爱上古诗',
       path: code ? `/pages/index/index?invite=${code}` : '/pages/index/index'

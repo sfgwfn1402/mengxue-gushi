@@ -10,6 +10,7 @@ const audioCache = require('../../utils/audio-cache')
 const { ensureRecordPermission } = require('../../utils/record-permission')
 const voiceConsent = require('../../utils/voice-consent')
 const onboarding = require('../../utils/onboarding')
+const { track } = require('../../utils/track')
 
 const fallbackPoems = [
   { id: 1, title: '静夜思', author: '李白', dynasty: '唐', content: '床前明月光，疑是地上霜。举头望明月，低头思故乡。', audio: '/audios/poem-1.mp3', pinyin: 'chuáng qián míng yuè guāng, yí shì dì shàng shuāng.', translation: '明亮的月光洒在床前，好像地上的霜。抬起头来看明月，低下头去思念故乡。', story: '李白25岁离开家乡四川，长期漫游在外。一个深秋夜晚看到月光想起故乡。', difficulty: 1, tags: ['思乡'], season: 'autumn' },
@@ -154,6 +155,7 @@ Page({
   onLoad(options) {
     const { id, type } = options
     this.setData({ id: parseInt(id), type })
+    track('poem_open', { poem_id: parseInt(id), type })
     this.loadData()
     // 域名 HTTPS 偶发 reset，页面初始化请求分批发，避免瞬时并发过高。
     setTimeout(() => this.updateProgress(), 80)
@@ -1160,6 +1162,7 @@ Page({
   completeFollowPoem() {
     const { id } = this.data
     const wasLearned = this.data.currentPoemLearned
+    track('poem_follow', { poem_id: id })
     wx.showToast({ title: '全诗跟读完成 🎉', icon: 'none' })
     api.updateProgress(id, { learned: true, read_count_delta: 1 })
       .then(() => this.completePoemTask())
@@ -1179,6 +1182,7 @@ Page({
   markAsLearned() {
     const { id, type } = this.data
     const wasLearned = this.data.currentPoemLearned
+    track('poem_learn', { poem_id: id, type })
 
     if (type === 'poem') {
       wx.showLoading({ title: '同步中...' })
@@ -1471,11 +1475,13 @@ Page({
       this.setData({ previewingRecord: false })
     }
     this.setData({ scoringRecitation: true })
+    track('ai_score_used', { poem_id: id })
     wx.showLoading({ title: 'AI 评分中…', mask: true })
     api.scoreRecitation(id, recordFilePath)
       .then(res => {
         wx.hideLoading()
         this.setData({ scoringRecitation: false, scoreResult: res, scoreVisible: true })
+        track('ai_score_done', { poem_id: id, score: res && res.score })
         if (wx.vibrateShort) wx.vibrateShort({ type: 'light', fail: () => {} })
       })
       .catch(err => {

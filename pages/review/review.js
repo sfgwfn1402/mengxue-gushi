@@ -1,6 +1,7 @@
 // pages/review/review.js - 复习巩固：基于遗忘曲线，把"该复习"的诗拿出来主动回想
 const app = getApp()
 const api = require('../../utils/api')
+const { track } = require('../../utils/track')
 
 const REVIEW_INTERVAL_DAYS = 2   // 学会/上次复习超过这么多天，就该复习
 const MAX_CARDS = 12             // 一次复习上限，避免太多
@@ -96,6 +97,7 @@ Page({
   remembered() {
     const card = this.data.cards[this.data.index]
     if (!card) return
+    track('review_done', { poem_id: card.id })
     api.updateProgress(card.id, { learned: true, read_count_delta: 1 })
       .catch(err => console.warn('复习进度同步失败', err))
     this.next()

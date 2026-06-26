@@ -39,5 +39,9 @@ Page({
 
   openArtworkReview() {
     wx.navigateTo({ url: '/pages/admin-artwork-review/admin-artwork-review' })
+  },
+
+  openAnalytics() {
+    wx.navigateTo({ url: '/pages/admin-analytics/admin-analytics' })
   }
 })
