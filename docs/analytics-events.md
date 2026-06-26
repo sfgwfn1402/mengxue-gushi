@@ -47,6 +47,7 @@
 | `ai_score_done` | AI评分(完成) | `learn.js` scoreMyRecitation 成功回调 | `{ poem_id, score }` | 评分完成率 / 分数分布 |
 | `checkin` | 打卡 | `profile.js` doCheckin 成功 | `{ streak }` | 每日活跃 / 打卡习惯 |
 | `share_clicked` | 点击分享 | index/profile/parent-report onShareAppMessage | `{ type, from }` | 分享有人点吗，哪种 |
+| `recitation_play` | 听社区朗诵 | `index.js` playDiscoverRecitation | `{ recitation_id }` | 发现页的朗诵有人听吗 |
 | `invite_landed` | 邀请落地 | `index.js` maybeShowInviteWelcome | `{ from }` | 邀请真转化了吗 |
 | `review_done` | 复习一首 | `review.js` remembered | `{ poem_id }` | 复习功能有人用吗 |
 | `reminder_subscribed` | 开启提醒 | `profile.js` openStudyReminder 授权成功 | — | 提醒订阅有人开吗 |

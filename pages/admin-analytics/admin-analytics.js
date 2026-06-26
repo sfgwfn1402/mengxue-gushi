@@ -11,6 +11,7 @@ const EVENT_LABELS = {
   ai_score_done: 'AI评分(完成)',
   checkin: '打卡',
   share_clicked: '点击分享',
+  recitation_play: '听社区朗诵',
   invite_landed: '邀请落地',
   review_done: '复习一首',
   reminder_subscribed: '开启提醒'

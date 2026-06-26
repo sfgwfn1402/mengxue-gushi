@@ -5,6 +5,15 @@ const { track } = require('../../utils/track')
 const audioManager = require('../../utils/audio-manager')
 const audioCache = require('../../utils/audio-cache')
 const onboarding = require('../../utils/onboarding')
+const { getPoemImageUrl } = require('../../utils/tts')
+
+function formatDuration(sec) {
+  const s = Math.max(0, Math.round(Number(sec) || 0))
+  if (!s) return ''
+  const m = Math.floor(s / 60)
+  const r = s % 60
+  return `${m}:${r < 10 ? '0' : ''}${r}`
+}
 
 Page({
   data: {
@@ -48,6 +57,7 @@ Page({
     homeTab: 'learn',
     discoverFilter: 'all',
     discoverItems: [],
+    failedCovers: {},
     visibleDiscoverItems: [],
     discoverPage: 1,
     discoverPageSize: 10,
@@ -617,17 +627,26 @@ Page({
           likedByMe: !!item.liked_by_me,
           createdAt: item.created_at || ''
         }))
-        const recitations = recitationRaw.map(item => ({
-          id: item.recitation && item.recitation.id,
-          type: 'recitation',
-          title: `朗诵《${item.poem_title || '古诗'}》`,
-          poemTitle: item.poem_title || '',
-          nickname: (item.recitation && item.recitation.nickname) || '小诗童',
-          avatarUrl: (item.recitation && item.recitation.avatar_url) || '',
-          likeCount: (item.recitation && item.recitation.like_count) || 0,
-          likedByMe: !!(item.recitation && item.recitation.liked_by_me),
-          createdAt: (item.recitation && item.recitation.created_at) || ''
-        })).filter(item => item.id)
+        const recitations = recitationRaw.map(item => {
+          const rec = item.recitation || {}
+          const poemId = rec.poem_id
+          return {
+            id: rec.id,
+            type: 'recitation',
+            title: `朗诵《${item.poem_title || '古诗'}》`,
+            poemTitle: item.poem_title || '',
+            poemId,
+            poemImageUrl: getPoemImageUrl(poemId),
+            // 配图缺失时按 poem_id 取一档渐变色，避免整墙同色
+            coverTone: (Number(poemId) || 0) % 6,
+            durationText: formatDuration(rec.duration_seconds),
+            nickname: rec.nickname || '小诗童',
+            avatarUrl: rec.avatar_url || '',
+            likeCount: rec.like_count || 0,
+            likedByMe: !!rec.liked_by_me,
+            createdAt: rec.created_at || ''
+          }
+        }).filter(item => item.id)
         const incomingItems = artworks.concat(recitations)
         const itemMap = {}
         ;(reset ? [] : this.data.discoverItems).concat(incomingItems).forEach(item => {
@@ -659,7 +678,19 @@ Page({
   },
 
   playDiscoverRecitation(e) {
+    const id = e.currentTarget.dataset.id
+    if (id && this.data.playingRecitationId !== id) {
+      track('recitation_play', { recitation_id: id })
+    }
     this.playPopularRecitation(e)
+  },
+
+  onRecitationCoverError(e) {
+    const id = e.currentTarget.dataset.id
+    if (!id) return
+    const failedCovers = Object.assign({}, this.data.failedCovers)
+    failedCovers[id] = true
+    this.setData({ failedCovers })
   },
 
   toggleDiscoverLike(e) {

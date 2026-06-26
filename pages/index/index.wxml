@@ -248,10 +248,18 @@
     <view class="discover-waterfall" wx:if="{{visibleDiscoverItems.length}}">
       <view class="discover-card {{item.type}}" wx:for="{{visibleDiscoverItems}}" wx:key="id">
         <image wx:if="{{item.type === 'artwork'}}" class="discover-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
-        <view wx:else class="recitation-cover">
-          <view class="recitation-icon">🎙️</view>
-          <view class="recitation-poem">{{item.poemTitle}}</view>
-          <view class="recitation-play" data-id="{{item.id}}" bindtap="playDiscoverRecitation">{{playingRecitationId === item.id ? '■ 正在播放' : '▶ 播放朗诵'}}</view>
+        <view wx:else class="recitation-cover tone-{{item.coverTone}}" data-id="{{item.id}}" bindtap="playDiscoverRecitation">
+          <image wx:if="{{item.poemImageUrl && !failedCovers[item.id]}}" class="recitation-cover-bg" src="{{item.poemImageUrl}}" mode="aspectFill" data-id="{{item.id}}" binderror="onRecitationCoverError"></image>
+          <view wx:else class="recitation-cover-mic">🎙️</view>
+          <view class="recitation-cover-shade"></view>
+          <view class="recitation-play-btn {{playingRecitationId === item.id ? 'playing' : ''}}">
+            <view wx:if="{{playingRecitationId === item.id}}" class="eq"><view class="eq-bar"></view><view class="eq-bar"></view><view class="eq-bar"></view></view>
+            <text wx:else class="play-tri">▶</text>
+          </view>
+          <view class="recitation-cover-foot">
+            <text class="recitation-cover-title">《{{item.poemTitle}}》</text>
+            <text wx:if="{{item.durationText}}" class="recitation-cover-dur">{{item.durationText}}</text>
+          </view>
         </view>
         <view class="discover-card-body">
           <view class="discover-card-title">{{item.title}}</view>

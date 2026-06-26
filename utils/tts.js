@@ -42,6 +42,13 @@ function getPoemAudioCandidates(poem) {
   return remote ? [remote] : []
 }
 
+// 诗词配图：公开标准资源 /images/poem-{id}.jpg，由 Nginx 反代 MinIO images-id/。
+function getPoemImageUrl(poemId) {
+  const id = Number(poemId)
+  if (!id) return ''
+  return `${MEDIA_BASE_URL}/images/poem-${id}.jpg`
+}
+
 function getIdiomAudioCandidates(idiom) {
   if (!idiom || !idiom.audio) return []
   return [idiom.audio]
@@ -93,6 +100,7 @@ module.exports = {
   getAudioPath,
   getAudioCandidates,
   getRemotePoemAudioPath,
+  getPoemImageUrl,
   isPoemAudioPending,
   audioExists,
   pickAvailableAudio
