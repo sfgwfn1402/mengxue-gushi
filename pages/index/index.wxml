@@ -43,48 +43,48 @@
 
   <view class="study-mask" wx:if="{{studyPanelOpen}}" bindtap="closeStudyPanel">
     <view class="study-panel" catchtap="noop">
-      <view class="study-panel-title">我的学习</view>
+      <view class="study-panel-title">我的小书房</view>
 
       <view class="streak-banner {{todayChecked ? 'done' : 'todo'}}" bindtap="goChallenge">
         <view class="streak-flame">🔥</view>
         <view class="streak-main">
-          <view class="streak-num">连续学习 <text class="streak-days">{{streak}}</text> 天</view>
+          <view class="streak-num">已经坚持 <text class="streak-days">{{streak}}</text> 天</view>
           <view class="streak-sub">{{streakSub}}</view>
         </view>
-        <view class="streak-cta">{{todayChecked ? '今天已学 ✓' : '去打卡 →'}}</view>
+        <view class="streak-cta">{{todayChecked ? '今天读过啦 ✓' : '去读一首 →'}}</view>
       </view>
 
       <!-- 今日学习计划：1首新诗 + 到期复习 -->
       <view class="plan-card" wx:if="{{dailyPlan && !dailyPlan.empty}}">
         <view class="plan-head">
-          <view class="plan-title">📅 今天的功课</view>
+          <view class="plan-title">📖 今天读什么</view>
           <view class="plan-progress">{{dailyPlan.doneCount}}/{{dailyPlan.total}}</view>
         </view>
         <view class="plan-bar"><view class="plan-bar-fill" style="width: {{dailyPlan.doneCount / dailyPlan.total * 100}}%"></view></view>
         <view class="plan-item {{item.done ? 'done' : ''}}" wx:for="{{dailyPlan.items}}" wx:key="id" data-id="{{item.id}}" data-kind="{{item.kind}}" catchtap="goPlanItem">
           <view class="plan-check">{{item.done ? '✅' : (item.kind === 'new' ? '🌱' : '🔁')}}</view>
           <view class="plan-item-main">
-            <view class="plan-item-title">{{item.kind === 'new' ? '学新诗' : '复习'}}《{{item.title}}》</view>
+            <view class="plan-item-title">{{item.kind === 'new' ? '读新诗' : '再读'}}《{{item.title}}》</view>
             <view class="plan-item-sub">{{item.sub}}</view>
           </view>
-          <view class="plan-item-cta" wx:if="{{!item.done}}">{{item.kind === 'new' ? '去学 →' : '去复习 →'}}</view>
-          <view class="plan-item-cta done-tag" wx:else>已完成</view>
+          <view class="plan-item-cta" wx:if="{{!item.done}}">{{item.kind === 'new' ? '去读 →' : '再读读 →'}}</view>
+          <view class="plan-item-cta done-tag" wx:else>读过啦</view>
         </view>
-        <view wx:if="{{dailyPlan.allDone}}" class="plan-alldone">🎉 今天的功课全部完成，太棒啦！</view>
+        <view wx:if="{{dailyPlan.allDone}}" class="plan-alldone">🎉 今天的诗都读完啦，真棒！</view>
       </view>
       <view wx:elif="{{dailyPlan && dailyPlan.empty}}" class="plan-card plan-empty">
         <view class="plan-empty-emoji">🌟</view>
-        <view class="plan-empty-text">今天没有必做功课，自由挑一首喜欢的诗读读吧～</view>
+        <view class="plan-empty-text">今天的诗读完啦～挑一首喜欢的再读读吧</view>
       </view>
 
-      <button class="invite-banner" open-type="share">
+      <view class="invite-banner">
         <view class="invite-banner-icon">🎁</view>
         <view class="invite-banner-main">
-          <view class="invite-banner-title">邀请好友，一起学古诗</view>
-          <view class="invite-banner-sub">{{inviteCount > 0 ? '已邀请 ' + inviteCount + ' 位 · 集勋章' : '好友进来即解锁勋章'}}</view>
+          <view class="invite-banner-title">叫上小伙伴一起读</view>
+          <view class="invite-banner-sub">{{inviteCount > 0 ? '已经叫来 ' + inviteCount + ' 位 · 有勋章' : '小伙伴来了就有勋章'}}</view>
         </view>
-        <view class="invite-banner-cta">去邀请 →</view>
-      </button>
+        <button class="invite-banner-cta" open-type="share">去邀请 →</button>
+      </view>
 
     </view>
   </view>

@@ -343,7 +343,7 @@ Page({
       if (!poemMap[rid]) return
       const p = poemMap[rid]
       const done = !!(pm[rid] && isToday(pm[rid].last_learned_at))
-      items.push({ kind: 'review', id: rid, title: p.title, sub: '复习巩固', done })
+      items.push({ kind: 'review', id: rid, title: p.title, sub: '再读一遍更熟啦', done })
     })
 
     if (!items.length) {
@@ -380,11 +380,11 @@ Page({
         const todayChecked = !!stats.today_checked
         let streakSub = ''
         if (todayChecked) {
-          streakSub = '今天已经学习啦，真棒！'
+          streakSub = '今天读过诗啦，真棒！'
         } else if (streak > 0) {
-          streakSub = '别让连续中断啦，今天再学一首'
+          streakSub = '今天再读一首，就接上啦'
         } else {
-          streakSub = '今天开启第一天，点亮一首诗吧'
+          streakSub = '今天读第一首诗吧～'
         }
         this.setData({ streak, todayChecked, streakSub })
       })
