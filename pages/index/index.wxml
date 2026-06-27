@@ -277,10 +277,12 @@
     <block wx:if="{{discoverFilter === 'artwork'}}">
       <view class="discover-waterfall" wx:if="{{visibleDiscoverItems.length}}">
         <view class="discover-card artwork" wx:for="{{visibleDiscoverItems}}" wx:key="id">
-          <image class="discover-art-img" src="{{item.imageUrl}}" mode="widthFix" data-url="{{item.imageUrl}}" catchtap="previewDiscoverImage"></image>
+          <view class="discover-art-wrap" data-url="{{item.imageUrl}}" catchtap="previewDiscoverImage">
+            <image class="discover-art-img" src="{{item.imageUrl}}" mode="widthFix"></image>
+            <view wx:if="{{item.poemTitle}}" class="discover-art-tag">🖌 《{{item.poemTitle}}》</view>
+          </view>
           <view class="discover-card-body">
             <view class="discover-card-title">{{item.title}}</view>
-            <view class="discover-card-poem">《{{item.poemTitle}}》</view>
             <view class="discover-user-row">
               <image wx:if="{{item.avatarUrl}}" class="discover-avatar" src="{{item.avatarUrl}}" mode="aspectFill"></image>
               <view wx:else class="discover-avatar fallback">👶</view>
