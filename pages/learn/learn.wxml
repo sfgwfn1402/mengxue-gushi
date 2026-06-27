@@ -176,6 +176,15 @@
         </view>
       </view>
 
+      <view class="story-entry-card" bindtap="goStory">
+        <view class="story-entry-card-icon">📖</view>
+        <view class="story-entry-card-main">
+          <view class="story-entry-card-title">读读这首诗的小故事</view>
+          <view class="story-entry-card-sub">诗人当时经历了什么？听一听更好懂</view>
+        </view>
+        <view class="story-entry-card-go">去看 →</view>
+      </view>
+
       <view class="section parent-questions" wx:if="{{parentQuestions.length}}">
         <view class="section-title">💬 可以问孩子</view>
         <view class="question-chip" wx:for="{{parentQuestions}}" wx:key="index">{{item}}</view>

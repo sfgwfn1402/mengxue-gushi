@@ -50,6 +50,9 @@
 | `recitation_play` | 听社区朗诵 | `index.js` playDiscoverRecitation | `{ recitation_id }` | 发现页的朗诵有人听吗 |
 | `listen_open` | 进磨耳朵 | `index.js` goListen | — | 磨耳朵入口有人点吗 |
 | `listen_play` | 磨耳朵播放 | `listen.js` playAt | `{ poem_id, list }` | 磨耳朵真有人听吗/听哪个单 |
+| `story_open` | 进诗词故事 | `index.js`/`learn.js` goStory | `{ from? }` | 诗词故事入口有人点吗 |
+| `story_view` | 看某首故事 | `story.js` showAt | `{ poem_id }` | 看了哪些诗的故事/翻了几首 |
+| `story_listen` | 故事页听读 | `story.js` toggleAudio | `{ poem_id }` | 故事页"听一听"有人用吗 |
 | `invite_landed` | 邀请落地 | `index.js` maybeShowInviteWelcome | `{ from }` | 邀请真转化了吗 |
 | `review_done` | 复习一首 | `review.js` remembered | `{ poem_id }` | 复习功能有人用吗 |
 | `reminder_subscribed` | 开启提醒 | `profile.js` openStudyReminder 授权成功 | — | 提醒订阅有人开吗 |

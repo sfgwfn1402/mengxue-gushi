@@ -1,0 +1,34 @@
+page { background: linear-gradient(180deg, #FFF8EE 0%, #FFF3F0 100%); }
+.story-page { padding: 24rpx 24rpx 60rpx; box-sizing: border-box; }
+.story-loading { text-align: center; color: #B0A89C; font-size: 28rpx; padding: 120rpx 0; }
+
+/* 封面 */
+.story-cover-wrap { position: relative; width: 100%; height: 420rpx; border-radius: 32rpx; overflow: hidden; box-shadow: 0 16rpx 40rpx rgba(180,120,60,0.18); }
+.story-cover { width: 100%; height: 100%; display: block; }
+.story-cover-fallback { display: flex; align-items: center; justify-content: center; font-size: 140rpx; background: linear-gradient(135deg, #FFE8C8, #FFD9C0); }
+.story-cover-mask { position: absolute; left: 0; right: 0; bottom: 0; height: 240rpx; background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.5)); }
+.story-cover-text { position: absolute; left: 28rpx; bottom: 26rpx; }
+.story-cover-title { font-size: 44rpx; font-weight: 900; color: #fff; text-shadow: 0 2rpx 10rpx rgba(0,0,0,0.4); }
+.story-cover-author { font-size: 26rpx; color: #fff; opacity: 0.92; margin-top: 6rpx; }
+.story-listen { position: absolute; right: 24rpx; top: 24rpx; background: rgba(255,255,255,0.92); color: #C2410C; font-size: 26rpx; font-weight: 800; padding: 12rpx 24rpx; border-radius: 999rpx; box-shadow: 0 6rpx 16rpx rgba(0,0,0,0.18); }
+.story-listen.on { background: #FF7A45; color: #fff; }
+
+/* 诗句 */
+.story-poem-card { margin-top: 24rpx; background: rgba(255,255,255,0.9); border-radius: 28rpx; padding: 30rpx 24rpx; text-align: center; box-shadow: 0 12rpx 28rpx rgba(180,120,60,0.08); }
+.story-line { font-size: 36rpx; font-weight: 800; color: #4A3A2A; line-height: 1.9; letter-spacing: 2rpx; }
+
+/* 故事 / 译文块 */
+.story-block { margin-top: 22rpx; background: #fff; border-radius: 28rpx; padding: 28rpx 26rpx; box-shadow: 0 12rpx 28rpx rgba(180,120,60,0.08); }
+.story-block.warm { background: linear-gradient(135deg, #FFF6E6, #FFF0E0); }
+.story-block-title { font-size: 30rpx; font-weight: 900; color: #8A4B00; margin-bottom: 14rpx; }
+.story-block-text { font-size: 28rpx; color: #5B4A38; line-height: 1.85; }
+
+/* 动作 */
+.story-actions { display: flex; gap: 16rpx; margin-top: 24rpx; }
+.story-action { flex: 1; text-align: center; padding: 24rpx 0; border-radius: 999rpx; font-size: 28rpx; font-weight: 900; }
+.story-action.ghost { background: #fff; color: #C2410C; border: 2rpx solid #FFD3A8; }
+
+/* 翻页 */
+.story-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 28rpx; }
+.story-nav-btn { font-size: 26rpx; font-weight: 800; color: #8A4B00; background: rgba(255,255,255,0.8); padding: 14rpx 26rpx; border-radius: 999rpx; }
+.story-nav-count { font-size: 24rpx; color: #B0A89C; font-weight: 700; }

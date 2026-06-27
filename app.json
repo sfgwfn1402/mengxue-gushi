@@ -22,7 +22,8 @@
     "pages/quiz/quiz",
     "pages/animation/animation",
     "pages/voice-agreement/voice-agreement",
-    "pages/listen/listen"
+    "pages/listen/listen",
+    "pages/story/story"
   ],
   "requiredBackgroundModes": ["audio"],
   "window": {

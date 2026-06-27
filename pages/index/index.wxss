@@ -880,6 +880,14 @@ page {
 .listen-entry-sub { font-size: 23rpx; color: #7B80AE; font-weight: 700; margin-top: 6rpx; }
 .listen-entry-go { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #8AB4FF, #6C6FE0); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; flex-shrink: 0; }
 
+/* 诗词故事会入口 */
+.story-entry { display: flex; align-items: center; gap: 18rpx; margin: 22rpx 0; padding: 24rpx; border-radius: 30rpx; background: linear-gradient(135deg, #FFF1DD 0%, #FFE3D0 100%); box-shadow: 0 14rpx 32rpx rgba(200,120,60,0.14); }
+.story-entry-icon { width: 78rpx; height: 78rpx; border-radius: 24rpx; background: rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center; font-size: 42rpx; flex-shrink: 0; }
+.story-entry-main { flex: 1; min-width: 0; }
+.story-entry-title { font-size: 30rpx; font-weight: 900; color: #7A3E00; }
+.story-entry-sub { font-size: 23rpx; color: #AE7B4B; font-weight: 700; margin-top: 6rpx; }
+.story-entry-go { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #FFB15D, #FF7A45); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; flex-shrink: 0; }
+
 .home-tabs { position: sticky; top: 0; z-index: 20; display: flex; justify-content: center; gap: 18rpx; margin: -28rpx -24rpx 24rpx; padding: 22rpx 24rpx 18rpx; background: rgba(246,248,252,0.96); backdrop-filter: blur(18rpx); }
 .home-tab { padding: 14rpx 34rpx; border-radius: 999rpx; color: #8A8F98; font-size: 30rpx; font-weight: 900; background: rgba(255,255,255,0.86); }
 .home-tab.active { color: #fff; background: linear-gradient(180deg, #FFB15D 0%, #FF7A45 100%); box-shadow: 0 12rpx 24rpx rgba(255,122,69,0.20); }

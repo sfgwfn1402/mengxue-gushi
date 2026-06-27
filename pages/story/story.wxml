@@ -1,0 +1,39 @@
+<view class="story-page" wx:if="{{poem}}">
+  <view class="story-cover-wrap">
+    <image wx:if="{{cover}}" class="story-cover" src="{{cover}}" mode="aspectFill"></image>
+    <view wx:else class="story-cover story-cover-fallback">📖</view>
+    <view class="story-cover-mask"></view>
+    <view class="story-cover-text">
+      <view class="story-cover-title">《{{poem.title}}》</view>
+      <view class="story-cover-author">{{poem.dynasty}} · {{poem.author}}</view>
+    </view>
+    <view wx:if="{{hasAudio}}" class="story-listen {{playing ? 'on' : ''}}" bindtap="toggleAudio">{{playing ? '⏸ 停一下' : '🔊 听一听'}}</view>
+  </view>
+
+  <view class="story-poem-card">
+    <view class="story-line" wx:for="{{lines}}" wx:key="*this">{{item}}</view>
+  </view>
+
+  <view class="story-block">
+    <view class="story-block-title">📖 这首诗的故事</view>
+    <view class="story-block-text">{{storyText}}</view>
+  </view>
+
+  <view class="story-block warm" wx:if="{{poem.translation}}">
+    <view class="story-block-title">🖼️ 诗里说的是</view>
+    <view class="story-block-text">{{poem.translation}}</view>
+  </view>
+
+  <view class="story-actions">
+    <view class="story-action ghost" bindtap="goLearn">去学这首 →</view>
+    <view class="story-action ghost" bindtap="goRecite">背一背 →</view>
+  </view>
+
+  <view class="story-nav">
+    <view class="story-nav-btn" bindtap="prevStory">‹ 上一首</view>
+    <view class="story-nav-count">{{index + 1}} / {{total}}</view>
+    <view class="story-nav-btn" bindtap="nextStory">下一首 ›</view>
+  </view>
+</view>
+
+<view wx:else class="story-loading">故事加载中…</view>

@@ -378,6 +378,12 @@ Page({
     wx.navigateTo({ url: '/pages/listen/listen' })
   },
 
+  goStory() {
+    track('story_open', {})
+    const id = this.data.todayPoem && this.data.todayPoem.id
+    wx.navigateTo({ url: id ? `/pages/story/story?id=${id}` : '/pages/story/story' })
+  },
+
   loadStreak() {
     api.getStats()
       .then(stats => {
