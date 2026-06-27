@@ -373,6 +373,11 @@ Page({
     wx.navigateTo({ url: '/pages/review/review' })
   },
 
+  goListen() {
+    track('listen_open', {})
+    wx.navigateTo({ url: '/pages/listen/listen' })
+  },
+
   loadStreak() {
     api.getStats()
       .then(stats => {

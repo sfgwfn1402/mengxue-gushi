@@ -48,6 +48,8 @@
 | `checkin` | 打卡 | `profile.js` doCheckin 成功 | `{ streak }` | 每日活跃 / 打卡习惯 |
 | `share_clicked` | 点击分享 | index/profile/parent-report onShareAppMessage | `{ type, from }` | 分享有人点吗，哪种 |
 | `recitation_play` | 听社区朗诵 | `index.js` playDiscoverRecitation | `{ recitation_id }` | 发现页的朗诵有人听吗 |
+| `listen_open` | 进磨耳朵 | `index.js` goListen | — | 磨耳朵入口有人点吗 |
+| `listen_play` | 磨耳朵播放 | `listen.js` playAt | `{ poem_id, list }` | 磨耳朵真有人听吗/听哪个单 |
 | `invite_landed` | 邀请落地 | `index.js` maybeShowInviteWelcome | `{ from }` | 邀请真转化了吗 |
 | `review_done` | 复习一首 | `review.js` remembered | `{ poem_id }` | 复习功能有人用吗 |
 | `reminder_subscribed` | 开启提醒 | `profile.js` openStudyReminder 授权成功 | — | 提醒订阅有人开吗 |

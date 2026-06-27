@@ -1,0 +1,55 @@
+<view class="listen-page">
+  <view class="listen-hero">
+    <view class="hero-title">🎧 磨耳朵 · 古诗听单</view>
+    <view class="hero-sub">睡前、路上、玩耍时，放着听就好</view>
+  </view>
+
+  <scroll-view class="list-tabs" scroll-x>
+    <view class="list-tab {{activeList === item.key ? 'active' : ''}}" wx:for="{{lists}}" wx:key="key" data-key="{{item.key}}" bindtap="switchList">{{item.label}}</view>
+  </scroll-view>
+
+  <block wx:if="{{!empty}}">
+    <view class="now-card">
+      <image wx:if="{{current.cover}}" class="now-cover" src="{{current.cover}}" mode="aspectFill"></image>
+      <view wx:else class="now-cover now-cover-fallback">🎵</view>
+      <view class="now-title">《{{current.title}}》</view>
+      <view class="now-author">{{current.dynasty}}{{current.author ? ' · ' + current.author : ''}}</view>
+
+      <view class="now-bar">
+        <view class="now-bar-fill" style="width: {{progress}}%"></view>
+      </view>
+      <view class="now-time"><text>{{curTime}}</text><text>{{durTime}}</text></view>
+
+      <view class="now-controls">
+        <view class="ctrl-btn loop {{loopOne ? 'on' : ''}}" bindtap="toggleLoopOne">{{loopOne ? '🔂' : '🔁'}}</view>
+        <view class="ctrl-btn" bindtap="prev">⏮</view>
+        <view class="ctrl-btn ctrl-main" bindtap="togglePlay">{{playing ? '⏸' : '▶'}}</view>
+        <view class="ctrl-btn" bindtap="next">⏭</view>
+        <view class="ctrl-btn ctrl-placeholder"></view>
+      </view>
+    </view>
+
+    <view class="sleep-row">
+      <text class="sleep-label">⏰ 睡前定时</text>
+      <view class="sleep-chips">
+        <view class="sleep-chip {{sleepLabel === item.label ? 'on' : ''}}" wx:for="{{sleepOptions}}" wx:key="min" data-min="{{item.min}}" bindtap="setSleep">{{item.label}}</view>
+      </view>
+    </view>
+
+    <view class="playlist">
+      <view class="playlist-head">共 {{playlist.length}} 首</view>
+      <view class="track {{index === idx ? 'playing' : ''}}" wx:for="{{playlist}}" wx:key="id" wx:for-index="idx" data-index="{{idx}}" bindtap="tapTrack">
+        <view class="track-idx">{{index === idx && playing ? '🔊' : idx + 1}}</view>
+        <view class="track-main">
+          <view class="track-title">《{{item.title}}》</view>
+          <view class="track-sub">{{item.dynasty}}{{item.author ? ' · ' + item.author : ''}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view wx:else class="listen-empty">
+    <view class="empty-emoji">🎵</view>
+    <view class="empty-text">这个听单还没有诗，换一个试试～</view>
+  </view>
+</view>

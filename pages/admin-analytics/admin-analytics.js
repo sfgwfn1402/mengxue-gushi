@@ -12,6 +12,8 @@ const EVENT_LABELS = {
   checkin: '打卡',
   share_clicked: '点击分享',
   recitation_play: '听社区朗诵',
+  listen_open: '进磨耳朵',
+  listen_play: '磨耳朵播放',
   invite_landed: '邀请落地',
   review_done: '复习一首',
   reminder_subscribed: '开启提醒',

@@ -109,6 +109,16 @@
       </view>
     </view>
 
+    <!-- 磨耳朵入口 -->
+    <view class="listen-entry" bindtap="goListen">
+      <view class="listen-entry-icon">🎧</view>
+      <view class="listen-entry-main">
+        <view class="listen-entry-title">磨耳朵 · 古诗听单</view>
+        <view class="listen-entry-sub">睡前、路上放着听，不知不觉就会了</view>
+      </view>
+      <view class="listen-entry-go">去听 →</view>
+    </view>
+
     <!-- 朗诵秀：人气朗诵 + 本周排行 双Tab切换 -->
     <view class="recitation-show">
       <view class="show-tabs">

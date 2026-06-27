@@ -21,8 +21,10 @@
     "pages/admin-analytics/admin-analytics",
     "pages/quiz/quiz",
     "pages/animation/animation",
-    "pages/voice-agreement/voice-agreement"
+    "pages/voice-agreement/voice-agreement",
+    "pages/listen/listen"
   ],
+  "requiredBackgroundModes": ["audio"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFD700",
