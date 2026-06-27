@@ -125,10 +125,16 @@ Page({
     inviteWelcomeText: ''
   },
 
-  onLoad() {
+  onLoad(options) {
     this.refreshList()
     this.loadHomeData()
     this.initBallPosition()
+    // 从分享链接进来，直接落到社区tab
+    if (options && options.tab === 'plaza') {
+      const apiUser = wx.getStorageSync('apiUser') || {}
+      this.setData({ homeTab: 'plaza', myUserId: apiUser.user_id || apiUser.id || '' })
+      this.loadMoments(true)
+    }
   },
 
   initBallPosition() {
@@ -444,7 +450,17 @@ Page({
       .catch(() => {})
   },
 
-  onShareAppMessage() {
+  onShareAppMessage(e) {
+    // 分享社区动态
+    const d = e && e.target && e.target.dataset
+    if (d && d.share === 'moment') {
+      track('share_clicked', { type: 'moment', from: 'plaza' })
+      return {
+        title: d.content ? String(d.content).slice(0, 40) : '快来萌学古诗社区，看看大家的分享',
+        path: '/pages/index/index?tab=plaza',
+        imageUrl: d.img || ''
+      }
+    }
     const code = this.data.inviteCode
     track('share_clicked', { type: 'home', from: 'index' })
     return {
