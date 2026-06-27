@@ -1,0 +1,29 @@
+<view class="am-page">
+  <view class="am-tabs">
+    <view class="am-tab {{status === item.value ? 'active' : ''}}" wx:for="{{tabs}}" wx:key="value" data-status="{{item.value}}" bindtap="switchTab">{{item.label}}</view>
+  </view>
+
+  <view class="am-item" wx:for="{{items}}" wx:key="id">
+    <view class="am-top">
+      <image wx:if="{{item.avatar_url}}" class="am-avatar" src="{{item.avatar_url}}" mode="aspectFill"></image>
+      <view wx:else class="am-avatar fb">👶</view>
+      <view class="am-name">{{item.nickname || '家长'}}</view>
+      <view class="am-status">{{item.status}}</view>
+    </view>
+    <view wx:if="{{item.content}}" class="am-content">{{item.content}}</view>
+    <image class="am-image" src="{{item.image_url}}" mode="widthFix" data-url="{{item.image_url}}" bindtap="preview"></image>
+    <view class="am-actions" wx:if="{{status === 'submitted'}}">
+      <view class="am-btn reject" data-id="{{item.id}}" data-status="rejected" bindtap="review">驳回</view>
+      <view class="am-btn pass" data-id="{{item.id}}" data-status="public" bindtap="review">通过</view>
+    </view>
+    <view class="am-actions" wx:elif="{{status === 'public'}}">
+      <view class="am-btn reject" data-id="{{item.id}}" data-status="rejected" bindtap="review">下架</view>
+    </view>
+    <view class="am-actions" wx:else>
+      <view class="am-btn pass" data-id="{{item.id}}" data-status="public" bindtap="review">恢复发布</view>
+    </view>
+  </view>
+
+  <view wx:if="{{loading}}" class="am-tip">加载中…</view>
+  <view wx:elif="{{!items.length}}" class="am-tip">这个分类没有动态</view>
+</view>

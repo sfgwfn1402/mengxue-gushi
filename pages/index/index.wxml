@@ -148,6 +148,16 @@
       <view class="game-entry-go">去玩 →</view>
     </view>
 
+    <!-- 亲子广场入口 -->
+    <view class="plaza-entry" bindtap="goPlaza">
+      <view class="plaza-entry-icon">👶</view>
+      <view class="plaza-entry-main">
+        <view class="plaza-entry-title">亲子广场</view>
+        <view class="plaza-entry-sub">看看大家的带娃日常，晒晒你的</view>
+      </view>
+      <view class="plaza-entry-go">去逛 →</view>
+    </view>
+
     <!-- 古诗卡册入口 -->
     <view class="cards-entry" bindtap="goCards">
       <view class="cards-entry-icon">🃏</view>

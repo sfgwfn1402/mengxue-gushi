@@ -25,6 +25,8 @@ const EVENT_LABELS = {
   card_detail: '看某张卡',
   color_open: '进诗配画涂色',
   color_publish: '发布涂色画',
+  plaza_open: '进亲子广场',
+  moment_post: '发布晒娃动态',
   invite_landed: '邀请落地',
   review_done: '复习一首',
   reminder_subscribed: '开启提醒',

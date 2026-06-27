@@ -28,7 +28,10 @@
     "pages/game-feihua/game-feihua",
     "pages/game-match/game-match",
     "pages/cards/cards",
-    "pages/color/color"
+    "pages/color/color",
+    "pages/plaza/plaza",
+    "pages/moment-post/moment-post",
+    "pages/admin-moments/admin-moments"
   ],
   "requiredBackgroundModes": ["audio"],
   "window": {

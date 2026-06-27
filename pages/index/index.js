@@ -394,6 +394,11 @@ Page({
     wx.navigateTo({ url: '/pages/cards/cards' })
   },
 
+  goPlaza() {
+    track('plaza_open', { from: 'home' })
+    wx.navigateTo({ url: '/pages/plaza/plaza' })
+  },
+
   loadStreak() {
     api.getStats()
       .then(stats => {

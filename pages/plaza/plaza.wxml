@@ -1,0 +1,35 @@
+<view class="plaza-page">
+  <view class="plaza-head">
+    <view class="plaza-title">👶 亲子广场</view>
+    <view class="plaza-sub">看看大家的带娃日常，晒晒你的</view>
+  </view>
+
+  <view wx:if="{{!items.length && !loading}}" class="plaza-empty">
+    <view class="plaza-empty-emoji">🌱</view>
+    <view class="plaza-empty-text">还没有人发动态，来晒第一条吧～</view>
+  </view>
+
+  <view class="moment" wx:for="{{items}}" wx:key="id">
+    <view class="moment-top">
+      <image wx:if="{{item.avatar_url}}" class="moment-avatar" src="{{item.avatar_url}}" mode="aspectFill"></image>
+      <view wx:else class="moment-avatar fallback">👶</view>
+      <view class="moment-meta">
+        <view class="moment-name">{{item.nickname || '小诗童家长'}}</view>
+        <view class="moment-time">{{item.timeText}}</view>
+      </view>
+      <view wx:if="{{item.user_id === myId}}" class="moment-del" data-id="{{item.id}}" catchtap="deleteMine">删除</view>
+    </view>
+    <view wx:if="{{item.content}}" class="moment-content">{{item.content}}</view>
+    <image class="moment-image" src="{{item.image_url}}" mode="widthFix" data-url="{{item.image_url}}" bindtap="previewImage"></image>
+    <view class="moment-actions">
+      <view class="moment-like {{item.liked_by_me ? 'liked' : ''}}" data-id="{{item.id}}" catchtap="toggleLike">
+        {{item.liked_by_me ? '♥' : '♡'}} {{item.like_count || 0}}
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{loading}}" class="plaza-loading">加载中…</view>
+  <view wx:elif="{{items.length && !hasMore}}" class="plaza-end">没有更多啦～</view>
+
+  <view class="plaza-fab" bindtap="goPost">＋ 晒一条</view>
+</view>

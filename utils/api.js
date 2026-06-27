@@ -471,6 +471,67 @@ function listArtworks(params) {
   return authed({ url: `/artworks${toQuery(params || {})}` }).then(normalizeWorkList)
 }
 
+function normalizeMoment(m) {
+  if (!m || typeof m !== 'object') return m
+  const out = Object.assign({}, m)
+  if (out.image_url) out.image_url = normalizeMediaUrl(out.image_url)
+  if (out.avatar_url) out.avatar_url = normalizeMediaUrl(out.avatar_url)
+  return out
+}
+
+function listMoments(params) {
+  return authed({ url: `/moments${toQuery(params || {})}` })
+    .then(data => ({ items: (data.items || []).map(normalizeMoment) }))
+}
+
+function postMoment(filePath, content) {
+  const doUpload = () => new Promise((resolve, reject) => {
+    wx.uploadFile({
+      url: `${config.apiBaseUrl}/moments`,
+      filePath,
+      name: 'file',
+      formData: { content: content || '' },
+      header: { Authorization: `Bearer ${getToken()}` },
+      timeout: 30000,
+      success(res) {
+        const status = res.statusCode || 0
+        let data = res.data
+        try { data = typeof data === 'string' ? JSON.parse(data) : data } catch (e) {
+          reject(new Error(`上传响应解析失败 ${status}`)); return
+        }
+        if (status >= 200 && status < 300) { resolve(data); return }
+        reject(new Error((data && data.message) || `发布失败 ${status}`))
+      },
+      fail: reject
+    })
+  })
+  return login().then(doUpload).catch(err => {
+    if (!isUnauthorizedError(err)) throw err
+    clearAuth()
+    return login(true).then(doUpload)
+  })
+}
+
+function likeMoment(id) {
+  return authed({ url: `/moments/${id}/like`, method: 'POST' })
+}
+function unlikeMoment(id) {
+  return authed({ url: `/moments/${id}/like`, method: 'DELETE' })
+}
+function deleteMoment(id) {
+  return authed({ url: `/moments/${id}`, method: 'DELETE' })
+}
+function listAdminMoments(params) {
+  return authed({ url: `/admin/moments${toQuery(params || {})}` })
+    .then(data => ({ total: data.total || 0, items: (data.items || []).map(normalizeMoment) }))
+}
+function reviewMoment(id, status) {
+  return authed({
+    url: `/admin/moments/${id}/review`, method: 'POST',
+    data: { status }, header: { 'Content-Type': 'application/json' }
+  })
+}
+
 function listMyRecitations(params) {
   return authed({ url: `/me/recitations${toQuery(params || {})}` }).then(normalizeWorkList)
 }
@@ -768,6 +829,13 @@ module.exports = {
   scoreRecitation,
   uploadArtwork,
   listArtworks,
+  listMoments,
+  postMoment,
+  likeMoment,
+  unlikeMoment,
+  deleteMoment,
+  listAdminMoments,
+  reviewMoment,
   listMyRecitations,
   getRecitation,
   getArtwork,

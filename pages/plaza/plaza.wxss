@@ -1,0 +1,30 @@
+page { background: linear-gradient(180deg, #FFF2F6 0%, #FFF7F2 100%); }
+.plaza-page { padding: 20rpx 24rpx 120rpx; box-sizing: border-box; }
+
+.plaza-head { padding: 8rpx 4rpx 18rpx; }
+.plaza-title { font-size: 34rpx; font-weight: 900; color: #B23A6B; }
+.plaza-sub { font-size: 24rpx; color: #C98AA4; margin-top: 6rpx; }
+
+.plaza-empty { text-align: center; padding: 120rpx 0; }
+.plaza-empty-emoji { font-size: 100rpx; }
+.plaza-empty-text { font-size: 26rpx; color: #C98AA4; margin-top: 20rpx; }
+
+.moment { background: #fff; border-radius: 28rpx; padding: 24rpx; margin-bottom: 22rpx; box-shadow: 0 12rpx 28rpx rgba(200,100,140,0.08); }
+.moment-top { display: flex; align-items: center; gap: 16rpx; }
+.moment-avatar { width: 72rpx; height: 72rpx; border-radius: 50%; flex-shrink: 0; background: #FFE3EC; }
+.moment-avatar.fallback { display: flex; align-items: center; justify-content: center; font-size: 40rpx; }
+.moment-meta { flex: 1; min-width: 0; }
+.moment-name { font-size: 28rpx; font-weight: 800; color: #3A2E35; }
+.moment-time { font-size: 22rpx; color: #B8AEB3; margin-top: 4rpx; }
+.moment-del { font-size: 22rpx; color: #C0B6BB; padding: 6rpx 12rpx; }
+
+.moment-content { font-size: 30rpx; color: #3A2E35; line-height: 1.6; margin: 16rpx 0; }
+.moment-image { width: 100%; border-radius: 20rpx; margin-top: 8rpx; display: block; background: #FBEFF3; }
+
+.moment-actions { display: flex; justify-content: flex-end; margin-top: 16rpx; }
+.moment-like { font-size: 28rpx; font-weight: 800; color: #9A9098; background: #F5EEF1; border-radius: 999rpx; padding: 10rpx 26rpx; }
+.moment-like.liked { color: #fff; background: linear-gradient(135deg, #FF8FB1, #FF6B9D); }
+
+.plaza-loading, .plaza-end { text-align: center; font-size: 24rpx; color: #C0B6BB; padding: 30rpx 0; }
+
+.plaza-fab { position: fixed; right: 40rpx; bottom: 60rpx; background: linear-gradient(135deg, #FF8FB1, #FF6B9D); color: #fff; font-size: 30rpx; font-weight: 900; padding: 22rpx 38rpx; border-radius: 999rpx; box-shadow: 0 14rpx 32rpx rgba(255,107,157,0.4); z-index: 50; }

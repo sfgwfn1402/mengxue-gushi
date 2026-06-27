@@ -43,5 +43,9 @@ Page({
 
   openAnalytics() {
     wx.navigateTo({ url: '/pages/admin-analytics/admin-analytics' })
+  },
+
+  openMomentsReview() {
+    wx.navigateTo({ url: '/pages/admin-moments/admin-moments' })
   }
 })

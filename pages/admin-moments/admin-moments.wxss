@@ -1,0 +1,19 @@
+page { background: #F5F7FB; }
+.am-page { padding: 20rpx 24rpx 60rpx; box-sizing: border-box; }
+.am-tabs { display: flex; gap: 14rpx; margin-bottom: 22rpx; }
+.am-tab { padding: 12rpx 28rpx; border-radius: 999rpx; background: #fff; color: #5A6472; font-size: 26rpx; font-weight: 700; }
+.am-tab.active { background: linear-gradient(135deg, #FF8FB1, #FF6B9D); color: #fff; }
+
+.am-item { background: #fff; border-radius: 24rpx; padding: 22rpx; margin-bottom: 20rpx; box-shadow: 0 8rpx 20rpx rgba(0,0,0,0.05); }
+.am-top { display: flex; align-items: center; gap: 14rpx; }
+.am-avatar { width: 60rpx; height: 60rpx; border-radius: 50%; background: #FFE3EC; }
+.am-avatar.fb { display: flex; align-items: center; justify-content: center; font-size: 34rpx; }
+.am-name { flex: 1; font-size: 28rpx; font-weight: 800; color: #2A3550; }
+.am-status { font-size: 22rpx; color: #9AA0C0; }
+.am-content { font-size: 28rpx; color: #3A4456; line-height: 1.6; margin: 14rpx 0; }
+.am-image { width: 100%; border-radius: 16rpx; display: block; background: #F0F2F6; }
+.am-actions { display: flex; gap: 16rpx; justify-content: flex-end; margin-top: 16rpx; }
+.am-btn { font-size: 26rpx; font-weight: 800; padding: 14rpx 32rpx; border-radius: 999rpx; }
+.am-btn.pass { background: linear-gradient(135deg, #2BE2A6, #06B587); color: #fff; }
+.am-btn.reject { background: #F5EEF1; color: #C0556F; }
+.am-tip { text-align: center; color: #9AA0C0; font-size: 26rpx; padding: 40rpx 0; }

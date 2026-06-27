@@ -61,6 +61,8 @@
 | `card_detail` | 看某张卡 | `cards.js` openCard | `{ poem_id, unlocked }` | 点开看哪些卡 |
 | `color_open` | 进诗配画涂色 | `create.js`/`learn.js` goColor | `{ from? }` | 涂色入口有人点吗 |
 | `color_publish` | 发布涂色画 | `color.js` publish | `{ poem_id }` | 画完发布的有多少 |
+| `plaza_open` | 进亲子广场 | `index.js`/`plaza.js` | `{ from? }` | 亲子广场有人逛吗 |
+| `moment_post` | 发布晒娃动态 | `moment-post.js` publish | — | 有多少人发动态 |
 | `invite_landed` | 邀请落地 | `index.js` maybeShowInviteWelcome | `{ from }` | 邀请真转化了吗 |
 | `review_done` | 复习一首 | `review.js` remembered | `{ poem_id }` | 复习功能有人用吗 |
 | `reminder_subscribed` | 开启提醒 | `profile.js` openStudyReminder 授权成功 | — | 提醒订阅有人开吗 |

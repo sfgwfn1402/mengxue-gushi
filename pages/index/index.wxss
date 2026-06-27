@@ -896,6 +896,14 @@ page {
 .game-entry-sub { font-size: 23rpx; color: #B0884F; font-weight: 700; margin-top: 6rpx; }
 .game-entry-go { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #FFCB52, #FF9F1C); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; flex-shrink: 0; }
 
+/* 亲子广场入口 */
+.plaza-entry { display: flex; align-items: center; gap: 18rpx; margin: 22rpx 0; padding: 24rpx; border-radius: 30rpx; background: linear-gradient(135deg, #FFE3EC 0%, #FFD6E4 100%); box-shadow: 0 14rpx 32rpx rgba(255,107,157,0.16); }
+.plaza-entry-icon { width: 78rpx; height: 78rpx; border-radius: 24rpx; background: rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center; font-size: 42rpx; flex-shrink: 0; }
+.plaza-entry-main { flex: 1; min-width: 0; }
+.plaza-entry-title { font-size: 30rpx; font-weight: 900; color: #B23A6B; }
+.plaza-entry-sub { font-size: 23rpx; color: #C77F9D; font-weight: 700; margin-top: 6rpx; }
+.plaza-entry-go { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #FF8FB1, #FF6B9D); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; flex-shrink: 0; }
+
 /* 古诗卡册入口 */
 .cards-entry { display: flex; align-items: center; gap: 18rpx; margin: 22rpx 0; padding: 24rpx; border-radius: 30rpx; background: linear-gradient(135deg, #ECE6FF 0%, #E2DBFF 100%); box-shadow: 0 14rpx 32rpx rgba(108,90,200,0.16); }
 .cards-entry-icon { width: 78rpx; height: 78rpx; border-radius: 24rpx; background: rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center; font-size: 42rpx; flex-shrink: 0; }

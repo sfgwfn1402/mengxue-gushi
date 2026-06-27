@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "亲子广场",
+  "navigationBarBackgroundColor": "#FF8FB1",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#FFF2F6",
+  "enablePullDownRefresh": true
+}
