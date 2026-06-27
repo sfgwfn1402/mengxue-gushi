@@ -58,7 +58,7 @@ Page({
         track('moment_post', { images: this.data.images.length })
         wx.showModal({
           title: '发布成功 🎉',
-          content: '动态已提交，审核通过后就会出现在亲子广场',
+          content: '动态已提交，审核通过后就会出现在社区',
           showCancel: false, confirmText: '好的',
           success: () => wx.navigateBack()
         })

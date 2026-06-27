@@ -11,11 +11,11 @@
       </view>
     </view>
 
-    <textarea class="post-textarea" placeholder="说点什么吧，比如：今天宝宝读了《静夜思》～"
+    <textarea class="post-textarea" placeholder="说点什么吧～孩子的作品、日常、心情都可以分享"
       value="{{content}}" bindinput="onContentInput" maxlength="300" auto-height></textarea>
 
     <view class="post-tip">💡 发布后需审核，通过才会公开。请勿上传含他人隐私或不适宜内容。</view>
 
-    <button class="post-btn {{publishing ? 'loading' : ''}}" bindtap="publish" disabled="{{publishing}}">发布到亲子广场</button>
+    <button class="post-btn {{publishing ? 'loading' : ''}}" bindtap="publish" disabled="{{publishing}}">发布到社区</button>
   </view>
 </view>

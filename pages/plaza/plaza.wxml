@@ -1,12 +1,12 @@
 <view class="plaza-page">
   <view class="plaza-head">
-    <view class="plaza-title">👶 亲子广场</view>
-    <view class="plaza-sub">看看大家的带娃日常，晒晒你的</view>
+    <view class="plaza-title">💬 社区</view>
+    <view class="plaza-sub">看看大家的分享，也来发一条吧</view>
   </view>
 
   <view wx:if="{{!items.length && !loading}}" class="plaza-empty">
     <view class="plaza-empty-emoji">🌱</view>
-    <view class="plaza-empty-text">还没有人发动态，来晒第一条吧～</view>
+    <view class="plaza-empty-text">还没有人发动态，来发第一条吧～</view>
   </view>
 
   <view class="moment" wx:for="{{items}}" wx:key="id">
@@ -34,5 +34,5 @@
   <view wx:if="{{loading}}" class="plaza-loading">加载中…</view>
   <view wx:elif="{{items.length && !hasMore}}" class="plaza-end">没有更多啦～</view>
 
-  <view class="plaza-fab" bindtap="goPost">＋ 晒一条</view>
+  <view class="plaza-fab" bindtap="goPost">＋ 发一条</view>
 </view>

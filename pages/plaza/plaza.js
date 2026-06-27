@@ -1,4 +1,4 @@
-// pages/plaza/plaza.js - 亲子广场：家长晒娃动态信息流
+// pages/plaza/plaza.js - 社区：用户动态信息流
 const api = require('../../utils/api')
 const { track } = require('../../utils/track')
 

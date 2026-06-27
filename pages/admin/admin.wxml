@@ -47,8 +47,8 @@
     <view class="admin-card" bindtap="openMomentsReview">
       <view class="admin-card-icon">👶</view>
       <view class="admin-card-main">
-        <view class="admin-card-title">亲子广场审核</view>
-        <view class="admin-card-desc">审核家长晒娃动态</view>
+        <view class="admin-card-title">社区审核</view>
+        <view class="admin-card-desc">审核社区动态</view>
       </view>
       <view class="admin-card-arrow">›</view>
     </view>

@@ -3,7 +3,7 @@
   <view class="home-tabs">
     <view class="home-tab {{homeTab === 'learn' ? 'active' : ''}}" data-tab="learn" bindtap="switchHomeTab">诗旅</view>
     <view class="home-tab {{homeTab === 'discover' ? 'active' : ''}}" data-tab="discover" bindtap="switchHomeTab">发现</view>
-    <view class="home-tab {{homeTab === 'plaza' ? 'active' : ''}}" data-tab="plaza" bindtap="switchHomeTab">亲子广场</view>
+    <view class="home-tab {{homeTab === 'plaza' ? 'active' : ''}}" data-tab="plaza" bindtap="switchHomeTab">社区</view>
   </view>
 
   <block wx:if="{{homeTab === 'learn'}}">
@@ -314,16 +314,16 @@
     <view class="discover-empty" wx:else>还没有作品，去“创作”发布第一条吧～</view>
   </block>
 
-  <!-- 亲子广场 -->
+  <!-- 社区 -->
   <block wx:if="{{homeTab === 'plaza'}}">
     <view class="plaza-head">
-      <view class="plaza-title">👶 亲子广场</view>
-      <view class="plaza-sub">看看大家的带娃日常，晒晒你的</view>
+      <view class="plaza-title">💬 社区</view>
+      <view class="plaza-sub">看看大家的分享，也来发一条吧</view>
     </view>
 
     <view wx:if="{{!momentItems.length && momentsLoaded}}" class="plaza-empty">
       <view class="plaza-empty-emoji">🌱</view>
-      <view class="plaza-empty-text">还没有人发动态，来晒第一条吧～</view>
+      <view class="plaza-empty-text">还没有人发动态，来发第一条吧～</view>
     </view>
 
     <view class="moment" wx:for="{{momentItems}}" wx:key="id">
@@ -349,7 +349,7 @@
 
     <view wx:if="{{momentsLoading}}" class="plaza-loading">加载中…</view>
 
-    <view class="plaza-fab" bindtap="goPostMoment">＋ 晒一条</view>
+    <view class="plaza-fab" bindtap="goPostMoment">＋ 发一条</view>
   </block>
 
   <!-- 首次欢迎引导 -->
