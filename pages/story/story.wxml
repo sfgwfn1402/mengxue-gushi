@@ -24,6 +24,20 @@
     <view class="story-block-text">{{poem.translation}}</view>
   </view>
 
+  <view class="story-block">
+    <view class="story-block-title">💬 可以问问孩子</view>
+    <view class="story-question" wx:for="{{questions}}" wx:key="*this">{{item}}</view>
+  </view>
+
+  <view class="story-block guide {{guideOpen ? 'open' : ''}}" wx:if="{{poem.parentGuide}}">
+    <view class="story-guide-head" bindtap="toggleGuide">
+      <view class="story-block-title">👨‍👩‍👧 妈妈可以这样讲</view>
+      <view class="story-guide-toggle">{{guideOpen ? '收起 ⌃' : '展开 ⌄'}}</view>
+    </view>
+    <view wx:if="{{!guideOpen}}" class="story-guide-preview">点开看一段照着讲的话术</view>
+    <view wx:else class="story-block-text">{{poem.parentGuide}}</view>
+  </view>
+
   <view class="story-actions">
     <view class="story-action ghost" bindtap="goLearn">去学这首 →</view>
     <view class="story-action ghost" bindtap="goRecite">背一背 →</view>

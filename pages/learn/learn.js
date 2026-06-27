@@ -71,10 +71,6 @@ Page({
     followDebug: '',
     lineTiming: null,
     lineAudio: null,
-    childExplain: '',
-    pictureGuide: '',
-    parentQuestions: [],
-    parentGuideExpanded: false,
     followPlayingLine: false,
     landscapeFollowVisible: false,
     isLandscapeViewport: false,
@@ -144,10 +140,6 @@ Page({
     return this.readingTaskId
   },
 
-  toggleParentGuide() {
-    this.setData({ parentGuideExpanded: !this.data.parentGuideExpanded })
-  },
-
   canPlayAudio() {
     return !!this.pageActive && (!app.globalData || app.globalData.appActive !== false)
   },
@@ -205,7 +197,6 @@ Page({
     const lineTiming = lineTimings[String(poem.id)] || null
     const followLines = this.getFollowLines(poem, poemLines)
     const followLineTimings = this.getFollowLineTimings(poem, followLines, lineTiming)
-    const childGuide = this.buildChildGuide(poem)
     this.setData({
       poem,
       audioPending: isPoemAudioPending(poem), // 朗读/跟读音频整理中：禁用相关入口
@@ -213,10 +204,6 @@ Page({
       poemLineRich,
       followLines,
       followLineTimings,
-      childExplain: childGuide.explain,
-      pictureGuide: childGuide.picture,
-      parentQuestions: childGuide.questions,
-      parentGuideExpanded: false,
       currentLineIndex: -1,
       scrollIntoView: '',
       followLineIndex: 0,
@@ -350,21 +337,6 @@ Page({
     return followLines.map((line, index) => Object.assign({ index, text: line }, timingLines[index] || {}))
   },
 
-  buildChildGuide(poem) {
-    const title = poem && poem.title ? poem.title : '这首诗'
-    const translation = poem && poem.translation ? poem.translation : ''
-    const story = poem && poem.story ? poem.story : ''
-    const tags = poem && poem.tags ? poem.tags : []
-    const tagText = Array.isArray(tags) && tags.length ? tags.slice(0, 3).join('、') : '画面和心情'
-    const explain = translation || story || `${title}是一首适合孩子慢慢听、慢慢读的古诗。先听声音，再看画面，最后试着自己读出来。`
-    const picture = story || `读这首诗时，可以让孩子想一想：诗里有什么？在哪里？诗人当时是什么心情？重点感受“${tagText}”。`
-    const questions = [
-      `这首诗里你听到了什么？`,
-      `你脑海里看到了什么画面？`,
-      `你觉得诗人当时开心、想念、安静还是勇敢？`
-    ]
-    return { explain, picture, questions }
-  },
 
   clearReadingTimer() {
     if (this.readingTimer) {

@@ -21,7 +21,17 @@ Page({
     hasAudio: false,
     playing: false,
     index: 0,
-    total: 0
+    total: 0,
+    questions: [
+      '这首诗里你听到了什么？',
+      '你脑海里看到了什么画面？',
+      '你觉得诗人当时开心、想念、安静还是勇敢？'
+    ],
+    guideOpen: false
+  },
+
+  toggleGuide() {
+    this.setData({ guideOpen: !this.data.guideOpen })
   },
 
   onLoad(options) {
@@ -58,6 +68,7 @@ Page({
       cover: getPoemImageUrl(poem.id),
       hasAudio,
       playing: false,
+      guideOpen: false,
       index: idx,
       total: poems.length
     })

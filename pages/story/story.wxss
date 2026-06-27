@@ -22,6 +22,11 @@ page { background: linear-gradient(180deg, #FFF8EE 0%, #FFF3F0 100%); }
 .story-block.warm { background: linear-gradient(135deg, #FFF6E6, #FFF0E0); }
 .story-block-title { font-size: 30rpx; font-weight: 900; color: #8A4B00; margin-bottom: 14rpx; }
 .story-block-text { font-size: 28rpx; color: #5B4A38; line-height: 1.85; }
+.story-question { font-size: 27rpx; color: #6B5A45; font-weight: 700; background: #FFF6E8; border-radius: 18rpx; padding: 18rpx 20rpx; margin-top: 12rpx; }
+.story-guide-head { display: flex; align-items: center; justify-content: space-between; }
+.story-guide-head .story-block-title { margin-bottom: 0; }
+.story-guide-toggle { font-size: 24rpx; color: #C2410C; font-weight: 800; }
+.story-guide-preview { font-size: 25rpx; color: #A98D6E; margin-top: 12rpx; }
 
 /* 动作 */
 .story-actions { display: flex; gap: 16rpx; margin-top: 24rpx; }

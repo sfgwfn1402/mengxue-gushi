@@ -165,42 +165,13 @@
         </view>
       </view>
 
-      <view class="child-guide-grid">
-        <view class="child-guide-card">
-          <view class="child-guide-title">🌈 这首诗讲什么？</view>
-          <view class="child-guide-content">{{childExplain}}</view>
-        </view>
-        <view class="child-guide-card warm">
-          <view class="child-guide-title">🖼️ 里面有什么画面？</view>
-          <view class="child-guide-content">{{pictureGuide}}</view>
-        </view>
-      </view>
-
       <view class="story-entry-card" bindtap="goStory">
         <view class="story-entry-card-icon">📖</view>
         <view class="story-entry-card-main">
           <view class="story-entry-card-title">读读这首诗的小故事</view>
-          <view class="story-entry-card-sub">诗人当时经历了什么？听一听更好懂</view>
+          <view class="story-entry-card-sub">诗人故事、画面译文、问孩子、家长讲解都在这</view>
         </view>
         <view class="story-entry-card-go">去看 →</view>
-      </view>
-
-      <view class="section parent-questions" wx:if="{{parentQuestions.length}}">
-        <view class="section-title">💬 可以问孩子</view>
-        <view class="question-chip" wx:for="{{parentQuestions}}" wx:key="index">{{item}}</view>
-      </view>
-
-      <view class="section parent-guide {{parentGuideExpanded ? 'open' : ''}}" wx:if="{{poem.parentGuide}}">
-        <view class="parent-guide-head" bindtap="toggleParentGuide">
-          <view class="parent-guide-icon">👨‍👩‍👧</view>
-          <view class="parent-guide-copy">
-            <view class="section-title">妈妈可以这样讲</view>
-            <view class="parent-guide-subtitle">给家长准备的亲子讲解话术，点开就能照着讲</view>
-          </view>
-          <view class="parent-guide-toggle">{{parentGuideExpanded ? '收起' : '展开'}} {{parentGuideExpanded ? '⌃' : '⌄'}}</view>
-        </view>
-        <view class="parent-guide-preview" wx:if="{{!parentGuideExpanded}}">里面有一段适合讲给孩子听的小故事和引导方式</view>
-        <view class="section-content parent-guide-content" wx:if="{{parentGuideExpanded}}">{{poem.parentGuide}}</view>
       </view>
     </block>
 
