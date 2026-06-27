@@ -101,6 +101,25 @@ page {
 .menu-icon { font-size: 42rpx; line-height: 1; }
 .menu-text { position: relative; z-index: 1; margin-top: 16rpx; font-size: 29rpx; color: #1F2937; font-weight: 900; }
 .menu-desc { position: relative; z-index: 1; margin-top: 8rpx; font-size: 21rpx; color: rgba(31,41,55,0.52); font-weight: 800; }
+
+/* 紧凑图标网格(4列) */
+.menu-grid { display: flex; flex-wrap: wrap; padding: 18rpx 6rpx; background: rgba(255,255,255,0.94); border-radius: 30rpx; box-shadow: 0 16rpx 36rpx rgba(31,35,46,0.07); }
+.menu-cell { width: 25%; box-sizing: border-box; padding: 18rpx 0; display: flex; flex-direction: column; align-items: center; background: transparent; }
+.menu-cell::after { border: none; }
+.menu-cell:active { transform: scale(0.94); }
+.menu-cell-icon { width: 88rpx; height: 88rpx; border-radius: 26rpx; display: flex; align-items: center; justify-content: center; font-size: 44rpx; }
+.menu-cell-text { margin-top: 12rpx; font-size: 23rpx; color: #3A4456; font-weight: 800; white-space: nowrap; }
+.tone-card { background: #FDF1E0; }
+.tone-pink { background: #FFE7F0; }
+.tone-orange { background: #FFF0DA; }
+.tone-blue { background: #E4F0FF; }
+.tone-purple { background: #EEE8FF; }
+.tone-green { background: #E5F7EC; }
+.tone-gold { background: #FFF3CF; }
+.tone-mint { background: #E0F7F2; }
+.tone-rose { background: #FFEAEC; }
+.tone-gray { background: #EEF1F6; }
+.tone-slate { background: #E8ECF4; }
 .menu-works { background: linear-gradient(145deg, #FFF4D8 0%, #FFE1A6 100%); }
 .menu-favorites { background: linear-gradient(145deg, #EAF7FF 0%, #CFEAFF 100%); }
 .menu-records { background: linear-gradient(145deg, #F0EEFF 0%, #DDD6FE 100%); }

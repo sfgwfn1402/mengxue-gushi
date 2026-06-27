@@ -74,61 +74,39 @@
     <button class="invite-btn" bindtap="shareInvite" open-type="share" data-share-type="invite">分享邀请，一起学古诗 →</button>
   </view>
 
-  <view class="menu-list">
-    <button class="menu-item menu-button menu-cards" data-action="cards" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">🃏</text></view>
-      <text class="menu-text">古诗卡册</text>
-      <text class="menu-desc">学一首点亮一张收藏卡</text>
+  <view class="menu-grid">
+    <button class="menu-cell menu-button" data-action="cards" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-card">🃏</view><text class="menu-cell-text">古诗卡册</text>
     </button>
-    <button class="menu-item menu-button menu-moments" data-action="my-moments" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">💬</text></view>
-      <text class="menu-text">我的动态</text>
-      <text class="menu-desc">我发的社区动态 · 可删除</text>
+    <button class="menu-cell menu-button" data-action="my-moments" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-pink">💬</view><text class="menu-cell-text">我的动态</text>
     </button>
-    <button class="menu-item menu-button menu-works" data-action="works" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">🎧</text></view>
-      <text class="menu-text">我的诗集</text>
-      <text class="menu-desc">朗读 · 诗画</text>
+    <button class="menu-cell menu-button" data-action="works" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-orange">🎧</view><text class="menu-cell-text">我的诗集</text>
     </button>
-    <button class="menu-item menu-button menu-favorites" data-action="favorites" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">📚</text></view>
-      <text class="menu-text">我的收藏</text>
-      <text class="menu-desc">喜欢的古诗</text>
+    <button class="menu-cell menu-button" data-action="favorites" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-blue">📚</view><text class="menu-cell-text">我的收藏</text>
     </button>
-    <button class="menu-item menu-button menu-records" data-action="records" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">📖</text></view>
-      <text class="menu-text">学习记录</text>
-      <text class="menu-desc">成长足迹</text>
+    <button class="menu-cell menu-button" data-action="records" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-purple">📖</view><text class="menu-cell-text">学习记录</text>
     </button>
-    <button class="menu-item menu-button menu-report" data-action="parent-report" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">📊</text></view>
-      <text class="menu-text">家长周报</text>
-      <text class="menu-desc">本周成长 · 可分享</text>
+    <button class="menu-cell menu-button" data-action="parent-report" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-green">📊</view><text class="menu-cell-text">家长周报</text>
     </button>
-    <button class="menu-item menu-button menu-achievements" data-action="achievements" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">🏆</text></view>
-      <text class="menu-text">成就墙</text>
-      <text class="menu-desc">勋章奖励</text>
+    <button class="menu-cell menu-button" data-action="achievements" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-gold">🏆</view><text class="menu-cell-text">成就墙</text>
     </button>
-    <button class="menu-item menu-button menu-feedback" data-action="feedback" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">💬</text></view>
-      <text class="menu-text">家长心声</text>
-      <text class="menu-desc">建议反馈</text>
+    <button class="menu-cell menu-button" data-action="feedback" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-mint">💬</view><text class="menu-cell-text">家长心声</text>
     </button>
-    <button wx:if="{{isAdmin}}" class="menu-item menu-button menu-admin" data-action="admin" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">🛠</text></view>
-      <text class="menu-text">管理员中心</text>
-      <text class="menu-desc">反馈 · 审核 · 数据</text>
+    <button class="menu-cell menu-button" data-action="voice-agreement" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-rose">🎙</view><text class="menu-cell-text">声纹授权</text>
     </button>
-    <button class="menu-item menu-button menu-voice" data-action="voice-agreement" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">🎙</text></view>
-      <text class="menu-text">声纹授权协议</text>
-      <text class="menu-desc">录音授权与撤回</text>
+    <button class="menu-cell menu-button" data-action="settings" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-gray">⚙️</view><text class="menu-cell-text">设置</text>
     </button>
-    <button class="menu-item menu-button menu-settings" data-action="settings" bindtap="handleMenuTap">
-      <view class="menu-icon-wrap"><text class="menu-icon">⚙️</text></view>
-      <text class="menu-text">设置</text>
-      <text class="menu-desc">账号与偏好</text>
+    <button wx:if="{{isAdmin}}" class="menu-cell menu-button" data-action="admin" bindtap="handleMenuTap">
+      <view class="menu-cell-icon tone-slate">🛠</view><text class="menu-cell-text">管理中心</text>
     </button>
   </view>
 
