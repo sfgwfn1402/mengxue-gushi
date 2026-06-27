@@ -53,6 +53,10 @@
 | `story_open` | 进诗词故事 | `index.js`/`learn.js` goStory | `{ from? }` | 诗词故事入口有人点吗 |
 | `story_view` | 看某首故事 | `story.js` showAt | `{ poem_id }` | 看了哪些诗的故事/翻了几首 |
 | `story_listen` | 故事页听读 | `story.js` toggleAudio | `{ poem_id }` | 故事页"听一听"有人用吗 |
+| `game_hub_open` | 进游戏中心 | `index.js`/`game.js` | `{ from? }` | 游戏入口有人点吗 |
+| `game_pick` | 选了某游戏 | `game.js` openGame | `{ game }` | 哪个游戏被选得多 |
+| `game_start` | 开始某游戏 | feihua/match prepare | `{ game }` | 游戏真开始玩了吗 |
+| `game_finish` | 玩完某游戏 | feihua/match finish | `{ game, score? }` | 玩完率/得分分布 |
 | `invite_landed` | 邀请落地 | `index.js` maybeShowInviteWelcome | `{ from }` | 邀请真转化了吗 |
 | `review_done` | 复习一首 | `review.js` remembered | `{ poem_id }` | 复习功能有人用吗 |
 | `reminder_subscribed` | 开启提醒 | `profile.js` openStudyReminder 授权成功 | — | 提醒订阅有人开吗 |

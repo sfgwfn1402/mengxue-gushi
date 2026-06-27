@@ -138,6 +138,16 @@
       <view class="story-entry-go">去看 →</view>
     </view>
 
+    <!-- 诗词游戏入口 -->
+    <view class="game-entry" bindtap="goGame">
+      <view class="game-entry-icon">🎮</view>
+      <view class="game-entry-main">
+        <view class="game-entry-title">诗词游戏</view>
+        <view class="game-entry-sub">飞花令、诗句配对，边玩边记牢</view>
+      </view>
+      <view class="game-entry-go">去玩 →</view>
+    </view>
+
     <!-- 朗诵秀：人气朗诵 + 本周排行 双Tab切换 -->
     <view class="recitation-show">
       <view class="show-tabs">

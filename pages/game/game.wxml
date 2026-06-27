@@ -1,0 +1,15 @@
+<view class="gh-page">
+  <view class="gh-hero">
+    <view class="gh-hero-title">🎮 诗词游戏</view>
+    <view class="gh-hero-sub">边玩边把诗记得更牢</view>
+  </view>
+
+  <view class="gh-card tone-{{item.tone}}" wx:for="{{games}}" wx:key="key" data-url="{{item.url}}" data-key="{{item.key}}" bindtap="openGame">
+    <view class="gh-card-emoji">{{item.emoji}}</view>
+    <view class="gh-card-main">
+      <view class="gh-card-title">{{item.title}}</view>
+      <view class="gh-card-desc">{{item.desc}}</view>
+    </view>
+    <view class="gh-card-go">开始 →</view>
+  </view>
+</view>

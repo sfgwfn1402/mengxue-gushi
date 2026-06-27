@@ -1,0 +1,35 @@
+<view class="gm-page">
+  <block wx:if="{{!finished}}">
+    <view class="gm-top">
+      <view class="gm-round">第 {{round}}/{{total}} 关</view>
+      <view class="gm-tip">点诗句，再点它的题目</view>
+    </view>
+
+    <view class="gm-board">
+      <view class="gm-col">
+        <view
+          class="gm-cell line {{selectedLeft === index ? 'sel' : ''}} {{matched[item.pid] ? 'done' : ''}} {{wrongLeft === index ? 'wrong' : ''}}"
+          wx:for="{{left}}" wx:key="pid" data-index="{{index}}" bindtap="tapLeft">
+          {{item.text}}
+        </view>
+      </view>
+      <view class="gm-col">
+        <view
+          class="gm-cell title {{matched[item.pid] ? 'done' : ''}} {{wrongRight === index ? 'wrong' : ''}}"
+          wx:for="{{right}}" wx:key="pid" data-index="{{index}}" bindtap="tapRight">
+          《{{item.title}}》
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view wx:else class="gm-result">
+    <view class="gm-result-emoji">🏆</view>
+    <view class="gm-result-title">全部连对啦！</view>
+    <view class="gm-result-sub">{{total}} 关都通关，你真棒！</view>
+    <view class="gm-result-btns">
+      <view class="gm-btn primary" bindtap="restart">再来一局</view>
+      <button class="gm-btn ghost" open-type="share">叫好友玩</button>
+    </view>
+  </view>
+</view>

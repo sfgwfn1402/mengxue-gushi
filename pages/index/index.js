@@ -384,6 +384,11 @@ Page({
     wx.navigateTo({ url: id ? `/pages/story/story?id=${id}` : '/pages/story/story' })
   },
 
+  goGame() {
+    track('game_hub_open', { from: 'home' })
+    wx.navigateTo({ url: '/pages/game/game' })
+  },
+
   loadStreak() {
     api.getStats()
       .then(stats => {

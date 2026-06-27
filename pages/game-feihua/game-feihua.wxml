@@ -1,0 +1,31 @@
+<view class="fh-page">
+  <block wx:if="{{!finished}}">
+    <view class="fh-top">
+      <view class="fh-round">第 {{round}}/{{total}} 关</view>
+      <view class="fh-score">⭐ {{score}}</view>
+    </view>
+
+    <view class="fh-prompt">
+      <view class="fh-prompt-label">找出含有这个字的诗句</view>
+      <view class="fh-ling">{{ling}}</view>
+    </view>
+
+    <view class="fh-options">
+      <view
+        class="fh-option {{selected === index ? (isCorrect ? 'right' : 'wrong') : ''}} {{locked && index === answerIndex ? 'reveal' : ''}}"
+        wx:for="{{options}}" wx:key="index" data-index="{{index}}" bindtap="choose">
+        {{item}}
+      </view>
+    </view>
+  </block>
+
+  <view wx:else class="fh-result">
+    <view class="fh-result-emoji">{{score >= 6 ? '🏆' : (score >= 4 ? '🎉' : '🌱')}}</view>
+    <view class="fh-result-title">答对 {{score}} / {{total}} 句</view>
+    <view class="fh-result-sub">{{score >= 6 ? '诗词小达人，太厉害啦！' : (score >= 4 ? '不错哦，再来挑战更高分！' : '多读几首诗，下次更棒～')}}</view>
+    <view class="fh-result-btns">
+      <view class="fh-btn primary" bindtap="restart">再来一局</view>
+      <button class="fh-btn ghost" open-type="share">叫好友PK</button>
+    </view>
+  </view>
+</view>

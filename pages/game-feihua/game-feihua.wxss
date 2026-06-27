@@ -1,0 +1,26 @@
+page { background: linear-gradient(180deg, #FFF3EC 0%, #FFF7F0 100%); }
+.fh-page { padding: 28rpx 28rpx 60rpx; box-sizing: border-box; min-height: 100vh; }
+
+.fh-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28rpx; }
+.fh-round { font-size: 28rpx; font-weight: 800; color: #8A4B00; background: rgba(255,255,255,0.8); padding: 10rpx 24rpx; border-radius: 999rpx; }
+.fh-score { font-size: 30rpx; font-weight: 900; color: #FF7A45; }
+
+.fh-prompt { text-align: center; margin: 30rpx 0 40rpx; }
+.fh-prompt-label { font-size: 28rpx; color: #A9714A; font-weight: 700; }
+.fh-ling { margin: 20rpx auto 0; width: 180rpx; height: 180rpx; line-height: 180rpx; text-align: center; font-size: 100rpx; font-weight: 900; color: #fff; background: linear-gradient(135deg, #FFB15D, #FF6030); border-radius: 40rpx; box-shadow: 0 16rpx 36rpx rgba(255,96,48,0.32); }
+
+.fh-options { display: flex; flex-direction: column; gap: 22rpx; }
+.fh-option { background: #fff; border-radius: 24rpx; padding: 34rpx 28rpx; font-size: 34rpx; font-weight: 800; color: #4A3A2A; text-align: center; box-shadow: 0 10rpx 24rpx rgba(180,120,60,0.1); border: 4rpx solid transparent; transition: all 0.15s; }
+.fh-option.right { background: #E9Faef; border-color: #45B96C; color: #2E9E58; }
+.fh-option.wrong { background: #FDECEC; border-color: #F26D6D; color: #D8443F; }
+.fh-option.reveal { border-color: #45B96C; }
+
+.fh-result { text-align: center; padding-top: 120rpx; }
+.fh-result-emoji { font-size: 140rpx; }
+.fh-result-title { font-size: 44rpx; font-weight: 900; color: #8A4B00; margin-top: 20rpx; }
+.fh-result-sub { font-size: 27rpx; color: #A9714A; margin-top: 14rpx; }
+.fh-result-btns { display: flex; gap: 20rpx; justify-content: center; margin-top: 50rpx; padding: 0 30rpx; }
+.fh-btn { flex: 1; max-width: 280rpx; text-align: center; padding: 26rpx 0; border-radius: 999rpx; font-size: 30rpx; font-weight: 900; margin: 0; line-height: 1.2; }
+.fh-btn.primary { background: linear-gradient(135deg, #FFB15D, #FF7A45); color: #fff; box-shadow: 0 12rpx 26rpx rgba(255,122,69,0.3); }
+.fh-btn.ghost { background: #fff; color: #FF7A45; border: 2rpx solid #FFD3A8; }
+.fh-btn.ghost::after { border: none; }

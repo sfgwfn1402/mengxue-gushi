@@ -1,0 +1,16 @@
+page { background: linear-gradient(180deg, #FFF8E8 0%, #FFF3F0 100%); }
+.gh-page { padding: 28rpx 24rpx 60rpx; box-sizing: border-box; }
+
+.gh-hero { padding: 12rpx 6rpx 26rpx; }
+.gh-hero-title { font-size: 38rpx; font-weight: 900; color: #5B3300; }
+.gh-hero-sub { font-size: 26rpx; color: #B0884F; margin-top: 8rpx; }
+
+.gh-card { display: flex; align-items: center; gap: 20rpx; padding: 30rpx 26rpx; border-radius: 30rpx; margin-bottom: 22rpx; box-shadow: 0 14rpx 32rpx rgba(120,90,40,0.1); }
+.gh-card.tone-coral { background: linear-gradient(135deg, #FFE6DC, #FFD8C8); }
+.gh-card.tone-sky { background: linear-gradient(135deg, #E3ECFF, #DCE4FF); }
+.gh-card.tone-mint { background: linear-gradient(135deg, #E2F7E6, #D6F2E0); }
+.gh-card-emoji { width: 92rpx; height: 92rpx; border-radius: 26rpx; background: rgba(255,255,255,0.75); display: flex; align-items: center; justify-content: center; font-size: 52rpx; flex-shrink: 0; }
+.gh-card-main { flex: 1; min-width: 0; }
+.gh-card-title { font-size: 34rpx; font-weight: 900; color: #3A2E1E; }
+.gh-card-desc { font-size: 24rpx; color: #8A7355; font-weight: 700; margin-top: 8rpx; }
+.gh-card-go { font-size: 26rpx; font-weight: 800; color: #fff; background: rgba(0,0,0,0.28); border-radius: 999rpx; padding: 14rpx 26rpx; white-space: nowrap; flex-shrink: 0; }

@@ -23,7 +23,10 @@
     "pages/animation/animation",
     "pages/voice-agreement/voice-agreement",
     "pages/listen/listen",
-    "pages/story/story"
+    "pages/story/story",
+    "pages/game/game",
+    "pages/game-feihua/game-feihua",
+    "pages/game-match/game-match"
   ],
   "requiredBackgroundModes": ["audio"],
   "window": {
