@@ -19,7 +19,7 @@ page { background: linear-gradient(180deg, #FFF2F6 0%, #FFF7F2 100%); }
 .moment-time { font-size: 22rpx; color: #B8AEB3; margin-top: 4rpx; }
 .moment-del { font-size: 22rpx; color: #C0B6BB; padding: 6rpx 12rpx; }
 
-.moment-content { font-size: 30rpx; color: #3A2E35; line-height: 1.6; margin: 16rpx 0; }
+.moment-content { font-size: 30rpx; color: #3A2E35; line-height: 1.6; margin: 16rpx 0; white-space: pre-wrap; word-break: break-word; }
 .moment-grid { display: grid; gap: 10rpx; margin-top: 8rpx; }
 .moment-grid.grid-1 { grid-template-columns: 1fr; }
 .moment-grid.grid-2 { grid-template-columns: 1fr 1fr; }

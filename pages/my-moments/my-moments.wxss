@@ -15,7 +15,7 @@ page { background: #FFF2F6; }
 .mm-status.rejected { color: #C0556F; background: #FCEBEF; }
 .mm-del { font-size: 24rpx; color: #C0B6BB; padding: 4rpx 10rpx; }
 
-.mm-content { font-size: 30rpx; color: #3A2E35; line-height: 1.6; margin: 16rpx 0; }
+.mm-content { font-size: 30rpx; color: #3A2E35; line-height: 1.6; margin: 16rpx 0; white-space: pre-wrap; word-break: break-word; }
 .mm-grid { display: grid; gap: 10rpx; margin-top: 8rpx; }
 .mm-grid.grid-1 { grid-template-columns: 1fr; }
 .mm-grid.grid-2 { grid-template-columns: 1fr 1fr; }
