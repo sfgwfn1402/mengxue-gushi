@@ -269,39 +269,61 @@
       <view class="discover-sub">看看小诗童们的朗诵和诗配画</view>
     </view>
     <view class="discover-filters">
-      <view class="discover-filter {{discoverFilter === 'all' ? 'active' : ''}}" data-filter="all" bindtap="switchDiscoverFilter">全部</view>
       <view class="discover-filter {{discoverFilter === 'artwork' ? 'active' : ''}}" data-filter="artwork" bindtap="switchDiscoverFilter">诗配画</view>
       <view class="discover-filter {{discoverFilter === 'recitation' ? 'active' : ''}}" data-filter="recitation" bindtap="switchDiscoverFilter">朗诵</view>
     </view>
-    <view class="discover-waterfall" wx:if="{{visibleDiscoverItems.length}}">
-      <view class="discover-card {{item.type}}" wx:for="{{visibleDiscoverItems}}" wx:key="id">
-        <image wx:if="{{item.type === 'artwork'}}" class="discover-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
-        <view wx:else class="recitation-cover tone-{{item.coverTone}}" data-id="{{item.id}}" bindtap="playDiscoverRecitation">
-          <image wx:if="{{item.poemImageUrl && !failedCovers[item.id]}}" class="recitation-cover-bg" src="{{item.poemImageUrl}}" mode="aspectFill" data-id="{{item.id}}" binderror="onRecitationCoverError"></image>
-          <view wx:else class="recitation-cover-mic">🎙️</view>
-          <view class="recitation-cover-shade"></view>
-          <view class="recitation-play-btn {{playingRecitationId === item.id ? 'playing' : ''}}">
-            <view wx:if="{{playingRecitationId === item.id}}" class="eq"><view class="eq-bar"></view><view class="eq-bar"></view><view class="eq-bar"></view></view>
-            <text wx:else class="play-tri">▶</text>
-          </view>
-          <view class="recitation-cover-foot">
-            <text class="recitation-cover-title">《{{item.poemTitle}}》</text>
-            <text wx:if="{{item.durationText}}" class="recitation-cover-dur">{{item.durationText}}</text>
+
+    <!-- 诗配画：社区作品式大卡 -->
+    <block wx:if="{{discoverFilter === 'artwork'}}">
+      <view class="moment" wx:for="{{visibleDiscoverItems}}" wx:key="id">
+        <view class="moment-top">
+          <image wx:if="{{item.avatarUrl}}" class="moment-avatar" src="{{item.avatarUrl}}" mode="aspectFill"></image>
+          <view wx:else class="moment-avatar fallback">👶</view>
+          <view class="moment-meta">
+            <view class="moment-name">{{item.nickname}}</view>
+            <view class="moment-time">{{item.timeText}}</view>
           </view>
         </view>
-        <view class="discover-card-body">
-          <view class="discover-card-title">{{item.title}}</view>
-          <view class="discover-card-poem" wx:if="{{item.type === 'artwork'}}">《{{item.poemTitle}}》</view>
-          <view class="discover-user-row">
-            <image wx:if="{{item.avatarUrl}}" class="discover-avatar" src="{{item.avatarUrl}}" mode="aspectFill"></image>
-            <view wx:else class="discover-avatar fallback">👶</view>
-            <view class="discover-nickname">{{item.nickname}}</view>
-            <view class="discover-like {{item.likedByMe ? 'liked' : ''}}" data-id="{{item.id}}" data-type="{{item.type}}" catchtap="toggleDiscoverLike">{{item.likedByMe ? '♥' : '♡'}} {{item.likeCount}}</view>
+        <view class="moment-content">{{item.title}} · 《{{item.poemTitle}}》</view>
+        <image class="moment-art-img" src="{{item.imageUrl}}" mode="widthFix" data-url="{{item.imageUrl}}" catchtap="previewDiscoverImage"></image>
+        <view class="moment-actions">
+          <view class="moment-spacer"></view>
+          <view class="moment-like {{item.likedByMe ? 'liked' : ''}}" data-id="{{item.id}}" data-type="{{item.type}}" catchtap="toggleDiscoverLike">{{item.likedByMe ? '♥' : '♡'}} {{item.likeCount}}</view>
+        </view>
+      </view>
+      <view wx:if="{{!visibleDiscoverItems.length}}" class="discover-empty">还没有诗配画，去“创作”发布第一幅吧～</view>
+    </block>
+
+    <!-- 朗诵：保持瀑布卡 -->
+    <block wx:else>
+      <view class="discover-waterfall" wx:if="{{visibleDiscoverItems.length}}">
+        <view class="discover-card recitation" wx:for="{{visibleDiscoverItems}}" wx:key="id">
+          <view class="recitation-cover tone-{{item.coverTone}}" data-id="{{item.id}}" bindtap="playDiscoverRecitation">
+            <image wx:if="{{item.poemImageUrl && !failedCovers[item.id]}}" class="recitation-cover-bg" src="{{item.poemImageUrl}}" mode="aspectFill" data-id="{{item.id}}" binderror="onRecitationCoverError"></image>
+            <view wx:else class="recitation-cover-mic">🎙️</view>
+            <view class="recitation-cover-shade"></view>
+            <view class="recitation-play-btn {{playingRecitationId === item.id ? 'playing' : ''}}">
+              <view wx:if="{{playingRecitationId === item.id}}" class="eq"><view class="eq-bar"></view><view class="eq-bar"></view><view class="eq-bar"></view></view>
+              <text wx:else class="play-tri">▶</text>
+            </view>
+            <view class="recitation-cover-foot">
+              <text class="recitation-cover-title">《{{item.poemTitle}}》</text>
+              <text wx:if="{{item.durationText}}" class="recitation-cover-dur">{{item.durationText}}</text>
+            </view>
+          </view>
+          <view class="discover-card-body">
+            <view class="discover-card-title">{{item.title}}</view>
+            <view class="discover-user-row">
+              <image wx:if="{{item.avatarUrl}}" class="discover-avatar" src="{{item.avatarUrl}}" mode="aspectFill"></image>
+              <view wx:else class="discover-avatar fallback">👶</view>
+              <view class="discover-nickname">{{item.nickname}}</view>
+              <view class="discover-like {{item.likedByMe ? 'liked' : ''}}" data-id="{{item.id}}" data-type="{{item.type}}" catchtap="toggleDiscoverLike">{{item.likedByMe ? '♥' : '♡'}} {{item.likeCount}}</view>
+            </view>
           </view>
         </view>
       </view>
-    </view>
-    <view class="discover-empty" wx:else>还没有作品，去“创作”发布第一条吧～</view>
+      <view wx:else class="discover-empty">还没有朗诵，去“创作”发布第一条吧～</view>
+    </block>
   </block>
 
   <!-- 社区 -->

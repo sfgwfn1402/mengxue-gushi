@@ -88,7 +88,7 @@ Page({
     momentsPage: 1,
     momentsHasMore: true,
     myUserId: '',
-    discoverFilter: 'all',
+    discoverFilter: 'artwork',
     discoverItems: [],
     failedCovers: {},
     dailyPlan: null,
@@ -686,6 +686,11 @@ Page({
     if (urls.length) wx.previewImage({ urls, current: cur || urls[0] })
   },
 
+  previewDiscoverImage(e) {
+    const url = e.currentTarget.dataset.url
+    if (url) wx.previewImage({ urls: [url], current: url })
+  },
+
   deleteMyMoment(e) {
     const id = e.currentTarget.dataset.id
     wx.showModal({
@@ -784,7 +789,7 @@ Page({
   },
 
   switchDiscoverFilter(e) {
-    const discoverFilter = e.currentTarget.dataset.filter || 'all'
+    const discoverFilter = e.currentTarget.dataset.filter || 'artwork'
     this.setData({ discoverFilter, visibleDiscoverItems: this.filterDiscoverItems(this.data.discoverItems, discoverFilter) })
   },
 
@@ -814,7 +819,8 @@ Page({
           avatarUrl: item.avatar_url || '',
           likeCount: item.like_count || 0,
           likedByMe: !!item.liked_by_me,
-          createdAt: item.created_at || ''
+          createdAt: item.created_at || '',
+          timeText: momentTime(item.created_at || '')
         }))
         const recitations = recitationRaw.map(item => {
           const rec = item.recitation || {}
