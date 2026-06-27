@@ -273,25 +273,24 @@
       <view class="discover-filter {{discoverFilter === 'recitation' ? 'active' : ''}}" data-filter="recitation" bindtap="switchDiscoverFilter">朗诵</view>
     </view>
 
-    <!-- 诗配画：社区作品式大卡 -->
+    <!-- 诗配画：双列瀑布卡(图上，内容/作者/点赞在下) -->
     <block wx:if="{{discoverFilter === 'artwork'}}">
-      <view class="moment" wx:for="{{visibleDiscoverItems}}" wx:key="id">
-        <view class="moment-top">
-          <image wx:if="{{item.avatarUrl}}" class="moment-avatar" src="{{item.avatarUrl}}" mode="aspectFill"></image>
-          <view wx:else class="moment-avatar fallback">👶</view>
-          <view class="moment-meta">
-            <view class="moment-name">{{item.nickname}}</view>
-            <view class="moment-time">{{item.timeText}}</view>
+      <view class="discover-waterfall" wx:if="{{visibleDiscoverItems.length}}">
+        <view class="discover-card artwork" wx:for="{{visibleDiscoverItems}}" wx:key="id">
+          <image class="discover-art-img" src="{{item.imageUrl}}" mode="widthFix" data-url="{{item.imageUrl}}" catchtap="previewDiscoverImage"></image>
+          <view class="discover-card-body">
+            <view class="discover-card-title">{{item.title}}</view>
+            <view class="discover-card-poem">《{{item.poemTitle}}》</view>
+            <view class="discover-user-row">
+              <image wx:if="{{item.avatarUrl}}" class="discover-avatar" src="{{item.avatarUrl}}" mode="aspectFill"></image>
+              <view wx:else class="discover-avatar fallback">👶</view>
+              <view class="discover-nickname">{{item.nickname}}</view>
+              <view class="discover-like {{item.likedByMe ? 'liked' : ''}}" data-id="{{item.id}}" data-type="{{item.type}}" catchtap="toggleDiscoverLike">{{item.likedByMe ? '♥' : '♡'}} {{item.likeCount}}</view>
+            </view>
           </view>
         </view>
-        <view class="moment-content">{{item.title}} · 《{{item.poemTitle}}》</view>
-        <image class="moment-art-img" src="{{item.imageUrl}}" mode="aspectFit" data-url="{{item.imageUrl}}" catchtap="previewDiscoverImage"></image>
-        <view class="moment-actions">
-          <view class="moment-spacer"></view>
-          <view class="moment-like {{item.likedByMe ? 'liked' : ''}}" data-id="{{item.id}}" data-type="{{item.type}}" catchtap="toggleDiscoverLike">{{item.likedByMe ? '♥' : '♡'}} {{item.likeCount}}</view>
-        </view>
       </view>
-      <view wx:if="{{!visibleDiscoverItems.length}}" class="discover-empty">还没有诗配画，去“创作”发布第一幅吧～</view>
+      <view wx:else class="discover-empty">还没有诗配画，去“创作”发布第一幅吧～</view>
     </block>
 
     <!-- 朗诵：保持瀑布卡 -->
