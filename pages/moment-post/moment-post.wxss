@@ -14,6 +14,6 @@ page { background: #FFF2F6; }
 
 .post-tip { font-size: 22rpx; color: #B89AA6; line-height: 1.6; margin: 18rpx 4rpx; }
 
-.post-btn { width: 100%; height: 88rpx; line-height: 88rpx; margin-top: 12rpx; background: linear-gradient(135deg, #FF8FB1, #FF6B9D); color: #fff; border-radius: 999rpx; font-size: 30rpx; font-weight: 900; border: none; }
+.post-btn { width: 100%; height: 88rpx; display: flex; align-items: center; justify-content: center; line-height: 1; margin-top: 12rpx; padding: 0; background: linear-gradient(135deg, #FF8FB1, #FF6B9D); color: #fff; border-radius: 999rpx; font-size: 30rpx; font-weight: 900; border: none; }
 .post-btn.loading { opacity: 0.6; }
 .post-btn::after { border: none; }
