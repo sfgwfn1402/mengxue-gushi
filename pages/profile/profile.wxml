@@ -1,5 +1,18 @@
 <!--pages/profile/profile.wxml-->
 <view class="container">
+  <view class="profile-header">
+    <button class="avatar avatar-button" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill"></image>
+      <text wx:else>👶</text>
+    </button>
+    <view class="user-info">
+      <input class="nickname-input" type="nickname" placeholder="给小诗人起个昵称" value="{{nicknameInput}}" bindinput="onNicknameInput" />
+      <view class="level">Lv.{{level}} 启蒙学者</view>
+      <view class="login-tip">微信静默登录已开启，学习记录会跟随当前微信账号</view>
+    </view>
+    <button class="profile-save" bindtap="saveProfile" loading="{{profileSaving}}" disabled="{{profileSaving}}">保存</button>
+  </view>
+
   <view class="checkin-card">
     <view class="checkin-header">
       <view class="checkin-title">🔥 学习打卡</view>
@@ -15,19 +28,6 @@
       {{todayChecked ? '✅ 今日已打卡' : '📌 立即打卡'}}
     </button>
     <view class="reminder-link" bindtap="openStudyReminder">🔔 开启每日学习提醒</view>
-  </view>
-
-  <view class="profile-header">
-    <button class="avatar avatar-button" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
-      <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill"></image>
-      <text wx:else>👶</text>
-    </button>
-    <view class="user-info">
-      <input class="nickname-input" type="nickname" placeholder="给小诗人起个昵称" value="{{nicknameInput}}" bindinput="onNicknameInput" />
-      <view class="level">Lv.{{level}} 启蒙学者</view>
-      <view class="login-tip">微信静默登录已开启，学习记录会跟随当前微信账号</view>
-    </view>
-    <button class="profile-save" bindtap="saveProfile" loading="{{profileSaving}}" disabled="{{profileSaving}}">保存</button>
   </view>
 
   <view class="stats">
