@@ -77,6 +77,15 @@
         <view class="plan-empty-text">今天的诗读完啦～挑一首喜欢的再读读吧</view>
       </view>
 
+      <view class="panel-listen" bindtap="goListen">
+        <view class="panel-listen-icon">🎧</view>
+        <view class="panel-listen-main">
+          <view class="panel-listen-title">磨耳朵 · 放着听</view>
+          <view class="panel-listen-sub">睡前、路上不知不觉就会了</view>
+        </view>
+        <view class="panel-listen-go">去听 →</view>
+      </view>
+
       <view class="invite-banner">
         <view class="invite-banner-icon">🎁</view>
         <view class="invite-banner-main">

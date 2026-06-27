@@ -958,6 +958,14 @@ page {
 .review-banner-cta { font-size: 24rpx; font-weight: 800; color: #fff; background: rgba(74, 124, 200, 0.92); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; }
 
 /* 邀请有礼入口（悬浮球面板内） */
+/* 面板内磨耳朵入口 */
+.panel-listen { display: flex; align-items: center; gap: 18rpx; margin: 0 0 22rpx; padding: 22rpx 24rpx; border-radius: 28rpx; background: linear-gradient(135deg, #E6EAFF 0%, #EFE8FF 100%); box-shadow: 0 12rpx 28rpx rgba(108,111,224,0.14); }
+.panel-listen-icon { font-size: 44rpx; line-height: 1; flex-shrink: 0; }
+.panel-listen-main { flex: 1; min-width: 0; }
+.panel-listen-title { font-size: 28rpx; font-weight: 800; color: #2A2E55; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.panel-listen-sub { font-size: 22rpx; color: #7B80AE; margin-top: 6rpx; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.panel-listen-go { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #8AB4FF, #6C6FE0); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; flex-shrink: 0; }
+
 .invite-banner { display: flex; align-items: center; gap: 18rpx; margin: 0 0 22rpx; padding: 22rpx 24rpx; border-radius: 28rpx; background: linear-gradient(135deg, #FFF1DD 0%, #FFE2C2 100%); box-shadow: 0 12rpx 28rpx rgba(255,150,70,0.16); }
 .invite-banner-icon { font-size: 48rpx; line-height: 1; flex-shrink: 0; }
 .invite-banner-main { flex: 1; min-width: 0; }
