@@ -790,7 +790,9 @@ Page({
 
   switchDiscoverFilter(e) {
     const discoverFilter = e.currentTarget.dataset.filter || 'artwork'
-    this.setData({ discoverFilter, visibleDiscoverItems: this.filterDiscoverItems(this.data.discoverItems, discoverFilter) })
+    if (discoverFilter === this.data.discoverFilter) return
+    this.setData({ discoverFilter, discoverItems: [], visibleDiscoverItems: [], discoverPage: 1, discoverHasMore: true })
+    this.loadDiscoverItems({ reset: true })
   },
 
   loadDiscoverItems(options) {
@@ -800,18 +802,29 @@ Page({
 
     const page = reset ? 1 : this.data.discoverPage
     const limit = this.data.discoverPageSize
+    const filter = this.data.discoverFilter
     this.setData({ discoverLoading: true })
 
-    Promise.all([
-      api.listArtworks({ limit, page }).catch(() => ({ items: [] })),
-      api.getPopularRecitations({ limit, page }).catch(() => ({ items: [] }))
-    ])
-      .then(([artRes, recRes]) => {
-        const artworkRaw = artRes.items || []
-        const recitationRaw = recRes.items || []
-        const artworks = artworkRaw.map(item => ({
-          id: item.id,
-          type: 'artwork',
+    const req = filter === 'recitation'
+      ? api.getPopularRecitations({ limit, page }).then(res => (res.items || []).map(item => {
+          const rec = item.recitation || {}
+          const poemId = rec.poem_id
+          return {
+            id: rec.id, type: 'recitation',
+            title: `朗诵《${item.poem_title || '古诗'}》`,
+            poemTitle: item.poem_title || '', poemId,
+            poemImageUrl: getPoemImageUrl(poemId),
+            coverTone: (Number(poemId) || 0) % 6,
+            durationText: formatDuration(rec.duration_seconds),
+            nickname: rec.nickname || '小诗童',
+            avatarUrl: rec.avatar_url || '',
+            likeCount: rec.like_count || 0,
+            likedByMe: !!rec.liked_by_me,
+            createdAt: rec.created_at || ''
+          }
+        }).filter(it => it.id))
+      : api.listArtworks({ limit, page }).then(res => (res.items || []).map(item => ({
+          id: item.id, type: 'artwork',
           title: item.title || '我的诗配画',
           imageUrl: item.image_url,
           poemTitle: item.poem_title || '',
@@ -821,56 +834,28 @@ Page({
           likedByMe: !!item.liked_by_me,
           createdAt: item.created_at || '',
           timeText: momentTime(item.created_at || '')
-        }))
-        const recitations = recitationRaw.map(item => {
-          const rec = item.recitation || {}
-          const poemId = rec.poem_id
-          return {
-            id: rec.id,
-            type: 'recitation',
-            title: `朗诵《${item.poem_title || '古诗'}》`,
-            poemTitle: item.poem_title || '',
-            poemId,
-            poemImageUrl: getPoemImageUrl(poemId),
-            // 配图缺失时按 poem_id 取一档渐变色，避免整墙同色
-            coverTone: (Number(poemId) || 0) % 6,
-            durationText: formatDuration(rec.duration_seconds),
-            nickname: rec.nickname || '小诗童',
-            avatarUrl: rec.avatar_url || '',
-            likeCount: rec.like_count || 0,
-            likedByMe: !!rec.liked_by_me,
-            createdAt: rec.created_at || ''
-          }
-        }).filter(item => item.id)
-        const incomingItems = artworks.concat(recitations)
-        const itemMap = {}
-        ;(reset ? [] : this.data.discoverItems).concat(incomingItems).forEach(item => {
-          itemMap[`${item.type}:${item.id}`] = item
-        })
-        const discoverItems = Object.keys(itemMap).map(key => itemMap[key])
-          .sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)))
-        const hasMore = artworkRaw.length >= limit || recitationRaw.length >= limit
-        this.setData({
-          discoverItems,
-          visibleDiscoverItems: this.filterDiscoverItems(discoverItems, this.data.discoverFilter),
-          discoverPage: page + 1,
-          discoverHasMore: hasMore,
-          discoverLoading: false
-        })
+        })))
+
+    req.then(incoming => {
+      const map = {}
+      ;(reset ? [] : this.data.discoverItems).concat(incoming).forEach(it => { map[`${it.type}:${it.id}`] = it })
+      const items = Object.keys(map).map(k => map[k]).sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)))
+      this.setData({
+        discoverItems: items,
+        visibleDiscoverItems: items,
+        discoverPage: page + 1,
+        discoverHasMore: incoming.length >= limit,
+        discoverLoading: false
       })
-      .catch(err => {
-        console.warn('读取发现作品失败', err)
-        this.setData({ discoverLoading: false })
-      })
+    }).catch(err => {
+      console.warn('读取发现作品失败', err)
+      this.setData({ discoverLoading: false })
+    })
   },
 
   onReachBottom() {
     if (this.data.homeTab === 'plaza') { this.loadMoments(false); return }
     if (this.data.homeTab === 'discover') this.loadDiscoverItems()
-  },
-
-  filterDiscoverItems(items, filter) {
-    return filter === 'all' ? items : items.filter(item => item.type === filter)
   },
 
   playDiscoverRecitation(e) {
@@ -907,10 +892,7 @@ Page({
           likeCount: typeof res.like_count === 'number' ? res.like_count : item.likeCount
         }
       })
-      this.setData({
-        discoverItems,
-        visibleDiscoverItems: this.filterDiscoverItems(discoverItems, this.data.discoverFilter)
-      })
+      this.setData({ discoverItems, visibleDiscoverItems: discoverItems })
     }).catch(err => {
       console.warn('发现作品点赞失败', err)
       wx.showToast({ title: '操作失败', icon: 'none' })

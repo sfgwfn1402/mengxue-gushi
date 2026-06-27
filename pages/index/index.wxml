@@ -325,6 +325,9 @@
       </view>
       <view wx:else class="discover-empty">还没有朗诵，去“创作”发布第一条吧～</view>
     </block>
+
+    <view wx:if="{{discoverLoading}}" class="discover-foot">加载中…</view>
+    <view wx:elif="{{visibleDiscoverItems.length && !discoverHasMore}}" class="discover-foot">没有更多啦～</view>
   </block>
 
   <!-- 社区 -->
@@ -365,6 +368,7 @@
     </view>
 
     <view wx:if="{{momentsLoading}}" class="plaza-loading">加载中…</view>
+    <view wx:elif="{{momentItems.length && !momentsHasMore}}" class="plaza-loading">没有更多啦～</view>
 
     <view class="plaza-fab" bindtap="goPostMoment">＋ 发一条</view>
   </block>
