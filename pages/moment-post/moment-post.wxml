@@ -1,8 +1,8 @@
 <view class="post-page">
   <view class="post-card">
     <view class="post-grid">
-      <view class="post-thumb" wx:for="{{images}}" wx:key="*this">
-        <image class="post-thumb-img" src="{{item}}" mode="aspectFill" data-index="{{index}}" bindtap="previewImage"></image>
+      <view class="post-thumb" wx:for="{{images}}" wx:key="url">
+        <image class="post-thumb-img" src="{{item.url}}" mode="aspectFill" data-index="{{index}}" bindtap="previewImage"></image>
         <view class="post-thumb-del" data-index="{{index}}" catchtap="removeImage">×</view>
       </view>
       <view wx:if="{{images.length < max}}" class="post-add" bindtap="chooseImage">
@@ -16,6 +16,6 @@
 
     <view class="post-tip">💡 发布后需审核，通过才会公开。请勿上传含他人隐私或不适宜内容。</view>
 
-    <button class="post-btn {{publishing ? 'loading' : ''}}" bindtap="publish" disabled="{{publishing}}">发布到社区</button>
+    <button class="post-btn {{publishing ? 'loading' : ''}}" bindtap="publish" disabled="{{publishing}}">{{editId ? '保存并重新提交' : '发布到社区'}}</button>
   </view>
 </view>

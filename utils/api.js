@@ -534,6 +534,14 @@ function postMoment(objectPaths, content) {
   })
 }
 
+function editMoment(id, objectPaths, content) {
+  return authed({
+    url: `/moments/${id}`, method: 'PUT',
+    data: { content: content || '', object_paths: objectPaths || [] },
+    header: { 'Content-Type': 'application/json' }
+  })
+}
+
 function likeMoment(id) {
   return authed({ url: `/moments/${id}/like`, method: 'POST' })
 }
@@ -855,6 +863,7 @@ module.exports = {
   listMyMoments,
   uploadMomentImage,
   postMoment,
+  editMoment,
   likeMoment,
   unlikeMoment,
   deleteMoment,

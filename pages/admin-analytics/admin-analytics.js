@@ -27,6 +27,7 @@ const EVENT_LABELS = {
   color_publish: '发布涂色画',
   plaza_open: '进社区',
   moment_post: '发布社区动态',
+  moment_edit: '编辑社区动态',
   invite_landed: '邀请落地',
   review_done: '复习一首',
   reminder_subscribed: '开启提醒',

@@ -13,6 +13,7 @@ page { background: #FFF2F6; }
 .mm-status.pending { color: #C77F2A; background: #FFF1DA; }
 .mm-status.public { color: #2E9E58; background: #E6F8EE; }
 .mm-status.rejected { color: #C0556F; background: #FCEBEF; }
+.mm-edit { font-size: 24rpx; color: #FF6B9D; font-weight: 700; padding: 4rpx 10rpx; }
 .mm-del { font-size: 24rpx; color: #C0B6BB; padding: 4rpx 10rpx; }
 
 .mm-content { font-size: 30rpx; color: #3A2E35; line-height: 1.6; margin: 16rpx 0; white-space: pre-wrap; word-break: break-word; }

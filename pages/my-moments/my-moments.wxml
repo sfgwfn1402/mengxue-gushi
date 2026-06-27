@@ -9,6 +9,7 @@
     <view class="mm-top">
       <view class="mm-time">{{item.timeText}}</view>
       <view class="mm-status {{item.statusCls}}">{{item.statusLabel}}</view>
+      <view class="mm-edit" data-id="{{item.id}}" catchtap="edit">编辑</view>
       <view class="mm-del" data-id="{{item.id}}" catchtap="remove">删除</view>
     </view>
     <view wx:if="{{item.content}}" class="mm-content">{{item.content}}</view>

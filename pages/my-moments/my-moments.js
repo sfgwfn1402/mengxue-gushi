@@ -45,6 +45,20 @@ Page({
     if (urls.length) wx.previewImage({ urls, current: cur || urls[0] })
   },
 
+  edit(e) {
+    const id = e.currentTarget.dataset.id
+    const m = this.data.items.find(it => it.id === id)
+    if (!m) return
+    // 把这条动态(含object_paths)存起来给编辑页用
+    wx.setStorageSync('editingMoment', {
+      id: m.id,
+      content: m.content || '',
+      images: m.images || [],
+      object_paths: m.object_paths || []
+    })
+    wx.navigateTo({ url: `/pages/moment-post/moment-post?id=${id}` })
+  },
+
   remove(e) {
     const id = e.currentTarget.dataset.id
     wx.showModal({
