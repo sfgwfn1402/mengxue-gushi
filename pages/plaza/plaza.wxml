@@ -20,7 +20,10 @@
       <view wx:if="{{item.user_id === myId}}" class="moment-del" data-id="{{item.id}}" catchtap="deleteMine">删除</view>
     </view>
     <view wx:if="{{item.content}}" class="moment-content">{{item.content}}</view>
-    <image class="moment-image" src="{{item.image_url}}" mode="widthFix" data-url="{{item.image_url}}" bindtap="previewImage"></image>
+    <view class="moment-grid grid-{{item.images.length > 4 ? 3 : (item.images.length === 1 ? 1 : (item.images.length === 4 ? 2 : (item.images.length < 3 ? item.images.length : 3)))}}">
+      <image class="moment-grid-img" wx:for="{{item.images}}" wx:for-item="img" wx:key="*this"
+        src="{{img}}" mode="aspectFill" data-urls="{{item.images}}" data-cur="{{img}}" catchtap="previewGrid"></image>
+    </view>
     <view class="moment-actions">
       <view class="moment-like {{item.liked_by_me ? 'liked' : ''}}" data-id="{{item.id}}" catchtap="toggleLike">
         {{item.liked_by_me ? '♥' : '♡'}} {{item.like_count || 0}}

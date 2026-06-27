@@ -484,13 +484,12 @@ function listMoments(params) {
     .then(data => ({ items: (data.items || []).map(normalizeMoment) }))
 }
 
-function postMoment(filePath, content) {
+function uploadMomentImage(filePath) {
   const doUpload = () => new Promise((resolve, reject) => {
     wx.uploadFile({
-      url: `${config.apiBaseUrl}/moments`,
+      url: `${config.apiBaseUrl}/moments/upload-image`,
       filePath,
       name: 'file',
-      formData: { content: content || '' },
       header: { Authorization: `Bearer ${getToken()}` },
       timeout: 30000,
       success(res) {
@@ -499,8 +498,8 @@ function postMoment(filePath, content) {
         try { data = typeof data === 'string' ? JSON.parse(data) : data } catch (e) {
           reject(new Error(`上传响应解析失败 ${status}`)); return
         }
-        if (status >= 200 && status < 300) { resolve(data); return }
-        reject(new Error((data && data.message) || `发布失败 ${status}`))
+        if (status >= 200 && status < 300) { resolve(data && data.object_path); return }
+        reject(new Error((data && data.message) || `上传失败 ${status}`))
       },
       fail: reject
     })
@@ -509,6 +508,14 @@ function postMoment(filePath, content) {
     if (!isUnauthorizedError(err)) throw err
     clearAuth()
     return login(true).then(doUpload)
+  })
+}
+
+function postMoment(objectPaths, content) {
+  return authed({
+    url: '/moments', method: 'POST',
+    data: { content: content || '', object_paths: objectPaths || [] },
+    header: { 'Content-Type': 'application/json' }
   })
 }
 
@@ -830,6 +837,7 @@ module.exports = {
   uploadArtwork,
   listArtworks,
   listMoments,
+  uploadMomentImage,
   postMoment,
   likeMoment,
   unlikeMoment,

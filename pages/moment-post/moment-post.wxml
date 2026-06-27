@@ -1,10 +1,13 @@
 <view class="post-page">
   <view class="post-card">
-    <view class="post-img-wrap" bindtap="chooseImage">
-      <image wx:if="{{imagePath}}" class="post-img" src="{{imagePath}}" mode="aspectFill"></image>
-      <view wx:else class="post-img-ph">
-        <view class="ph-emoji">📷</view>
-        <view class="ph-text">选一张孩子的照片</view>
+    <view class="post-grid">
+      <view class="post-thumb" wx:for="{{images}}" wx:key="*this">
+        <image class="post-thumb-img" src="{{item}}" mode="aspectFill" data-index="{{index}}" bindtap="previewImage"></image>
+        <view class="post-thumb-del" data-index="{{index}}" catchtap="removeImage">×</view>
+      </view>
+      <view wx:if="{{images.length < max}}" class="post-add" bindtap="chooseImage">
+        <view class="post-add-plus">＋</view>
+        <view class="post-add-text">{{images.length}}/{{max}}</view>
       </view>
     </view>
 

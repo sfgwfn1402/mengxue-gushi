@@ -11,7 +11,8 @@ page { background: #F5F7FB; }
 .am-name { flex: 1; font-size: 28rpx; font-weight: 800; color: #2A3550; }
 .am-status { font-size: 22rpx; color: #9AA0C0; }
 .am-content { font-size: 28rpx; color: #3A4456; line-height: 1.6; margin: 14rpx 0; }
-.am-image { width: 100%; border-radius: 16rpx; display: block; background: #F0F2F6; }
+.am-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8rpx; }
+.am-grid-img { width: 100%; height: 180rpx; border-radius: 12rpx; display: block; background: #F0F2F6; }
 .am-actions { display: flex; gap: 16rpx; justify-content: flex-end; margin-top: 16rpx; }
 .am-btn { font-size: 26rpx; font-weight: 800; padding: 14rpx 32rpx; border-radius: 999rpx; }
 .am-btn.pass { background: linear-gradient(135deg, #2BE2A6, #06B587); color: #fff; }

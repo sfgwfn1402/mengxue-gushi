@@ -11,7 +11,10 @@
       <view class="am-status">{{item.status}}</view>
     </view>
     <view wx:if="{{item.content}}" class="am-content">{{item.content}}</view>
-    <image class="am-image" src="{{item.image_url}}" mode="widthFix" data-url="{{item.image_url}}" bindtap="preview"></image>
+    <view class="am-grid">
+      <image class="am-grid-img" wx:for="{{item.images}}" wx:for-item="img" wx:key="*this"
+        src="{{img}}" mode="aspectFill" data-urls="{{item.images}}" data-cur="{{img}}" bindtap="preview"></image>
+    </view>
     <view class="am-actions" wx:if="{{status === 'submitted'}}">
       <view class="am-btn reject" data-id="{{item.id}}" data-status="rejected" bindtap="review">驳回</view>
       <view class="am-btn pass" data-id="{{item.id}}" data-status="public" bindtap="review">通过</view>

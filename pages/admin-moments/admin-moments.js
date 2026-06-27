@@ -49,8 +49,9 @@ Page({
   },
 
   preview(e) {
-    const url = e.currentTarget.dataset.url
-    if (url) wx.previewImage({ urls: [url], current: url })
+    const urls = e.currentTarget.dataset.urls || []
+    const cur = e.currentTarget.dataset.cur
+    if (urls.length) wx.previewImage({ urls, current: cur || urls[0] })
   },
 
   review(e) {
