@@ -15,6 +15,7 @@ page { background: linear-gradient(180deg, #FFF2F6 0%, #FFF7F2 100%); }
 .moment-avatar.fallback { display: flex; align-items: center; justify-content: center; font-size: 40rpx; }
 .moment-meta { flex: 1; min-width: 0; }
 .moment-name { font-size: 28rpx; font-weight: 800; color: #3A2E35; }
+.moment-pending { font-size: 20rpx; font-weight: 700; color: #C77F2A; background: #FFF1DA; border-radius: 999rpx; padding: 2rpx 12rpx; margin-left: 12rpx; }
 .moment-time { font-size: 22rpx; color: #B8AEB3; margin-top: 4rpx; }
 .moment-del { font-size: 22rpx; color: #C0B6BB; padding: 6rpx 12rpx; }
 

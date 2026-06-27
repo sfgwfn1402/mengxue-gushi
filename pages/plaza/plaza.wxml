@@ -14,7 +14,7 @@
       <image wx:if="{{item.avatar_url}}" class="moment-avatar" src="{{item.avatar_url}}" mode="aspectFill"></image>
       <view wx:else class="moment-avatar fallback">👶</view>
       <view class="moment-meta">
-        <view class="moment-name">{{item.nickname || '小诗童家长'}}</view>
+        <view class="moment-name">{{item.nickname || '小诗童家长'}}<text wx:if="{{item.status === 'submitted'}}" class="moment-pending">审核中</text></view>
         <view class="moment-time">{{item.timeText}}</view>
       </view>
       <view wx:if="{{item.user_id === myId}}" class="moment-del" data-id="{{item.id}}" catchtap="deleteMine">删除</view>
