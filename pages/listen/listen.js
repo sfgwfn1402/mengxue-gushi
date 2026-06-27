@@ -166,21 +166,32 @@ Page({
     bam.singer = `${item.dynasty}${item.author ? ' · ' + item.author : ''}`
     if (item.cover) bam.coverImgUrl = item.cover
     bam.src = item.url // 设置 src 自动播放
+    this._loadedUrl = item.url // 记录已装载到后台播放器的曲目
     this.setData({ index: i, current: item, playing: true, progress: 0, curTime: '0:00' })
     track('listen_play', { poem_id: item.id, list: this.data.activeList })
   },
 
   togglePlay() {
     const bam = this.bam || wx.getBackgroundAudioManager()
-    if (!this.data.current) {
-      if (this.data.playlist.length) this.playAt(0)
+    const cur = this.data.current
+    if (!cur) {
+      if (this.data.playlist.length) this.playAt(this.data.index || 0)
       return
     }
-    if (bam.paused) {
-      bam.play()
-    } else {
+    // 正在播放 → 暂停
+    if (this.data.playing && this._loadedUrl === cur.url) {
       bam.pause()
+      this.setData({ playing: false })
+      return
     }
+    // 已装载且暂停中 → 尝试原地继续
+    if (this._loadedUrl === cur.url && bam.src) {
+      bam.play()
+      this.setData({ playing: true })
+      return
+    }
+    // 其它情况（首次点击/换了听单/装载丢失）→ 直接从头启动这首，保证一点就响
+    this.playAt(this.data.index)
   },
 
   next() {
