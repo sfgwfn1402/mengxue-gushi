@@ -31,6 +31,7 @@
     "pages/color/color",
     "pages/plaza/plaza",
     "pages/moment-post/moment-post",
+    "pages/my-moments/my-moments",
     "pages/admin-moments/admin-moments"
   ],
   "requiredBackgroundModes": ["audio"],

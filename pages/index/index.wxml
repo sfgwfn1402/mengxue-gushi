@@ -324,6 +324,7 @@
           <view class="moment-name">{{item.nickname || '小诗童家长'}}<text wx:if="{{item.status === 'submitted'}}" class="moment-pending">审核中</text></view>
           <view class="moment-time">{{item.timeText}}</view>
         </view>
+        <view wx:if="{{item.user_id === myUserId}}" class="moment-del" data-id="{{item.id}}" catchtap="deleteMyMoment">删除</view>
       </view>
       <view wx:if="{{item.content}}" class="moment-content">{{item.content}}</view>
       <view class="moment-grid grid-{{item.images.length > 4 ? 3 : (item.images.length === 1 ? 1 : (item.images.length === 4 ? 2 : (item.images.length < 3 ? item.images.length : 3)))}}">

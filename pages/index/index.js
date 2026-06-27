@@ -670,6 +670,20 @@ Page({
     if (urls.length) wx.previewImage({ urls, current: cur || urls[0] })
   },
 
+  deleteMyMoment(e) {
+    const id = e.currentTarget.dataset.id
+    wx.showModal({
+      title: '删除动态', content: '确定删除这条动态吗？', confirmText: '删除',
+      success: res => {
+        if (!res.confirm) return
+        api.deleteMoment(id).then(() => {
+          this.setData({ momentItems: this.data.momentItems.filter(m => m.id !== id) })
+          wx.showToast({ title: '已删除', icon: 'none' })
+        }).catch(() => wx.showToast({ title: '删除失败', icon: 'none' }))
+      }
+    })
+  },
+
   goPostMoment() {
     this._refreshMoments = true
     wx.navigateTo({ url: '/pages/moment-post/moment-post' })

@@ -1,0 +1,27 @@
+page { background: #FFF2F6; }
+.mm-page { padding: 20rpx 24rpx 60rpx; box-sizing: border-box; }
+
+.mm-empty { text-align: center; padding: 120rpx 0; }
+.mm-empty-emoji { font-size: 100rpx; }
+.mm-empty-text { font-size: 26rpx; color: #C98AA4; margin-top: 20rpx; }
+.mm-empty-btn { display: inline-block; margin-top: 30rpx; background: linear-gradient(135deg, #FF8FB1, #FF6B9D); color: #fff; font-size: 28rpx; font-weight: 900; padding: 18rpx 44rpx; border-radius: 999rpx; }
+
+.mm-item { background: #fff; border-radius: 26rpx; padding: 24rpx; margin-bottom: 22rpx; box-shadow: 0 12rpx 28rpx rgba(200,100,140,0.08); }
+.mm-top { display: flex; align-items: center; gap: 14rpx; }
+.mm-time { flex: 1; font-size: 24rpx; color: #B8AEB3; }
+.mm-status { font-size: 22rpx; font-weight: 800; padding: 4rpx 16rpx; border-radius: 999rpx; }
+.mm-status.pending { color: #C77F2A; background: #FFF1DA; }
+.mm-status.public { color: #2E9E58; background: #E6F8EE; }
+.mm-status.rejected { color: #C0556F; background: #FCEBEF; }
+.mm-del { font-size: 24rpx; color: #C0B6BB; padding: 4rpx 10rpx; }
+
+.mm-content { font-size: 30rpx; color: #3A2E35; line-height: 1.6; margin: 16rpx 0; }
+.mm-grid { display: grid; gap: 10rpx; margin-top: 8rpx; }
+.mm-grid.grid-1 { grid-template-columns: 1fr; }
+.mm-grid.grid-2 { grid-template-columns: 1fr 1fr; }
+.mm-grid.grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.mm-grid-img { width: 100%; height: 210rpx; border-radius: 14rpx; display: block; background: #FBEFF3; }
+.mm-grid.grid-1 .mm-grid-img { height: 420rpx; }
+
+.mm-reject-tip { margin-top: 14rpx; font-size: 22rpx; color: #C0556F; background: #FCEBEF; border-radius: 14rpx; padding: 14rpx 16rpx; line-height: 1.5; }
+.mm-like { margin-top: 14rpx; font-size: 26rpx; color: #FF6B9D; font-weight: 800; }

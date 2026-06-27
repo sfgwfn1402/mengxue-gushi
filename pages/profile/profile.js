@@ -356,6 +356,7 @@ Page({
   handleMenuTap(e) {
     const action = e.currentTarget.dataset.action
     if (action === 'cards') wx.navigateTo({ url: '/pages/cards/cards' })
+    if (action === 'my-moments') wx.navigateTo({ url: '/pages/my-moments/my-moments' })
     if (action === 'works') wx.navigateTo({ url: '/pages/works/works' })
     if (action === 'favorites') this.openFavorites()
     if (action === 'records') this.openRecords()

@@ -80,6 +80,11 @@
       <text class="menu-text">古诗卡册</text>
       <text class="menu-desc">学一首点亮一张收藏卡</text>
     </button>
+    <button class="menu-item menu-button menu-moments" data-action="my-moments" bindtap="handleMenuTap">
+      <view class="menu-icon-wrap"><text class="menu-icon">💬</text></view>
+      <text class="menu-text">我的动态</text>
+      <text class="menu-desc">我发的社区动态 · 可删除</text>
+    </button>
     <button class="menu-item menu-button menu-works" data-action="works" bindtap="handleMenuTap">
       <view class="menu-icon-wrap"><text class="menu-icon">🎧</text></view>
       <text class="menu-text">我的诗集</text>

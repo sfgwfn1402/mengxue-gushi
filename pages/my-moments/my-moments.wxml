@@ -1,0 +1,22 @@
+<view class="mm-page">
+  <view wx:if="{{!items.length && !loading}}" class="mm-empty">
+    <view class="mm-empty-emoji">🌱</view>
+    <view class="mm-empty-text">你还没发过动态，去社区发一条吧～</view>
+    <view class="mm-empty-btn" bindtap="goPost">＋ 发一条</view>
+  </view>
+
+  <view class="mm-item" wx:for="{{items}}" wx:key="id">
+    <view class="mm-top">
+      <view class="mm-time">{{item.timeText}}</view>
+      <view class="mm-status {{item.statusCls}}">{{item.statusLabel}}</view>
+      <view class="mm-del" data-id="{{item.id}}" catchtap="remove">删除</view>
+    </view>
+    <view wx:if="{{item.content}}" class="mm-content">{{item.content}}</view>
+    <view class="mm-grid grid-{{item.images.length > 4 ? 3 : (item.images.length === 1 ? 1 : (item.images.length === 4 ? 2 : (item.images.length < 3 ? item.images.length : 3)))}}">
+      <image class="mm-grid-img" wx:for="{{item.images}}" wx:for-item="img" wx:key="*this"
+        src="{{img}}" mode="aspectFill" data-urls="{{item.images}}" data-cur="{{img}}" catchtap="preview"></image>
+    </view>
+    <view wx:if="{{item.status === 'rejected'}}" class="mm-reject-tip">这条没通过审核，可能含隐私或不适宜内容，删除后可重新发布</view>
+    <view wx:if="{{item.status === 'public'}}" class="mm-like">♥ {{item.like_count || 0}}</view>
+  </view>
+</view>

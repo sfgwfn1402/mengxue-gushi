@@ -484,6 +484,11 @@ function listMoments(params) {
     .then(data => ({ items: (data.items || []).map(normalizeMoment) }))
 }
 
+function listMyMoments() {
+  return authed({ url: '/moments/mine' })
+    .then(data => ({ items: (data.items || []).map(normalizeMoment) }))
+}
+
 function uploadMomentImage(filePath) {
   const doUpload = () => new Promise((resolve, reject) => {
     wx.uploadFile({
@@ -837,6 +842,7 @@ module.exports = {
   uploadArtwork,
   listArtworks,
   listMoments,
+  listMyMoments,
   uploadMomentImage,
   postMoment,
   likeMoment,
