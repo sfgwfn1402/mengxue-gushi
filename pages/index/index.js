@@ -47,7 +47,7 @@ Page({
     learningPaths: [
       { id: 'must', emoji: '📖', title: '启蒙必背', desc: '从最简单的诗开始', action: 'category', category: 'level1' },
       { id: 'follow', emoji: '🎙️', title: '跟读练习', desc: '听一句，读一句', action: 'mode', mode: 'follow' },
-      { id: 'recite', emoji: '🎯', title: '背诵闯关', desc: '遮字背一背', action: 'challenge' },
+      { id: 'recite', emoji: '🎯', title: '背诵闯关', desc: '遮字背一背', action: 'recite' },
       { id: 'review', emoji: '🔁', title: '我的复习', desc: '温故而知新', action: 'review' }
     ],
     childThemes: [
@@ -803,12 +803,32 @@ Page({
   },
 
 
-  // 「今天怎么学」入口分发：分类/模式跳诗园，背诵闯关跳诗光，复习跳复习页
+  // 「今天怎么学」入口分发：分类/模式跳诗园，背诵闯关进遮字背诵，复习跳复习页
   tapLearnEntry(e) {
     const action = e.currentTarget.dataset.action
-    if (action === 'challenge') return this.goChallenge()
+    if (action === 'recite') return this.goReciteEntry()
     if (action === 'review') return this.goReview()
     this.openLearningPath(e)
+  },
+
+  // 背诵闯关：挑一首最近学过的诗去遮字背诵；没学过则引导先去学
+  goReciteEntry() {
+    const go = (list) => {
+      const learned = (list || []).filter(it => it.learned && (it.poem_id != null || it.poemId != null))
+      learned.sort((a, b) => String(b.last_learned_at || '').localeCompare(String(a.last_learned_at || '')))
+      const t = learned[0]
+      const pid = t ? Number(t.poem_id != null ? t.poem_id : t.poemId) : null
+      if (pid) {
+        wx.navigateTo({ url: `/pages/recite/recite?id=${pid}&type=poem` })
+      } else {
+        wx.showToast({ title: '先学一首诗，再来背一背吧', icon: 'none' })
+        setTimeout(() => this.openWarehouse(), 900)
+      }
+    }
+    if (this._lastProgress) { go(this._lastProgress); return }
+    api.listProgress()
+      .then(items => go(Array.isArray(items) ? items : (items.items || [])))
+      .catch(() => go([]))
   },
 
   openLearningPath(e) {
