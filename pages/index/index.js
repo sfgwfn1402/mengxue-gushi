@@ -27,6 +27,19 @@ function daysSince(s) {
 const REVIEW_INTERVAL_DAYS = 2
 const PLAN_REVIEW_CAP = 2
 
+function momentTime(s) {
+  if (!s) return ''
+  const t = new Date(String(s).replace(' ', 'T') + (String(s).includes('Z') ? '' : 'Z')).getTime()
+  if (isNaN(t)) return ''
+  const diff = Date.now() - t
+  if (diff < 60000) return '刚刚'
+  if (diff < 3600000) return Math.floor(diff / 60000) + '分钟前'
+  if (diff < 86400000) return Math.floor(diff / 3600000) + '小时前'
+  if (diff < 7 * 86400000) return Math.floor(diff / 86400000) + '天前'
+  const d = new Date(t)
+  return `${d.getMonth() + 1}月${d.getDate()}日`
+}
+
 function formatDuration(sec) {
   const s = Math.max(0, Math.round(Number(sec) || 0))
   if (!s) return ''
@@ -69,6 +82,12 @@ Page({
     weeklyRankIndex: 0,
     recitationShowTab: 'hot', // 'hot' | 'rank'
     homeTab: 'learn',
+    momentItems: [],
+    momentsLoaded: false,
+    momentsLoading: false,
+    momentsPage: 1,
+    momentsHasMore: true,
+    myUserId: '',
     discoverFilter: 'all',
     discoverItems: [],
     failedCovers: {},
@@ -196,6 +215,10 @@ Page({
     this.maybeShowInviteWelcome() // 被邀请者落地欢迎语
     this.startDrift() // 悬浮球自动飘动
     track('page_view', { name: 'index' })
+    if (this._refreshMoments && this.data.homeTab === 'plaza') {
+      this._refreshMoments = false
+      this.loadMoments(true)
+    }
     if (this._loadedOnce) return
     this._loadedOnce = true
   },
@@ -392,11 +415,6 @@ Page({
   goCards() {
     track('cards_open', { from: 'home' })
     wx.navigateTo({ url: '/pages/cards/cards' })
-  },
-
-  goPlaza() {
-    track('plaza_open', { from: 'home' })
-    wx.navigateTo({ url: '/pages/plaza/plaza' })
   },
 
   loadStreak() {
@@ -610,6 +628,57 @@ Page({
     if (tab !== this.data.homeTab) this.stopPageRecitation() // 切换发现/诗旅时停掉正在播放的朗诵
     this.setData({ homeTab: tab })
     if (tab === 'discover') this.loadDiscoverItems({ reset: true })
+    if (tab === 'plaza') {
+      track('plaza_open', { from: 'home-tab' })
+      if (!this.data.myUserId) {
+        const apiUser = wx.getStorageSync('apiUser') || {}
+        this.setData({ myUserId: apiUser.user_id || apiUser.id || '' })
+      }
+      this.loadMoments(true)
+    }
+  },
+
+  loadMoments(reset) {
+    if (this.data.momentsLoading) return
+    if (!reset && !this.data.momentsHasMore) return
+    const page = reset ? 1 : this.data.momentsPage
+    this.setData({ momentsLoading: true })
+    api.listMoments({ page, page_size: 10 })
+      .then(res => {
+        const incoming = (res.items || []).map(m => Object.assign({}, m, { timeText: momentTime(m.created_at) }))
+        const items = reset ? incoming : this.data.momentItems.concat(incoming)
+        this.setData({
+          momentItems: items,
+          momentsPage: page + 1,
+          momentsHasMore: incoming.length >= 10,
+          momentsLoading: false,
+          momentsLoaded: true
+        })
+      })
+      .catch(() => this.setData({ momentsLoading: false, momentsLoaded: true }))
+  },
+
+  toggleMomentLike(e) {
+    const id = e.currentTarget.dataset.id
+    const item = this.data.momentItems.find(m => m.id === id)
+    if (!item) return
+    const willLike = !item.liked_by_me
+    const patch = m => m.id === id ? Object.assign({}, m, { liked_by_me: willLike, like_count: Math.max(0, (m.like_count || 0) + (willLike ? 1 : -1)) }) : m
+    this.setData({ momentItems: this.data.momentItems.map(patch) })
+    ;(willLike ? api.likeMoment(id) : api.unlikeMoment(id)).then(res => {
+      this.setData({ momentItems: this.data.momentItems.map(m => m.id === id ? Object.assign({}, m, { liked_by_me: !!res.liked, like_count: typeof res.like_count === 'number' ? res.like_count : m.like_count }) : m) })
+    }).catch(() => {})
+  },
+
+  previewMoment(e) {
+    const urls = e.currentTarget.dataset.urls || []
+    const cur = e.currentTarget.dataset.cur
+    if (urls.length) wx.previewImage({ urls, current: cur || urls[0] })
+  },
+
+  goPostMoment() {
+    this._refreshMoments = true
+    wx.navigateTo({ url: '/pages/moment-post/moment-post' })
   },
 
   switchRecitationShowTab(e) {
@@ -766,6 +835,7 @@ Page({
   },
 
   onReachBottom() {
+    if (this.data.homeTab === 'plaza') { this.loadMoments(false); return }
     if (this.data.homeTab === 'discover') this.loadDiscoverItems()
   },
 

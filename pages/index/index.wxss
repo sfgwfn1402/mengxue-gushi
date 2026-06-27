@@ -896,13 +896,34 @@ page {
 .game-entry-sub { font-size: 23rpx; color: #B0884F; font-weight: 700; margin-top: 6rpx; }
 .game-entry-go { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #FFCB52, #FF9F1C); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; flex-shrink: 0; }
 
-/* 亲子广场入口 */
-.plaza-entry { display: flex; align-items: center; gap: 18rpx; margin: 22rpx 0; padding: 24rpx; border-radius: 30rpx; background: linear-gradient(135deg, #FFE3EC 0%, #FFD6E4 100%); box-shadow: 0 14rpx 32rpx rgba(255,107,157,0.16); }
-.plaza-entry-icon { width: 78rpx; height: 78rpx; border-radius: 24rpx; background: rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center; font-size: 42rpx; flex-shrink: 0; }
-.plaza-entry-main { flex: 1; min-width: 0; }
-.plaza-entry-title { font-size: 30rpx; font-weight: 900; color: #B23A6B; }
-.plaza-entry-sub { font-size: 23rpx; color: #C77F9D; font-weight: 700; margin-top: 6rpx; }
-.plaza-entry-go { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #FF8FB1, #FF6B9D); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; flex-shrink: 0; }
+/* 亲子广场（首页内嵌 Tab） */
+.plaza-head { padding: 4rpx 4rpx 16rpx; }
+.plaza-title { font-size: 32rpx; font-weight: 900; color: #B23A6B; }
+.plaza-sub { font-size: 23rpx; color: #C98AA4; margin-top: 6rpx; }
+.plaza-empty { text-align: center; padding: 100rpx 0; }
+.plaza-empty-emoji { font-size: 90rpx; }
+.plaza-empty-text { font-size: 26rpx; color: #C98AA4; margin-top: 20rpx; }
+.plaza-loading { text-align: center; font-size: 24rpx; color: #C0B6BB; padding: 30rpx 0; }
+.plaza-fab { position: fixed; right: 36rpx; bottom: 56rpx; background: linear-gradient(135deg, #FF8FB1, #FF6B9D); color: #fff; font-size: 30rpx; font-weight: 900; padding: 22rpx 38rpx; border-radius: 999rpx; box-shadow: 0 14rpx 32rpx rgba(255,107,157,0.4); z-index: 50; }
+
+.moment { background: #fff; border-radius: 28rpx; padding: 24rpx; margin-bottom: 22rpx; box-shadow: 0 12rpx 28rpx rgba(200,100,140,0.08); }
+.moment-top { display: flex; align-items: center; gap: 16rpx; }
+.moment-avatar { width: 72rpx; height: 72rpx; border-radius: 50%; flex-shrink: 0; background: #FFE3EC; }
+.moment-avatar.fallback { display: flex; align-items: center; justify-content: center; font-size: 40rpx; }
+.moment-meta { flex: 1; min-width: 0; }
+.moment-name { font-size: 28rpx; font-weight: 800; color: #3A2E35; }
+.moment-pending { font-size: 20rpx; font-weight: 700; color: #C77F2A; background: #FFF1DA; border-radius: 999rpx; padding: 2rpx 12rpx; margin-left: 12rpx; }
+.moment-time { font-size: 22rpx; color: #B8AEB3; margin-top: 4rpx; }
+.moment-content { font-size: 30rpx; color: #3A2E35; line-height: 1.6; margin: 16rpx 0; }
+.moment-grid { display: grid; gap: 10rpx; margin-top: 8rpx; }
+.moment-grid.grid-1 { grid-template-columns: 1fr; }
+.moment-grid.grid-2 { grid-template-columns: 1fr 1fr; }
+.moment-grid.grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.moment-grid-img { width: 100%; height: 218rpx; border-radius: 14rpx; display: block; background: #FBEFF3; }
+.moment-grid.grid-1 .moment-grid-img { height: 440rpx; }
+.moment-actions { display: flex; justify-content: flex-end; margin-top: 16rpx; }
+.moment-like { font-size: 28rpx; font-weight: 800; color: #9A9098; background: #F5EEF1; border-radius: 999rpx; padding: 10rpx 26rpx; }
+.moment-like.liked { color: #fff; background: linear-gradient(135deg, #FF8FB1, #FF6B9D); }
 
 /* 古诗卡册入口 */
 .cards-entry { display: flex; align-items: center; gap: 18rpx; margin: 22rpx 0; padding: 24rpx; border-radius: 30rpx; background: linear-gradient(135deg, #ECE6FF 0%, #E2DBFF 100%); box-shadow: 0 14rpx 32rpx rgba(108,90,200,0.16); }
