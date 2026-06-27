@@ -223,6 +223,11 @@ Page({
     wx.showToast({ title: '试听中…', icon: 'none', duration: 1500 })
   },
 
+  goColor() {
+    const id = this.data.selectedPoemId
+    wx.navigateTo({ url: id ? `/pages/color/color?id=${id}` : '/pages/color/color' })
+  },
+
   chooseArtwork() {
     wx.chooseMedia({
       count: 1,

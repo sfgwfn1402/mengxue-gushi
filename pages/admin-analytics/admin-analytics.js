@@ -23,6 +23,8 @@ const EVENT_LABELS = {
   game_finish: '玩完某游戏',
   cards_open: '进古诗卡册',
   card_detail: '看某张卡',
+  color_open: '进诗配画涂色',
+  color_publish: '发布涂色画',
   invite_landed: '邀请落地',
   review_done: '复习一首',
   reminder_subscribed: '开启提醒',

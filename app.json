@@ -27,7 +27,8 @@
     "pages/game/game",
     "pages/game-feihua/game-feihua",
     "pages/game-match/game-match",
-    "pages/cards/cards"
+    "pages/cards/cards",
+    "pages/color/color"
   ],
   "requiredBackgroundModes": ["audio"],
   "window": {

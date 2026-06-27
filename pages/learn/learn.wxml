@@ -173,6 +173,15 @@
         </view>
         <view class="story-entry-card-go">去看 →</view>
       </view>
+
+      <view class="story-entry-card color-entry-card" bindtap="goColor">
+        <view class="story-entry-card-icon">🎨</view>
+        <view class="story-entry-card-main">
+          <view class="story-entry-card-title">给这首诗画一幅画</view>
+          <view class="story-entry-card-sub">手指涂画诗里的画面，画完能发布到诗集</view>
+        </view>
+        <view class="story-entry-card-go">去画 →</view>
+      </view>
     </block>
 
     <!-- 成语 -->

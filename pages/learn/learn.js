@@ -1240,6 +1240,14 @@ Page({
     wx.navigateTo({ url: `/pages/story/story?id=${id}` })
   },
 
+  goColor() {
+    const { id, type } = this.data
+    if (type !== 'poem' || !id) return
+    this.stopReading()
+    track('color_open', { from: 'learn' })
+    wx.navigateTo({ url: `/pages/color/color?id=${id}` })
+  },
+
   noop() {},
 
   addToFavorites() {

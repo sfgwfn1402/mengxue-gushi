@@ -1978,6 +1978,10 @@ page {
 .story-entry-card-title { font-size: 29rpx; font-weight: 900; color: #7A3E00; }
 .story-entry-card-sub { font-size: 23rpx; color: #AE7B4B; font-weight: 700; margin-top: 6rpx; }
 .story-entry-card-go { font-size: 24rpx; font-weight: 800; color: #fff; background: linear-gradient(135deg, #FFB15D, #FF7A45); border-radius: 999rpx; padding: 12rpx 22rpx; white-space: nowrap; flex-shrink: 0; }
+.color-entry-card { margin-top: 16rpx; background: linear-gradient(135deg, #DDF7EE 0%, #D2F2F0 100%); }
+.color-entry-card .story-entry-card-title { color: #1F6B53; }
+.color-entry-card .story-entry-card-sub { color: #5BA88C; }
+.color-entry-card .story-entry-card-go { background: linear-gradient(135deg, #2BE2A6, #06B587); }
 .child-guide-title {
   font-size: 29rpx;
   font-weight: 900;

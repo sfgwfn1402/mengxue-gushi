@@ -50,6 +50,14 @@
   </view>
 
   <view class="form-card" wx:if="{{mode === 'artwork'}}">
+    <view class="online-draw" bindtap="goColor">
+      <view class="online-draw-icon">🎨</view>
+      <view class="online-draw-main">
+        <view class="online-draw-title">没带画？在线画一幅</view>
+        <view class="online-draw-sub">手指涂画，画完直接发布</view>
+      </view>
+      <view class="online-draw-go">去画 →</view>
+    </view>
     <view class="field-label">上传诗配画</view>
     <view class="art-preview" bindtap="chooseArtwork">
       <image wx:if="{{artworkPath}}" src="{{artworkPath}}" mode="aspectFill"></image>

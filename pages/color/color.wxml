@@ -1,0 +1,40 @@
+<view class="color-page">
+  <view wx:if="{{poem}}" class="color-hero">
+    <view class="color-hero-title">🎨 给《{{poem.title}}》画一幅画</view>
+    <view class="color-hero-lines">
+      <text wx:for="{{lines}}" wx:key="*this" class="color-hero-line">{{item}}</text>
+    </view>
+  </view>
+  <view wx:else class="color-hero">
+    <view class="color-hero-title">🎨 古诗涂鸦板</view>
+    <view class="color-hero-lines"><text class="color-hero-line">画一幅你心里的古诗画面吧</text></view>
+  </view>
+
+  <view class="canvas-wrap">
+    <canvas type="2d" id="paint" class="paint-canvas"
+      bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" disable-scroll="true"></canvas>
+  </view>
+
+  <!-- 颜色 -->
+  <view class="palette">
+    <view class="swatch {{color === item && !erasing ? 'on' : ''}}" wx:for="{{colors}}" wx:key="*this"
+      style="background: {{item}};" data-color="{{item}}" bindtap="pickColor"></view>
+  </view>
+
+  <!-- 笔刷 + 工具 -->
+  <view class="tools">
+    <view class="tool-sizes">
+      <view class="size-dot {{size === item && !erasing ? 'on' : ''}}" wx:for="{{sizes}}" wx:key="*this" data-size="{{item}}" bindtap="pickSize">
+        <view class="size-inner" style="width: {{item}}px; height: {{item}}px;"></view>
+      </view>
+    </view>
+    <view class="tool-btn {{erasing ? 'on' : ''}}" bindtap="toggleEraser">🧽 橡皮</view>
+    <view class="tool-btn" bindtap="clearCanvas">🗑 清空</view>
+  </view>
+
+  <!-- 保存/发布 -->
+  <view class="color-actions">
+    <view class="color-action ghost" bindtap="saveAlbum">存到相册</view>
+    <view class="color-action primary {{saving ? 'loading' : ''}}" bindtap="publish">{{poem ? '发布到诗集 →' : '存到相册 →'}}</view>
+  </view>
+</view>
