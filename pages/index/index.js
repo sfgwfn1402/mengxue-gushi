@@ -401,12 +401,6 @@ Page({
     wx.navigateTo({ url: '/pages/listen/listen' })
   },
 
-  goStory() {
-    track('story_open', {})
-    const id = this.data.todayPoem && this.data.todayPoem.id
-    wx.navigateTo({ url: id ? `/pages/story/story?id=${id}` : '/pages/story/story' })
-  },
-
   goGame() {
     track('game_hub_open', { from: 'home' })
     wx.navigateTo({ url: '/pages/game/game' })

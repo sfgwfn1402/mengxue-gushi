@@ -129,16 +129,6 @@
       <view class="listen-entry-go">去听 →</view>
     </view>
 
-    <!-- 诗词故事会入口 -->
-    <view class="story-entry" bindtap="goStory">
-      <view class="story-entry-icon">📖</view>
-      <view class="story-entry-main">
-        <view class="story-entry-title">诗词故事会</view>
-        <view class="story-entry-sub">每首诗背后都有个小故事，听一听更好懂</view>
-      </view>
-      <view class="story-entry-go">去看 →</view>
-    </view>
-
     <!-- 诗词游戏入口 -->
     <view class="game-entry" bindtap="goGame">
       <view class="game-entry-icon">🎮</view>
