@@ -389,6 +389,11 @@ Page({
     wx.navigateTo({ url: '/pages/game/game' })
   },
 
+  goCards() {
+    track('cards_open', { from: 'home' })
+    wx.navigateTo({ url: '/pages/cards/cards' })
+  },
+
   loadStreak() {
     api.getStats()
       .then(stats => {

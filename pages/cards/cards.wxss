@@ -1,0 +1,47 @@
+page { background: linear-gradient(180deg, #2E2A42 0%, #1F1B30 100%); }
+.cards-page { padding: 24rpx 24rpx 60rpx; box-sizing: border-box; }
+
+.cards-head { display: flex; align-items: baseline; justify-content: space-between; padding: 6rpx 4rpx 18rpx; }
+.cards-title { font-size: 34rpx; font-weight: 900; color: #fff; }
+.cards-progress { font-size: 26rpx; color: #C8C2E0; font-weight: 700; }
+.cards-num { font-size: 32rpx; font-weight: 900; color: #FFD166; }
+
+.cards-filters { display: flex; gap: 14rpx; margin-bottom: 24rpx; }
+.cards-filter { padding: 10rpx 28rpx; border-radius: 999rpx; background: rgba(255,255,255,0.1); color: #C8C2E0; font-size: 25rpx; font-weight: 700; }
+.cards-filter.active { background: linear-gradient(135deg, #FFD166, #FF9F1C); color: #3A2E00; }
+
+/* 卡片网格 */
+.cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18rpx; }
+.card { position: relative; border-radius: 20rpx; padding: 12rpx 12rpx 16rpx; background: #3A3550; border: 3rpx solid #4A4468; overflow: hidden; }
+.card.rarity-rare { border-color: #5B8DEF; box-shadow: 0 0 18rpx rgba(91,141,239,0.4); }
+.card.rarity-epic { border-color: #FFC24B; box-shadow: 0 0 22rpx rgba(255,194,75,0.5); }
+.card.locked { opacity: 0.55; filter: grayscale(0.7); }
+.card-rarity { position: absolute; left: 0; top: 0; font-size: 18rpx; font-weight: 800; color: #fff; background: rgba(0,0,0,0.4); padding: 4rpx 12rpx; border-bottom-right-radius: 12rpx; z-index: 2; }
+.card.rarity-rare .card-rarity { background: #5B8DEF; }
+.card.rarity-epic .card-rarity { background: linear-gradient(135deg, #FFC24B, #FF9F1C); color: #4A2E00; }
+.card-cover { width: 100%; height: 180rpx; border-radius: 14rpx; display: block; }
+.card-cover-locked { display: flex; align-items: center; justify-content: center; font-size: 60rpx; color: #6A6488; background: #2C2840; }
+.card-title { margin-top: 10rpx; font-size: 26rpx; font-weight: 900; color: #fff; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-author { font-size: 18rpx; color: #A8A2C8; text-align: center; margin-top: 4rpx; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.cards-empty { text-align: center; color: #A8A2C8; font-size: 26rpx; padding: 100rpx 0; }
+
+/* 详情 */
+.card-mask { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 500; padding: 40rpx; box-sizing: border-box; }
+.card-detail { width: 100%; max-width: 560rpx; background: linear-gradient(180deg, #45406A 0%, #322E4C 100%); border-radius: 32rpx; padding: 32rpx 28rpx; text-align: center; border: 4rpx solid #5A5480; }
+.card-detail.rarity-rare { border-color: #5B8DEF; }
+.card-detail.rarity-epic { border-color: #FFC24B; }
+.card-detail-rarity { display: inline-block; font-size: 22rpx; font-weight: 800; color: #fff; background: rgba(0,0,0,0.3); padding: 6rpx 20rpx; border-radius: 999rpx; }
+.card-detail.rarity-epic .card-detail-rarity { background: linear-gradient(135deg, #FFC24B, #FF9F1C); color: #4A2E00; }
+.card-detail-cover { width: 100%; height: 320rpx; border-radius: 22rpx; margin: 18rpx 0; display: block; }
+.card-cover-locked.big { height: 260rpx; font-size: 120rpx; border-radius: 22rpx; margin: 18rpx 0; }
+.card-detail-title { font-size: 38rpx; font-weight: 900; color: #fff; }
+.card-detail-author { font-size: 24rpx; color: #C8C2E0; margin-top: 6rpx; }
+.card-detail-lines { margin: 20rpx 0; }
+.card-detail-line { display: block; font-size: 30rpx; color: #FFE9B0; font-weight: 700; line-height: 1.8; }
+.card-detail-fact { font-size: 24rpx; color: #C8C2E0; line-height: 1.7; background: rgba(0,0,0,0.22); border-radius: 16rpx; padding: 16rpx 18rpx; text-align: left; margin-bottom: 20rpx; }
+.card-detail-btns { display: flex; gap: 16rpx; }
+.card-detail-btn { flex: 1; text-align: center; padding: 22rpx 0; border-radius: 999rpx; font-size: 28rpx; font-weight: 900; }
+.card-detail-btn.primary { background: linear-gradient(135deg, #FFD166, #FF9F1C); color: #4A2E00; }
+.card-detail-btn.ghost { background: rgba(255,255,255,0.14); color: #fff; }
+.card-detail-btn.full { flex: 1; }

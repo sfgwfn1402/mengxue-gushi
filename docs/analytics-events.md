@@ -57,6 +57,8 @@
 | `game_pick` | 选了某游戏 | `game.js` openGame | `{ game }` | 哪个游戏被选得多 |
 | `game_start` | 开始某游戏 | feihua/match prepare | `{ game }` | 游戏真开始玩了吗 |
 | `game_finish` | 玩完某游戏 | feihua/match finish | `{ game, score? }` | 玩完率/得分分布 |
+| `cards_open` | 进古诗卡册 | `index.js`/`cards.js` | `{ from?, unlocked?, total? }` | 卡册有人看吗/集了多少 |
+| `card_detail` | 看某张卡 | `cards.js` openCard | `{ poem_id, unlocked }` | 点开看哪些卡 |
 | `invite_landed` | 邀请落地 | `index.js` maybeShowInviteWelcome | `{ from }` | 邀请真转化了吗 |
 | `review_done` | 复习一首 | `review.js` remembered | `{ poem_id }` | 复习功能有人用吗 |
 | `reminder_subscribed` | 开启提醒 | `profile.js` openStudyReminder 授权成功 | — | 提醒订阅有人开吗 |

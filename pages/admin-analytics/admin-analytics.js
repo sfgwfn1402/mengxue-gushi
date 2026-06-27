@@ -21,6 +21,8 @@ const EVENT_LABELS = {
   game_pick: '选了某游戏',
   game_start: '开始某游戏',
   game_finish: '玩完某游戏',
+  cards_open: '进古诗卡册',
+  card_detail: '看某张卡',
   invite_landed: '邀请落地',
   review_done: '复习一首',
   reminder_subscribed: '开启提醒',

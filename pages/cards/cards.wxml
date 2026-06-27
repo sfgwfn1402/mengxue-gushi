@@ -1,0 +1,53 @@
+<view class="cards-page">
+  <view class="cards-head">
+    <view class="cards-title">🃏 我的古诗卡册</view>
+    <view class="cards-progress">已集 <text class="cards-num">{{unlockedCount}}</text> / {{total}} 张</view>
+  </view>
+
+  <view class="cards-filters">
+    <view class="cards-filter {{filter === 'all' ? 'active' : ''}}" data-filter="all" bindtap="switchFilter">全部</view>
+    <view class="cards-filter {{filter === 'unlocked' ? 'active' : ''}}" data-filter="unlocked" bindtap="switchFilter">已点亮</view>
+    <view class="cards-filter {{filter === 'locked' ? 'active' : ''}}" data-filter="locked" bindtap="switchFilter">未点亮</view>
+  </view>
+
+  <view class="cards-grid">
+    <view class="card rarity-{{item.rarity}} {{item.unlocked ? '' : 'locked'}}" wx:for="{{visible}}" wx:key="id" data-id="{{item.id}}" bindtap="openCard">
+      <view class="card-rarity">{{item.rarityLabel}}</view>
+      <image wx:if="{{item.unlocked && item.cover}}" class="card-cover" src="{{item.cover}}" mode="aspectFill"></image>
+      <view wx:else class="card-cover card-cover-locked">{{item.unlocked ? '🖼️' : '?'}}</view>
+      <view class="card-title">{{item.unlocked ? item.title : '？？？'}}</view>
+      <view class="card-author">{{item.unlocked ? (item.dynasty + ' · ' + item.author) : '未点亮'}}</view>
+    </view>
+  </view>
+
+  <view wx:if="{{!visible.length}}" class="cards-empty">这里还没有卡片，去学诗点亮第一张吧～</view>
+</view>
+
+<!-- 卡片详情 -->
+<view class="card-mask" wx:if="{{detail}}" bindtap="closeDetail">
+  <view class="card-detail rarity-{{detail.rarity}}" catchtap="noop">
+    <view class="card-detail-rarity">{{detail.rarityLabel}}卡</view>
+    <block wx:if="{{!detailLocked}}">
+      <image wx:if="{{detail.cover}}" class="card-detail-cover" src="{{detail.cover}}" mode="aspectFill"></image>
+      <view wx:else class="card-detail-cover card-cover-locked">🖼️</view>
+      <view class="card-detail-title">《{{detail.title}}》</view>
+      <view class="card-detail-author">{{detail.dynasty}} · {{detail.author}}</view>
+      <view class="card-detail-lines">
+        <text class="card-detail-line" wx:for="{{detail.lines}}" wx:key="*this">{{item}}</text>
+      </view>
+      <view wx:if="{{detail.story}}" class="card-detail-fact">💡 {{detail.story}}</view>
+      <view class="card-detail-btns">
+        <view class="card-detail-btn ghost" bindtap="goStoryDetail">看故事</view>
+        <view class="card-detail-btn primary" bindtap="goLearnDetail">去学这首</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="card-detail-cover card-cover-locked big">🔒</view>
+      <view class="card-detail-title">还没点亮这张卡</view>
+      <view class="card-detail-author">学会这首诗就能收入卡册</view>
+      <view class="card-detail-btns">
+        <view class="card-detail-btn primary full" bindtap="goLearnDetail">去学，点亮它 →</view>
+      </view>
+    </block>
+  </view>
+</view>

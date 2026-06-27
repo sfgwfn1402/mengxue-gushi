@@ -148,6 +148,16 @@
       <view class="game-entry-go">去玩 →</view>
     </view>
 
+    <!-- 古诗卡册入口 -->
+    <view class="cards-entry" bindtap="goCards">
+      <view class="cards-entry-icon">🃏</view>
+      <view class="cards-entry-main">
+        <view class="cards-entry-title">古诗卡册</view>
+        <view class="cards-entry-sub">学一首点亮一张收藏卡，集齐它们</view>
+      </view>
+      <view class="cards-entry-go">去集卡 →</view>
+    </view>
+
     <!-- 朗诵秀：人气朗诵 + 本周排行 双Tab切换 -->
     <view class="recitation-show">
       <view class="show-tabs">
