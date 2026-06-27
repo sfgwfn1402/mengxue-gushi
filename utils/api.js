@@ -471,10 +471,20 @@ function listArtworks(params) {
   return authed({ url: `/artworks${toQuery(params || {})}` }).then(normalizeWorkList)
 }
 
+function absMediaUrl(u) {
+  if (!u) return ''
+  const s = String(u)
+  if (/^https?:\/\//.test(s)) return s
+  // 相对路径(如 /api/moments/.../image/0)补成绝对域名，<image> 才能加载
+  const base = (config.mediaBaseUrl || '').replace(/\/$/, '')
+  return s.charAt(0) === '/' ? base + s : s
+}
+
 function normalizeMoment(m) {
   if (!m || typeof m !== 'object') return m
   const out = Object.assign({}, m)
-  if (out.image_url) out.image_url = normalizeMediaUrl(out.image_url)
+  if (out.image_url) out.image_url = absMediaUrl(out.image_url)
+  if (Array.isArray(out.images)) out.images = out.images.map(absMediaUrl)
   if (out.avatar_url) out.avatar_url = normalizeMediaUrl(out.avatar_url)
   return out
 }
