@@ -332,7 +332,9 @@
           src="{{img}}" mode="aspectFill" data-urls="{{item.images}}" data-cur="{{img}}" catchtap="previewMoment"></image>
       </view>
       <view class="moment-actions">
-        <button class="moment-share" open-type="share" data-share="moment" data-content="{{item.content}}" data-img="{{item.images[0]}}">↗ 分享</button>
+        <button class="moment-share" size="mini" open-type="share" data-share="moment" data-content="{{item.content}}" data-img="{{item.images[0]}}">
+          <text class="moment-share-ico">↗</text> 分享
+        </button>
         <view class="moment-like {{item.liked_by_me ? 'liked' : ''}}" data-id="{{item.id}}" catchtap="toggleMomentLike">
           {{item.liked_by_me ? '♥' : '♡'}} {{item.like_count || 0}}
         </view>
