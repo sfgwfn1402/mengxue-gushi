@@ -285,7 +285,7 @@
           </view>
         </view>
         <view class="moment-content">{{item.title}} · 《{{item.poemTitle}}》</view>
-        <image class="moment-art-img" src="{{item.imageUrl}}" mode="widthFix" data-url="{{item.imageUrl}}" catchtap="previewDiscoverImage"></image>
+        <image class="moment-art-img" src="{{item.imageUrl}}" mode="aspectFill" data-url="{{item.imageUrl}}" catchtap="previewDiscoverImage"></image>
         <view class="moment-actions">
           <view class="moment-spacer"></view>
           <view class="moment-like {{item.likedByMe ? 'liked' : ''}}" data-id="{{item.id}}" data-type="{{item.type}}" catchtap="toggleDiscoverLike">{{item.likedByMe ? '♥' : '♡'}} {{item.likeCount}}</view>
